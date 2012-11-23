@@ -13,7 +13,7 @@ function fieramilanomedia_views_views_api() {
  * Implements hook_views_default_views().
  */
 function fieramilanomedia_views_views_default_views() {
-    $path = './' . drupal_get_path('module', 'fieramilanomedia_views') . '/views/*.inc';
+    $path = './' . drupal_get_path('module', 'realestate_views') . '/views/*.inc';
     $views = array();
     foreach (glob($path) as $views_filename) {
         require_once($views_filename);
@@ -21,4 +21,4 @@ function fieramilanomedia_views_views_default_views() {
     return $views;
 }
 
-drupal_add_css(drupal_get_path('module', 'fieramilanomedia_views') .'/fieramilanomedia_views.css');
+drupal_add_css(drupal_get_path('module', 'realestate_views') .'/realestate_views.css');
