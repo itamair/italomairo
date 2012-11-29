@@ -1,0 +1,7 @@
+name = "Custom CSS Adds (Custom Module)"
+description = "adds css new rules for every theme in the project"
+core = "7.x"
+package = Custom_modules
+core = 7.x
+
+files[] = custom_css_adds.module

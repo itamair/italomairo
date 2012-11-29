@@ -1,0 +1,2 @@
+<?php
+drupal_add_css(drupal_get_path('module', 'custom_css_adds') .'/custom_css_adds.css');
