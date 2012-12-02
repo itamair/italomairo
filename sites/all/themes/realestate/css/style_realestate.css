@@ -1,0 +1,318 @@
+/* HTML 
+--------------------------------------------------------------------------*/
+
+body {
+  line-height: 1.6em;
+  font-size: 14px;
+  color: #222222;
+  background: none;	
+  border-top: 3px solid #222222;
+}
+
+.page-inner {
+  margin: 30px auto;
+  background: #ffffff;
+  -moz-box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  border-color:   #eee;
+  font-size: inherit;
+  font: 100%;
+  margin: 16px 0;
+  padding: 0;
+  width: 100%;
+}
+
+p {
+  padding-bottom: 0.2em;
+}
+
+th, thead, thead th {
+  background-color: #333;
+  border: none; 
+  color:  #fcfcf8;
+  padding-right: 1em;
+  text-align: left;
+  font-weight: bold;
+  height: 20px;
+  padding: 6px 0 4px 4px;
+  vertical-align: middle;
+}
+
+th a, thead a, thead th a {
+	color: #F90;  
+}
+
+td {
+  padding: 6px 0 4px 4px;
+
+}
+
+legend {
+	padding: 4px 0;
+}
+
+div.field {
+  padding: 4px 0;
+}
+
+ul.action-links {
+  padding: 6px 0 6px 6px;
+}
+
+ul.primary {
+  font-size: 85%;
+}
+
+/* HEADER 
+--------------------------------------------------------------------------*/
+
+/* SLIDESHOW 
+--------------------------------------------------------------------------*/
+
+/* PREFACE 
+--------------------------------------------------------------------------*/
+
+/* MAIN CONTENT 
+--------------------------------------------------------------------------*/
+
+.submitted, .field-name-field-data {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 12px;
+  color: 
+  #be1125;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.field-name-title {
+  margin-top: 6px;
+}
+
+.field-name-field-section, .field-name-field-tags {
+  padding: 6px 0 0 0;
+}
+
+.field-name-field-section .field-item, .field-name-field-tags .field-item {
+  display: inline-block;
+  margin-right: 4px;
+}
+
+.taxonomy-inner .field-name-field-section .field-item a {
+  display: block;
+  padding: 2px 10px;
+  float: left;
+  font-size: 12px;
+  color:   #ffffff;
+  background: #be1125;
+  border-radius: 3px;
+}
+
+/* SIDEBARS 
+--------------------------------------------------------------------------*/
+
+.main-content-wrapper  {
+}
+
+.main-inner {
+}
+
+.main-content-wrapper-inner {
+  
+}
+
+
+.sidebars-split .banners-right {
+  float: right;
+  width: 200px;
+  margin-left: 10px;
+}
+
+.grid_3 {
+  display: inline;
+  float: left;
+  margin-left: 4px;
+  margin-right: 14px;
+}
+
+.grid_1 {
+  display: inline;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.container_12 {
+margin-left: auto;
+margin-right: auto;
+width: 990px;
+}
+
+.container_12 .grid_8 {
+  width: 570px !important;
+}
+
+.container_12 .grid_11 {
+  width: 800px !important;
+}
+
+.container_12 .grid_12 {
+width: 970px;
+}
+
+.container_12 .main-inner.grid_11 {
+/*  width: 100% !important;*/
+}
+
+.container_12 .grid_1 {
+  width: auto;
+}
+
+
+.container_12 .second-sidebar.grid_3 {
+  width: 220px;
+  font-size: 85%
+}
+
+.container_12 .second-sidebar .quicktabs_main.quicktabs-style-nostyle .item-list {
+  padding: 4px 0;
+}
+
+.container_12 .second-sidebar .more-link a {
+  font-size: 80%;
+  padding: 2px 10px;
+}
+
+.second-sidebar .block-inner {
+margin-right: 6px;
+}
+
+
+
+
+/* POSTSCRIPT 
+--------------------------------------------------------------------------*/
+
+/* FOOTER
+--------------------------------------------------------------------------*/
+
+/* LISTS 
+--------------------------------------------------------------------------*/
+
+/* USER MENU 
+--------------------------------------------------------------------------*/
+
+/* MAIN MENU 
+--------------------------------------------------------------------------*/
+
+/* SIDE MENU 
+--------------------------------------------------------------------------*/
+
+/* CONTENT TOP & CONTENT BOTTOM
+--------------------------------------------------------------------------*/
+
+/* NODES
+--------------------------------------------------------------------------*/
+
+/* Teasers */
+
+/* COMMENTS
+--------------------------------------------------------------------------*/
+
+/* BREADCRUMBS
+--------------------------------------------------------------------------*/
+
+/* SEARCH FORM
+--------------------------------------------------------------------------*/
+
+/* SOCIAL
+--------------------------------------------------------------------------*/
+
+/* MISC
+--------------------------------------------------------------------------*/
+
+
+/* VIEWS
+--------------------------------------------------------------------------*/
+
+.exposed-filters .form-item {
+  margin: 0 0 0.4em 0;
+  padding: 0;
+}
+
+.view-ultime-notizie .views-view-grid td {
+  padding: 0 10px;  
+}
+
+.view-catalogo-realestate {
+  padding: 6px;
+}
+
+.view-catalogo-realestate .views-view-grid tr td {
+  text-align: center;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.view-catalogo-realestate .views-view-grid tr td .views-field-name{
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 120%;
+	text-transform: uppercase;
+	padding: 6px 0;
+}
+
+.view-ultime-riviste.in-archvio {
+  border-top: 1px solid #dddddd;
+  padding: 20px 10px;
+  margin-top: 10px;
+}
+
+.view-ultime-riviste .view-header {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 120%;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+
+/* OTHERS
+--------------------------------------------------------------------------*/
+
+html.js fieldset.collapsed {
+  border-bottom-width: 0;
+  border-left-width: 0;
+  border-right-width: 0;
+  height: auto;
+}
+
+.container-inline {
+  margin: 16px 0 0 0;
+}
+
+button, input[type="reset"], input[type="submit"], input[type="button"] {
+  margin: 0 10px 0 0;
+  padding: 3px 10px;
+}
+
+span.autocomplete-deluxe-button {
+  top: 0em;
+  left: 2px;
+  height: 1.75em;
+  overflow: hidden;
+  outline: none;
+}
+
+#header-top #block-locale-language {
+  float: right;
+  margin: 10px 0;
+}
+
+.sidebar #block-views-banner-zona-destra-block .block-inner {
+  margin-bottom: 0;
+  border-bottom: none;
+}
