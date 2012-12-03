@@ -1,6 +1,6 @@
 <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> <?php print $zebra; ?> "<?php print $attributes; ?>> 
   
-  <?php
+  <?php 
   if (isset($content['field_image'])): ?>
     <div class="field-image">
       <?php print render($content['field_image']); ?>
@@ -32,7 +32,8 @@
         <h1 class="title"<?php print $title_attributes; ?>><?php print $title; ?></h1>
       <?php endif; ?>
          
-    <?php print render($title_suffix); ?>                      
+    <?php //dpm($content);
+    print render($title_suffix); ?>                      
   
     <div class="content"<?php print $content_attributes; ?>>
 	  <?php

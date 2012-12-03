@@ -1,5 +1,11 @@
 <div id="page"><div class="page-inner <?php echo $grid_size ?>"><div class="page-inner-inner ">
 
+  <?php if ($page['header_top']): ?>   
+    <nav id="header-top" class="clearfix">
+		<?php print render($page['header_top']); ?>   
+    </nav>      
+  <?php endif; ?>  
+
   <?php if ($page['user_menu']): ?>   
     <nav id="user-menu" class="clearfix">
 		<?php print render($page['user_menu']); ?>
@@ -39,11 +45,11 @@
       <div class="social">
         <ul class="social-links">
           <li><a class="rss" href="<?php print $base_path ?>rss.xml"></a></li>
-          <li><a class="twitter" href="<?php echo $twitter ?>"></a></li>
-          <li><a class="facebook" href="<?php echo $facebook ?>"></a></li>
-          <li><a class="google" href="<?php echo $google ?>"></a></li>
+          <? if ( strlen($twitter)>0) { ?><li><a class="twitter" href="<?php echo $twitter ?>"></a></li><? } ?>
+          <? if ( strlen($facebook)>0) { ?><li><a class="facebook" href="<?php echo $facebook ?>"></a></li></a></li><? } ?>
+          <? if ( strlen($google)>0) { ?><li><a class="google" href="<?php echo $google ?>"></a></li><? } ?>
         </ul>
-      </div>             
+      </div>
       
     </header>    
       
@@ -74,18 +80,25 @@
   <?php endif; ?> 
      
 <!-- Main Content -->  
-  <div class="main-content-wrapper clearfix"><div class="main-content-wrapper-inner">
-    <section id="main-content">       	   
+  <div class="main-content-wrapper clearfix">
+	    
+	    <div class="main-content-wrapper-inner">
+  
+      
+    <section id="main-content">
 
-      <?php if ($page['sidebar_first']): ?>
+   
+      <div class="main">
+	    <?php print $messages; ?>
+
+	            <?php if ($page['sidebar_first']): ?>
       <aside class="sidebar first-sidebar <?php print $sidebar_first_grid_width ?>">
           <?php print render($page['sidebar_first']); ?>
       </aside>
-      <?php endif; ?>    
-    
-      <div class="main">
+      <?php endif; ?>
+
         <div class="main-inner  <?php print $main_content_grid_width ?>">
-        
+	        
 		  <?php if ($page['slideshow']): ?>
             <div class="slideshow-wrapper clearfix"><div class="slideshow-wrapper-inner">
               <div id="slideshow">
@@ -93,20 +106,24 @@
               </div>
             </div></div>  
           <?php endif; ?>         
-
           <?php print render($page['content_top']); ?>
           <?php if ($page['highlighted']): ?><div id="highlighted"><?php print render($page['highlighted']); ?></div><?php endif; ?>
-          <?php print render($tabs); ?>
+	  <?php print render($tabs); ?>
           <?php if (!isset($node)): ?>
             <?php print render($title_prefix); ?>
               <?php if ($title): ?><h1 class="title" id="page-title"><span><?php print $title; ?></span></h1><?php endif; ?>
             <?php print render($title_suffix); ?>
           <?php endif; ?>
-          <?php print render($page['help']); ?>          
+          <?php print render($page['help']); ?>
+	    <?php print render($tabs2); ?>
+	  <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
           <?php print render($page['content']); ?>          
           <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
           <?php print render($page['content_bottom']); ?>
         </div> 
+       
+
+	
         <?php if ($page['sidebar_second']): ?>
         <aside class="sidebar second-sidebar <?php print $sidebar_second_grid_width ?> clearfix">
             <?php print render($page['sidebar_second']); ?>                
