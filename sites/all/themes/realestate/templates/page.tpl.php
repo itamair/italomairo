@@ -8,15 +8,40 @@
 
   <?php if ($page['user_menu']): ?>   
     <nav id="user-menu" class="clearfix">
-		<?php print render($page['user_menu']); ?>
+		<?php print render($page['user_menu']); ?> 
+    </nav>      
+  <?php endif; ?>
+  
+    <?php if ($page['search_box']): ?>   
+    <nav id="search-box" class="clearfix">
         <?php print render($page['search_box']); ?>       
     </nav>      
-  <?php endif; ?>    
+  <?php endif; ?>
+  
+
 
   <div class="header-wrapper clearfix"><div class="header-wrapper-inner <?php echo $grid_full_width ?>">
-    <header>
+  
     
-      <div class="logo-slogan">
+    <header>
+	    
+      <div class="social">
+        <ul class="social-links">
+          <li><a class="rss" href="<?php print $base_path ?>rss.xml"></a></li>
+          <? if ( strlen($twitter)>0) { ?><li><a class="twitter" href="<?php echo $twitter ?>"></a></li><? } ?>
+          <? if ( strlen($facebook)>0) { ?><li><a class="facebook" href="<?php echo $facebook ?>"></a></li></a></li><? } ?>
+          <? if ( strlen($google)>0) { ?><li><a class="google" href="<?php echo $google ?>"></a></li><? } ?>
+        </ul>
+      </div>
+
+    
+  <?php if ($page['banner_top']): ?>   
+    <nav id="banner-top" class="clearfix banner-top">
+        <?php print render($page['banner_top']); ?>       
+    </nav>      
+  <?php endif; ?>	    
+
+	    <div class="logo-slogan">
       
       <?php if ($logo): ?>
         <div class="site-logo">
@@ -41,15 +66,7 @@
       </hgroup>
       
       </div> 
-      
-      <div class="social">
-        <ul class="social-links">
-          <li><a class="rss" href="<?php print $base_path ?>rss.xml"></a></li>
-          <? if ( strlen($twitter)>0) { ?><li><a class="twitter" href="<?php echo $twitter ?>"></a></li><? } ?>
-          <? if ( strlen($facebook)>0) { ?><li><a class="facebook" href="<?php echo $facebook ?>"></a></li></a></li><? } ?>
-          <? if ( strlen($google)>0) { ?><li><a class="google" href="<?php echo $google ?>"></a></li><? } ?>
-        </ul>
-      </div>
+
       
     </header>    
       
@@ -105,25 +122,30 @@
                 <?php print render($page['slideshow']); ?>
               </div>
             </div></div>  
-          <?php endif; ?>         
+          <?php endif; ?>
+	  
+	  
           <?php print render($page['content_top']); ?>
           <?php if ($page['highlighted']): ?><div id="highlighted"><?php print render($page['highlighted']); ?></div><?php endif; ?>
-	  <?php print render($tabs); ?>
-          <?php if (!isset($node)): ?>
+	  <?php if((arg(1) != 'term') || (arg(1) == 'term' && arg(3) == 'edit')) print render($tabs); ?>
+	  
+          <?php if (/*!$is_front &&*/ !isset($node)): ?>
+	  
             <?php print render($title_prefix); ?>
               <?php if ($title): ?><h1 class="title" id="page-title"><span><?php print $title; ?></span></h1><?php endif; ?>
             <?php print render($title_suffix); ?>
           <?php endif; ?>
+	  
+	  
           <?php print render($page['help']); ?>
 	    <?php print render($tabs2); ?>
 	  <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
           <?php print render($page['content']); ?>          
-          <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
+          <?php if ($action_links): ?><ul class="action-links"><?php //print render($action_links); ?></ul><?php endif; ?>
           <?php print render($page['content_bottom']); ?>
         </div> 
        
 
-	
         <?php if ($page['sidebar_second']): ?>
         <aside class="sidebar second-sidebar <?php print $sidebar_second_grid_width ?> clearfix">
             <?php print render($page['sidebar_second']); ?>                
@@ -160,7 +182,6 @@
   <div class="footer-wrapper clearfix"><div class="footer-wrapper-inner">
     <footer id="footer" class="<?php echo $grid_full_width ?>">
       <?php print render($page['footer']) ?>
-      <span style="font-size: 0.6em;"><a href="http://www.themeshark.com">Drupal Themes</a> by ThemeShark.com</span>
     </footer><!-- /footer -->
   </div></div>
  
