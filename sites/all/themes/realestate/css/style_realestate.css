@@ -7,6 +7,7 @@ body {
   color: #222222;
   background: none;	
   border-top: 3px solid #222222;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 h1.title {
@@ -14,11 +15,12 @@ h1.title {
 }
 
 .page-inner {
-  margin: 30px auto;
-  background: #ffffff;
-  -moz-box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
-  -webkit-box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
-  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+	margin: 30px auto;
+	background: #ffffff;
+	-moz-box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+	border: thin solid #CCC;
 }
 
 table {
@@ -69,50 +71,17 @@ ul.action-links {
   padding: 6px 0 6px 6px;
 }
 
-ul.primary {
+.tabs.primary {
   font-size: 85%;
+ }
+
+a:hover {
+	color: #900;
+	text-decoration: underline;
 }
 
-/* HEADER 
---------------------------------------------------------------------------*/
-
-.header-wrapper-inner {
-  padding: 2px 0px;
-}
-
-header {
-  position: relative;
-}
-
-.logo-slogan .site-logo {
-  float: left;
-  margin-right: 20px;
-}
-
-h1.site-name a, h2.site-name a {
-  float: none;
-  line-height: 60px;
-  padding-right: 15px;
-  color: #222222;
-  font-family: 'Alfa Slab One', cursive;
-  font-size: 60px;
-}
-
-h3.site-slogan {
-  float: none;
-  width: 70%;
-  padding-top: 4px;
-  font-weight: bold;
-  line-height: 14px;
-  font-size: 14px;
-  color: #666666;
-  vertical-align: middle;
-}
-
-#banner-top.banner-top {
-  position: absolute;
-  top: 120px;
-  right: 10px;
+.fieldset-wrapper .views-field, .fieldset-wrapper .field {
+  padding: 4px;
 }
 
 label {
@@ -127,18 +96,137 @@ label {
   margin-bottom: 0.4em;
 }
 
+
+/* HEADER 
+--------------------------------------------------------------------------*/
+
+.header-wrapper-inner {
+  padding: 20px 0 0 0;
+}
+
+header {
+  position: relative;
+}
+
+.logo-slogan .site-logo {
+  float: left;
+  margin-right: 20px;
+}
+
+.logo-slogan .site-logo a {
+  z-index: 200;
+}
+
+h1.site-name a, h2.site-name a {
+  float: none;
+  line-height: 60px;
+  padding-right: 15px;
+  color: #222222;
+  font-family: 'Alfa Slab One', cursive;
+  font-size: 140%;
+}
+
+h3.site-slogan {
+  float: none;
+  width: 70%;
+  padding-top: 4px;
+  font-weight: bold;
+  line-height: 14px;
+  font-size: 14px;
+  color: #666666;
+  vertical-align: middle;
+}
+
+#fieramilanomedia-logo.fieramilanomedia-logo {
+  position: absolute;
+  top: 80px;
+  left: 280px;
+}
+
+#banner-top.banner-top {
+  position: absolute;
+  top: 120px;
+  right: 10px;
+  z-index: 100;
+}
+
+.social {
+  float: right;
+  padding-top: 7px;
+  margin-top: 60px;
+}
+
+#search-box {
+	float: right;
+	margin: 0 0 10px 0;
+	text-align: right;
+}
+
+#block-search-form {
+  margin-left: 10px;
+  text-align: right;
+}
+
+#block-search-form .container-inline {
+  margin: 16px 0 0 0;
+}
+
+#search-block-form {
+	margin-top: 0;
+	background: 0;
+	line-height: 36px;
+	background-color: #FFF;
+}
+
+#search-block-form .form-text {
+	margin-left: 6px;
+	padding: 4px;
+	width: 150px;
+	color: #666;
+	font-size: 12px;
+	background-color: #FFF;
+	border: thin solid #999;
+}
+
+#search-block-form .form-submit {
+	display: inline-block;
+	margin-right: 0;
+	width: 40px;
+	height: 39px;
+	padding: 0 5px;
+	border-radius: 0;
+	text-transform: uppercase;
+	background: 0;
+	font-weight: normal;
+	text-indent: -999em;
+	background-image: url(../images/search.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.search-results {
+  list-style: none;
+  margin-top: 20px;
+}
+
+.rss {
+  background: url(../images/feed-icon.png) no-repeat;
+}
+
+
 /* SLIDESHOW 
 --------------------------------------------------------------------------*/
 
 /* PREFACE - POSTSCRIPT
 --------------------------------------------------------------------------*/
 
-.preface-wrapper, .postscript-wrapper {
-	font-size: 90%;
-	color: #FFF;
+.postscript-wrapper {
+	font-size: 85%;
 }
 
 .preface-wrapper {
+	font-size: 90%;
+	color: #FFF;
 	padding: 0;
 	margin: 0 -15px;
 	background: #be1125;
@@ -160,6 +248,10 @@ margin-bottom: 0px;
 
 /* MAIN CONTENT 
 --------------------------------------------------------------------------*/
+
+.main-inner {
+  padding: 0 0 0 6px;
+}
 
 .front #page-title {
   display: block;
@@ -203,6 +295,11 @@ padding: 6px 0 0;
 
 /* SIDEBARS 
 --------------------------------------------------------------------------*/
+
+.sidebar .block-inner .content {
+	padding: 14px 0 10 0;
+	overflow: hidden;
+}
 
 .sidebars-split .banners-right {
   float: right;
@@ -278,10 +375,6 @@ margin-right: 6px;
   border: 1px solid #dddddd;
 }
 
-.views-field-field-imm-copertine img {
-  padding: 3px;
-  border: 1px solid #dddddd;
-}
 
 
 /* FOOTER
@@ -305,12 +398,37 @@ margin-right: 6px;
 /* NODES
 --------------------------------------------------------------------------*/
 
- .tabs.primary {
-	border-top-width: thin;
-	border-top-style: solid;
-	border-top-color: #999;
-	padding-top: 20px;
- }
+.node-teaser {
+  width: 100%;
+  float: left;
+  margin-bottom: 6px;
+}
+ 
+ .ds-rivista-contenuto-completo .field-name-field-link-abbonamento a,
+.ds-rivista-contenuto-completo .views-field-field-link-abbonamento a,
+.ds-rivista-contenuto-completo .field-name-field-link-bottone a,
+.ds-rivista-contenuto-completo .views-field-field-link-bottone a,
+.view-catalogo-realestate .field-name-field-link-abbonamento a,
+.view-catalogo-realestate .field-name-field-link-bottone a {
+	display: block;
+	padding: 2px 10px;
+	margin: 4px auto;
+	font-size: 90%;
+	color: #ffffff;
+	background: #be1125;
+	border-radius: 3px;
+	width: 140px;
+	text-align: center;
+}
+
+.field-collection-container, .field-type-field-collection {
+  border-bottom: none;
+  margin-bottom: 0.2em !important;
+}
+
+.field-type-field-collection .field {
+  padding: 2px 0 2px 4px;
+}
 
 
 /* Teasers */
@@ -334,13 +452,18 @@ margin-right: 6px;
 margin: 5px 0 6px;
 }
 
+.sidebar .block-inner .content {
+padding: 14px 0;
+overflow: hidden;
+}
+
 
 /* VIEWS
 --------------------------------------------------------------------------*/
 
 .view-header {
-  margin: 10px 0;
-  padding: 6px 0;
+  margin: 6px 0;
+  padding: 4px 0;
 }
 
 
@@ -387,8 +510,7 @@ margin: 5px 0 6px;
 
 
 .view-catalogo-realestate {
-  padding: 6px;
-  	font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 .view-catalogo-realestate .views-view-grid tr td {
@@ -406,7 +528,7 @@ margin: 5px 0 6px;
 
 .view-ultime-riviste.in-archvio {
   border-top: 1px solid #dddddd;
-  padding: 20px 10px;
+  padding: 10px 4px;
   margin-top: 10px;
 }
 
@@ -419,6 +541,66 @@ margin: 5px 0 6px;
 
 .view-amministra-i-contenuti table th.views-field-field-section, .view-amministra-i-contenuti table td.views-field-field-section {
   width: 220px;
+}
+
+.view-contatti-rivista {
+  display: block;
+  margin: 10px 0 0 4px ;
+}
+
+
+.view-contatti-rivista .title {
+  font-size: 110%;
+  padding-bottom: 6px;
+  margin: 0;
+}
+
+.view-catalogo-realestate-slideshow {
+  margin-bottom: 10px;
+  border-bottom-width: thin;
+  border-bottom-style: solid;
+  border-bottom-color: #CCC;
+}
+
+.view-catalogo-realestate-slideshow h1 {
+  font-size: 150%;
+}
+
+.views-field-field-imm-copertine img {
+  padding: 3px;
+  border: 1px solid #dddddd;
+}
+
+
+.view-contatti-riviste-realestate {
+  padding: 10px 0 4px 0;
+  margin-bottom: 20px;
+}
+
+.view-contatti-riviste-realestate h3 {
+  padding-top: 14px;
+}
+
+.view-ultima-copertina-rivista {
+  padding: 4px 0 0 0;
+  z-index: 200;
+}
+
+.view-elenco-spazi-pubblicitari {
+  margin-left: 6px;
+}
+
+.view-elenco-spazi-pubblicitari table {
+  margin-bottom: 10px;
+}
+
+
+.view-elenco-spazi-pubblicitari td {
+  padding: 0 0 0 4px;
+}
+
+.view-elenco-spazi-pubblicitari .view-header h3 {
+  font-size: 180%;
 }
 
 /* OTHERS
