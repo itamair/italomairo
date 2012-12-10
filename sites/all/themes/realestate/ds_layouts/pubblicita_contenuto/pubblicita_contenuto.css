@@ -1,0 +1,31 @@
+
+.ds-pubblicita-contenuto {
+	padding: 4px 0 8px 0;
+	margin-bottom: 10px;
+}
+
+.ds-pubblicita-contenuto .group-header {
+  padding: 4px 0 2px 0;
+  
+}
+
+
+.ds-pubblicita-contenuto .group-left {
+	float: left;
+	padding: 0 6px 0 0;
+	margin: 0 10px 0 0;
+	z-index: 100;
+}
+
+.ds-pubblicita-contenuto .group-right {
+  padding: 0 10px 0 4px;
+  font-size: 90%;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.ds-pubblicita-contenuto .group-footer {
+  clear: both;
+  padding-top: 6px;
+}
+
