@@ -146,7 +146,7 @@ h3.site-slogan {
 }
 
 .views-slideshow-controls-bottom .views-slideshow-pager-field-item  {
-  display: inline-block;
+  display: inline-block; zoom: 1; *display: inline;
   width: 32px;
   height: 34px;
   text-indent: -999em;
@@ -643,7 +643,7 @@ ul.inline li.comment_forbidden, ul.inline li.comment-add, ul.inline li.comment-c
 }
 
 #search-block-form .form-submit {
-  display: inline-block;
+  display: inline-block; zoom: 1; *display: inline;
   margin-right: 30px;
   width: 32px;
   height: 39px;
@@ -686,7 +686,7 @@ ul.inline li.comment_forbidden, ul.inline li.comment-add, ul.inline li.comment-c
 }
 
 .social-links li a {
-  display: inline-block;
+  display: inline-block; zoom: 1; *display: inline;
   width: 48px;
   height: 48px;
 }
@@ -796,7 +796,7 @@ ul.primary li a {
 }
 
 .item-list ul.pager li {
-  display: inline-block;	
+  display: inline-block; zoom: 1; *display: inline;	
   padding: 0;
   line-height: 32px;
 }
@@ -814,7 +814,7 @@ ul.primary li a {
 }
 
 .item-list ul.pager li a {
-  display: inline-block;
+  display: inline-block; zoom: 1; *display: inline;
   line-height: 32px;
   color: #222222;
 }
@@ -851,7 +851,7 @@ ul.quicktabs-tabs.quicktabs-style-nostyle {
 
 ul.quicktabs-tabs.quicktabs-style-nostyle a {
   font-size: 9px;
-  display: inline-block;
+  display: inline-block; zoom: 1; *display: inline;
   padding: 2px 10px;
   font-weight: bold;
   text-decoration:none;
