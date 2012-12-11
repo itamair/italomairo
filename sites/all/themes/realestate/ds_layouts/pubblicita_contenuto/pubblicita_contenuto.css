@@ -1,18 +1,23 @@
 
 .ds-pubblicita-contenuto {
-	padding: 4px 0 8px 0;
-	margin-bottom: 10px;
+	padding: 4px 0 4px 0;
+	margin-bottom: 0;
 }
 
 .ds-pubblicita-contenuto .group-header {
-  padding: 4px 0 2px 0;
+  padding: 4px 0 4px 0;
+  
+}
+
+.ds-pubblicita-contenuto .group-header h3 {
+  font-size: 120%;
   
 }
 
 
 .ds-pubblicita-contenuto .group-left {
 	float: left;
-	padding: 0 6px 0 0;
+	padding: 4px 6px 0 0;
 	margin: 0 10px 0 0;
 	z-index: 100;
 }
