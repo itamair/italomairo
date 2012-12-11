@@ -1,39 +1,67 @@
 
-.group-header {
-	display: block;
+.ds-rivista-contenuto-completo {
+	padding: 0 10px 4px 4px;
 }
 
+.group-header {
+  padding: 4px 0 10px 0;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: bold;
+  font-size: 100%;
+}
+
+.group-header .field-name-field-pubb-mese-anno {
+  font-weight: bold;
+  font-size: 110%;
+}
+
+.group-header .field-name-field-sottotitolo {
+  padding: 4px 0;
+  font-weight: bold;
+  font-size: 120%;
+}
+
+.group-header .field-name-field-codice {
+  padding: 4px 0;
+  font-weight: normal;
+  font-size: 100%;
+}
 
 .group-logo {
-  float: right;
+/*  float: right;*/
   margin-right: 60px;
 }
 
 .group-copertine {
   float: right;
-  margin-right: 60px;
+  padding: 10px 10px 0 28px;
+  text-align: center;
 }
 
-.group-descrizione {
+.group-copertine .field {
+  padding: 0px;
+  margin: auto;
+}
+
+.group-descrizione, .general_info_rivista {
   text-align: justify;
-  width: 70%;
-  float: left;
-  margin-top: 10px;
+  font-size: 100%;
+  padding-bottom: 10px;
+
+}
+
+
+.group-right {
+  float: right;
+  padding: 0 20px;
 }
 
 .group-left {
-	width: 20%;
-	float: left;
-	margin-right: 16px;
-	margin-left: 2px;
-}
-
-.group-right {
-  width: 7%;
-  float: right;
+	margin: 10px 16px 16px 0;
 }
 
 .group-footer {
   clear: both;
-  padding-top: 6px;
+  padding: 6px 0 16px 0;;
 }
+
