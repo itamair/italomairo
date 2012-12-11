@@ -2,7 +2,6 @@
 
 $style = theme_get_setting('style');
 
-dpm($style);
 
 switch ($style) {
 	case 1:
@@ -20,8 +19,9 @@ switch ($style) {
 	case 5:
 		drupal_add_css(drupal_get_path('theme', 'realestate') . '/css/style5.css', array('group' => CSS_THEME, 'weight' => 100, 'type' => 'file'));
 		break;
-	case 'realestate':
-		drupal_add_css(drupal_get_path('theme', 'realestate') . '/css/style_realestate.css', array('group' => CSS_THEME, 'weight' => 100, 'type' => 'file'));
+	case 6:
+		drupal_add_css(drupal_get_path('theme', 'realestate') . '/css/style5.css', array('group' => CSS_THEME, 'weight' => 100, 'type' => 'file'));
+		drupal_add_css(drupal_get_path('theme', 'realestate') . '/css/style_realestate.css', array('group' => CSS_THEME, 'weight' => 110, 'type' => 'file'));
 		break;
 	default:
 		drupal_add_css(drupal_get_path('theme', 'realestate') . '/css/style1.css', array('group' => CSS_THEME, 'weight' => 100, 'type' => 'file'));
@@ -39,7 +39,7 @@ function realestate_breadcrumb($variables) {
     // Provide a navigational heading to give context for breadcrumb links to
     // screen-reader users. Make the heading invisible with .element-invisible.
 
-    $output .= '<div class="breadcrumb"><div class="breadcrumb-inner">' . implode(' / ', $breadcrumb) . '</div></div>';
+    $output = '<div class="breadcrumb"><div class="breadcrumb-inner">' . implode(' / ', $breadcrumb) . '</div></div>';
     return $output;
   }
 }
@@ -73,3 +73,19 @@ function realestate_preprocess_html(&$vars) {
     $vars['classes_array'][] = drupal_clean_css_identifier($alias);
   } 
 }
+
+/*** Funzione accessoria per creare una data come alternativa tra field_data e data di creazione della notizia ***/
+function RE_createdDateR(&$node) {
+	//dpm($node);
+	if ($node->field_data) {
+		$node_pubblication_data_field = field_get_items('node', $node, 'field_data');
+		$node_pubblication_data = $node_pubblication_data_field[0]['value'];
+		$data = date('d/m/Y', strtotime($node_pubblication_data));
+	} else { 
+		$data = date('d/m/Y', $node->created);
+	} ?>
+	<span class="data"><?=$data; ?>&nbsp;&nbsp;</span> <?
+}
+
+
+
