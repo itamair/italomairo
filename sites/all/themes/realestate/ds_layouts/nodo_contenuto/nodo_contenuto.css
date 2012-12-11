@@ -1,57 +1,58 @@
 
 .ds-nodo-contenuto {
-	padding: 10px;
+	padding: 0 10px 4px 4px;
 }
 
-.group-header {
+.ds-nodo-contenuto .group-header {
 	clear: both;
 	display: block;
 	padding: 6px 0 10px 0;
 	margin: 0;
 }
 
-.group-suffix {
+.ds-nodo-contenuto .group-suffix {
   clear: both;
   font-weight: bolder;
   font-size: 1em;
   color: #779125;
 }
 
-.group-image {
+.ds-nodo-contenuto .group-image {
 	float: left;
 	margin-right: 18px;
 	margin-left: 2px;
-	padding: 14px 0 0 0;
+	padding: 4px 0 0 0;
+	width: 98%;
+	overflow: hidden;
 }
 
 
-.group-description {
+.ds-nodo-contenuto .group-description {
 /*	float: left;
 	margin-right: 18px;*/
 	margin-left: 2px;
-	padding: 14px 0 0 0;
+	padding: 10px 0 10px 0;
 	text-align: justify;
 }
 
-.group-left {
+.ds-nodo-contenuto .group-left {
 /*	float: left;
 	margin-right: 18px;*/
-	margin-left: 2px;
 	padding: 14px 0 0 0;
 }
 
-.group-right {
+.ds-nodo-contenuto .group-right {
 	font-size: 90%;
 	margin-top: 10px;
 	text-align: justify;
 }
 
-.group-footer {
+.ds-nodo-contenuto .group-footer {
 	clear: both;
 	padding: 0 0 10px 0;
 	font-size: 90%;
 }
 
-.group-footer .field-name-node-link a {
+.ds-nodo-contenuto .group-footer .field-name-node-link a {
 	font-weight: normal;
 }

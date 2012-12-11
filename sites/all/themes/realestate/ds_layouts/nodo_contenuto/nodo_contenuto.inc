@@ -12,7 +12,7 @@ function ds_nodo_contenuto() {
         'footer' => t('Footer'),
     ),
     // Add this line if there is a default css file.
-    //'css' => TRUE,
+    'css' => TRUE,
   );
 }
 ?>

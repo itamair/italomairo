@@ -20,60 +20,73 @@
 ?>
 <div class="ds-nodo-contenuto <?php print $classes;?> clearfix">
 
-  <? //dpm($content); ?>
+  <? //dpm($content);
+  //dpm($node); ?>
 
   <?php if (isset($title_suffix['contextual_links'])): ?>
   <?php print render($title_suffix['contextual_links']); ?>
   <?php endif; ?>
   
-      <?php if ($display_submitted): ?>
+      <?php if ($display_submitted && $display_submitted == TRUE): ?>
       <div class="submitted">
-          <span class="date"><?php print $date; ?></span>
+          <span class="date"><?php
+          print $date;
+          //RE_createdDateR($node);
+           ?>
+          </span>
           <?php print $name; ?>
       </div>
-    <?php endif; ?>   
+    <?php endif ?>   
 
-  <?php if ($header): ?>
-    <div class="group-header<?php print $header_classes; ?>">
+  <?php if ($header && $header != '&nbsp;'): ?>
+    <div class="group-header <?php print $header_classes; ?>">
       <?php print $header; ?>
-    </div>
-  <?php endif; ?>
-
-  <?php if ($suffix): ?>
-    <div class="group-suffix<?php print $suffix_classes; ?>">
-      <?php print $suffix; ?>
     </div>
   <?php endif; ?>
   
   <?php
   //dpm($image);
-  if ($image && $image != "&nbsp;"):?>
-    <div class="group-image<?php print $image_classes; ?>">
+  if ($image && $image!= '&nbsp;'):?>
+    <div class="group-image <?php print $image_classes; ?>">
       <?php print $image; ?>
     </div>
   <?php endif; ?>
 
-  <?php if ($description && $description != "&nbsp;"): ?>
-    <div class="group-description<?php print $description_classes; ?>">
+
+  <?php if ($suffix && $suffix != '&nbsp;'): ?>
+    <div class="group-suffix <?php print $suffix_classes; ?>">
+      <?php print $suffix; ?>
+    </div>
+  <?php endif; ?>
+  
+
+  <?php if ($description && $description != '&nbsp;'): ?>
+    <div class="group-description <?php print $description_classes; ?>">
       <?php print $description; ?>
     </div>
   <?php endif; ?>
 
-  <?php if ($left): ?>
-    <div class="group-left<?php print $left_classes; ?>">
+  <?php if ($left && $left != '&nbsp;'): ?>
+    <div class="group-left <?php print $left_classes; ?>">
       <?php print $left; ?>
     </div>
   <?php endif; ?>
 
-  <?php if ($right): ?>
-    <div class="group-right<?php print $right_classes; ?>">
+  <?php if ($right && $right != '&nbsp;'): ?>
+    <div class="group-right <?php print $right_classes; ?>">
       <?php print $right; ?>
     </div>
   <?php endif; ?>
 
-  <?php if ($footer): ?>
-    <div class="group-footer<?php print $footer_classes; ?>">
+  <?php if ($footer && $footer != '&nbsp;'): ?>
+    <div class="group-footer <?php print $footer_classes; ?>">
       <?php print $footer; ?>
+    </div>
+  <?php endif; ?>
+  
+    <?php if (isset($content['addthis'])): ?>
+    <div class="addthis">
+      <?php print render($content['addthis']); ?>
     </div>
   <?php endif; ?>
   
