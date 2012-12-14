@@ -18,21 +18,12 @@ h1.title {
   padding-bottom: 6px;
 }
 
-.page-inner {
-	margin: 30px auto;
-	background: #ffffff;
-	-moz-box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
-	-webkit-box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
-	box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
-	border: thin solid #CCC;
-}
 
 table {
   border-collapse: collapse;
   border-spacing: 0;
   border-color:   #eee;
   font-size: inherit;
-  font: 100%;
   margin: 16px 0;
   padding: 0;
   width: 100%;
@@ -69,6 +60,7 @@ td {
 
 legend {
 	padding: 4px 0;
+	font-weight: bold;
 }
 
 ul.action-links {
@@ -84,8 +76,9 @@ a:hover {
 	text-decoration: underline;
 }
 
-.fieldset-wrapper .views-field, .fieldset-wrapper .field {
-  padding: 4px;
+
+.fieldset-wrapper {
+  padding: 4px 0 10px 14px;
 }
 
 label {
@@ -100,12 +93,17 @@ label {
   margin-bottom: 0.4em;
 }
 
+.more-link {
+  text-align: right;
+  padding-top: 10px;
+}
 
 /* HEADER 
 --------------------------------------------------------------------------*/
 
 .header-wrapper-inner {
-  padding: 20px 0 0 0;
+	padding: 4px 0 0 0;
+	background-color: #000;
 }
 
 header {
@@ -121,14 +119,20 @@ header {
   z-index: 200;
 }
 
+h1.site-name a, h2.site-name {
+  display: none;
+}
+
 h1.site-name a, h2.site-name a {
-  float: none;
+  margin-top: 20px;
   line-height: 60px;
   padding-right: 15px;
-  color: #222222;
+  color: #FFF;
   font-family: 'Alfa Slab One', cursive;
-  font-size: 180%;
+  font-size: 140%;
 }
+
+
 
 h3.site-slogan {
   float: none;
@@ -143,14 +147,14 @@ h3.site-slogan {
 
 #fieramilanomedia-logo.fieramilanomedia-logo {
   position: absolute;
-  top: 80px;
-  left: 280px;
+  top: 0;
+  right: 20px;
 }
 
 #banner-top.banner-top {
   position: absolute;
-  top: 120px;
-  right: 10px;
+  top: 28px;
+  left: 260px;
   z-index: 100;
 }
 
@@ -193,7 +197,7 @@ h3.site-slogan {
 }
 
 #search-block-form .form-submit {
-	display: inline-block; zoom: 1; *display: inline;
+	display: inline-block;
 	margin-right: 0;
 	width: 40px;
 	height: 39px;
@@ -254,7 +258,11 @@ margin-bottom: 0px;
 --------------------------------------------------------------------------*/
 
 .main-inner {
-  padding: 0 0 0 6px;
+  padding: 8px 0 0 6px;
+}
+
+.sidebar  {
+  padding: 8px 0 0 0;
 }
 
 .front #page-title {
@@ -285,7 +293,7 @@ padding: 6px 0 0;
 }
 
 .field-name-field-section .field-item, .field-name-field-tags .field-item {
-  display: inline-block; zoom: 1; *display: inline;
+  display: inline-block;
   margin-right: 4px;
 }
 
@@ -302,8 +310,13 @@ padding: 6px 0 0;
 /* SIDEBARS 
 --------------------------------------------------------------------------*/
 
+.sidebar .block-inner {
+  margin-bottom: 12px;
+  border-bottom: 1px dashed #dddddd;
+}
+
 .sidebar .block-inner .content {
-	padding: 14px 0 10 0;
+	padding: 14px 0 10px 0;
 	overflow: hidden;
 }
 
@@ -327,14 +340,42 @@ padding: 6px 0 0;
   margin-right: 0;
 }
 
-.container_12 {
-margin-left: auto;
-margin-right: auto;
-width: 990px;
+
+
+.page-outer.container_12 {
+  margin-left: auto;
+  margin-right: auto;
+  width: 1280px;
+}
+
+.page-outer {
+  margin: 30px auto;
+}
+
+.page-inner {
+	margin: 0px auto;
+	background: #ffffff;
+	-moz-box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+	border: thin solid #CCC;
+}
+
+.page-inner.container_12 {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 900px;
+}
+
+#banner-extratheme {
+  position: absolute;
+  right: -170px;
+  top: 0px;
 }
 
 .container_12 .grid_8 {
-  width: 570px !important;
+  width: 590px !important;
 }
 
 .container_12 .grid_11 {
@@ -342,7 +383,12 @@ width: 990px;
 }
 
 .container_12 .grid_12 {
-width: 970px;
+  width: 900px;
+  margin: 0;
+}
+
+.container_12 .grid_4 {
+width: 260px;
 }
 
 .container_12 .grid_1 {
@@ -480,14 +526,16 @@ overflow: hidden;
   margin-bottom: 10px;
 }
 
+.item-list ul.pager li {
+  display: inline-block;
+  padding: 0px;
+  line-height: 32px;
+  margin: 0 2px;
+}
+
 .exposed-filters .form-item {
   margin: 0 0 0.4em 0;
   padding: 0;
-}
-
-.view-ultime-notizie .views-view-grid tr {
-  padding: 0 0 10px;
-  margin-bottom: 10px;
 }
 
 .view-ultime-notizie .views-view-grid td {
@@ -500,7 +548,7 @@ overflow: hidden;
 
 .view-slideshow .views_slideshow_main img {
   padding: 10px;
-  width: 550px;
+  width: 580px;
   height: auto;
   border: 1px solid #dddddd;
 }
@@ -525,7 +573,20 @@ overflow: hidden;
   margin-bottom: 20px;
 }
 
-.view-catalogo-realestate .views-view-grid tr td .views-field-name, .view-catalogo-realestate .views-view-grid tr td h2{
+.view-ultime-riviste-realestate table.views-view-grid  {
+  width: 90%;
+}
+
+.view-ultime-riviste-realestate .views-view-grid tr td {
+text-align: center;
+padding: 0;
+}
+
+.view-ultime-riviste-realestate .views-view-grid tr td .block-ultima-rivista-uscita {
+  font-size: 80%;
+}
+
+.view-catalogo-realestate .views-view-grid tr td .views-field-name, .view-catalogo-realestate .views-view-grid tr td h2 {
 
 	font-size: 130%;
 	text-transform: uppercase;
@@ -571,7 +632,7 @@ overflow: hidden;
 .view-slideshow-notizie .views_slideshow_main img {
   padding: 10px;
   border: 1px solid #dddddd;
-  width: 540px;
+  width: 570px;
 }
 
 .view-catalogo-realestate-slideshow h1 {
