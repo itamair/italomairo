@@ -1,44 +1,55 @@
-<div id="page"><div class="page-inner <?php echo $grid_size ?>"><div class="page-inner-inner ">
+<div id="page">
+
+<div class="page-outer <?php echo $grid_size ?>">
+ 
+
+<div class="page-inner <?php echo $grid_size ?>">
+
+  <?php if ($page['banner_extratheme']): ?>   
+    <div id="banner-extratheme">
+		<?php print render($page['banner_extratheme']); ?>   
+    </div>      
+  <?php endif; ?> 
+
+<div class="page-inner-inner ">
 
   <?php if ($page['header_top']): ?>   
-    <nav id="header-top" class="clearfix">
+    <div id="header-top" class="clearfix>
 		<?php print render($page['header_top']); ?>   
-    </nav>      
+    </div>      
   <?php endif; ?>  
 
   <?php if ($page['user_menu']): ?>   
-    <nav id="user-menu" class="clearfix">
+    <div id="user-menu" class="clearfix>
 		<?php print render($page['user_menu']); ?> 
-    </nav>      
+    </div>      
   <?php endif; ?>
   
-    <?php if ($page['search_box']): ?>   
-    <nav id="search-box" class="clearfix">
-        <?php print render($page['search_box']); ?>       
-    </nav>      
-  <?php endif; ?>
-  
-
-
   <div class="header-wrapper clearfix"><div class="header-wrapper-inner <?php echo $grid_full_width ?>">
   
     
     <header>
 	    
-      <div class="social">
+    <?php if ($page['search_box']): ?>   
+    <div id="search-box" class="clearfix>
+        <?php print render($page['search_box']); ?>       
+    </div>      
+  <?php endif; ?>
+	    
+<!--      <div class="social">
         <ul class="social-links">
           <li><a class="rss" href="<?php print $base_path ?>rss.xml"></a></li>
           <? if ( strlen($twitter)>0) { ?><li><a class="twitter" href="<?php echo $twitter ?>"></a></li><? } ?>
           <? if ( strlen($facebook)>0) { ?><li><a class="facebook" href="<?php echo $facebook ?>"></a></li></a></li><? } ?>
           <? if ( strlen($google)>0) { ?><li><a class="google" href="<?php echo $google ?>"></a></li><? } ?>
         </ul>
-      </div>
+      </div>-->
 
     
   <?php if ($page['banner_top']): ?>   
-    <nav id="banner-top" class="clearfix banner-top">
+    <div id="banner-top" class="clearfix banner-top">
         <?php print render($page['banner_top']); ?>       
-    </nav>      
+    </div>      
   <?php endif; ?>	    
 
 	    <div class="logo-slogan">
@@ -61,7 +72,13 @@
         
         <?php if ($site_slogan): ?>
             <h3 class="site-slogan"><?php print $site_slogan; ?></h3>            
-        <?php endif; ?>    
+        <?php endif; ?>
+
+        <?php if ($page['fieramilanomedia_logo']): ?>
+            <div id="fieramilanomedia-logo" class="fieramilanomedia-logo">
+	    <?php print render($page['fieramilanomedia_logo']); ?></div>            
+        <?php endif; ?>	
+	
       
       </hgroup>
       
@@ -71,20 +88,20 @@
     </header>    
       
   </div></div>
-  
+   
   <?php if ($page['main_menu']): ?>    
     <div class="main-menu-wrapper clearfix"><div class="main-menu-wrapper-inner">  
-      <nav id="main-menu" class="<?php echo $grid_full_width ?>">
+      <div id="main-menu" class="<?php echo $grid_full_width ?>">
         <?php print render($page['main_menu']); ?>      
-      </nav>
+      </div>
     </div></div> 
   <?php endif; ?> 
   
   <?php if ($page['main_menu_second_level']): ?>    
     <div class="main-menu-second-level-wrapper clearfix"><div class="main-menu-second-level-wrapper-inner">  
-      <nav id="main-menu-second-level"  class="<?php echo $grid_full_width ?>">
+      <div id="main-menu-second-level"  class="<?php echo $grid_full_width ?>">
         <?php print render($page['main_menu_second_level']); ?>      
-      </nav>
+      </div>
     </div></div> 
   <?php endif; ?> 
   
@@ -109,9 +126,9 @@
 	    <?php print $messages; ?>
 
 	            <?php if ($page['sidebar_first']): ?>
-      <aside class="sidebar first-sidebar <?php print $sidebar_first_grid_width ?>">
+      <div class="sidebar first-sidebar <?php print $sidebar_first_grid_width ?>">
           <?php print render($page['sidebar_first']); ?>
-      </aside>
+      </div>
       <?php endif; ?>
 
         <div class="main-inner  <?php print $main_content_grid_width ?>">
@@ -147,9 +164,9 @@
        
 
         <?php if ($page['sidebar_second']): ?>
-        <aside class="sidebar second-sidebar <?php print $sidebar_second_grid_width ?> clearfix">
+        <div class="sidebar second-sidebar <?php print $sidebar_second_grid_width ?> clearfix">
             <?php print render($page['sidebar_second']); ?>                
-        </aside>
+        </div>
         <?php endif; ?>     
       </div>            
   
@@ -185,4 +202,7 @@
     </footer><!-- /footer -->
   </div></div>
  
-</div></div></div><!-- page -->
+</div></div>
+
+</div><!-- page-outer -->
+</div><!-- page -->
