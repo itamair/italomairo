@@ -1,0 +1,16 @@
+
+.item-list ul.pager li {
+  display: inline;
+  zoom: 1;
+}
+
+#search-block-form .form-submit {
+	zoom: 1;
+	display: inline;
+}
+
+.field-name-field-section .field-item, .field-name-field-tags .field-item {
+  zoom: 1;
+  display: inline;
+}
+
