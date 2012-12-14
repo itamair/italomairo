@@ -5,8 +5,6 @@ engine = phptemplate
 screenshot = screenshot.png
 base theme = bones
 
-stylesheets[all][]   = css/style_all.css
-
 scripts[] = js/scripts.js
 scripts[] = js/jquery.color.js
 scripts[] = js/jquery-glowing.js
@@ -28,6 +26,7 @@ regions[main_menu_second_level]       = Main Menu Second Level (via Menublock)
 regions[search_box]     = Search Box
 regions[fieramilanomedia_logo]    = Logo Fieramilano Media
 regions[banner_top]    = Banner Top
+regions[banner_extratheme]    = Banner Dx Extratheme
 regions[highlighted]    = Highlighted
 regions[help]           = Help
 regions[sidebar_first]  = Sidebar First (Banners Dx)
