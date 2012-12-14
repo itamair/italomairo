@@ -55,7 +55,7 @@ $handler->display->display_options['fields']['field_image']['alter']['target'] =
 $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
 $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
 $handler->display->display_options['fields']['field_image']['settings'] = array(
-  'image_style' => '',
+  'image_style' => 'banner_468x60',
   'image_link' => '',
 );
 /* Criterio di ordinamento: Contenuto: Data di inserimento */

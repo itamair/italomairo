@@ -12,7 +12,7 @@ $view->disabled = FALSE; /* Edit this to true to make a default view disabled in
 
 /* Display: Master */
 $handler = $view->new_display('default', 'Master', 'default');
-$handler->display->display_options['title'] = 'Slideshow';
+$handler->display->display_options['title'] = 'Slideshow Archivio Riviste';
 $handler->display->display_options['use_more_always'] = FALSE;
 $handler->display->display_options['use_more_text'] = 'leggi tutto';
 $handler->display->display_options['access']['type'] = 'perm';
@@ -37,45 +37,29 @@ $handler->display->display_options['style_options']['skin_info'] = array(
   'stylesheets' => array(),
 );
 $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['weight'] = '1';
-$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
-$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
-  'field_video' => 0,
-  'field_image' => 0,
-  'field_immagini' => 0,
-  'created' => 0,
-  'title' => 0,
-  'body' => 0,
-  'counter' => 0,
-);
 $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['weight'] = '1';
 $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
 $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_slide_counter']['weight'] = '1';
 $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['enable'] = 1;
 $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['weight'] = '1';
-$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
-$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
-  'counter' => 'counter',
-  'field_video' => 0,
-  'field_image' => 0,
-  'field_immagini' => 0,
-  'created' => 0,
-  'title' => 0,
-  'body' => 0,
-);
 $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['weight'] = '1';
 $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
 $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_slide_counter']['weight'] = '1';
+$handler->display->display_options['style_options']['views_slideshow_cycle']['effect'] = 'scrollHorz';
 $handler->display->display_options['style_options']['views_slideshow_cycle']['timeout'] = '5000';
 $handler->display->display_options['style_options']['views_slideshow_cycle']['speed'] = '700';
 $handler->display->display_options['style_options']['views_slideshow_cycle']['delay'] = '0';
+$handler->display->display_options['style_options']['views_slideshow_cycle']['pause'] = 0;
+$handler->display->display_options['style_options']['views_slideshow_cycle']['pause_on_click'] = 1;
 $handler->display->display_options['style_options']['views_slideshow_cycle']['start_paused'] = 0;
 $handler->display->display_options['style_options']['views_slideshow_cycle']['remember_slide_days'] = '1';
 $handler->display->display_options['style_options']['views_slideshow_cycle']['items_per_slide'] = '1';
 $handler->display->display_options['style_options']['views_slideshow_cycle']['wait_for_image_load_timeout'] = '3000';
 $handler->display->display_options['style_options']['views_slideshow_cycle']['cleartype'] = 0;
 $handler->display->display_options['style_options']['views_slideshow_cycle']['cleartypenobg'] = 0;
-$handler->display->display_options['row_plugin'] = 'fields';
-/* Campo: Campo: Copertina */
+$handler->display->display_options['row_plugin'] = 'entity';
+$handler->display->display_options['row_options']['view_mode'] = 'slideshow_riviste';
+/* Campo: Contenuto: Copertina */
 $handler->display->display_options['fields']['field_imm_copertine']['id'] = 'field_imm_copertine';
 $handler->display->display_options['fields']['field_imm_copertine']['table'] = 'field_data_field_imm_copertine';
 $handler->display->display_options['fields']['field_imm_copertine']['field'] = 'field_imm_copertine';
@@ -133,11 +117,11 @@ $handler->display->display_options['fields']['counter']['label'] = '';
 $handler->display->display_options['fields']['counter']['exclude'] = TRUE;
 $handler->display->display_options['fields']['counter']['element_label_colon'] = FALSE;
 $handler->display->display_options['fields']['counter']['counter_start'] = '1';
-/* Criterio di ordinamento: Contenuto: Data di pubblicazione della Notizia (field_data) */
-$handler->display->display_options['sorts']['field_data_value']['id'] = 'field_data_value';
-$handler->display->display_options['sorts']['field_data_value']['table'] = 'field_data_field_data';
-$handler->display->display_options['sorts']['field_data_value']['field'] = 'field_data_value';
-$handler->display->display_options['sorts']['field_data_value']['order'] = 'DESC';
+/* Criterio di ordinamento: Contenuto: Mese di pubblicazione (field_pubb_mese_anno) */
+$handler->display->display_options['sorts']['field_pubb_mese_anno_value']['id'] = 'field_pubb_mese_anno_value';
+$handler->display->display_options['sorts']['field_pubb_mese_anno_value']['table'] = 'field_data_field_pubb_mese_anno';
+$handler->display->display_options['sorts']['field_pubb_mese_anno_value']['field'] = 'field_pubb_mese_anno_value';
+$handler->display->display_options['sorts']['field_pubb_mese_anno_value']['order'] = 'DESC';
 /* Criterio di ordinamento: Contenuto: Data di inserimento */
 $handler->display->display_options['sorts']['created']['id'] = 'created';
 $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -160,9 +144,100 @@ $handler->display->display_options['filters']['type']['value'] = array(
 /* Display: Slideshow Riviste */
 $handler = $view->new_display('block', 'Slideshow Riviste', 'block');
 $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+
+/* Display: Slideshow Archivio Riviste */
+$handler = $view->new_display('block', 'Slideshow Archivio Riviste', 'block_1');
+$handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+$handler->display->display_options['defaults']['style_plugin'] = FALSE;
+$handler->display->display_options['style_plugin'] = 'slideshow';
+$handler->display->display_options['style_options']['slideshow_type'] = 'views_slideshow_cycle';
+$handler->display->display_options['style_options']['slideshow_skin'] = 'default';
+$handler->display->display_options['style_options']['skin_info'] = array(
+  'class' => 'default',
+  'name' => 'Predefinito',
+  'module' => 'views_slideshow',
+  'path' => '',
+  'stylesheets' => array(),
+);
+$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['weight'] = '1';
+$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
+$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
+  'title' => 0,
+  'field_rivista_realestate' => 0,
+  'field_imm_copertine' => 0,
+  'field_pubb_mese_anno' => 0,
+);
+$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['weight'] = '1';
+$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
+$handler->display->display_options['style_options']['widgets']['top']['views_slideshow_slide_counter']['weight'] = '1';
+$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['weight'] = '1';
+$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
+$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
+  'title' => 0,
+  'field_rivista_realestate' => 0,
+  'field_imm_copertine' => 0,
+  'field_pubb_mese_anno' => 0,
+);
+$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['weight'] = '1';
+$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
+$handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_slide_counter']['weight'] = '1';
+$handler->display->display_options['style_options']['views_slideshow_cycle']['timeout'] = '5000';
+$handler->display->display_options['style_options']['views_slideshow_cycle']['speed'] = '700';
+$handler->display->display_options['style_options']['views_slideshow_cycle']['delay'] = '0';
+$handler->display->display_options['style_options']['views_slideshow_cycle']['start_paused'] = 0;
+$handler->display->display_options['style_options']['views_slideshow_cycle']['remember_slide_days'] = '1';
+$handler->display->display_options['style_options']['views_slideshow_cycle']['items_per_slide'] = '1';
+$handler->display->display_options['style_options']['views_slideshow_cycle']['wait_for_image_load_timeout'] = '3000';
+$handler->display->display_options['style_options']['views_slideshow_cycle']['cleartype'] = 0;
+$handler->display->display_options['style_options']['views_slideshow_cycle']['cleartypenobg'] = 0;
+$handler->display->display_options['defaults']['style_options'] = FALSE;
+$handler->display->display_options['defaults']['row_plugin'] = FALSE;
+$handler->display->display_options['row_plugin'] = 'fields';
+$handler->display->display_options['defaults']['row_options'] = FALSE;
+$handler->display->display_options['defaults']['fields'] = FALSE;
+/* Campo: Contenuto: Titolo */
+$handler->display->display_options['fields']['title']['id'] = 'title';
+$handler->display->display_options['fields']['title']['table'] = 'node';
+$handler->display->display_options['fields']['title']['field'] = 'title';
+$handler->display->display_options['fields']['title']['label'] = '';
+$handler->display->display_options['fields']['title']['exclude'] = TRUE;
+$handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+$handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+$handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+/* Campo: Contenuto: Rivista */
+$handler->display->display_options['fields']['field_rivista_realestate']['id'] = 'field_rivista_realestate';
+$handler->display->display_options['fields']['field_rivista_realestate']['table'] = 'field_data_field_rivista_realestate';
+$handler->display->display_options['fields']['field_rivista_realestate']['field'] = 'field_rivista_realestate';
+$handler->display->display_options['fields']['field_rivista_realestate']['label'] = '';
+$handler->display->display_options['fields']['field_rivista_realestate']['element_label_colon'] = FALSE;
+/* Campo: Contenuto: Copertina */
+$handler->display->display_options['fields']['field_imm_copertine']['id'] = 'field_imm_copertine';
+$handler->display->display_options['fields']['field_imm_copertine']['table'] = 'field_data_field_imm_copertine';
+$handler->display->display_options['fields']['field_imm_copertine']['field'] = 'field_imm_copertine';
+$handler->display->display_options['fields']['field_imm_copertine']['label'] = '';
+$handler->display->display_options['fields']['field_imm_copertine']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_imm_copertine']['click_sort_column'] = 'fid';
+$handler->display->display_options['fields']['field_imm_copertine']['settings'] = array(
+  'image_style' => 'medium',
+  'image_link' => '',
+);
+/* Campo: Contenuto: Mese di pubblicazione */
+$handler->display->display_options['fields']['field_pubb_mese_anno']['id'] = 'field_pubb_mese_anno';
+$handler->display->display_options['fields']['field_pubb_mese_anno']['table'] = 'field_data_field_pubb_mese_anno';
+$handler->display->display_options['fields']['field_pubb_mese_anno']['field'] = 'field_pubb_mese_anno';
+$handler->display->display_options['fields']['field_pubb_mese_anno']['label'] = '';
+$handler->display->display_options['fields']['field_pubb_mese_anno']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_pubb_mese_anno']['settings'] = array(
+  'format_type' => 'mese_anno',
+  'fromto' => 'both',
+  'multiple_number' => '',
+  'multiple_from' => '',
+  'multiple_to' => '',
+  'show_repeat_rule' => 'show',
+);
 $translatables['slideshow_riviste'] = array(
   t('Master'),
-  t('Slideshow'),
+  t('Slideshow Archivio Riviste'),
   t('leggi tutto'),
   t('Applica'),
   t('Ripristina'),

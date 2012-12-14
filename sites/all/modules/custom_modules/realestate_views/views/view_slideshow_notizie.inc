@@ -24,7 +24,7 @@ $handler->display->display_options['exposed_form']['options']['reset_button_labe
 $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Ordina per';
 $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Disc';
 $handler->display->display_options['pager']['type'] = 'some';
-$handler->display->display_options['pager']['options']['items_per_page'] = '10';
+$handler->display->display_options['pager']['options']['items_per_page'] = '4';
 $handler->display->display_options['pager']['options']['offset'] = '0';
 $handler->display->display_options['style_plugin'] = 'slideshow';
 $handler->display->display_options['style_options']['slideshow_type'] = 'views_slideshow_cycle';
@@ -75,18 +75,6 @@ $handler->display->display_options['style_options']['views_slideshow_cycle']['wa
 $handler->display->display_options['style_options']['views_slideshow_cycle']['cleartype'] = 0;
 $handler->display->display_options['style_options']['views_slideshow_cycle']['cleartypenobg'] = 0;
 $handler->display->display_options['row_plugin'] = 'fields';
-/* Campo: Contenuto: Video */
-$handler->display->display_options['fields']['field_video']['id'] = 'field_video';
-$handler->display->display_options['fields']['field_video']['table'] = 'field_data_field_video';
-$handler->display->display_options['fields']['field_video']['field'] = 'field_video';
-$handler->display->display_options['fields']['field_video']['label'] = '';
-$handler->display->display_options['fields']['field_video']['element_label_colon'] = FALSE;
-$handler->display->display_options['fields']['field_video']['click_sort_column'] = 'video_url';
-$handler->display->display_options['fields']['field_video']['type'] = 'video_embed_field_thumbnail';
-$handler->display->display_options['fields']['field_video']['settings'] = array(
-  'image_style' => 'slideshow',
-  'image_link' => 'node',
-);
 /* Campo: Contenuto: Immagine */
 $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
 $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
@@ -98,7 +86,7 @@ $handler->display->display_options['fields']['field_image']['settings'] = array(
   'image_style' => 'slideshow',
   'image_link' => 'content',
 );
-/* Campo: Contenuto: Immagine Notizia */
+/* Campo: Contenuto: Immagine Spazio Pubblicitario */
 $handler->display->display_options['fields']['field_immagini']['id'] = 'field_immagini';
 $handler->display->display_options['fields']['field_immagini']['table'] = 'field_data_field_immagini';
 $handler->display->display_options['fields']['field_immagini']['field'] = 'field_immagini';
@@ -109,7 +97,7 @@ $handler->display->display_options['fields']['field_immagini']['settings'] = arr
   'image_style' => 'slideshow',
   'image_link' => '',
 );
-/* Campo: Campo: Copertina */
+/* Campo: Contenuto: Copertina */
 $handler->display->display_options['fields']['field_imm_copertine']['id'] = 'field_imm_copertine';
 $handler->display->display_options['fields']['field_imm_copertine']['table'] = 'field_data_field_imm_copertine';
 $handler->display->display_options['fields']['field_imm_copertine']['field'] = 'field_imm_copertine';
@@ -125,8 +113,23 @@ $handler->display->display_options['fields']['created']['id'] = 'created';
 $handler->display->display_options['fields']['created']['table'] = 'node';
 $handler->display->display_options['fields']['created']['field'] = 'created';
 $handler->display->display_options['fields']['created']['label'] = '';
+$handler->display->display_options['fields']['created']['exclude'] = TRUE;
 $handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
-$handler->display->display_options['fields']['created']['date_format'] = 'long';
+$handler->display->display_options['fields']['created']['date_format'] = 'medium';
+/* Campo: Contenuto: Data di pubblicazione della Notizia */
+$handler->display->display_options['fields']['field_data']['id'] = 'field_data';
+$handler->display->display_options['fields']['field_data']['table'] = 'field_data_field_data';
+$handler->display->display_options['fields']['field_data']['field'] = 'field_data';
+$handler->display->display_options['fields']['field_data']['label'] = '';
+$handler->display->display_options['fields']['field_data']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_data']['settings'] = array(
+  'format_type' => 'medium',
+  'fromto' => 'both',
+  'multiple_number' => '',
+  'multiple_from' => '',
+  'multiple_to' => '',
+  'show_repeat_rule' => 'show',
+);
 /* Campo: Contenuto: Titolo */
 $handler->display->display_options['fields']['title']['id'] = 'title';
 $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -176,11 +179,18 @@ $handler->display->display_options['filters']['type']['value'] = array(
   'article' => 'article',
   'notizia' => 'notizia',
 );
+/* Filter criterion: Contenuto: In evidenza/slideshow home (field_in_evidenza) */
+$handler->display->display_options['filters']['field_in_evidenza_value']['id'] = 'field_in_evidenza_value';
+$handler->display->display_options['filters']['field_in_evidenza_value']['table'] = 'field_data_field_in_evidenza';
+$handler->display->display_options['filters']['field_in_evidenza_value']['field'] = 'field_in_evidenza_value';
+$handler->display->display_options['filters']['field_in_evidenza_value']['value'] = array(
+  1 => '1',
+);
 
 /* Display: Slideshow Notizie */
 $handler = $view->new_display('block', 'Slideshow Notizie', 'block');
 $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
-$translatables['slideshow'] = array(
+$translatables['slideshow_notizie'] = array(
   t('Master'),
   t('Slideshow'),
   t('leggi tutto'),

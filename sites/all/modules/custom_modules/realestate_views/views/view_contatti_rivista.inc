@@ -42,14 +42,14 @@ $handler->display->display_options['row_options']['separator'] = ' - ';
 $handler->display->display_options['relationships']['field_rivista_realestate_tid']['id'] = 'field_rivista_realestate_tid';
 $handler->display->display_options['relationships']['field_rivista_realestate_tid']['table'] = 'field_data_field_rivista_realestate';
 $handler->display->display_options['relationships']['field_rivista_realestate_tid']['field'] = 'field_rivista_realestate_tid';
-/* Campo: Termine della tassonomia: Nome Cognome Commerciale */
+/* Campo: Gestore rotto/mancante */
 $handler->display->display_options['fields']['field_nome_cognome_commerciale']['id'] = 'field_nome_cognome_commerciale';
 $handler->display->display_options['fields']['field_nome_cognome_commerciale']['table'] = 'field_data_field_nome_cognome_commerciale';
 $handler->display->display_options['fields']['field_nome_cognome_commerciale']['field'] = 'field_nome_cognome_commerciale';
 $handler->display->display_options['fields']['field_nome_cognome_commerciale']['relationship'] = 'field_rivista_realestate_tid';
 $handler->display->display_options['fields']['field_nome_cognome_commerciale']['label'] = '';
 $handler->display->display_options['fields']['field_nome_cognome_commerciale']['element_label_colon'] = FALSE;
-/* Campo: Termine della tassonomia: Email Commerciale */
+/* Campo: Gestore rotto/mancante */
 $handler->display->display_options['fields']['field_email_commerciale']['id'] = 'field_email_commerciale';
 $handler->display->display_options['fields']['field_email_commerciale']['table'] = 'field_data_field_email_commerciale';
 $handler->display->display_options['fields']['field_email_commerciale']['field'] = 'field_email_commerciale';
@@ -130,7 +130,7 @@ $translatables['contatti_rivista'] = array(
   t('seguente ›'),
   t('ultima »'),
   t('term from field_rivista_realestate'),
-  t('Email Commerciale'),
+  t('Errato gestore field_data_field_email_commerciale.field_email_commerciale'),
   t('Tutti'),
   t('Contatti Rivista'),
   t('Contatti'),

@@ -12,7 +12,7 @@ $view->disabled = FALSE; /* Edit this to true to make a default view disabled in
 
 /* Display: Master */
 $handler = $view->new_display('default', 'Master', 'default');
-$handler->display->display_options['title'] = 'Amministra contenuti FMM';
+$handler->display->display_options['title'] = 'Amministra contenuti Realestate';
 $handler->display->display_options['use_ajax'] = TRUE;
 $handler->display->display_options['use_more_always'] = FALSE;
 $handler->display->display_options['use_more_text'] = 'leggi tutto';
@@ -289,11 +289,15 @@ $handler->display->display_options['fields']['title_field']['link_to_entity'] = 
 $handler->display->display_options['fields']['type']['id'] = 'type';
 $handler->display->display_options['fields']['type']['table'] = 'node';
 $handler->display->display_options['fields']['type']['field'] = 'type';
-/* Campo: Campo: Canale FMM */
-$handler->display->display_options['fields']['field_canale_fmm']['id'] = 'field_canale_fmm';
-$handler->display->display_options['fields']['field_canale_fmm']['table'] = 'field_data_field_canale_fmm';
-$handler->display->display_options['fields']['field_canale_fmm']['field'] = 'field_canale_fmm';
-$handler->display->display_options['fields']['field_canale_fmm']['type'] = 'taxonomy_term_reference_plain';
+/* Campo: Contenuto: Sezione */
+$handler->display->display_options['fields']['field_section']['id'] = 'field_section';
+$handler->display->display_options['fields']['field_section']['table'] = 'field_data_field_section';
+$handler->display->display_options['fields']['field_section']['field'] = 'field_section';
+/* Campo: Contenuto: In evidenza/slideshow home */
+$handler->display->display_options['fields']['field_in_evidenza']['id'] = 'field_in_evidenza';
+$handler->display->display_options['fields']['field_in_evidenza']['table'] = 'field_data_field_in_evidenza';
+$handler->display->display_options['fields']['field_in_evidenza']['field'] = 'field_in_evidenza';
+$handler->display->display_options['fields']['field_in_evidenza']['label'] = 'In evidenza/slideshow';
 /* Campo: Contenuto: Data di inserimento */
 $handler->display->display_options['fields']['created']['id'] = 'created';
 $handler->display->display_options['fields']['created']['table'] = 'node';
@@ -342,59 +346,25 @@ $handler->display->display_options['filters']['type']['id'] = 'type';
 $handler->display->display_options['filters']['type']['table'] = 'node';
 $handler->display->display_options['filters']['type']['field'] = 'type';
 $handler->display->display_options['filters']['type']['value'] = array(
-  'article' => 'article',
-  'blocco' => 'blocco',
-  'evento_business_international' => 'evento_business_international',
-  'evento_mostra_convegno' => 'evento_mostra_convegno',
-  'immaginihp' => 'immaginihp',
-  'lancio' => 'lancio',
+  'banner' => 'banner',
   'notizia' => 'notizia',
   'page' => 'page',
-  'portale' => 'portale',
-  'prodotto_in_vendita' => 'prodotto_in_vendita',
-  'pubblicit_' => 'pubblicit_',
   'rivista' => 'rivista',
+  'spazio_pubblicitario' => 'spazio_pubblicitario',
 );
 $handler->display->display_options['filters']['type']['group'] = 1;
-$handler->display->display_options['filters']['type']['expose']['operator_id'] = 'type_op';
-$handler->display->display_options['filters']['type']['expose']['label'] = 'Tipo di contenuto';
-$handler->display->display_options['filters']['type']['expose']['operator'] = 'type_op';
-$handler->display->display_options['filters']['type']['expose']['identifier'] = 'type';
-$handler->display->display_options['filters']['type']['expose']['remember_roles'] = array(
-  2 => '2',
-  1 => 0,
-  3 => 0,
-  9 => 0,
-  4 => 0,
-  5 => 0,
-  6 => 0,
-  7 => 0,
-  8 => 0,
-);
-/* Filter criterion: Utente: Name (raw) */
-$handler->display->display_options['filters']['name']['id'] = 'name';
-$handler->display->display_options['filters']['name']['table'] = 'users';
-$handler->display->display_options['filters']['name']['field'] = 'name';
-$handler->display->display_options['filters']['name']['relationship'] = 'uid';
-$handler->display->display_options['filters']['name']['operator'] = '!=';
-$handler->display->display_options['filters']['name']['value'] = 'marcoromano';
 /* Filter criterion: Contenuto: Tipo */
 $handler->display->display_options['filters']['type_1']['id'] = 'type_1';
 $handler->display->display_options['filters']['type_1']['table'] = 'node';
 $handler->display->display_options['filters']['type_1']['field'] = 'type';
 $handler->display->display_options['filters']['type_1']['value'] = array(
-  'blocco' => 'blocco',
-  'evento_business_international' => 'evento_business_international',
-  'evento_mostra_convegno' => 'evento_mostra_convegno',
-  'immaginihp' => 'immaginihp',
-  'lancio' => 'lancio',
+  'banner' => 'banner',
   'notizia' => 'notizia',
   'page' => 'page',
-  'portale' => 'portale',
-  'prodotto_in_vendita' => 'prodotto_in_vendita',
-  'pubblicit_' => 'pubblicit_',
   'rivista' => 'rivista',
+  'spazio_pubblicitario' => 'spazio_pubblicitario',
 );
+$handler->display->display_options['filters']['type_1']['group'] = 1;
 $handler->display->display_options['filters']['type_1']['exposed'] = TRUE;
 $handler->display->display_options['filters']['type_1']['expose']['operator_id'] = 'type_1_op';
 $handler->display->display_options['filters']['type_1']['expose']['label'] = 'Tipo';
@@ -404,46 +374,61 @@ $handler->display->display_options['filters']['type_1']['expose']['remember'] = 
 $handler->display->display_options['filters']['type_1']['expose']['remember_roles'] = array(
   2 => 0,
   3 => '3',
-  9 => '9',
-  4 => '4',
   1 => 0,
-  10 => 0,
   5 => 0,
+  4 => 0,
   6 => 0,
   7 => 0,
   8 => 0,
 );
 $handler->display->display_options['filters']['type_1']['expose']['reduce'] = TRUE;
-/* Filter criterion: Campo: Canale FMM (field_canale_fmm) */
-$handler->display->display_options['filters']['field_canale_fmm_tid']['id'] = 'field_canale_fmm_tid';
-$handler->display->display_options['filters']['field_canale_fmm_tid']['table'] = 'field_data_field_canale_fmm';
-$handler->display->display_options['filters']['field_canale_fmm_tid']['field'] = 'field_canale_fmm_tid';
-$handler->display->display_options['filters']['field_canale_fmm_tid']['exposed'] = TRUE;
-$handler->display->display_options['filters']['field_canale_fmm_tid']['expose']['operator_id'] = 'field_canale_fmm_tid_op';
-$handler->display->display_options['filters']['field_canale_fmm_tid']['expose']['label'] = 'Canale FMM';
-$handler->display->display_options['filters']['field_canale_fmm_tid']['expose']['operator'] = 'field_canale_fmm_tid_op';
-$handler->display->display_options['filters']['field_canale_fmm_tid']['expose']['identifier'] = 'field_canale_fmm_tid';
-$handler->display->display_options['filters']['field_canale_fmm_tid']['expose']['remember_roles'] = array(
+/* Filter criterion: Utente: Name (raw) */
+$handler->display->display_options['filters']['name']['id'] = 'name';
+$handler->display->display_options['filters']['name']['table'] = 'users';
+$handler->display->display_options['filters']['name']['field'] = 'name';
+$handler->display->display_options['filters']['name']['relationship'] = 'uid';
+$handler->display->display_options['filters']['name']['operator'] = 'contains';
+$handler->display->display_options['filters']['name']['exposed'] = TRUE;
+$handler->display->display_options['filters']['name']['expose']['operator_id'] = 'name_op';
+$handler->display->display_options['filters']['name']['expose']['label'] = 'Autore';
+$handler->display->display_options['filters']['name']['expose']['operator'] = 'name_op';
+$handler->display->display_options['filters']['name']['expose']['identifier'] = 'name';
+$handler->display->display_options['filters']['name']['expose']['remember_roles'] = array(
   2 => '2',
   1 => 0,
   3 => 0,
-  9 => 0,
-  4 => 0,
-  10 => 0,
   5 => 0,
+  4 => 0,
   6 => 0,
   7 => 0,
   8 => 0,
 );
-$handler->display->display_options['filters']['field_canale_fmm_tid']['type'] = 'select';
-$handler->display->display_options['filters']['field_canale_fmm_tid']['vocabulary'] = 'canali';
+/* Filter criterion: Contenuto: In evidenza/slideshow home (field_in_evidenza) */
+$handler->display->display_options['filters']['field_in_evidenza_value']['id'] = 'field_in_evidenza_value';
+$handler->display->display_options['filters']['field_in_evidenza_value']['table'] = 'field_data_field_in_evidenza';
+$handler->display->display_options['filters']['field_in_evidenza_value']['field'] = 'field_in_evidenza_value';
+$handler->display->display_options['filters']['field_in_evidenza_value']['exposed'] = TRUE;
+$handler->display->display_options['filters']['field_in_evidenza_value']['expose']['operator_id'] = 'field_in_evidenza_value_op';
+$handler->display->display_options['filters']['field_in_evidenza_value']['expose']['label'] = 'In evidenza/slideshow home';
+$handler->display->display_options['filters']['field_in_evidenza_value']['expose']['operator'] = 'field_in_evidenza_value_op';
+$handler->display->display_options['filters']['field_in_evidenza_value']['expose']['identifier'] = 'field_in_evidenza_value';
+$handler->display->display_options['filters']['field_in_evidenza_value']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  3 => 0,
+  5 => 0,
+  4 => 0,
+  6 => 0,
+  7 => 0,
+  8 => 0,
+);
 
 /* Display: Page */
 $handler = $view->new_display('page', 'Page', 'page');
 $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
-$handler->display->display_options['path'] = 'admin/manage_FMM_content';
+$handler->display->display_options['path'] = 'admin/manage_Realestate_content';
 $handler->display->display_options['menu']['type'] = 'normal';
-$handler->display->display_options['menu']['title'] = 'Amministra contenuti FMM';
+$handler->display->display_options['menu']['title'] = 'Amministra contenuti RealEstate';
 $handler->display->display_options['menu']['weight'] = '15';
 $handler->display->display_options['menu']['name'] = 'management';
 $handler->display->display_options['menu']['context'] = 0;
@@ -453,7 +438,7 @@ $handler->display->display_options['tab_options']['weight'] = '0';
 $handler->display->display_options['tab_options']['name'] = 'main-menu';
 $translatables['amministra_i_contenuti'] = array(
   t('Master'),
-  t('Amministra contenuti FMM'),
+  t('Amministra contenuti Realestate'),
   t('leggi tutto'),
   t('Applica'),
   t('Ripristina'),
@@ -472,15 +457,17 @@ $translatables['amministra_i_contenuti'] = array(
   t('Contenuto'),
   t('Titolo (tradotto)'),
   t('Tipo'),
-  t('Canale FMM'),
+  t('Sezione'),
+  t('In evidenza/slideshow'),
   t('Inserimento'),
   t('Aggiornato'),
   t('Autore'),
   t('Operazioni'),
   t('[edit_node] <a href=\'/node/[nid]/translate\'>tranlslate</a>'),
-  t('Tipo di contenuto'),
+  t('In evidenza/slideshow home'),
   t('Page'),
 );
+
 
 /* Define this new view from code in views list */
 $views[$view->name] = $view;

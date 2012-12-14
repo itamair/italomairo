@@ -1,19 +1,17 @@
 <?php
 
 $view = new view();
-$view->name = 'ultime_riviste';
-$view->description = 'Ultimi Numeri di un tipo di Rivista Real Estate';
+$view->name = 'copertina_dettagli_ultime_riviste';
+$view->description = 'Espone l\'ultima copertina di una rivista';
 $view->tag = 'default';
 $view->base_table = 'node';
-$view->human_name = 'Ultime Riviste (in code)';
+$view->human_name = 'Copertina e Dettagli Ultime Riviste (in code)';
 $view->core = 7;
 $view->api_version = '3.0';
 $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
 
 /* Display: Master */
 $handler = $view->new_display('default', 'Master', 'default');
-$handler->display->display_options['title'] = 'Ultime Riviste';
-$handler->display->display_options['use_ajax'] = TRUE;
 $handler->display->display_options['use_more_always'] = FALSE;
 $handler->display->display_options['use_more_text'] = 'leggi tutto';
 $handler->display->display_options['access']['type'] = 'perm';
@@ -28,69 +26,42 @@ $handler->display->display_options['pager']['type'] = 'some';
 $handler->display->display_options['pager']['options']['items_per_page'] = '1';
 $handler->display->display_options['pager']['options']['offset'] = '0';
 $handler->display->display_options['style_plugin'] = 'default';
-$handler->display->display_options['row_plugin'] = 'node';
-$handler->display->display_options['row_options']['view_mode'] = 'full';
-/* Relazione: Contenuto: Rivista (field_rivista_realestate) */
-$handler->display->display_options['relationships']['field_rivista_realestate_tid']['id'] = 'field_rivista_realestate_tid';
-$handler->display->display_options['relationships']['field_rivista_realestate_tid']['table'] = 'field_data_field_rivista_realestate';
-$handler->display->display_options['relationships']['field_rivista_realestate_tid']['field'] = 'field_rivista_realestate_tid';
-$handler->display->display_options['relationships']['field_rivista_realestate_tid']['required'] = TRUE;
-/* Campo: Contenuto: Nid */
-$handler->display->display_options['fields']['nid']['id'] = 'nid';
-$handler->display->display_options['fields']['nid']['table'] = 'node';
-$handler->display->display_options['fields']['nid']['field'] = 'nid';
-$handler->display->display_options['fields']['nid']['exclude'] = TRUE;
-/* Campo: Termine della tassonomia: ID Termine */
-$handler->display->display_options['fields']['tid']['id'] = 'tid';
-$handler->display->display_options['fields']['tid']['table'] = 'taxonomy_term_data';
-$handler->display->display_options['fields']['tid']['field'] = 'tid';
-$handler->display->display_options['fields']['tid']['relationship'] = 'term_node_tid';
-$handler->display->display_options['fields']['tid']['exclude'] = TRUE;
+$handler->display->display_options['row_plugin'] = 'fields';
 /* Campo: Contenuto: Titolo */
 $handler->display->display_options['fields']['title']['id'] = 'title';
 $handler->display->display_options['fields']['title']['table'] = 'node';
 $handler->display->display_options['fields']['title']['field'] = 'title';
 $handler->display->display_options['fields']['title']['label'] = '';
-$handler->display->display_options['fields']['title']['alter']['make_link'] = TRUE;
-$handler->display->display_options['fields']['title']['alter']['path'] = 'taxonomy/term/[tid]/[nid]';
+$handler->display->display_options['fields']['title']['exclude'] = TRUE;
 $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
 $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
 $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-$handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-/* Campo: Contenuto: Sottotitolo */
-$handler->display->display_options['fields']['field_sottotitolo']['id'] = 'field_sottotitolo';
-$handler->display->display_options['fields']['field_sottotitolo']['table'] = 'field_data_field_sottotitolo';
-$handler->display->display_options['fields']['field_sottotitolo']['field'] = 'field_sottotitolo';
-$handler->display->display_options['fields']['field_sottotitolo']['label'] = '';
-$handler->display->display_options['fields']['field_sottotitolo']['element_label_colon'] = FALSE;
+/* Campo: Contenuto: Nid */
+$handler->display->display_options['fields']['nid']['id'] = 'nid';
+$handler->display->display_options['fields']['nid']['table'] = 'node';
+$handler->display->display_options['fields']['nid']['field'] = 'nid';
+$handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+/* Campo: Contenuto: Rivista */
+$handler->display->display_options['fields']['field_rivista_realestate']['id'] = 'field_rivista_realestate';
+$handler->display->display_options['fields']['field_rivista_realestate']['table'] = 'field_data_field_rivista_realestate';
+$handler->display->display_options['fields']['field_rivista_realestate']['field'] = 'field_rivista_realestate';
+$handler->display->display_options['fields']['field_rivista_realestate']['label'] = '';
+$handler->display->display_options['fields']['field_rivista_realestate']['exclude'] = TRUE;
+$handler->display->display_options['fields']['field_rivista_realestate']['alter']['make_link'] = TRUE;
+$handler->display->display_options['fields']['field_rivista_realestate']['alter']['path'] = '/node/[nid]';
+$handler->display->display_options['fields']['field_rivista_realestate']['element_type'] = 'h2';
+$handler->display->display_options['fields']['field_rivista_realestate']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_rivista_realestate']['type'] = 'taxonomy_term_reference_plain';
 /* Campo: Contenuto: Copertina */
 $handler->display->display_options['fields']['field_imm_copertine']['id'] = 'field_imm_copertine';
 $handler->display->display_options['fields']['field_imm_copertine']['table'] = 'field_data_field_imm_copertine';
 $handler->display->display_options['fields']['field_imm_copertine']['field'] = 'field_imm_copertine';
 $handler->display->display_options['fields']['field_imm_copertine']['label'] = '';
 $handler->display->display_options['fields']['field_imm_copertine']['element_label_colon'] = FALSE;
-$handler->display->display_options['fields']['field_imm_copertine']['element_wrapper_class'] = 'copertina';
 $handler->display->display_options['fields']['field_imm_copertine']['click_sort_column'] = 'fid';
-$handler->display->display_options['fields']['field_imm_copertine']['type'] = 'colorbox';
 $handler->display->display_options['fields']['field_imm_copertine']['settings'] = array(
-  'colorbox_node_style' => 'thumbnail',
-  'colorbox_image_style' => '',
-  'colorbox_gallery' => 'post',
-  'colorbox_gallery_custom' => '',
-  'colorbox_caption' => 'auto',
-  'colorbox_caption_custom' => '',
-);
-/* Campo: Contenuto: Body */
-$handler->display->display_options['fields']['body']['id'] = 'body';
-$handler->display->display_options['fields']['body']['table'] = 'field_data_body';
-$handler->display->display_options['fields']['body']['field'] = 'body';
-$handler->display->display_options['fields']['body']['label'] = 'Corpo';
-$handler->display->display_options['fields']['body']['exclude'] = TRUE;
-$handler->display->display_options['fields']['body']['alter']['max_length'] = '300';
-$handler->display->display_options['fields']['body']['alter']['more_link'] = TRUE;
-$handler->display->display_options['fields']['body']['alter']['trim'] = TRUE;
-$handler->display->display_options['fields']['body']['settings'] = array(
-  'trim_length' => '300',
+  'image_style' => 'copertina_rivista',
+  'image_link' => 'content',
 );
 /* Criterio di ordinamento: Contenuto: Mese di pubblicazione (field_pubb_mese_anno) */
 $handler->display->display_options['sorts']['field_pubb_mese_anno_value']['id'] = 'field_pubb_mese_anno_value';
@@ -109,14 +80,13 @@ $handler->display->display_options['arguments']['field_rivista_realestate_tid'][
 $handler->display->display_options['arguments']['field_rivista_realestate_tid']['default_action'] = 'default';
 $handler->display->display_options['arguments']['field_rivista_realestate_tid']['exception']['title'] = 'Tutti';
 $handler->display->display_options['arguments']['field_rivista_realestate_tid']['default_argument_type'] = 'taxonomy_tid';
+$handler->display->display_options['arguments']['field_rivista_realestate_tid']['default_argument_options']['node'] = TRUE;
+$handler->display->display_options['arguments']['field_rivista_realestate_tid']['default_argument_options']['vocabularies'] = array(
+  'riviste_realestate' => 'riviste_realestate',
+);
 $handler->display->display_options['arguments']['field_rivista_realestate_tid']['summary']['number_of_records'] = '0';
 $handler->display->display_options['arguments']['field_rivista_realestate_tid']['summary']['format'] = 'default_summary';
 $handler->display->display_options['arguments']['field_rivista_realestate_tid']['summary_options']['items_per_page'] = '25';
-$handler->display->display_options['arguments']['field_rivista_realestate_tid']['specify_validation'] = TRUE;
-$handler->display->display_options['arguments']['field_rivista_realestate_tid']['validate']['type'] = 'taxonomy_term';
-$handler->display->display_options['arguments']['field_rivista_realestate_tid']['validate_options']['vocabularies'] = array(
-  'riviste_realestate' => 'riviste_realestate',
-);
 /* Filter criterion: Contenuto: Pubblicato */
 $handler->display->display_options['filters']['status']['id'] = 'status';
 $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -132,147 +102,149 @@ $handler->display->display_options['filters']['type']['value'] = array(
   'rivista' => 'rivista',
 );
 
-/* Display: Block Ultima Rivista */
-$handler = $view->new_display('block', 'Block Ultima Rivista', 'block');
+/* Display: Ultima Copertina Uscita */
+$handler = $view->new_display('entity_view', 'Ultima Copertina Uscita', 'entity_view_1');
 $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
-
-/* Display: In Allegato Archivio */
-$handler = $view->new_display('attachment', 'In Allegato Archivio', 'attachment_1');
-$handler->display->display_options['defaults']['css_class'] = FALSE;
-$handler->display->display_options['css_class'] = 'in-archvio';
-$handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
-$handler->display->display_options['pager']['type'] = 'none';
-$handler->display->display_options['pager']['options']['offset'] = '1';
-$handler->display->display_options['defaults']['style_plugin'] = FALSE;
-$handler->display->display_options['style_plugin'] = 'default';
-$handler->display->display_options['defaults']['style_options'] = FALSE;
-$handler->display->display_options['defaults']['row_plugin'] = FALSE;
-$handler->display->display_options['row_plugin'] = 'node';
-$handler->display->display_options['row_options']['view_mode'] = 'riviste_anteprime';
-$handler->display->display_options['defaults']['row_options'] = FALSE;
-$handler->display->display_options['defaults']['header'] = FALSE;
-/* Intestazione: Globale: Text area */
-$handler->display->display_options['header']['area']['id'] = 'area';
-$handler->display->display_options['header']['area']['table'] = 'views';
-$handler->display->display_options['header']['area']['field'] = 'area';
-$handler->display->display_options['header']['area']['content'] = 'in archives';
-$handler->display->display_options['header']['area']['format'] = 'full_html';
-$handler->display->display_options['defaults']['arguments'] = FALSE;
-/* Contextual filter: Contenuto: Rivista (field_rivista_realestate) */
-$handler->display->display_options['arguments']['field_rivista_realestate_tid']['id'] = 'field_rivista_realestate_tid';
-$handler->display->display_options['arguments']['field_rivista_realestate_tid']['table'] = 'field_data_field_rivista_realestate';
-$handler->display->display_options['arguments']['field_rivista_realestate_tid']['field'] = 'field_rivista_realestate_tid';
-$handler->display->display_options['arguments']['field_rivista_realestate_tid']['default_action'] = 'default';
-$handler->display->display_options['arguments']['field_rivista_realestate_tid']['exception']['title'] = 'Tutti';
-$handler->display->display_options['arguments']['field_rivista_realestate_tid']['default_argument_type'] = 'taxonomy_tid';
-$handler->display->display_options['arguments']['field_rivista_realestate_tid']['summary']['number_of_records'] = '0';
-$handler->display->display_options['arguments']['field_rivista_realestate_tid']['summary']['format'] = 'default_summary';
-$handler->display->display_options['arguments']['field_rivista_realestate_tid']['summary_options']['items_per_page'] = '25';
-$handler->display->display_options['displays'] = array(
-  'block' => 'block',
-  'default' => 0,
+$handler->display->display_options['entity_type'] = 'taxonomy_term';
+$handler->display->display_options['bundles'] = array(
+  0 => 'riviste_realestate',
 );
-$handler->display->display_options['attachment_position'] = 'after';
 
-/* Display: Blocco Archivio Riviste */
-$handler = $view->new_display('block', 'Blocco Archivio Riviste', 'block_1');
-$handler->display->display_options['defaults']['css_class'] = FALSE;
-$handler->display->display_options['css_class'] = 'in-archvio';
+/* Display: Dettagli Ultima Rivista Uscita */
+$handler = $view->new_display('entity_view', 'Dettagli Ultima Rivista Uscita', 'entity_view_2');
 $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
-$handler->display->display_options['defaults']['pager'] = FALSE;
-$handler->display->display_options['pager']['type'] = 'full';
-$handler->display->display_options['pager']['options']['items_per_page'] = '2';
-$handler->display->display_options['pager']['options']['offset'] = '0';
-$handler->display->display_options['pager']['options']['id'] = '0';
-$handler->display->display_options['pager']['options']['quantity'] = '9';
-$handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Voci per pagina';
-$handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Tutto -';
-$handler->display->display_options['pager']['options']['expose']['offset_label'] = 'Slittamento';
-$handler->display->display_options['pager']['options']['tags']['first'] = '« prima';
-$handler->display->display_options['pager']['options']['tags']['previous'] = '‹ precedente';
-$handler->display->display_options['pager']['options']['tags']['next'] = 'seguente ›';
-$handler->display->display_options['pager']['options']['tags']['last'] = 'ultima »';
-$handler->display->display_options['defaults']['style_plugin'] = FALSE;
-$handler->display->display_options['style_plugin'] = 'default';
-$handler->display->display_options['defaults']['style_options'] = FALSE;
-$handler->display->display_options['defaults']['row_plugin'] = FALSE;
-$handler->display->display_options['row_plugin'] = 'node';
-$handler->display->display_options['row_options']['view_mode'] = 'riviste_anteprime';
-$handler->display->display_options['defaults']['row_options'] = FALSE;
-$handler->display->display_options['defaults']['header'] = FALSE;
-/* Intestazione: Globale: Text area */
-$handler->display->display_options['header']['area']['id'] = 'area';
-$handler->display->display_options['header']['area']['table'] = 'views';
-$handler->display->display_options['header']['area']['field'] = 'area';
-$handler->display->display_options['header']['area']['content'] = 'in archives';
-$handler->display->display_options['header']['area']['format'] = 'full_html';
-$handler->display->display_options['defaults']['arguments'] = FALSE;
-/* Contextual filter: Contenuto: Rivista (field_rivista_realestate) */
-$handler->display->display_options['arguments']['field_rivista_realestate_tid']['id'] = 'field_rivista_realestate_tid';
-$handler->display->display_options['arguments']['field_rivista_realestate_tid']['table'] = 'field_data_field_rivista_realestate';
-$handler->display->display_options['arguments']['field_rivista_realestate_tid']['field'] = 'field_rivista_realestate_tid';
-$handler->display->display_options['arguments']['field_rivista_realestate_tid']['default_action'] = 'default';
-$handler->display->display_options['arguments']['field_rivista_realestate_tid']['exception']['title'] = 'Tutti';
-$handler->display->display_options['arguments']['field_rivista_realestate_tid']['default_argument_type'] = 'php';
-$handler->display->display_options['arguments']['field_rivista_realestate_tid']['default_argument_options']['code'] = 'if ( arg(0) == \'node\' && is_numeric(arg(1)) && !arg(2) ) {
-  $node = node_load(arg(1));
-$rivista_tid_field = field_get_items(\'node\', $node, \'field_rivista_realestate\');
-$rivista_tid = $rivista_tid_field[0][\'tid\'];
-return $rivista_tid;
-}';
-$handler->display->display_options['arguments']['field_rivista_realestate_tid']['summary']['number_of_records'] = '0';
-$handler->display->display_options['arguments']['field_rivista_realestate_tid']['summary']['format'] = 'default_summary';
-$handler->display->display_options['arguments']['field_rivista_realestate_tid']['summary_options']['items_per_page'] = '25';
-$handler->display->display_options['arguments']['field_rivista_realestate_tid']['specify_validation'] = TRUE;
-$handler->display->display_options['arguments']['field_rivista_realestate_tid']['validate']['type'] = 'taxonomy_term';
-$handler->display->display_options['arguments']['field_rivista_realestate_tid']['validate_options']['vocabularies'] = array(
-  'riviste_realestate' => 'riviste_realestate',
+$handler->display->display_options['defaults']['fields'] = FALSE;
+/* Campo: Contenuto: Titolo */
+$handler->display->display_options['fields']['title']['id'] = 'title';
+$handler->display->display_options['fields']['title']['table'] = 'node';
+$handler->display->display_options['fields']['title']['field'] = 'title';
+$handler->display->display_options['fields']['title']['label'] = '';
+$handler->display->display_options['fields']['title']['exclude'] = TRUE;
+$handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+$handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+$handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+/* Campo: Contenuto: Rivista */
+$handler->display->display_options['fields']['field_rivista_realestate']['id'] = 'field_rivista_realestate';
+$handler->display->display_options['fields']['field_rivista_realestate']['table'] = 'field_data_field_rivista_realestate';
+$handler->display->display_options['fields']['field_rivista_realestate']['field'] = 'field_rivista_realestate';
+$handler->display->display_options['fields']['field_rivista_realestate']['label'] = '';
+$handler->display->display_options['fields']['field_rivista_realestate']['exclude'] = TRUE;
+$handler->display->display_options['fields']['field_rivista_realestate']['element_label_colon'] = FALSE;
+/* Campo: Contenuto: Mese di pubblicazione */
+$handler->display->display_options['fields']['field_pubb_mese_anno']['id'] = 'field_pubb_mese_anno';
+$handler->display->display_options['fields']['field_pubb_mese_anno']['table'] = 'field_data_field_pubb_mese_anno';
+$handler->display->display_options['fields']['field_pubb_mese_anno']['field'] = 'field_pubb_mese_anno';
+$handler->display->display_options['fields']['field_pubb_mese_anno']['label'] = '';
+$handler->display->display_options['fields']['field_pubb_mese_anno']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_pubb_mese_anno']['settings'] = array(
+  'format_type' => 'mese_anno',
+  'fromto' => 'both',
+  'multiple_number' => '',
+  'multiple_from' => '',
+  'multiple_to' => '',
+  'show_repeat_rule' => 'show',
 );
-/* Contextual filter: Contenuto: Nid */
-$handler->display->display_options['arguments']['nid']['id'] = 'nid';
-$handler->display->display_options['arguments']['nid']['table'] = 'node';
-$handler->display->display_options['arguments']['nid']['field'] = 'nid';
-$handler->display->display_options['arguments']['nid']['default_action'] = 'default';
-$handler->display->display_options['arguments']['nid']['exception']['title'] = 'Tutti';
-$handler->display->display_options['arguments']['nid']['default_argument_type'] = 'php';
-$handler->display->display_options['arguments']['nid']['default_argument_options']['code'] = 'if ( arg(0) == \'node\' && is_numeric(arg(1)) && !arg(2) ) {
-  $node = node_load(arg(1));
-  return $node->nid;
-}';
-$handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
-$handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
-$handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
-$handler->display->display_options['arguments']['nid']['validate']['type'] = 'node';
-$handler->display->display_options['arguments']['nid']['not'] = TRUE;
-$handler->display->display_options['block_description'] = 'Archivio Riviste';
-$translatables['ultime_riviste'] = array(
+/* Campo: Contenuto: Sottotitolo */
+$handler->display->display_options['fields']['field_sottotitolo']['id'] = 'field_sottotitolo';
+$handler->display->display_options['fields']['field_sottotitolo']['table'] = 'field_data_field_sottotitolo';
+$handler->display->display_options['fields']['field_sottotitolo']['field'] = 'field_sottotitolo';
+$handler->display->display_options['fields']['field_sottotitolo']['label'] = '';
+$handler->display->display_options['fields']['field_sottotitolo']['element_label_colon'] = FALSE;
+/* Campo: Contenuto: Body */
+$handler->display->display_options['fields']['body']['id'] = 'body';
+$handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+$handler->display->display_options['fields']['body']['field'] = 'body';
+$handler->display->display_options['fields']['body']['label'] = '';
+$handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['body']['type'] = 'text_trimmed';
+$handler->display->display_options['fields']['body']['settings'] = array(
+  'trim_length' => '500',
+);
+/* Campo: Contenuto: Link */
+$handler->display->display_options['fields']['view_node']['id'] = 'view_node';
+$handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
+$handler->display->display_options['fields']['view_node']['field'] = 'view_node';
+$handler->display->display_options['fields']['view_node']['label'] = '';
+$handler->display->display_options['fields']['view_node']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['view_node']['text'] = 'read all';
+$handler->display->display_options['entity_type'] = 'taxonomy_term';
+$handler->display->display_options['bundles'] = array(
+  0 => 'riviste_realestate',
+);
+
+/* Display: Ultima Rivista Uscita */
+$handler = $view->new_display('entity_view', 'Ultima Rivista Uscita', 'entity_view_3');
+$handler->display->display_options['defaults']['css_class'] = FALSE;
+$handler->display->display_options['css_class'] = 'block-ultima-rivista-uscita';
+$handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+$handler->display->display_options['defaults']['fields'] = FALSE;
+/* Campo: Contenuto: Titolo */
+$handler->display->display_options['fields']['title']['id'] = 'title';
+$handler->display->display_options['fields']['title']['table'] = 'node';
+$handler->display->display_options['fields']['title']['field'] = 'title';
+$handler->display->display_options['fields']['title']['label'] = '';
+$handler->display->display_options['fields']['title']['exclude'] = TRUE;
+$handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+$handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+$handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+/* Campo: Contenuto: Nid */
+$handler->display->display_options['fields']['nid']['id'] = 'nid';
+$handler->display->display_options['fields']['nid']['table'] = 'node';
+$handler->display->display_options['fields']['nid']['field'] = 'nid';
+$handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+/* Campo: Contenuto: Rivista */
+$handler->display->display_options['fields']['field_rivista_realestate']['id'] = 'field_rivista_realestate';
+$handler->display->display_options['fields']['field_rivista_realestate']['table'] = 'field_data_field_rivista_realestate';
+$handler->display->display_options['fields']['field_rivista_realestate']['field'] = 'field_rivista_realestate';
+$handler->display->display_options['fields']['field_rivista_realestate']['label'] = '';
+$handler->display->display_options['fields']['field_rivista_realestate']['alter']['make_link'] = TRUE;
+$handler->display->display_options['fields']['field_rivista_realestate']['alter']['path'] = 'node/[nid]';
+$handler->display->display_options['fields']['field_rivista_realestate']['element_type'] = 'h2';
+$handler->display->display_options['fields']['field_rivista_realestate']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_rivista_realestate']['type'] = 'taxonomy_term_reference_plain';
+/* Campo: Contenuto: Copertina */
+$handler->display->display_options['fields']['field_imm_copertine']['id'] = 'field_imm_copertine';
+$handler->display->display_options['fields']['field_imm_copertine']['table'] = 'field_data_field_imm_copertine';
+$handler->display->display_options['fields']['field_imm_copertine']['field'] = 'field_imm_copertine';
+$handler->display->display_options['fields']['field_imm_copertine']['label'] = '';
+$handler->display->display_options['fields']['field_imm_copertine']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_imm_copertine']['click_sort_column'] = 'fid';
+$handler->display->display_options['fields']['field_imm_copertine']['settings'] = array(
+  'image_style' => 'thumbnail-bigger',
+  'image_link' => 'content',
+);
+/* Campo: Contenuto: Mese di pubblicazione */
+$handler->display->display_options['fields']['field_pubb_mese_anno']['id'] = 'field_pubb_mese_anno';
+$handler->display->display_options['fields']['field_pubb_mese_anno']['table'] = 'field_data_field_pubb_mese_anno';
+$handler->display->display_options['fields']['field_pubb_mese_anno']['field'] = 'field_pubb_mese_anno';
+$handler->display->display_options['fields']['field_pubb_mese_anno']['label'] = '';
+$handler->display->display_options['fields']['field_pubb_mese_anno']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_pubb_mese_anno']['settings'] = array(
+  'format_type' => 'mese_anno',
+  'fromto' => 'both',
+  'multiple_number' => '',
+  'multiple_from' => '',
+  'multiple_to' => '',
+  'show_repeat_rule' => 'show',
+);
+$handler->display->display_options['entity_type'] = 'taxonomy_term';
+$handler->display->display_options['bundles'] = array(
+  0 => 'riviste_realestate',
+);
+$translatables['copertina_dettagli_ultime_riviste'] = array(
   t('Master'),
-  t('Ultime Riviste'),
   t('leggi tutto'),
   t('Applica'),
   t('Ripristina'),
   t('Ordina per'),
   t('Asc'),
   t('Disc'),
-  t('term from field_rivista_realestate'),
   t('Nid'),
-  t('ID Termine'),
-  t('.'),
-  t(','),
-  t('Corpo'),
   t('Tutti'),
-  t('Block Ultima Rivista'),
-  t('In Allegato Archivio'),
-  t('in archives'),
-  t('Blocco Archivio Riviste'),
-  t('Voci per pagina'),
-  t('- Tutto -'),
-  t('Slittamento'),
-  t('« prima'),
-  t('‹ precedente'),
-  t('seguente ›'),
-  t('ultima »'),
-  t('Archivio Riviste'),
+  t('Ultima Copertina Uscita'),
+  t('Dettagli Ultima Rivista Uscita'),
+  t('read all'),
+  t('Ultima Rivista Uscita'),
 );
 
 

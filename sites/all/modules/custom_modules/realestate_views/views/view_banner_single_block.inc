@@ -1,18 +1,18 @@
 <?php
 
 $view = new view();
-$view->name = 'banner_zona_top';
+$view->name = 'banner_single_block';
 $view->description = '';
 $view->tag = 'default';
 $view->base_table = 'node';
-$view->human_name = 'Banner Zona Top (in code)';
+$view->human_name = 'Banner Single Block (in code)';
 $view->core = 7;
 $view->api_version = '3.0';
 $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
 
 /* Display: Master */
 $handler = $view->new_display('default', 'Master', 'default');
-$handler->display->display_options['title'] = 'Banner Zona Top';
+$handler->display->display_options['title'] = 'Banner Westimmo';
 $handler->display->display_options['use_more_always'] = FALSE;
 $handler->display->display_options['use_more_text'] = 'leggi tutto';
 $handler->display->display_options['access']['type'] = 'perm';
@@ -24,7 +24,8 @@ $handler->display->display_options['exposed_form']['options']['reset_button_labe
 $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Ordina per';
 $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Disc';
 $handler->display->display_options['pager']['type'] = 'some';
-$handler->display->display_options['pager']['options']['items_per_page'] = '5';
+$handler->display->display_options['pager']['options']['items_per_page'] = '1';
+$handler->display->display_options['pager']['options']['offset'] = '0';
 $handler->display->display_options['style_plugin'] = 'default';
 $handler->display->display_options['row_plugin'] = 'fields';
 /* Campo: Contenuto: Titolo */
@@ -58,15 +59,15 @@ $handler->display->display_options['fields']['field_image']['settings'] = array(
   'image_style' => '',
   'image_link' => '',
 );
+/* Criterio di ordinamento: Campo: Ordine di Visualizzazione (field_ordine) */
+$handler->display->display_options['sorts']['field_ordine_value']['id'] = 'field_ordine_value';
+$handler->display->display_options['sorts']['field_ordine_value']['table'] = 'field_data_field_ordine';
+$handler->display->display_options['sorts']['field_ordine_value']['field'] = 'field_ordine_value';
 /* Criterio di ordinamento: Contenuto: Data di inserimento */
 $handler->display->display_options['sorts']['created']['id'] = 'created';
 $handler->display->display_options['sorts']['created']['table'] = 'node';
 $handler->display->display_options['sorts']['created']['field'] = 'created';
 $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-/* Criterio di ordinamento: Campo: Ordine di Visualizzazione (field_ordine) */
-$handler->display->display_options['sorts']['field_ordine_value']['id'] = 'field_ordine_value';
-$handler->display->display_options['sorts']['field_ordine_value']['table'] = 'field_data_field_ordine';
-$handler->display->display_options['sorts']['field_ordine_value']['field'] = 'field_ordine_value';
 /* Filter criterion: Contenuto: Pubblicato */
 $handler->display->display_options['filters']['status']['id'] = 'status';
 $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -74,22 +75,19 @@ $handler->display->display_options['filters']['status']['field'] = 'status';
 $handler->display->display_options['filters']['status']['value'] = 1;
 $handler->display->display_options['filters']['status']['group'] = 1;
 $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-/* Filter criterion: Contenuto: Zona Banner (field_zona_banner) */
-$handler->display->display_options['filters']['field_zona_banner_tid']['id'] = 'field_zona_banner_tid';
-$handler->display->display_options['filters']['field_zona_banner_tid']['table'] = 'field_data_field_zona_banner';
-$handler->display->display_options['filters']['field_zona_banner_tid']['field'] = 'field_zona_banner_tid';
-$handler->display->display_options['filters']['field_zona_banner_tid']['value'] = array(
-  58 => '58',
-);
-$handler->display->display_options['filters']['field_zona_banner_tid']['type'] = 'select';
-$handler->display->display_options['filters']['field_zona_banner_tid']['vocabulary'] = 'zone_banners';
+/* Filter criterion: Contenuto: Nid */
+$handler->display->display_options['filters']['nid']['id'] = 'nid';
+$handler->display->display_options['filters']['nid']['table'] = 'node';
+$handler->display->display_options['filters']['nid']['field'] = 'nid';
+$handler->display->display_options['filters']['nid']['value']['value'] = '107';
+$handler->display->display_options['filters']['nid']['group'] = 1;
 
-/* Display: Block Banners Zona Top */
-$handler = $view->new_display('block', 'Block Banners Zona Top', 'block');
+/* Display: Block Banners Sidebar */
+$handler = $view->new_display('block', 'Block Banners Sidebar', 'block');
 $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
-$translatables['banner_zona_top'] = array(
+$translatables['banner_single_block'] = array(
   t('Master'),
-  t('Banner Zona Top'),
+  t('Banner Westimmo'),
   t('leggi tutto'),
   t('Applica'),
   t('Ripristina'),
@@ -97,9 +95,8 @@ $translatables['banner_zona_top'] = array(
   t('Asc'),
   t('Disc'),
   t('_blank'),
-  t('Block Banners Zona Top'),
+  t('Block Banners Sidebar'),
 );
-
 
 /* Define this new view from code in views list */
 $views[$view->name] = $view;

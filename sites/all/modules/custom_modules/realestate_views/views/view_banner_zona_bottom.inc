@@ -24,8 +24,10 @@ $handler->display->display_options['exposed_form']['options']['reset_button_labe
 $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Ordina per';
 $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Disc';
 $handler->display->display_options['pager']['type'] = 'some';
-$handler->display->display_options['pager']['options']['items_per_page'] = '5';
-$handler->display->display_options['style_plugin'] = 'default';
+$handler->display->display_options['pager']['options']['items_per_page'] = '0';
+$handler->display->display_options['pager']['options']['offset'] = '0';
+$handler->display->display_options['style_plugin'] = 'grid';
+$handler->display->display_options['style_options']['columns'] = '6';
 $handler->display->display_options['row_plugin'] = 'fields';
 /* Campo: Contenuto: Titolo */
 $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -36,26 +38,37 @@ $handler->display->display_options['fields']['title']['exclude'] = TRUE;
 $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
 $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
 $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+/* Campo: Contenuto: Link Banner */
+$handler->display->display_options['fields']['field_link_banner']['id'] = 'field_link_banner';
+$handler->display->display_options['fields']['field_link_banner']['table'] = 'field_data_field_link_banner';
+$handler->display->display_options['fields']['field_link_banner']['field'] = 'field_link_banner';
+$handler->display->display_options['fields']['field_link_banner']['label'] = '';
+$handler->display->display_options['fields']['field_link_banner']['exclude'] = TRUE;
+$handler->display->display_options['fields']['field_link_banner']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_link_banner']['click_sort_column'] = 'url';
 /* Campo: Contenuto: Immagine */
 $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
 $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
 $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
 $handler->display->display_options['fields']['field_image']['label'] = '';
+$handler->display->display_options['fields']['field_image']['alter']['make_link'] = TRUE;
+$handler->display->display_options['fields']['field_image']['alter']['path'] = '[field_link_banner]';
+$handler->display->display_options['fields']['field_image']['alter']['target'] = '_blank';
 $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
 $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
 $handler->display->display_options['fields']['field_image']['settings'] = array(
   'image_style' => '',
   'image_link' => '',
 );
+/* Criterio di ordinamento: Campo: Ordine di Visualizzazione (field_ordine) */
+$handler->display->display_options['sorts']['field_ordine_value']['id'] = 'field_ordine_value';
+$handler->display->display_options['sorts']['field_ordine_value']['table'] = 'field_data_field_ordine';
+$handler->display->display_options['sorts']['field_ordine_value']['field'] = 'field_ordine_value';
 /* Criterio di ordinamento: Contenuto: Data di inserimento */
 $handler->display->display_options['sorts']['created']['id'] = 'created';
 $handler->display->display_options['sorts']['created']['table'] = 'node';
 $handler->display->display_options['sorts']['created']['field'] = 'created';
 $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-/* Criterio di ordinamento: Campo: Ordine di Visualizzazione (field_ordine) */
-$handler->display->display_options['sorts']['field_ordine_value']['id'] = 'field_ordine_value';
-$handler->display->display_options['sorts']['field_ordine_value']['table'] = 'field_data_field_ordine';
-$handler->display->display_options['sorts']['field_ordine_value']['field'] = 'field_ordine_value';
 /* Filter criterion: Contenuto: Pubblicato */
 $handler->display->display_options['filters']['status']['id'] = 'status';
 $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -76,7 +89,7 @@ $handler->display->display_options['filters']['field_zona_banner_tid']['vocabula
 /* Display: Block Banners Zona Bottom */
 $handler = $view->new_display('block', 'Block Banners Zona Bottom', 'block');
 $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
-$translatables['banner_zona_footer'] = array(
+$translatables['banner_zona_bottom'] = array(
   t('Master'),
   t('Banner Zona Destra'),
   t('leggi tutto'),
@@ -85,6 +98,7 @@ $translatables['banner_zona_footer'] = array(
   t('Ordina per'),
   t('Asc'),
   t('Disc'),
+  t('_blank'),
   t('Block Banners Zona Bottom'),
 );
 
