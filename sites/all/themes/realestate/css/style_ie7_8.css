@@ -2,15 +2,24 @@
 .item-list ul.pager li {
   display: inline;
   zoom: 1;
+  float: left;
 }
 
 #search-block-form .form-submit {
 	zoom: 1;
 	display: inline;
+	float: left;
 }
 
 .field-name-field-section .field-item, .field-name-field-tags .field-item {
   zoom: 1;
   display: inline;
+  float: left;
 }
 
+
+.container-inline div, .container-inline label {
+	display: inline;
+	  zoom: 1;
+	  vertical-align: top;
+}
