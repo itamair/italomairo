@@ -1,0 +1,10 @@
+name = My Webforms (Custom Module)
+description = Alters the way of (Fiera Milano Media Site) Webforms behaviour
+package = Custom_modules
+core = 7.x
+php = 5.2
+
+dependencies[] = webform
+
+files[] = my_webforms.module
+

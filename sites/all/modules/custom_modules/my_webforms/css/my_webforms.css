@@ -1,0 +1,56 @@
+
+.webform-component  .newsletters.hidden {
+    display: none;
+}
+
+.webform-component-display {
+    font-weight: bold;
+}
+
+.webform-component-display label {
+    font-weight: normal;
+}
+
+.ui-dialog-title,#popup a{
+    color:#00AEEF;
+}
+
+
+#popup .spaziotitolo{
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.submissionexixt{
+
+}
+
+.containermsgwebform{
+    visibility: hidden;
+    display: none;
+}
+
+.node-webform .content form {
+    padding-left: 0;
+}
+
+.webform-results-per-page {
+    padding: 10px 0;
+}
+
+.webform-submission-navigation {
+    padding: 10px;
+}
+
+#webform-confirmation-page {
+
+	font-size: 110%;
+	font-weight: bold;
+	color: #00aeef;
+	padding: 0 0 0 40px;
+	height: 200px;
+}
+
+.fieldset-description {
+	padding-bottom: 6px;	
+}
