@@ -1,4 +1,8 @@
-<div id="page">
+<?
+//dpm($node);
+global $language;
+?>
+<div id="page" lan="<?print $language->language;?>">
 
 <div class="page-outer <?php echo $grid_size ?>">
  
@@ -123,7 +127,10 @@
 
    
       <div class="main">
-	    <?php print $messages; ?>
+	    <?if (isset($node) && $node->type=="webform") {
+					    ?>
+					    <div class="containermsgwebform"><?php print $messages; ?></div>
+					    <? } else print $messages; ?>
 
 	            <?php if ($page['sidebar_first']): ?>
       <div class="sidebar first-sidebar <?php print $sidebar_first_grid_width ?>">
