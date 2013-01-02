@@ -34,8 +34,9 @@ margin: 4px 0;
 }
 
 p {
-  padding-bottom: 0.2em;
+  padding-bottom: 0.6em;
 }
+
 
 th, thead, thead th {
   background-color: #333;
@@ -76,9 +77,31 @@ a:hover {
 	text-decoration: underline;
 }
 
+fieldset {
+  margin-right: 1em;
+  margin-bottom: 1em;
+  padding: 0.5em;
+}
 
 .fieldset-wrapper {
   padding: 4px 0 10px 14px;
+}
+
+fieldset.webform-component-fieldset {
+  border: 1px solid #ccc;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -moz-box-sizing: border-box;
+  margin-right: 20px;
+  }
+  
+fieldset.webform-component-fieldset legend .fieldset-legend {
+  font-size: 120%;
+  font-weight: bold;
+  padding: 0 4px 0 4px;
 }
 
 label {
@@ -96,6 +119,15 @@ label {
 .more-link {
   text-align: right;
   padding-top: 10px;
+}
+
+span.error {
+  background-image: url(../images/errore.jpg);
+  border-color: transparent;
+  background-position: 5px;
+  background-repeat: no-repeat;
+  padding-left: 35px;
+  color: #ff0000;
 }
 
 /* HEADER 
@@ -198,13 +230,13 @@ h3.site-slogan {
 	color: #666;
 	font-size: 12px;
 	background-color: #FFF;
-	border: thin solid #999;
+	border: 1px solid #999;
 }
 
 
 
 .sidebar #search-block-form .form-text {
-	width: 180px;
+	width: 166px;
 }
 
 #search-block-form .form-submit {
@@ -229,7 +261,7 @@ overflow: hidden;
 }
 
 .sidebar #block-search-form .block-inner {
-margin-bottom: 12px;
+margin-bottom: 0;
 border-bottom: none;
 }
 
@@ -258,6 +290,10 @@ border-bottom: none;
 
 /* PREFACE - POSTSCRIPT
 --------------------------------------------------------------------------*/
+
+.preface-wrapper, .postscript-wrapper, .footer-wrapper {
+	width: 930px;
+}
 
 .postscript-wrapper {
 	font-size: 85%;
@@ -342,12 +378,15 @@ padding: 6px 0 0;
 --------------------------------------------------------------------------*/
 
 .sidebar .block-inner {
-  margin-bottom: 12px;
-  border-bottom: 1px dashed #dddddd;
+	margin-bottom: 0;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
 }
 
 .sidebar .block-inner .content {
-	padding: 14px 0 10px 0;
+	padding: 8px 0 0 0;
 	overflow: hidden;
 }
 
@@ -389,7 +428,7 @@ padding: 6px 0 0;
 	-moz-box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
 	-webkit-box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
 	box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
-	border: thin solid #CCC;
+	border: 1px solid #dddddd;
 }
 
 .page-inner.container_12 {
@@ -442,7 +481,7 @@ width: 260px;
 }
 
 .second-sidebar .block-inner {
-margin-right: 6px;
+margin-right: 0;
 }
 
 .sidebar #block-views-banner-zona-destra-block .block-inner .content {
@@ -456,6 +495,23 @@ margin-right: 6px;
   margin-bottom: 10px;
   padding: 3px;
   border: 1px solid #dddddd;
+}
+
+.region-sidebar-second div.block {
+	border: 1px solid #dddddd;
+	margin-bottom: 8px;
+	padding-top: 8px;
+	padding-right: 8px;
+	padding-bottom: 8px;
+	padding-left: 16px;
+}
+
+.region-sidebar-second #block-views-banner-single-block-block.block {
+	padding: 0;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
 }
 
 
@@ -567,9 +623,10 @@ margin: 5px 0 6px;
 
 .view-ultime-notizie .views-view-grid td {
   padding: 10px 20px 10px 0;
-  border-bottom-width: thin;
+/*  border-bottom-width: thin;
   border-bottom-style: solid;
   border-bottom-color: #CCC;
+  */
   
 }
 
@@ -601,7 +658,7 @@ margin: 5px 0 6px;
 }
 
 .view-ultime-riviste-realestate table.views-view-grid  {
-  width: 90%;
+  width: 98%;
 }
 
 .view-ultime-riviste-realestate .views-view-grid tr td {
@@ -639,7 +696,7 @@ padding: 0;
 
 .view-contatti-rivista {
   display: block;
-  margin: 10px 0 0 4px ;
+  margin: 16px 0 0 4px ;
 }
 
 
@@ -747,7 +804,7 @@ span.autocomplete-deluxe-button {
 }
 
 .sidebar #block-views-banner-single-block-block .block-inner .content {
-  padding: 0 0 20px 0;
+  padding: 0;
 }
 
 .sidebar.fisrt-sidebar #block-views-banner-zona-destra-block {
