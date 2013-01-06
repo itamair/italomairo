@@ -1,0 +1,10 @@
+name = ItaloMairo specific code views (Custom Module)
+description = Code versions of Realestate Site specific defined views
+package = Custom_modules
+core = 7.x
+php = 5.2
+
+dependencies[] = views
+
+files[] = italomairo_views.module
+
