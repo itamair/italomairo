@@ -1,0 +1,65 @@
+
+
+.ds-my-project-preview.article {
+  font-size: 0.9em;
+  margin-bottom: 16px;
+  padding-bottom: 20px;
+  display: block;
+}
+
+.ds-my-project-preview.article .field {
+  margin: 4px 0;
+}
+
+
+.ds-my-project-preview p {
+  margin-top: 6px;
+  margin-bottom: 4px;
+}
+
+.ds-my-project-preview .group-header {
+  margin-top: 6px;
+  margin-bottom: 16px;
+}
+
+.ds-my-project-preview  .group-content {
+  position: relative;
+}
+
+.ds-my-project-preview .group-left {
+  float: left;
+  margin-right: 20px;
+  margin-left: 4px;
+  width: 420px;
+  display: block;
+  height: 400px
+}
+
+.ds-my-project-preview  .group-left img {
+	
+}
+
+
+.ds-my-project-preview  .group-right {
+  position: relative;
+  font-size: 110%;
+  min-height: 40px;
+  text-align:justify;
+  padding-top: 4px;
+  margin-left: 450px;
+  
+}
+
+.ds-my-project-preview  .group-right .field  {
+  float: left;
+  
+}
+
+.ds-my-project-preview  .group-footer {
+  padding-top: 10px;
+  width: 80%;
+}
+
+
+
+
