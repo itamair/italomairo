@@ -1,0 +1,61 @@
+/* Set Images Formtas in Nodes content*/
+.ia-l .field-type-image {
+	clear: none;
+	float: none;
+	text-align: left;
+	margin: 10px 0; 
+}
+
+.field-type-image img, .field-type-image figure, .field-type-image figcaption {
+	display: inline;
+}
+
+
+/* Set Images Formtas in Table Image Gallery*/
+table.mini-gallery {
+    width: auto;
+}
+
+table.mini-gallery tbody, table.mini-gallery tbody tr, table.mini-gallery tbody td {
+    border-style: none;
+}
+
+table.mini-gallery img {
+    margin: 0px;
+}
+
+table.mini-gallery .photo-title {
+    font-size: 0.8em;
+}
+
+/*Adatta più in basso il posizionamento della Menu-Bar e dell'eventuale superfish */
+#menu-bar {
+  padding-top: 5px;
+}
+
+#menu-bar-wrapper, #menu-bar {
+  height: 40px;
+}
+
+.block.superfish_menu ul li {
+	background-color: #e9b165;
+	font-weight: bold;
+}
+
+  input.form-text, input.form-password, input.form-file, textarea {
+  background-color: #fafafa;
+  border: 1px solid #ccc;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  padding: 2px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -moz-box-sizing: border-box;
+  }
+  
+  /* Codice css per la vista elenco segnalazioni*/
+
+.view-elenco-segnalazioni {
+	font-size: 80%;
+}
