@@ -4,17 +4,18 @@
 }
 
 
-/* Imposta la formmattazione delle icone della lingua in orizzontale */
+/* Codice per Language Icons*/
 
 #block-locale-language ul {
-  width: 200px;
-  margin-left: 0px;
+	width: 60px;
+	margin-left: -15px;
 }
 
 #block-locale-language ul li {
-  display: inline;
-  padding-right: 10px;
+	display: inline;
+	padding-right: 6px;
 }
+
 
 /*#block-locale-language ul li a.session-active, #block-locale-language ul.language-switcher-locale-url li a.language-link.active {
 	border-bottom-width: medium;
