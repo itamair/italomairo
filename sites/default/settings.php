@@ -192,6 +192,21 @@ $databases = array (
       'prefix' => '',
     ),
   ),
+  
+ 'previous_italomairo_cms' => 
+  array (
+    'default' => 
+    array (
+      'database' => 'itamair_cms',
+      'username' => 'root',
+      'password' => 'root',
+      'host' => 'localhost',
+      'port' => '',
+      'driver' => 'mysql',
+      'prefix' => '',
+    ),
+  ),
+  
 );
 
 /**
