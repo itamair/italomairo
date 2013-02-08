@@ -30,10 +30,10 @@
 .ds-my-project-preview .group-left {
   float: left;
   margin-right: 20px;
+  margin-bottom: 20px;
   margin-left: 4px;
   width: 420px;
   display: block;
-  height: 360px
 }
 
 .ds-my-project-preview  .group-left img {
