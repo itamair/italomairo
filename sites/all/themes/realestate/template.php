@@ -29,6 +29,9 @@ switch ($style) {
 }
 
 drupal_add_css(drupal_get_path('theme', 'realestate') . '/css/responsive.css', array('group' => CSS_THEME, 'weight' => 101, 'type' => 'file'));
+drupal_add_css(drupal_get_path('theme', 'realestate') . '/css/style_ie7_8.css', array('group' => CSS_THEME, 'browsers' => array('IE' => 'lte IE 7', '!IE' => FALSE), 'preprocess' => FALSE));
+drupal_add_css(drupal_get_path('theme', 'realestate') . '/css/style_ie7_8.css', array('group' => CSS_THEME, 'browsers' => array('IE' => 'lte IE 8', '!IE' => FALSE), 'preprocess' => FALSE));
+
 
 /* Breadcrumbs */
 
