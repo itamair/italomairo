@@ -3,65 +3,77 @@
 	padding: 0 10px 4px 4px;
 }
 
-.group-header {
-  padding: 4px 0 10px 0;
+.ds-rivista-contenuto-completo .group-header {
+  padding: 0 0 10px 0;
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: bold;
   font-size: 100%;
 }
 
-.group-header .field-name-field-pubb-mese-anno {
+.ds-rivista-contenuto-completo .group-header .field-name-field-pubb-mese-anno {
   font-weight: bold;
   font-size: 110%;
+  padding: 0;
+
 }
 
-.group-header .field-name-field-sottotitolo {
-  padding: 4px 0;
+.ds-rivista-contenuto-completo .group-header .field-name-field-sottotitolo {
+  padding: 4px 0 0 0;
   font-weight: bold;
   font-size: 120%;
 }
 
-.group-header .field-name-field-codice {
+.ds-rivista-contenuto-completo .group-header .field-name-field-codice {
   padding: 4px 0;
   font-weight: normal;
   font-size: 100%;
 }
 
-.group-logo {
+.ds-rivista-contenuto-completo .group-logo {
 /*  float: right;*/
   margin-right: 60px;
 }
 
-.group-copertine {
-  float: right;
-  padding: 10px 10px 0 28px;
+.ds-rivista-contenuto-completo .group-copertine {
+  float: left;
+  padding: 4px 10px 0 4px;
   text-align: center;
+  margin-right: 10px;
+  width: 200px;
 }
 
-.group-copertine .field {
+.ds-rivista-contenuto-completo .group-copertine .field {
   padding: 0px;
   margin: auto;
 }
 
-.group-descrizione, .general_info_rivista {
+.ds-rivista-contenuto-completo .group-descrizione, .general_info_rivista {
   text-align: justify;
   font-size: 100%;
   padding-bottom: 10px;
 
 }
 
+.ds-rivista-contenuto-completo .group-bottom {
+  padding: 6px 0;
+  clear: both;
+}
 
-.group-right {
+.ds-rivista-contenuto-completo .group-right {
   float: right;
   padding: 0 20px;
 }
 
-.group-left {
+.ds-rivista-contenuto-completo .group-left {
 	margin: 10px 16px 16px 0;
 }
 
-.group-footer {
+.ds-rivista-contenuto-completo .group-footer {
   clear: both;
   padding: 6px 0 16px 0;;
 }
 
+.ds-rivista-contenuto-completo fieldset {
+  padding: 0;
+  margin-bottom: 0;
+}

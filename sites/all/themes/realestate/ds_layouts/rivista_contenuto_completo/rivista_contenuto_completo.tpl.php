@@ -67,6 +67,8 @@
     </div>
   <?php endif; ?>
   
+  <div class="group-bottom clearfix">
+  
   <?php if ($right && $right!= '&nbsp;'): ?>
     <div class="group-right<?php print $right_classes; ?>">
       <?php print $right; ?>
@@ -78,7 +80,8 @@
       <?php print $left; ?>
     </div>
   <?php endif; ?>
-
+  
+  </div> 
 
   <?php if ($footer && $footer != '&nbsp;'): ?>
     <div class="group-footer<?php print $footer_classes; ?>">
