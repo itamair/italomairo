@@ -1,6 +1,6 @@
 /* Highlights with red & bold style the overriden case view setups */
 .views-displays .views-ui-display-tab-setting.overridden, .views-ui-display-tab-bucket.overridden > h3 {
-	color: #00F;
+	color: #F00;
 }
 
 
@@ -43,5 +43,34 @@ section.cronologia {
 
 .block tr.webform-add-form input.form-text {
   width: 80%;
+}
+
+/* Ipostazioni per Infowindow della Mappa */
+
+.infowindow .content {
+	width: 250px;
+	font-size: 0.8em;
+}
+
+.infowindow .content div {
+	margin: 10px 0;
+}
+
+.infowindow .content div.image {
+	float: right;
+	margin: 0 0 10px 8px;
+}
+
+.infowindow .content div.title {
+	font-size: 1.2em;
+}
+
+.infowindow .content div.body {
+	text-align: justify;
+}
+
+.infowindow .info div.readmore {
+	text-align: right;
+	font-size: 0.8em;
 }
 
