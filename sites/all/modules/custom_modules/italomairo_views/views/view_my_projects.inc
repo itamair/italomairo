@@ -1,6 +1,6 @@
 <?php
 
-$view = new view;
+$view = new view();
 $view->name = 'my_projects_views';
 $view->description = '';
 $view->tag = 'default';
@@ -13,12 +13,14 @@ $view->disabled = FALSE; /* Edit this to true to make a default view disabled in
 /* Display: Master */
 $handler = $view->new_display('default', 'Master', 'default');
 $handler->display->display_options['title'] = 'Projects';
+$handler->display->display_options['use_more_always'] = FALSE;
 $handler->display->display_options['use_more_text'] = 'leggi tutto';
 $handler->display->display_options['access']['type'] = 'perm';
 $handler->display->display_options['cache']['type'] = 'none';
 $handler->display->display_options['query']['type'] = 'views_query';
 $handler->display->display_options['query']['options']['query_comment'] = FALSE;
 $handler->display->display_options['exposed_form']['type'] = 'basic';
+$handler->display->display_options['exposed_form']['options']['submit_button'] = 'Applica';
 $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Ripristina';
 $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Ordina per';
 $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Disc';
@@ -27,27 +29,23 @@ $handler->display->display_options['pager']['options']['items_per_page'] = '50';
 $handler->display->display_options['pager']['options']['offset'] = '0';
 $handler->display->display_options['pager']['options']['id'] = '0';
 $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Voci per pagina';
-$handler->display->display_options['pager']['options']['expose']['items_per_page_options_all'] = 0;
 $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Tutto -';
 $handler->display->display_options['pager']['options']['expose']['offset_label'] = 'Slittamento';
+$handler->display->display_options['pager']['options']['tags']['first'] = '« prima';
+$handler->display->display_options['pager']['options']['tags']['previous'] = '‹ precedente';
+$handler->display->display_options['pager']['options']['tags']['next'] = 'seguente ›';
+$handler->display->display_options['pager']['options']['tags']['last'] = 'ultima »';
 $handler->display->display_options['style_plugin'] = 'default';
 $handler->display->display_options['row_plugin'] = 'node';
+$handler->display->display_options['row_options']['view_mode'] = 'anteprima_my_project';
+$handler->display->display_options['row_options']['links'] = FALSE;
 /* Campo: Contenuto: Titolo */
 $handler->display->display_options['fields']['title']['id'] = 'title';
 $handler->display->display_options['fields']['title']['table'] = 'node';
 $handler->display->display_options['fields']['title']['field'] = 'title';
 $handler->display->display_options['fields']['title']['label'] = '';
-$handler->display->display_options['fields']['title']['alter']['alter_text'] = 0;
-$handler->display->display_options['fields']['title']['alter']['make_link'] = 0;
-$handler->display->display_options['fields']['title']['alter']['absolute'] = 0;
-$handler->display->display_options['fields']['title']['alter']['word_boundary'] = 0;
-$handler->display->display_options['fields']['title']['alter']['ellipsis'] = 0;
-$handler->display->display_options['fields']['title']['alter']['strip_tags'] = 0;
-$handler->display->display_options['fields']['title']['alter']['trim'] = 0;
-$handler->display->display_options['fields']['title']['alter']['html'] = 0;
-$handler->display->display_options['fields']['title']['hide_empty'] = 0;
-$handler->display->display_options['fields']['title']['empty_zero'] = 0;
-$handler->display->display_options['fields']['title']['link_to_node'] = 1;
+$handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+$handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
 /* Criterio di ordinamento: Contenuto: Mese di pubblicazione (field_mese_pubblicazione) */
 $handler->display->display_options['sorts']['field_mese_pubblicazione_value']['id'] = 'field_mese_pubblicazione_value';
 $handler->display->display_options['sorts']['field_mese_pubblicazione_value']['table'] = 'field_data_field_mese_pubblicazione';
@@ -73,26 +71,21 @@ $handler->display->display_options['filters']['type']['value'] = array(
   'my_project' => 'my_project',
 );
 $handler->display->display_options['filters']['type']['group'] = 1;
-/* Filter criterion: Traduzione dei contenuti: Lingua */
-$handler->display->display_options['filters']['language']['id'] = 'language';
-$handler->display->display_options['filters']['language']['table'] = 'node';
-$handler->display->display_options['filters']['language']['field'] = 'language';
-$handler->display->display_options['filters']['language']['value'] = array(
-  '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
-);
-$handler->display->display_options['filters']['language']['group'] = 1;
 
 /* Display: Projects Main Page */
 $handler = $view->new_display('page', 'Projects Main Page', 'page');
+$handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
 $handler->display->display_options['path'] = 'my-projects';
 $handler->display->display_options['menu']['type'] = 'normal';
-$handler->display->display_options['menu']['title'] = 'Projects';
-$handler->display->display_options['menu']['weight'] = '0';
+$handler->display->display_options['menu']['title'] = 'Projects List';
+$handler->display->display_options['menu']['weight'] = '10';
+$handler->display->display_options['menu']['name'] = 'main-menu';
 $handler->display->display_options['menu']['context'] = 0;
 $handler->display->display_options['tab_options']['weight'] = '0';
 
 /* Display: All Projects Page */
 $handler = $view->new_display('page', 'All Projects Page', 'page_1');
+$handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
 $handler->display->display_options['path'] = 'my-projects/all';
 $handler->display->display_options['menu']['type'] = 'default tab';
 $handler->display->display_options['menu']['title'] = 'All Projects';
@@ -104,6 +97,9 @@ $handler->display->display_options['tab_options']['weight'] = '0';
 $handler = $view->new_display('page', 'Gis & Web Gis Projects Page', 'page_2');
 $handler->display->display_options['defaults']['title'] = FALSE;
 $handler->display->display_options['title'] = 'Gis & Web Gis 2.0 Projects';
+$handler->display->display_options['enabled'] = FALSE;
+$handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+$handler->display->display_options['defaults']['filter_groups'] = FALSE;
 $handler->display->display_options['defaults']['filters'] = FALSE;
 /* Filter criterion: Contenuto: Pubblicato */
 $handler->display->display_options['filters']['status']['id'] = 'status';
@@ -120,7 +116,7 @@ $handler->display->display_options['filters']['type']['value'] = array(
   'my_project' => 'my_project',
 );
 $handler->display->display_options['filters']['type']['group'] = 1;
-/* Filter criterion: Traduzione dei contenuti: Lingua */
+/* Filter criterion: Contenuto: Lingua */
 $handler->display->display_options['filters']['language']['id'] = 'language';
 $handler->display->display_options['filters']['language']['table'] = 'node';
 $handler->display->display_options['filters']['language']['field'] = 'language';
@@ -133,11 +129,10 @@ $handler->display->display_options['filters']['term_node_tid_depth']['id'] = 'te
 $handler->display->display_options['filters']['term_node_tid_depth']['table'] = 'node';
 $handler->display->display_options['filters']['term_node_tid_depth']['field'] = 'term_node_tid_depth';
 $handler->display->display_options['filters']['term_node_tid_depth']['value'] = array(
-  52 => '52',
-  49 => '49',
+  1 => '1',
+  2 => '2',
 );
 $handler->display->display_options['filters']['term_node_tid_depth']['group'] = 1;
-$handler->display->display_options['filters']['term_node_tid_depth']['reduce_duplicates'] = 0;
 $handler->display->display_options['filters']['term_node_tid_depth']['type'] = 'select';
 $handler->display->display_options['filters']['term_node_tid_depth']['vocabulary'] = 'category';
 $handler->display->display_options['filters']['term_node_tid_depth']['hierarchy'] = 1;
@@ -159,6 +154,10 @@ $translatables['my_projects_views'] = array(
   t('Voci per pagina'),
   t('- Tutto -'),
   t('Slittamento'),
+  t('« prima'),
+  t('‹ precedente'),
+  t('seguente ›'),
+  t('ultima »'),
   t('Projects Main Page'),
   t('All Projects Page'),
   t('Gis & Web Gis Projects Page'),

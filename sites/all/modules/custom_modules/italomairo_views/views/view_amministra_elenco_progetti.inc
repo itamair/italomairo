@@ -185,6 +185,11 @@ $handler->display->display_options['fields']['views_bulk_operations']['vbo']['fo
 $handler->display->display_options['fields']['nid']['id'] = 'nid';
 $handler->display->display_options['fields']['nid']['table'] = 'node';
 $handler->display->display_options['fields']['nid']['field'] = 'nid';
+$handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+/* Campo: Contenuto: id_progetto */
+$handler->display->display_options['fields']['field_id_progetto']['id'] = 'field_id_progetto';
+$handler->display->display_options['fields']['field_id_progetto']['table'] = 'field_data_field_id_progetto';
+$handler->display->display_options['fields']['field_id_progetto']['field'] = 'field_id_progetto';
 /* Campo: Contenuto: Immagine di copertina */
 $handler->display->display_options['fields']['field_cover_images']['id'] = 'field_cover_images';
 $handler->display->display_options['fields']['field_cover_images']['table'] = 'field_data_field_cover_images';
@@ -291,6 +296,11 @@ $handler->display->display_options['defaults']['fields'] = FALSE;
 $handler->display->display_options['fields']['nid']['id'] = 'nid';
 $handler->display->display_options['fields']['nid']['table'] = 'node';
 $handler->display->display_options['fields']['nid']['field'] = 'nid';
+$handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+/* Campo: Contenuto: id_progetto */
+$handler->display->display_options['fields']['field_id_progetto']['id'] = 'field_id_progetto';
+$handler->display->display_options['fields']['field_id_progetto']['table'] = 'field_data_field_id_progetto';
+$handler->display->display_options['fields']['field_id_progetto']['field'] = 'field_id_progetto';
 /* Campo: Contenuto: Titolo */
 $handler->display->display_options['fields']['title']['id'] = 'title';
 $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -338,6 +348,7 @@ $translatables['amministra_elenco_progetti'] = array(
   t('<div class=\'add-project\' style=\'float: right; margin-right: 20px\'><a href=\'/node/add/my-project\'>Aggiungi un progetto</a></div>'),
   t('Contenuto'),
   t('Nid'),
+  t('id_progetto'),
   t('Titolo'),
   t('Mese di Pubblicazione'),
   t('Corpo'),
