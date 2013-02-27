@@ -6,6 +6,7 @@
   margin-bottom: 0px;
   padding-bottom: 10px;
   display: block;
+  width: 100%;
 }
 
 .ds-my-project-preview.article .field {
@@ -29,31 +30,30 @@
 
 .ds-my-project-preview .group-left {
   float: left;
-  margin-right: 20px;
   margin-bottom: 20px;
   margin-left: 4px;
-  width: 420px;
+  width: 50%;
   display: block;
 }
 
-.ds-my-project-preview  .group-left img {
-	
+.ds-my-project-preview  .group-left .field-name-field-image img {
+  margin-right: 1%;
+}
+
+.ds-my-project-preview  .group-left .field-name-field-image img.image-style-minithumbnail-progetti {
+  width: 15%;
 }
 
 
 .ds-my-project-preview  .group-right {
-  position: relative;
-  font-size: 100%;
-  min-height: 40px;
   text-align:justify;
-  padding: 4px 30px 0 0;
-  margin-left: 450px;
+  padding: 0 10px 0 0;
+  margin-left: 55%;
   
 }
 
 .ds-my-project-preview  .group-right .field  {
   float: left;
-  width: 100%;
   
 }
 
