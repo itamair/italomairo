@@ -1,0 +1,12 @@
+name = Download Count
+description = Tracks file downloads for Drupal private core file fields.
+core = 7.x
+dependencies[] = field
+dependencies[] = file
+
+; Information added by drupal.org packaging script on 2012-03-13
+version = "7.x-3.x-dev"
+core = "7.x"
+project = "download_count"
+datestamp = "1331640715"
+
