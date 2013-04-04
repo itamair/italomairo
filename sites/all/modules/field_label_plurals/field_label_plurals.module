@@ -89,7 +89,6 @@ function field_label_plurals_preprocess_field(&$vars) {
     if (isset($instance['field_label_plurals_singular']) && trim($instance['field_label_plurals_singular']) != '') {
       $vars['label'] = check_plain($instance['field_label_plurals_singular']);
       $vars['element']['#title'] = $instance['field_label_plurals_singular'];
-      dpm($vars['label']);
     }
   }
 }
