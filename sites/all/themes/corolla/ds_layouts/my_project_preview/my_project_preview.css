@@ -36,7 +36,8 @@
   display: block;
 }
 
-.ds-my-project-preview  .group-left .field-name-field-image img {
+.ds-my-project-preview  .group-left .field-name-field-image img,
+.ds-my-project-preview  .group-left .views-field-field-cover-images img {
   margin-right: 1%;
 }
 
@@ -53,6 +54,7 @@
 }
 
 .ds-my-project-preview  .group-right .field  {
+  width: 100%;
   float: left;
   
 }
