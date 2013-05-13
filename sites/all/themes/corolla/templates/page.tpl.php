@@ -32,7 +32,7 @@
                   <?php endif; ?>
 
                   <?php if ($site_slogan): ?>
-                    <h2<?php print $site_slogan_attributes; ?>><?php print $site_slogan; ?></h2>
+                    <h2<?php print $site_slogan_attributes; ?>><?php print t($site_slogan); ?></h2>
                   <?php endif; ?>
 
                 </hgroup>
@@ -47,6 +47,14 @@
 
       </div>
     </div>
+
+                <?php if ($page['site_references']): ?>
+                  <div id="site-references-wrapper">
+                    <div class="container clearfix">
+                      <?php print render($page['site_references']); ?>
+                    </div>
+                  </div>
+                 <?php endif; ?>
 
     <?php if (
       $page['three_33_top'] ||
@@ -95,7 +103,24 @@
             <div id="content-column">
               <div class="content-inner">
 
+          <?php
+          //Code to add if we want to use System Main Menu to the Page Template ... (ref: http://drupal.org/node/1043018 )
+          /*
+          $custom_menu = i18n_menu_navigation_links('main-menu');
+          if ($custom_menu) {
+          
+          print theme('links__system_main-menu', array(
+                              'links' => $custom_menu,
+                              'attributes' => array(
+                                  'class' => array('main-menu no-list', 'inline-list', 'align-right', 'sub-nav'),
+                              ),
+                              ));
+          }; */ ?>
+
                 <?php print render($page['highlighted']); ?>
+
+                <?php if ($primary_navigation): print $primary_navigation; endif; ?>
+                <?php if ($secondary_navigation): print $secondary_navigation; endif; ?>
 
                 <<?php print $tag; ?> id="main-content" role="main">
 

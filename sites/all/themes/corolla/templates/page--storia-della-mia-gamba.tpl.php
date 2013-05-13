@@ -41,8 +41,6 @@
             </div>
           <?php endif; ?>
 
-          <?php print render($page['header']); ?>
-
         </header>
 
       </div>
@@ -56,26 +54,6 @@
                   </div>
                  <?php endif; ?>
 
-    <?php if (
-      $page['three_33_top'] ||
-      $page['three_33_first'] ||
-      $page['three_33_second'] ||
-      $page['three_33_third'] ||
-      $page['three_33_bottom']
-      ): ?>
-      <div id="top-panels-wrapper">
-        <div class="container clearfix">
-          <!-- Three column 3x33 Gpanel -->
-          <div class="at-panel gpanel panel-display three-3x33 clearfix">
-            <?php print render($page['three_33_top']); ?>
-            <?php print render($page['three_33_first']); ?>
-            <?php print render($page['three_33_second']); ?>
-            <?php print render($page['three_33_third']); ?>
-            <?php print render($page['three_33_bottom']); ?>
-          </div>
-        </div>
-      </div>
-    <?php endif; ?>
 
     <?php if ($page['secondary_content']): ?>
       <div id="secondary-content-wrapper">
@@ -119,8 +97,7 @@
 
                 <?php print render($page['highlighted']); ?>
 
-                <?php if ($primary_navigation): print $primary_navigation; endif; ?>
-                <?php if ($secondary_navigation): print $secondary_navigation; endif; ?>
+                <?php print "<h2 style='color: black; font-weight: bold; margin-left: 30px; padding-bottom: 20px'>Gonartrosi secondaria (post-traumatica) Gamba Destra - Degenerazione Meniscale Comparto Laterale</h2>"  ?>
 
                 <<?php print $tag; ?> id="main-content" role="main">
 
@@ -141,11 +118,9 @@
 
                       <?php if ($secondary_local_tasks): ?>
                         <ul class="tabs secondary">
-                          <?php print render($secondary_local_tasks); ?>
+                         <?php print render($secondary_local_tasks); ?>
                         </ul>
                       <?php endif; ?>
-
-                      <?php if ($breadcrumb): print $breadcrumb; endif; ?>
 
                       <?php print render($title_prefix); ?>
 
@@ -181,8 +156,6 @@
               </div>
             </div>
 
-            <?php print render($page['sidebar_first']); ?>
-            <?php print render($page['sidebar_second']); ?>
 
           </div>
         </div>

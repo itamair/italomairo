@@ -43,6 +43,8 @@
  *
  * @ingroup themeable
  */
+
+//dpm($element);
 ?>
 <!--
 THIS FILE IS NOT USED AND IS HERE AS A STARTING POINT FOR CUSTOMIZATION ONLY.
@@ -51,11 +53,20 @@ After copying this file to your theme's folder and customizing it, remove this
 HTML comment.
 -->
 <div class="<?php print $classes; ?>"<?php print $attributes; ?>>
-  <?php if (!$label_hidden): ?>
+  <?php if (!$label_hidden):
+  //['#items'][0]['value2'] == ['#items'][0]['value'];
+  ?>
     <div class="field-label"<?php print $title_attributes; ?>><?php print $label ?>:&nbsp;</div>
   <?php endif; ?>
   <div class="field-items"<?php print $content_attributes; ?>>
-    <?php foreach ($items as $delta => $item): ?>
+    <?php
+    foreach ($items as $delta => $item) :
+        if ($element['#items'][$delta]['value2'] == $element['#items'][$delta]['value']) {
+          $my_prefix = '<span>'.t('from ').'</span>';
+          $my_suffix = '<span>'.t(' in progress ...').'</span>';
+          $item['#markup'] = $my_prefix.$item['#markup'].$my_suffix;
+        }
+     ?>
       <div class="field-item <?php print $delta % 2 ? 'odd' : 'even'; ?>"<?php print $item_attributes[$delta]; ?>><?php print render($item); ?></div>
     <?php endforeach; ?>
   </div>

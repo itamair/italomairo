@@ -43,7 +43,8 @@
  *
  * @ingroup themeable
  */
-dpm($items);
+//dpm($items);
+//dpm($element['#bundle']);
 ?>
 <!--
 THIS FILE IS NOT USED AND IS HERE AS A STARTING POINT FOR CUSTOMIZATION ONLY.
@@ -54,11 +55,47 @@ HTML comment.
 <div class="<?php print $classes; ?>"<?php print $attributes; ?>>
   <?php if (!$label_hidden): ?>
     <h2 class="field-label"<?php print $title_attributes; ?>><?php
-     print $label ?>:&nbsp;</h2>
+     print t($label) ?>:&nbsp;</h2>
   <?php endif; ?>
+  <? if ($element['#bundle'] == 'esperienza_professionale xxx') {
+    $html_wrapper = 'span';
+    $html_delimiter = ', ';
+  } else {
+    $html_wrapper = 'div';
+    $html_delimiter = ''; 
+  }; ?>
   <div class="field-items"<?php print $content_attributes; ?>>
-    <?php foreach ($items as $delta => $item): ?>
-      <div class="field-item <?php print $delta % 2 ? 'odd' : 'even'; ?>"<?php print $item_attributes[$delta]; ?>><?php print render($item); ?></div>
+    <?php
+    
+    foreach ($items as $delta => $item): ?>
+    <?php //dpm($item);
+    $item_term = $item['#options']['entity'];
+    $item_term_sottotitolo = "";
+    if ($item_term->field_sottotitolo) {
+      $item_term_sottotitolo_field = field_get_items('taxonomy_term', $item_term, 'field_sottotitolo');
+      $item_term_sottotitolo = "<span> - ".$item_term_sottotitolo_field[0]['safe_value']."</span>";
+      //dpm($item_term_sottotitolo);
+    }
+    
+    
+    ?>
+      <<?php print $html_wrapper; ?> class="field-item committente <?php print $delta % 2 ? 'odd' : 'even'; ?>"<?php print $item_attributes[$delta]; ?>>
+      <?php
+      //dpm($item['#options']['entity']->field_website['und'][0]['url']);
+      if(isset($item['#options']['entity']->field_website['und'][0]['url'])) {
+        $item_url = $item['#options']['entity']->field_website['und'][0]['url'];
+        //dpm($item_url);
+        //dpm($item);
+        $item['#href'] =  valid_url($item_url, $absolute = TRUE) ? $item_url : 'http://'.$item_url;
+        $item['#attributes'] = array('target'=>'blank');
+      } else {
+        $item['#type'] = 'markup';
+        $item['#markup'] = $item['#title'];
+        unset($item['#href']);
+        }
+      //dpm($item);
+      print render($item).$item_term_sottotitolo;
+      ?></<?php print $html_wrapper; ?>><?php if ($delta != count($items) -1) print $html_delimiter; ?>
     <?php endforeach; ?>
   </div>
 </div>
