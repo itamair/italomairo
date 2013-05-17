@@ -27,6 +27,7 @@
   stylesheets[all][] = color/colors.css
   stylesheets[print][] = css/print.css
   stylesheets[all][] = italo.css
+  stylesheets[all][] = italo_responsive.css
 
   ; Internet Explorer Stylesheets
   ;
