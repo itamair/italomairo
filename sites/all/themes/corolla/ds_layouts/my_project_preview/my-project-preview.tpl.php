@@ -30,7 +30,7 @@
     </div>
   <?php endif; ?>
   
-  <div class="group-content">
+  <div class="group-content clearfix">
 
     <?php if ($left): ?>
       <div class="group-left<?php print $left_classes; ?>">

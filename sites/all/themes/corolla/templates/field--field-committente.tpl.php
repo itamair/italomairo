@@ -71,7 +71,7 @@ HTML comment.
     <?php //dpm($item);
     $item_term = $item['#options']['entity'];
     $item_term_sottotitolo = "";
-    if ($item_term->field_sottotitolo) {
+    if (isset($item_term->field_sottotitolo)) {
       $item_term_sottotitolo_field = field_get_items('taxonomy_term', $item_term, 'field_sottotitolo');
       $item_term_sottotitolo = "<span> - ".$item_term_sottotitolo_field[0]['safe_value']."</span>";
       //dpm($item_term_sottotitolo);

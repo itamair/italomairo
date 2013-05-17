@@ -1,5 +1,5 @@
 name = "MY Personal Menus (Custom Module)"
-description = "adds my personal menus to the page.tpl.php"
+description = "a test module that adds menus variables to the page.tpl.php"
 core = "7.x"
 package = Custom_modules
 core = 7.x

@@ -40,6 +40,7 @@
             fx: settings.fx,
             speed: settings.speed,
             timeout: parseInt(settings.timeout),
+            delay: 5000,
             index: i,
             settings: settings
           }

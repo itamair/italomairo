@@ -17,7 +17,7 @@ $handler->display->display_options['use_ajax'] = TRUE;
 $handler->display->display_options['use_more_always'] = FALSE;
 $handler->display->display_options['use_more_text'] = 'leggi tutto';
 $handler->display->display_options['access']['type'] = 'perm';
-$handler->display->display_options['access']['perm'] = 'edit own notizia content';
+$handler->display->display_options['access']['perm'] = 'administer nodes';
 $handler->display->display_options['cache']['type'] = 'none';
 $handler->display->display_options['query']['type'] = 'views_query';
 $handler->display->display_options['query']['options']['query_comment'] = FALSE;
@@ -289,6 +289,11 @@ $handler->display->display_options['fields']['title_field']['link_to_entity'] = 
 $handler->display->display_options['fields']['type']['id'] = 'type';
 $handler->display->display_options['fields']['type']['table'] = 'node';
 $handler->display->display_options['fields']['type']['field'] = 'type';
+/* Campo: Contenuto: Pubblicato */
+$handler->display->display_options['fields']['status']['id'] = 'status';
+$handler->display->display_options['fields']['status']['table'] = 'node';
+$handler->display->display_options['fields']['status']['field'] = 'status';
+$handler->display->display_options['fields']['status']['not'] = 0;
 /* Campo: Contenuto: Data di inserimento */
 $handler->display->display_options['fields']['created']['id'] = 'created';
 $handler->display->display_options['fields']['created']['table'] = 'node';
@@ -325,28 +330,37 @@ $handler->display->display_options['sorts']['created']['id'] = 'created';
 $handler->display->display_options['sorts']['created']['table'] = 'node';
 $handler->display->display_options['sorts']['created']['field'] = 'created';
 $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-/* Filter criterion: Contenuto: Pubblicato */
-$handler->display->display_options['filters']['status']['id'] = 'status';
-$handler->display->display_options['filters']['status']['table'] = 'node';
-$handler->display->display_options['filters']['status']['field'] = 'status';
-$handler->display->display_options['filters']['status']['value'] = 1;
-$handler->display->display_options['filters']['status']['group'] = 1;
-$handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+/* Filter criterion: Contenuto: Pubblicato o in amministrazione */
+$handler->display->display_options['filters']['status_extra']['id'] = 'status_extra';
+$handler->display->display_options['filters']['status_extra']['table'] = 'node';
+$handler->display->display_options['filters']['status_extra']['field'] = 'status_extra';
+$handler->display->display_options['filters']['status_extra']['group'] = 1;
+/* Filter criterion: Contenuto: Tipo */
+$handler->display->display_options['filters']['type']['id'] = 'type';
+$handler->display->display_options['filters']['type']['table'] = 'node';
+$handler->display->display_options['filters']['type']['field'] = 'type';
+$handler->display->display_options['filters']['type']['value'] = array(
+  'article' => 'article',
+  'curriculum_vitae' => 'curriculum_vitae',
+  'evento_gamba_destra' => 'evento_gamba_destra',
+  'my_project' => 'my_project',
+  'page' => 'page',
+);
+$handler->display->display_options['filters']['type']['group'] = 1;
 /* Filter criterion: Contenuto: Tipo */
 $handler->display->display_options['filters']['type_1']['id'] = 'type_1';
 $handler->display->display_options['filters']['type_1']['table'] = 'node';
 $handler->display->display_options['filters']['type_1']['field'] = 'type';
 $handler->display->display_options['filters']['type_1']['value'] = array(
-  'all' => 'all',
   'article' => 'article',
   'blog' => 'blog',
   'blocco' => 'blocco',
+  'evento_gamba_destra' => 'evento_gamba_destra',
   'feed' => 'feed',
   'feed_item' => 'feed_item',
   'my_project' => 'my_project',
   'notizia' => 'notizia',
   'page' => 'page',
-  'rivista' => 'rivista',
   'segnalazione' => 'segnalazione',
   'webform' => 'webform',
 );
@@ -389,7 +403,7 @@ $handler->display->display_options['filters']['name']['expose']['remember_roles'
 /* Display: Page */
 $handler = $view->new_display('page', 'Page', 'page');
 $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
-$handler->display->display_options['path'] = 'admin/manage_Realestate_content';
+$handler->display->display_options['path'] = 'manage_site_content';
 $handler->display->display_options['menu']['type'] = 'normal';
 $handler->display->display_options['menu']['title'] = 'Amministra contenuti ItaloMairo.com';
 $handler->display->display_options['menu']['weight'] = '15';
@@ -420,6 +434,7 @@ $translatables['amministra_i_contenuti'] = array(
   t('Contenuto'),
   t('Titolo (tradotto)'),
   t('Tipo'),
+  t('Pubblicato'),
   t('Inserimento'),
   t('Aggiornato'),
   t('Autore'),
@@ -427,7 +442,6 @@ $translatables['amministra_i_contenuti'] = array(
   t('[edit_node] <a href=\'/node/[nid]/translate\'>tranlslate</a>'),
   t('Page'),
 );
-
 
 /* Define this new view from code in views list */
 $views[$view->name] = $view;

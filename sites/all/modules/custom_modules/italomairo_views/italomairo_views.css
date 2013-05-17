@@ -1,0 +1,75 @@
+.view-amministra-elenco-progetti table th.views-field-field-cover-images img,
+.view-amministra-elenco-progetti table td.views-field-field-cover-images img,
+.view-amministra-elenco-progetti table td.views-field-field-cover-images,
+.view-amministra-elenco-progetti table td.views-field-field-cover-images {
+    width: 60px !important;
+    max-width: 60px;
+    
+}
+
+.views-row {
+    margin: 20px 0;
+}
+
+
+.view-cvs .field-content {
+	text-align: center;
+}
+
+.view-cvs tr td:last-child {
+	border-right: none;
+}
+
+#block-views-cvs-block,
+#block-tagadelic-1,
+.block.other-projects 
+/*, #block-views-getlocation-map-block-1,
+#block-views-getlocation-map-block-2*/
+{
+	padding: 10px 10px;
+	background-color: #fff;
+	-khtml-border-radius: 6px;
+	border-radius: 6px;
+	border: 1px solid #e1e1e1;
+	margin-bottom: 15px;
+}
+
+.block.sviluppo-drupal {
+	padding: 0 3px 10px 2px;
+	background-color: #fff;
+	-khtml-border-radius: 6px;
+	border-radius: 6px;
+	border: 1px solid #e1e1e1;
+	margin-bottom: 15px;
+}
+
+.block.other-projects {
+	font-size: .9em;
+}
+
+
+#block-views-cvs-block {
+	font-size: 0.9em;
+}
+
+#block-views-cvs-block h2.block-title {
+	text-transform: none;
+}
+
+#block-views-cvs-block .file-icon {
+	display: none;
+}
+
+.view-esperienze-professionali .view-content {
+	margin-top: 20px;
+}
+
+.flexslider {
+    margin: 0;
+    padding: 0 10px !important;
+}
+
+
+.view-mode-teaser img {
+    margin-top: 6px;
+}

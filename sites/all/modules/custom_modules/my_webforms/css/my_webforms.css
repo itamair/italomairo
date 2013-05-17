@@ -11,18 +11,27 @@
     font-weight: normal;
 }
 
-.ui-dialog-title,#popup a{
-    color:#00AEEF;
+.ui-dialog-title,#popup a, #normativa_privacy{
+    color:#be1125;
 }
 
+#normativa_privacy:hover{
+    text-decoration: underline;
+}
 
-#popup .spaziotitolo{
-    font-size: 22px;
-    font-weight: bold;
+#ui-popup {
+    font-size: 80%;
+    padding-right: 20px;
+}
+
+.ui-widget-content a {
+color: #be1125;
 }
 
 .submissionexixt{
-
+    margin-top: 10px;
+	text-decoration: underline;
+	font-size: 110%
 }
 
 .containermsgwebform{

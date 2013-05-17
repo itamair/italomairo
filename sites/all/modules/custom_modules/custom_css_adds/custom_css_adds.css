@@ -45,7 +45,7 @@ section.cronologia {
   width: 80%;
 }
 
-/* Ipostazioni per Infowindow della Mappa */
+/* Impostazioni per Infowindow della Mappa */
 
 .infowindow .content {
 	width: 250px;
@@ -63,6 +63,7 @@ section.cronologia {
 
 .infowindow .content div.title {
 	font-size: 1.2em;
+	width: 150px;
 }
 
 .infowindow .content div.body {
@@ -73,4 +74,116 @@ section.cronologia {
 	text-align: right;
 	font-size: 0.8em;
 }
+
+/* Impostazioni Main Menù */
+
+
+.region-highlighted ul.main-menu {
+	margin: 0 10px;
+
+}
+
+#primary-menu-bar {
+	margin: 0 0 10px 0;
+	padding: 0 10px;
+}
+
+.region-highlighted ul.main-menu,
+.region-highlighted .block-main-menu ul.menu,
+#primary-menu-bar ul.primary-menu  {
+	padding: 10px 10px;
+	background-color: #333;
+	border: none;
+	color: #fcfcf8;
+	border-radius: 6px 6px 0 0;
+}
+
+.region-highlighted ul.main-menu li,
+.region-highlighted .block-main-menu ul.menu li,
+#primary-menu-bar ul.primary-menu li {
+	font-weight: bold;
+	display: inline;
+	padding: 10px 10px;
+	background-color: #333;
+	border: none;
+	color: 	#fcfcf8;
+	margin: 0;
+	text-transform: uppercase;
+}
+
+.region-highlighted ul.main-menu li a,
+.region-highlighted .block-main-menu ul.menu li a,
+ #primary-menu-bar ul.primary-menu li a {
+	color: 	#CCC;
+}
+
+.region-highlighted .block-main-menu ul.menu li a:hover,
+.region-highlighted ul.main-menu li a:hover,
+ #primary-menu-bar ul.primary-menu li a:hover {
+	color: 	#FFF;
+}
+
+.region-highlighted .block-main-menu ul.menu li a.active,
+.region-highlighted ul.main-menu li a.active,
+#primary-menu-bar ul.primary-menu li a.active, #primary-menu-bar ul.primary-menu li a.active-trail{
+	color: 	#FFF;
+	font-size: 1.1em;
+}
+
+/* Impostazioni Secondary Menù */
+
+#secondary-menu-bar {
+	margin: 0 0 10px 0;
+}
+
+#secondary-menu-bar ul.secondary-menu {
+	padding: 10px 10px;
+	background-color: #FFF;
+	border: thin solid #e1e1e1;
+	color: #000;
+	border-radius: 0 0 6px 6px;
+	margin: 0 10px;
+}
+
+#secondary-menu-bar ul.secondary-menu li {
+	font-weight: bold;
+	display: inline;
+	padding: 10px 10px;
+	background-color: #FFF;
+	border: none;
+	color: 	#000;
+	margin: 0;
+	text-transform: uppercase;
+}
+
+#secondary-menu-bar ul.secondary-menu li a {
+	color: 	#666;
+}
+
+#secondary-menu-bar ul.secondary-menu li a:hover {
+	color: 	#000;
+}
+
+#secondary-menu-bar ul.secondary-menu li a.active {
+	color: 	#000;
+	font-size: 1.1em;
+}
+
+/*Social media Elements Stylization */
+.widgets-style-horizontal .widgets-element {
+	padding: 0 4px;
+}
+
+#block-locale-language.block {
+	margin-bottom: 8px;
+}
+
+#block-locale-language.block .block-inner  {
+	margin-right: 0;
+}
+
+ul.language-switcher-locale-url {
+	margin: 0 0 0.4em 0;
+}
+
 

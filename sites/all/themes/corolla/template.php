@@ -41,7 +41,8 @@ function corolla_process_html(&$vars) {
 function corolla_process_page(&$vars) {
   if (module_exists('color')) {
     _color_page_alter($vars);
-  }
+  } 
+
 }
 
 /**
@@ -121,3 +122,70 @@ function corolla_fieldset($vars) {
 
   return $output;
 }
+
+//* Codice precedentemente aggiunto da Italo per alterare la visualizzazione delle icone dei file Cvs Allegati in download, poi trasferito nella vista del blocco, in quanto andava ad interferire con la formattazione dei file allegati in generale (anche quelli non Cvs nel blocco) ***/
+
+/**
+ * Returns HTML for a link to a file.
+ *
+ * @param $variables
+ *   An associative array containing:
+ *   - file: A file object to which the link will be created.
+ *   - icon_directory: (optional) A path to a directory of icons to be used for
+ *     files. Defaults to the value of the "file_icon_directory" variable.
+ *
+ * @ingroup themeable
+ */
+/*
+ function corolla_file_link($variables) {
+  $file = $variables['file'];
+  $icon_directory = $variables['icon_directory'];
+
+  $url = file_create_url($file->uri);
+  $icon = theme('file_icon', array('file' => $file, 'icon_directory' => $icon_directory));
+
+  // Set options as per anchor format described at
+  // http://microformats.org/wiki/file-format-examples
+  $options = array(
+    'attributes' => array(
+      'type' => $file->filemime . '; length=' . $file->filesize,
+    ),
+  );
+
+  // Use the description as the link text if available.
+  if (empty($file->description)) {
+    $link_text = $file->filename;
+  }
+  else {
+    $link_text = $file->description;
+    $options['attributes']['title'] = check_plain($file->filename);
+    $options['attributes']['target'] = "_blank";
+  }
+
+  return '<span class="file">' . $icon . ' <div class="file_text_url">' . l($link_text, $url, $options) . '</div></span>';
+}
+*/
+
+
+/**
+ * Returns HTML for an image with an appropriate icon for the given file.
+ *
+ * @param $variables
+ *   An associative array containing:
+ *   - file: A file object for which to make an icon.
+ *   - icon_directory: (optional) A path to a directory of icons to be used for
+ *     files. Defaults to the value of the "file_icon_directory" variable.
+ *
+ * @ingroup themeable
+ */
+/*
+function corolla_file_icon($variables) {
+  $file = $variables['file'];
+  $url = (module_exists('file_force')) ? file_force_create_url($file->uri) : file_create_url($file->uri);
+  $icon_directory = $variables['icon_directory'];
+
+  $mime = check_plain($file->filemime);
+  $icon_url = file_icon_url($file, $icon_directory);
+  return '<div class="file_icon"><a href="'.$url.'" ><img class="file-icon" alt="" title="' . $mime . '" src="' . $icon_url . '" width="50px" /></a></div>';
+}
+*/

@@ -26,6 +26,7 @@ function field_slideshow_field_formatter_info() {
         'slideshow_fx'                        => 'fade',
         'slideshow_speed'                     => '1000',
         'slideshow_timeout'                   => '4000',
+        'slideshow_delay'                     => '0',
         'slideshow_order'                     => '',
         'slideshow_controls'                  => 0,
         'slideshow_controls_pause'            => 0,
@@ -239,6 +240,15 @@ function field_slideshow_field_formatter_settings_form($field, $instance, $view_
     '#size'           => 5,
     '#default_value'  => $settings['slideshow_timeout'],
     '#description'    => t('Time between transitions (ms). Enter 0 to disable automatic transitions (then, enable pager and/or controls).'),
+    '#required'       => TRUE,
+  );
+
+  $element['slideshow_delay'] = array(
+    '#title'          => t('Delay'),
+    '#type'           => 'textfield',
+    '#size'           => 5,
+    '#default_value'  => $settings['slideshow_delay'],
+    '#description'    => t('Delay of the first slide transition (ms). Might be negative.'),
     '#required'       => TRUE,
   );
 
@@ -514,6 +524,7 @@ function field_slideshow_field_formatter_settings_summary($field, $instance, $vi
   $summary[] = t('Transition effect: @effect', array('@effect' => $settings['slideshow_fx']));
   $summary[] = t('Speed: @speed', array('@speed' => $settings['slideshow_speed']));
   $summary[] = t('Timeout: @timeout', array('@timeout' => $settings['slideshow_timeout']));
+  $summary[] = t('Delay: @delay', array('@delay' => $settings['slideshow_delay']));
   $orders = array(
     'reverse' => t('Reverse order'),
     'random'  => t('Random order'),
@@ -764,6 +775,7 @@ function field_slideshow_field_formatter_view($entity_type, $entity, $field, $in
         'fx'                   => $settings['slideshow_fx'],
         'speed'                => $settings['slideshow_speed'],
         'timeout'              => $settings['slideshow_timeout'],
+        'delay'                => $settings['slideshow_delay'],
         'pause'                => $settings['slideshow_pause'],
         'start_on_hover'       => $settings['slideshow_start_on_hover'],
         'carousel_visible'     => $settings['slideshow_carousel_visible'],

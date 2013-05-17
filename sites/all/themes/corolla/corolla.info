@@ -54,6 +54,8 @@
   ; following as a guide:
   ;
   ; ie_scripts[lte IE 8] = js/my-script.js
+  
+  scripts[] = scripts/colorbox-youtube-cleanup.js
 
 
 
@@ -63,6 +65,7 @@
   regions[sidebar_second]    = Sidebar second
 
   regions[header]            = Header
+  regions[site_references]   = Riferimenti
   regions[menu_bar]          = Menu Bar
   regions[help]              = Help
 
@@ -119,6 +122,10 @@
   features[] = comment_user_picture
   features[] = comment_user_verification
   features[] = favicon
+  
+  ; --- Added by Italo to enable those variables and the $primary_navigation and $secondary_navigation vars
+  features[] = main_menu
+  features[] = secondary_menu
 
 
 

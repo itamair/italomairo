@@ -4,15 +4,52 @@
 * Implements $modulename_preprocess_$hook().
 */
 function my_personal_menus_preprocess_page(&$vars) {
-
+    
     //get all menu's
     $menus = array();
     $menus = menu_get_menus($all = TRUE);
+    //dpm($menus);
     
     //create var for every menu so we can use it in our page.tpl.php
     foreach($menus as $key => $value){
         $var = str_replace('-','_',$key);
         $vars[$var] = menu_tree($key);
-    } 
+        //dpm($var);
+        //dpm($vars[$var]);
+    }
+
+  if (isset($vars['main_menu'])) {
+    //dpm($vars['main_menu']);
+    $vars['primary_nav'] = theme('links__system_main_menu', array(
+      'links' => $vars['main_menu'],
+      'attributes' => array(
+        'class' => array('links', 'inline', 'main-menu'),
+      ),
+      'heading' => array(
+        'text' => t('Main menu'),
+        'level' => 'h2',
+        'class' => array('element-invisible'),
+      )
+    ));
+  }
+  else {
+    $vars['primary_nav'] = FALSE;
+  } //dpm($vars['primary_nav']);
+  if (isset($vars['secondary_menu'])) {
+    $vars['secondary_nav'] = theme('links__system_secondary_menu', array(
+      'links' => $vars['secondary_menu'],
+      'attributes' => array(
+        'class' => array('links', 'inline', 'secondary-menu'),
+      ),
+      'heading' => array(
+        'text' => t('Secondary menu'),
+        'level' => 'h2',
+        'class' => array('element-invisible'),
+      )
+    ));
+  }
+  else {
+    $vars['secondary_nav'] = FALSE;
+  }
 
 }

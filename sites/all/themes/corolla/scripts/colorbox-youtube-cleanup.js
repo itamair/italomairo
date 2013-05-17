@@ -1,8 +1,11 @@
 (function ($) {
+  
+  jQuery(document).ready(function($) {
 
 	//Correct youtube URL's to one's that work with colorbox
 	//http://drupal.org/node/1368274#comment-5353436
 	$('a.colorbox-load').each(function(){
+	  //alert('ciao');
 	  var newUrl = $(this).attr('href').replace('youtube.com/watch?v=', 'youtube.com/v/');
 	  $(this).attr('href', newUrl);
 	});
@@ -20,5 +23,7 @@
 	//Force all embedded videos to use wmode="transparent"
 	//http://stackoverflow.com/questions/2704485/how-to-add-wmode-transparent-for-every-flash-object-ebmed-tag
 	$("object").append('<param name="wMode" value="transparent"/>');
+  
+  });
 
 })(jQuery);

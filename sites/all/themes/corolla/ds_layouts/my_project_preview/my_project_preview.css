@@ -9,10 +9,18 @@
   width: 100%;
 }
 
+
 .ds-my-project-preview.article .field {
   margin: 4px 0;
 }
 
+.ds-my-project-preview .field.clearfix {
+  width: 100%;
+}
+
+.ds-my-project-preview .field.clearfix::after {
+
+}
 
 .ds-my-project-preview p {
   margin-top: 6px;
@@ -30,19 +38,18 @@
 
 .ds-my-project-preview .group-left {
   float: left;
-  margin-bottom: 20px;
-  margin-left: 4px;
+  margin: 0 40px 20px 4px;
   width: 50%;
   display: block;
 }
 
 .ds-my-project-preview  .group-left .field-name-field-image img,
 .ds-my-project-preview  .group-left .views-field-field-cover-images img {
-  margin-right: 1%;
+  width: 100%;
 }
 
-.ds-my-project-preview  .group-left .field-name-field-image img.image-style-minithumbnail-progetti {
-  width: 15%;
+.ds-my-project-preview  .group-left img.image-style-minithumbnail-progetti {
+  width: 15% !important;
 }
 
 
@@ -50,19 +57,23 @@
   text-align:justify;
   padding: 0 10px 0 0;
   margin-left: 55%;
-  
+}
+
+.flexslider .ds-my-project-preview  .group-right {
+  margin-left: 56%;
 }
 
 .ds-my-project-preview  .group-right .field  {
+  display: block;
   width: 100%;
   float: left;
-  
 }
 
 .ds-my-project-preview  .group-footer {
   padding-top: 10px;
-  width: 80%;
 }
+
+
 
 
 
