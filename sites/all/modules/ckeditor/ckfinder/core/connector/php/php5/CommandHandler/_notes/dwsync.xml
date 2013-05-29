@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="CommandHandlerBase.php" server="82.107.99.186//var/www/fmm/" local="3382297200" remote="11972231792" />
+<file name="CopyFiles.php" server="82.107.99.186//var/www/fmm/" local="3382297200" remote="11972231792" />
+<file name="CreateFolder.php" server="82.107.99.186//var/www/fmm/" local="3382297200" remote="11972231792" />
+<file name="DeleteFile.php" server="82.107.99.186//var/www/fmm/" local="3382297200" remote="11972231792" />
+<file name="DeleteFolder.php" server="82.107.99.186//var/www/fmm/" local="3382297200" remote="11972231792" />
+<file name="DownloadFile.php" server="82.107.99.186//var/www/fmm/" local="3382297200" remote="11972231792" />
+<file name="FileUpload.php" server="82.107.99.186//var/www/fmm/" local="3382297200" remote="11972231792" />
+<file name="GetFiles.php" server="82.107.99.186//var/www/fmm/" local="3382297200" remote="11972231792" />
+<file name="GetFolders.php" server="82.107.99.186//var/www/fmm/" local="3382297200" remote="11972231792" />
+<file name="Init.php" server="82.107.99.186//var/www/fmm/" local="3382297200" remote="11972231792" />
+<file name="MoveFiles.php" server="82.107.99.186//var/www/fmm/" local="3382297200" remote="11972231792" />
+<file name="QuickUpload.php" server="82.107.99.186//var/www/fmm/" local="3382297200" remote="11972231792" />
+<file name="RenameFile.php" server="82.107.99.186//var/www/fmm/" local="3382297200" remote="11972231792" />
+<file name="RenameFolder.php" server="82.107.99.186//var/www/fmm/" local="3382297200" remote="11972231792" />
+<file name="Thumbnail.php" server="82.107.99.186//var/www/fmm/" local="3382297200" remote="11972231792" />
+<file name="XmlCommandHandlerBase.php" server="82.107.99.186//var/www/fmm/" local="3382297200" remote="11972231792" />
+</dwsync>
