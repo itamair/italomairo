@@ -26,6 +26,22 @@ p {
 	padding: 0;
 }
 
+.content-style {
+	position: relative;
+}
+
+.field-type-image {
+	width: 100%;
+}
+
+.ia-l .field-type-image {
+	clear: none;
+	float: none;
+	text-align: left;
+	margin: 10px 0;
+}
+
+
 .field-name-body {
 	margin: 10px 0;
 	padding: 0;
@@ -34,6 +50,10 @@ p {
 .field-name-body p {
 	margin: 0 0 4px;
 	padding: 0;
+}
+
+.field-slideshow {
+	width: 98% !important;
 }
 
 #branding, .region-header {
@@ -49,17 +69,24 @@ p {
 	margin-left: 105px;
 }
 
+#block-views-cvs-block,
+#block-tagadelic-1,
+.projects-list-block,
+.block.other-projects  {
+	display: none;
+}
+
 h1#page-title, .in-maintenance h1#page-title {
 	border-bottom: none;
 	line-height: 1;
 	margin: 10px 0 10px;
 	padding: 10px 0 0;
-	font-size: 200%;
+	font-size: 160%;
 }
 
 .content-style {
 	min-height: 170px;
-	padding: 35px 40px;
+	padding: 20px 40px;
 	background-color: #fff;
 }
 
@@ -86,7 +113,11 @@ h1#page-title, .in-maintenance h1#page-title {
 }
 
 .field-type-image figure, .field-type-image figure img, .field-type-image figcaption {
-	display: inline-block;
+	display: block;
+}
+
+.field-type-image figure {
+	overflow: visible;
 }
 
 
@@ -95,9 +126,10 @@ h1#page-title, .in-maintenance h1#page-title {
 .field-name-body img,
 .views-field img,
 iframe#google_map_contatcts {
-	margin-right: 10px;
+	margin: 0 10px 0 0 !important;
 	padding: 5px;
 	border: 1px solid #dddddd;
+	display:inline-block;
 }
 
 .view-content .views-field img,
@@ -246,3 +278,76 @@ body.page-storia-della-mia-gamba.sidebar-first .content-inner {
 	margin-left: 0;
 	margin-right: 0;
 }
+
+thead th label {
+	color: #FCFCF8;
+}
+
+
+/*** Flexslider ***/
+
+.flexslider {
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	-o-box-shadow: none;
+}
+
+.flex-control-nav {
+	width: 100%;
+	position: absolute;
+	bottom: -10px;
+	text-align: center;
+}
+
+.flex-direction-nav .flex-prev {
+	margin-left: -30px;
+}
+
+.flex-direction-nav .flex-next {
+	margin-right: -24px;
+}
+
+.flexslider .slides {
+	width: 90%;
+	margin: auto;
+}
+
+.flexslider .view-immagini-aggiuntive img {
+	display: inline-block;
+}
+
+/*** Credits ***/
+
+.credits-block {
+	text-align: right;
+	margin-top: 10px !important;
+}
+
+/*** Maps ***/
+
+.map-reset {
+	position: absolute;
+	top: 76px;
+	right: 46px;
+}
+
+.map-reset a {
+	padding: 6px 10px;
+	background-color: #E76730;
+	border: none;
+	color: #fcfcf8;
+	border-radius: 6px;
+	text-transform: uppercase;
+	font-weight: bold;
+	color: #FFF;
+	font-size: 100%;
+	text-shadow: 1px 1px 1px #555555;
+}
+
+.map-reset a:hover {
+	text-decoration: none;
+	background-color: #E73A00;
+}
+
+

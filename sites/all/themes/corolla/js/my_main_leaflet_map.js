@@ -30,8 +30,14 @@
         });
     
     
-    // Just once the page is loaded ...
-    $(document).ready(function () {
+  Drupal.behaviors.corolla = {
+    
+    attach:function (context, settings) {
+        
+        console.log(context);
+        console.log(settings);
+        
+        $(settings.views).each(function () {
         
         function mapReset (lMap) {
             lMap.setView([lMap.center.lat, lMap.center.lng], lMap.zoom, true);
@@ -99,7 +105,7 @@
             //markers[nid].fire('click');
             
             // If there are Murkerclusters we need all this below
-            lat = parseFloat(features[nid].lat) + 0.00015; //devo aggiungere un pò di lat altrimenti il pupop fa al centro del marker
+            lat = parseFloat(features[nid].lat) + 0.0035; //devo aggiungere un pò di lat altrimenti il pupop fa al centro del marker
             lng = parseFloat(features[nid].lon);
             latlng = new L.LatLng(lat, lng );
             popupContent = features[nid].popup;
@@ -107,11 +113,15 @@
             //Create a Leaflet popup and open it in the latlng place
             popup = L.popup()
                 .setLatLng(latlng)
-                .setContent(popupContent)
-                .openOn(thisLeafletMap);
+                .setContent(popupContent);
+
             
             // Zooom sulla mappa con centro del popup creato, senza ricostruzione della mappa
-            thisLeafletMap.setView([lat, lng], 12, false);
+            thisLeafletMap.setView([lat, lng], 12, false).whenReady( function () {
+                setTimeout( function () {
+                popup.openOn(thisLeafletMap);
+                }, 400);
+            });
             
 
     
@@ -119,7 +129,8 @@
     
         
         $(".projects-list-block .views-row a.map-zoom").bind('mouseout', function(event) {
-
+        
+        
             $(this).removeClass('highlighted').text('zoom in map');
             nid = $(this).attr('nid');
             
@@ -136,6 +147,13 @@
             mapReset (thisLeafletMap);
         });
     
+    
     });
+
+      }
+
+    }
+  
+  
 
 })(jQuery);

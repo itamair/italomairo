@@ -5,7 +5,7 @@
         //alert ('Javascript enabled!');
         //console.log(document);
     
-    
+    $('.block').fadeIn('slow');
 
     });
 
