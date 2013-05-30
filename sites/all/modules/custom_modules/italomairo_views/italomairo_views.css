@@ -1,3 +1,7 @@
+.view-amministra-elenco-progetti .views-row {
+    margin: 10px 0;
+}
+
 .view-amministra-elenco-progetti table th.views-field-field-cover-images img,
 .view-amministra-elenco-progetti table td.views-field-field-cover-images img,
 .view-amministra-elenco-progetti table td.views-field-field-cover-images,
@@ -91,9 +95,30 @@
 
 /**** Ip Geoloc Map Views ****/
 
-.projects-map .ip-geoloc-map.leaflet-view .leaflet-popup {
-    width: 300px;
+
+
+.leaflet-container a.leaflet-popup-close-button {
+    z-index: 200;
 }
+
+.leaflet-popup-content {
+    overflow: hidden;
+}
+
+/*** Main Project Map ***/
+
+
+.projects-map .ip-geoloc-map.leaflet-view .leaflet-popup .leaflet-popup-content-wrapper {
+    position: relative;
+
+}
+
+.projects-map .ip-geoloc-map.leaflet-view .leaflet-popup .infowindow-container {
+    position: relative;
+    width: 240px;
+    height: 200px;
+}
+
 
 .projects-map .ip-geoloc-map.leaflet-view .leaflet-popup .clearfix::after {
     content: "";
@@ -107,17 +132,46 @@
     height: 0;
 }
 
-.projects-map .ip-geoloc-map.leaflet-view .leaflet-popup h4 {
-    margin-bottom: 8px;
+.projects-map .ip-geoloc-map.leaflet-view .leaflet-popup .title h4 {
+    position: absolute;
+    bottom: 24px;
+    left: 0;
+    background: #0173BA;
+    background: rgba(1,115,186, 0.7);
+    font-weight: bold;
+    z-index: 170;
+    padding: 6px 10px 6px 10px;
+    margin-left: 20px;
+    text-align: right;
 }
 
-.projects-map .ip-geoloc-map.leaflet-view .leaflet-popup .field-name-field-category {
-    margin-bottom: 4px;
+.projects-map .ip-geoloc-map.leaflet-view .leaflet-popup .title h4 a {
+    font-size: 90%;
+    color: white; 
 }
+
+.projects-map .ip-geoloc-map.leaflet-view .leaflet-popup .title h4 a:hover {
+    color: #EDBF30; 
+}
+
+
+.projects-map .ip-geoloc-map.leaflet-view .leaflet-popup .field-name-field-category {
+    padding: 0 0 6px 0 !important;
+    color: #828282;
+}
+
 
 
 .projects-map .ip-geoloc-map.leaflet-view .leaflet-popup .field-name-field-cover-images img {
-    margin: 4px auto 10px 4px;    
+    margin: 4px 0 10px 0;
+    position: relative;
+    width: 100%;
+    padding: 0;
+    border: none;
+    z-index: 100;
+    -moz-box-shadow: 0 0 5px #888;
+    -webkit-box-shadow: 0 0 5px #888;
+    box-shadow: 0 0 5px #888;
 }
 
 .projects-map .ip-geoloc-map.leaflet-view .leaflet-popup .read-all {
@@ -125,8 +179,110 @@
     font-size: 95%;
 }
 
--moz-border-radius: 6px;
--webkit-border-radius: 6px;
--khtml-border-radius: 6px;
-border-radius: 6px;
+/*** View Mini Map ***/
 
+.view-mini-map .ip-geoloc-map.leaflet-view .leaflet-popup .leaflet-popup-content-wrapper,
+.view-mini-map .ip-geoloc-map.leaflet-view .leaflet-popup .infowindow-container {
+    position: relative;
+    width: 140px;
+}
+
+.view-mini-map .ip-geoloc-map.leaflet-view .leaflet-popup .leaflet-popup-content-wrapper .leaflet-popup-content {
+    margin: 10px 14px;
+}
+
+
+.view-mini-map .ip-geoloc-map.leaflet-view .leaflet-popup .clearfix::after {
+    content: "";
+    display: block;
+    clear: none;
+}
+
+.view-mini-map .ip-geoloc-map.leaflet-view .leaflet-popup br {
+    display: none;
+    margin: 0;
+    height: 0;
+}
+
+.view-mini-map .ip-geoloc-map.leaflet-view .leaflet-popup .title h4 {
+    font-size: 0.8em;
+}
+
+.view-mini-map .ip-geoloc-map.leaflet-view .leaflet-popup .location-name {
+    font-size: 0.8em;
+    color: #999999;
+}
+
+.view-mini-map .ip-geoloc-map.leaflet-view .leaflet-popup .title h4 a {
+
+}
+
+.view-mini-map .ip-geoloc-map.leaflet-view .leaflet-popup .title h4 a:hover {
+
+}
+
+.view-mini-map .ip-geoloc-map.leaflet-view .leaflet-popup .field-name-field-cover-images img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0;
+    border: none;
+    height: 100%;
+    opacity: 0.5;
+}
+
+.view-mini-map .ip-geoloc-map.leaflet-view .leaflet-control-attribution {
+    display: none;
+}
+
+.view-mini-map .goto-mainmap  {
+	margin: auto;
+	margin-top: 8px;
+	width: 80%;
+	text-align: center;
+}
+
+.view-mini-map .goto-mainmap a  {
+	color:     #FFFFFF;
+	text-shadow: 1px 1px 1px #9B9B9B;
+	margin-top: 8px;
+	font-size: 0.95em;
+	padding: 4px 10px;
+	background-color: #E76730;
+	border: 1px solid #dddddd;
+	border-radius: 6px;
+	text-transform: uppercase;
+	font-weight: bold;
+	display: block;
+
+/*	-moz-box-shadow: 0 0 5px #888;
+	-webkit-box-shadow: 0 0 5px #888;
+	box-shadow: 0 0 5px #888;*/
+}
+
+.view-mini-map .goto-mainmap a:hover {
+	text-decoration: none;
+	background-color: #E73A00;
+}
+
+/*** Zoom in map ***/
+a.map-zoom {
+    color: #E76730;
+    margin: 2px 0;
+    font-size: 100%;
+    border: none;
+    border-radius: 4px;
+    text-transform: none;
+    font-weight: bold;
+    opacity: 0.7;
+    filter: alpha(opacity=70);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+    text-shadow: 1px 1px 1px #B3B3B3;
+    white-space: nowrap;
+}
+
+a.map-zoom:hover {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
