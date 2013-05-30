@@ -18,8 +18,8 @@
             markersList.push(lFeature);
             featuresList.push(feature);
             
-            console.log(feature);
-            console.log(lFeature);
+            //console.log(feature);
+            //console.log(lFeature);
             
         });
         
@@ -88,12 +88,9 @@
     //console.log(thisLeafletSettings);
         
         // Fade in dei click per lo zoom sulla mappa
-        $('.block.legend, .block.block-most-ranked, .block-most-ranked .node-row a.map-zoom').fadeIn('slow');
+        $('.projects-list-block .node-row a.map-zoom').fadeIn('slow');
     
-        $(".block-most-ranked .node-row a.map-zoom").bind('mouseover', function(event) {
-    
-            // Cambio il testo del click sul mouseover, per evidenziare il click al nodo
-            $(this).addClass('highlighted').text('click for more');
+        $(".projects-list-block .views-row a.map-zoom").bind('mouseover', function(event) {
             
             nid = $(this).attr('nid');
             
@@ -114,14 +111,14 @@
                 .openOn(thisLeafletMap);
             
             // Zooom sulla mappa con centro del popup creato, senza ricostruzione della mappa
-            thisLeafletMap.setView([lat, lng], 16, false);
+            thisLeafletMap.setView([lat, lng], 12, false);
             
 
     
         });
     
         
-        $(".block-most-ranked .node-row a.map-zoom").bind('mouseout', function(event) {
+        $(".projects-list-block .views-row a.map-zoom").bind('mouseout', function(event) {
 
             $(this).removeClass('highlighted').text('zoom in map');
             nid = $(this).attr('nid');
