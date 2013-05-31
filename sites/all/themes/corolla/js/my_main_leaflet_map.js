@@ -13,8 +13,8 @@
         //retrieve the Leaflet Markers and Lefalet Features data from the Leaflet (or Leaflet Markeclusterer) module
         $(document).bind('leaflet.feature', function(e, lFeature, feature) {
             
-            markers[feature.feature_id] = lFeature; 
-            features[feature.feature_id] = feature;
+            markers[feature.drupal_entity_id] = lFeature; 
+            features[feature.drupal_entity_id] = feature;
             markersList.push(lFeature);
             featuresList.push(feature);
             
