@@ -123,10 +123,8 @@ h1#page-title, .in-maintenance h1#page-title {
 
 .field-type-image img,
 .views-field-field-cover-images img,
-.field-name-body img,
 .views-field img,
 iframe#google_map_contatcts {
-	margin: 0 10px 0 0 !important;
 	padding: 5px;
 	border: 1px solid #dddddd;
 	display:inline-block;
@@ -135,6 +133,7 @@ iframe#google_map_contatcts {
 .view-content .views-field img,
 .view-content .field-type-image figure img {
 	margin-right: 4px;
+	margin-left: 0;
 }
 
 #node-86 .field-name-body img {
@@ -328,7 +327,7 @@ thead th label {
 
 .map-reset {
 	position: absolute;
-	top: 76px;
+	top: 60px;
 	right: 46px;
 }
 
