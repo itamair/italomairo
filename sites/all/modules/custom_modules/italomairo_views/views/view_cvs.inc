@@ -25,7 +25,7 @@ $handler->display->display_options['exposed_form']['options']['exposed_sorts_lab
 $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Disc';
 $handler->display->display_options['pager']['type'] = 'some';
 $handler->display->display_options['pager']['options']['items_per_page'] = '5';
-$handler->display->display_options['style_plugin'] = 'grid';
+$handler->display->display_options['style_plugin'] = 'default';
 $handler->display->display_options['row_plugin'] = 'fields';
 /* Campo: Contenuto: Titolo */
 $handler->display->display_options['fields']['title']['id'] = 'title';

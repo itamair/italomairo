@@ -41,6 +41,11 @@ $handler->display->display_options['fields']['title']['field'] = 'title';
 $handler->display->display_options['fields']['title']['label'] = '';
 $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
 $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+/* Criterio di ordinamento: Contenuto: Data di Pubblicazione (field_data_di_pubblicazione) */
+$handler->display->display_options['sorts']['field_data_di_pubblicazione_value']['id'] = 'field_data_di_pubblicazione_value';
+$handler->display->display_options['sorts']['field_data_di_pubblicazione_value']['table'] = 'field_data_field_data_di_pubblicazione';
+$handler->display->display_options['sorts']['field_data_di_pubblicazione_value']['field'] = 'field_data_di_pubblicazione_value';
+$handler->display->display_options['sorts']['field_data_di_pubblicazione_value']['order'] = 'DESC';
 /* Criterio di ordinamento: Contenuto: Data di inserimento */
 $handler->display->display_options['sorts']['created']['id'] = 'created';
 $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -58,7 +63,14 @@ $handler->display->display_options['filters']['type']['id'] = 'type';
 $handler->display->display_options['filters']['type']['table'] = 'node';
 $handler->display->display_options['filters']['type']['field'] = 'type';
 $handler->display->display_options['filters']['type']['value'] = array(
-  'blog_article' => 'blog_article',
+  'article' => 'article',
+);
+/* Filter criterion: Contenuto: In Blog (field_in_blog) */
+$handler->display->display_options['filters']['field_in_blog_value']['id'] = 'field_in_blog_value';
+$handler->display->display_options['filters']['field_in_blog_value']['table'] = 'field_data_field_in_blog';
+$handler->display->display_options['filters']['field_in_blog_value']['field'] = 'field_in_blog_value';
+$handler->display->display_options['filters']['field_in_blog_value']['value'] = array(
+  1 => '1',
 );
 
 /* Display: Page */
@@ -88,7 +100,6 @@ $translatables['vista_blog'] = array(
   t('ultima »'),
   t('Page'),
 );
-
 
 /* Define this new view from code in views list */
 $views[$view->name] = $view;

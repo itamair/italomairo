@@ -46,6 +46,16 @@ $handler->display->display_options['fields']['title']['field'] = 'title';
 $handler->display->display_options['fields']['title']['label'] = '';
 $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
 $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+/* Criterio di ordinamento: Contenuto: In corso (field_in_corso) */
+$handler->display->display_options['sorts']['field_in_corso_value']['id'] = 'field_in_corso_value';
+$handler->display->display_options['sorts']['field_in_corso_value']['table'] = 'field_data_field_in_corso';
+$handler->display->display_options['sorts']['field_in_corso_value']['field'] = 'field_in_corso_value';
+$handler->display->display_options['sorts']['field_in_corso_value']['order'] = 'DESC';
+/* Criterio di ordinamento: Contenuto: Anno fine (field_anno_fine) */
+$handler->display->display_options['sorts']['field_anno_fine_value']['id'] = 'field_anno_fine_value';
+$handler->display->display_options['sorts']['field_anno_fine_value']['table'] = 'field_data_field_anno_fine';
+$handler->display->display_options['sorts']['field_anno_fine_value']['field'] = 'field_anno_fine_value';
+$handler->display->display_options['sorts']['field_anno_fine_value']['order'] = 'DESC';
 /* Criterio di ordinamento: Contenuto: Mese di pubblicazione (field_mese_pubblicazione) */
 $handler->display->display_options['sorts']['field_mese_pubblicazione_value']['id'] = 'field_mese_pubblicazione_value';
 $handler->display->display_options['sorts']['field_mese_pubblicazione_value']['table'] = 'field_data_field_mese_pubblicazione';

@@ -562,6 +562,94 @@ $handler->display->display_options['filters']['type']['value'] = array(
 );
 $handler->display->display_options['filters']['type']['group'] = 1;
 $handler->display->display_options['block_description'] = 'Altri Progetti';
+
+/* Display: Blocco Elenco Progetti con Mappa Grande */
+$handler = $view->new_display('block', 'Blocco Elenco Progetti con Mappa Grande', 'block_2');
+$handler->display->display_options['defaults']['title'] = FALSE;
+$handler->display->display_options['title'] = 'Projects';
+$handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+$handler->display->display_options['defaults']['access'] = FALSE;
+$handler->display->display_options['access']['type'] = 'perm';
+$handler->display->display_options['defaults']['pager'] = FALSE;
+$handler->display->display_options['pager']['type'] = 'mini';
+$handler->display->display_options['pager']['options']['items_per_page'] = '5';
+$handler->display->display_options['pager']['options']['offset'] = '0';
+$handler->display->display_options['pager']['options']['id'] = '0';
+$handler->display->display_options['pager']['options']['quantity'] = '3';
+$handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Voci per pagina';
+$handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Tutto -';
+$handler->display->display_options['pager']['options']['expose']['offset_label'] = 'Slittamento';
+$handler->display->display_options['pager']['options']['tags']['first'] = '« prima';
+$handler->display->display_options['pager']['options']['tags']['previous'] = '‹ precedente';
+$handler->display->display_options['pager']['options']['tags']['next'] = 'seguente ›';
+$handler->display->display_options['pager']['options']['tags']['last'] = 'ultima »';
+$handler->display->display_options['defaults']['style_plugin'] = FALSE;
+$handler->display->display_options['style_plugin'] = 'default';
+$handler->display->display_options['defaults']['style_options'] = FALSE;
+$handler->display->display_options['defaults']['row_plugin'] = FALSE;
+$handler->display->display_options['row_plugin'] = 'fields';
+$handler->display->display_options['row_options']['inline'] = array(
+  'title' => 'title',
+  'field_mese_pubblicazione' => 'field_mese_pubblicazione',
+  'nid' => 'nid',
+);
+$handler->display->display_options['row_options']['separator'] = ' - ';
+$handler->display->display_options['defaults']['row_options'] = FALSE;
+$handler->display->display_options['defaults']['header'] = FALSE;
+/* Intestazione: Globale: Text area */
+$handler->display->display_options['header']['area']['id'] = 'area';
+$handler->display->display_options['header']['area']['table'] = 'views';
+$handler->display->display_options['header']['area']['field'] = 'area';
+$handler->display->display_options['header']['area']['format'] = 'full_html';
+$handler->display->display_options['defaults']['fields'] = FALSE;
+/* Campo: Contenuto: Titolo */
+$handler->display->display_options['fields']['title']['id'] = 'title';
+$handler->display->display_options['fields']['title']['table'] = 'node';
+$handler->display->display_options['fields']['title']['field'] = 'title';
+$handler->display->display_options['fields']['title']['label'] = '';
+$handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+$handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+$handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+/* Campo: Contenuto: Mese di pubblicazione */
+$handler->display->display_options['fields']['field_mese_pubblicazione']['id'] = 'field_mese_pubblicazione';
+$handler->display->display_options['fields']['field_mese_pubblicazione']['table'] = 'field_data_field_mese_pubblicazione';
+$handler->display->display_options['fields']['field_mese_pubblicazione']['field'] = 'field_mese_pubblicazione';
+$handler->display->display_options['fields']['field_mese_pubblicazione']['label'] = '';
+$handler->display->display_options['fields']['field_mese_pubblicazione']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_mese_pubblicazione']['settings'] = array(
+  'format_type' => 'mese_anno',
+  'fromto' => 'both',
+  'multiple_number' => '',
+  'multiple_from' => '',
+  'multiple_to' => '',
+  'show_repeat_rule' => 'show',
+);
+/* Campo: Contenuto: Nid */
+$handler->display->display_options['fields']['nid']['id'] = 'nid';
+$handler->display->display_options['fields']['nid']['table'] = 'node';
+$handler->display->display_options['fields']['nid']['field'] = 'nid';
+$handler->display->display_options['fields']['nid']['label'] = '';
+$handler->display->display_options['fields']['nid']['alter']['alter_text'] = TRUE;
+$handler->display->display_options['fields']['nid']['alter']['text'] = '<a href="/node/[nid]" nid="[nid]" class="map-zoom">zoom in map</a>';
+$handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+$handler->display->display_options['defaults']['arguments'] = FALSE;
+$handler->display->display_options['defaults']['filter_groups'] = FALSE;
+$handler->display->display_options['defaults']['filters'] = FALSE;
+/* Filter criterion: Contenuto: Pubblicato */
+$handler->display->display_options['filters']['status']['id'] = 'status';
+$handler->display->display_options['filters']['status']['table'] = 'node';
+$handler->display->display_options['filters']['status']['field'] = 'status';
+$handler->display->display_options['filters']['status']['value'] = '1';
+$handler->display->display_options['filters']['status']['group'] = 1;
+/* Filter criterion: Contenuto: Tipo */
+$handler->display->display_options['filters']['type']['id'] = 'type';
+$handler->display->display_options['filters']['type']['table'] = 'node';
+$handler->display->display_options['filters']['type']['field'] = 'type';
+$handler->display->display_options['filters']['type']['value'] = array(
+  'my_project' => 'my_project',
+);
+$handler->display->display_options['filters']['type']['group'] = 1;
+$handler->display->display_options['block_description'] = 'Elenco Progetti con Mappa';
 $translatables['amministra_elenco_progetti'] = array(
   t('Master'),
   t('Elenco Progetti'),
@@ -622,6 +710,10 @@ $translatables['amministra_elenco_progetti'] = array(
   t('ultima »'),
   t('Tutti'),
   t('Altri Progetti'),
+  t('Blocco Elenco Progetti con Mappa Grande'),
+  t('Projects'),
+  t('<a href="/node/[nid]" nid="[nid]" class="map-zoom">zoom in map</a>'),
+  t('Elenco Progetti con Mappa'),
 );
 
 
