@@ -1,0 +1,7 @@
+name = "My Functions (Custom Module)"
+description = "A global basket of functions for personalize the Site Behaviors"
+core = "7.x"
+package = Custom_modules
+core = 7.x
+
+files[] = my_functions.module

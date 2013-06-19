@@ -1,0 +1,11 @@
+<?php
+
+/**
+* Implements $modulename_page_alter().
+*/
+function my_functions_page_alter(&$page) {
+    dpm(current_path());
+  if (current_path() == 'manage_site_content') {
+    unset($page['sidebar_first']);
+  }
+}
