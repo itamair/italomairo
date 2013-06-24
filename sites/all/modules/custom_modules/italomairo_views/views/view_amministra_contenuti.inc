@@ -3,6 +3,9 @@
 $view = new view();
 $view->name = 'amministra_i_contenuti';
 $view->description = '';
+$view = new view();
+$view->name = 'amministra_i_contenuti';
+$view->description = '';
 $view->tag = 'default';
 $view->base_table = 'node';
 $view->human_name = 'Amministra i contenuti (in code)';
@@ -12,7 +15,7 @@ $view->disabled = FALSE; /* Edit this to true to make a default view disabled in
 
 /* Display: Master */
 $handler = $view->new_display('default', 'Master', 'default');
-$handler->display->display_options['title'] = 'Amministra contenuti ItaloMairo.com';
+$handler->display->display_options['title'] = 'Amministra contenuti Sito';
 $handler->display->display_options['use_ajax'] = TRUE;
 $handler->display->display_options['use_more_always'] = FALSE;
 $handler->display->display_options['use_more_text'] = 'leggi tutto';
@@ -294,6 +297,14 @@ $handler->display->display_options['fields']['status']['id'] = 'status';
 $handler->display->display_options['fields']['status']['table'] = 'node';
 $handler->display->display_options['fields']['status']['field'] = 'status';
 $handler->display->display_options['fields']['status']['not'] = 0;
+/* Campo: Contenuto: In Blog */
+$handler->display->display_options['fields']['field_in_blog']['id'] = 'field_in_blog';
+$handler->display->display_options['fields']['field_in_blog']['table'] = 'field_data_field_in_blog';
+$handler->display->display_options['fields']['field_in_blog']['field'] = 'field_in_blog';
+/* Campo: Contenuto: In Home Page */
+$handler->display->display_options['fields']['field_in_home_page']['id'] = 'field_in_home_page';
+$handler->display->display_options['fields']['field_in_home_page']['table'] = 'field_data_field_in_home_page';
+$handler->display->display_options['fields']['field_in_home_page']['field'] = 'field_in_home_page';
 /* Campo: Contenuto: Data di inserimento */
 $handler->display->display_options['fields']['created']['id'] = 'created';
 $handler->display->display_options['fields']['created']['table'] = 'node';
@@ -399,13 +410,41 @@ $handler->display->display_options['filters']['name']['expose']['remember_roles'
   7 => 0,
   8 => 0,
 );
+/* Filter criterion: Contenuto: In Home Page (field_in_home_page) */
+$handler->display->display_options['filters']['field_in_home_page_value']['id'] = 'field_in_home_page_value';
+$handler->display->display_options['filters']['field_in_home_page_value']['table'] = 'field_data_field_in_home_page';
+$handler->display->display_options['filters']['field_in_home_page_value']['field'] = 'field_in_home_page_value';
+$handler->display->display_options['filters']['field_in_home_page_value']['exposed'] = TRUE;
+$handler->display->display_options['filters']['field_in_home_page_value']['expose']['operator_id'] = 'field_in_home_page_value_op';
+$handler->display->display_options['filters']['field_in_home_page_value']['expose']['label'] = 'In Home Page';
+$handler->display->display_options['filters']['field_in_home_page_value']['expose']['operator'] = 'field_in_home_page_value_op';
+$handler->display->display_options['filters']['field_in_home_page_value']['expose']['identifier'] = 'field_in_home_page_value';
+$handler->display->display_options['filters']['field_in_home_page_value']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  3 => 0,
+);
+/* Filter criterion: Contenuto: In Blog (field_in_blog) */
+$handler->display->display_options['filters']['field_in_blog_value']['id'] = 'field_in_blog_value';
+$handler->display->display_options['filters']['field_in_blog_value']['table'] = 'field_data_field_in_blog';
+$handler->display->display_options['filters']['field_in_blog_value']['field'] = 'field_in_blog_value';
+$handler->display->display_options['filters']['field_in_blog_value']['exposed'] = TRUE;
+$handler->display->display_options['filters']['field_in_blog_value']['expose']['operator_id'] = 'field_in_blog_value_op';
+$handler->display->display_options['filters']['field_in_blog_value']['expose']['label'] = 'In Blog';
+$handler->display->display_options['filters']['field_in_blog_value']['expose']['operator'] = 'field_in_blog_value_op';
+$handler->display->display_options['filters']['field_in_blog_value']['expose']['identifier'] = 'field_in_blog_value';
+$handler->display->display_options['filters']['field_in_blog_value']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  3 => 0,
+);
 
 /* Display: Page */
 $handler = $view->new_display('page', 'Page', 'page');
 $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
 $handler->display->display_options['path'] = 'manage_site_content';
 $handler->display->display_options['menu']['type'] = 'normal';
-$handler->display->display_options['menu']['title'] = 'Amministra contenuti ItaloMairo.com';
+$handler->display->display_options['menu']['title'] = 'Amministra contenuti Sito';
 $handler->display->display_options['menu']['weight'] = '15';
 $handler->display->display_options['menu']['name'] = 'management';
 $handler->display->display_options['menu']['context'] = 0;
@@ -415,7 +454,7 @@ $handler->display->display_options['tab_options']['weight'] = '0';
 $handler->display->display_options['tab_options']['name'] = 'main-menu';
 $translatables['amministra_i_contenuti'] = array(
   t('Master'),
-  t('Amministra contenuti ItaloMairo.com'),
+  t('Amministra contenuti Sito'),
   t('leggi tutto'),
   t('Applica'),
   t('Ripristina'),
@@ -435,6 +474,8 @@ $translatables['amministra_i_contenuti'] = array(
   t('Titolo (tradotto)'),
   t('Tipo'),
   t('Pubblicato'),
+  t('In Blog'),
+  t('In Home Page'),
   t('Inserimento'),
   t('Aggiornato'),
   t('Autore'),
