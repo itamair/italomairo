@@ -14,6 +14,10 @@
   margin: 4px 0;
 }
 
+.ds-my-project-preview .field-type-image figure {
+	padding-top: 0 !important;
+}
+
 .ds-my-project-preview .field.clearfix {
   width: 100%;
 }
@@ -38,7 +42,7 @@
 
 .ds-my-project-preview .group-left {
   float: left;
-  margin: 0 40px 20px 4px;
+  margin: 0 4% 20px 0;
   width: 50%;
   display: block;
 }

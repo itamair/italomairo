@@ -2,7 +2,7 @@
 @media only screen and (max-width: 1024px) {
 	
 	body {
-		font-size: 90%;
+		font-size: 80% !important;
 	}
 
 	.content-style {
@@ -11,14 +11,16 @@
 	}
 	
 	#branding, .region-header {
-		padding-top: 15px;
-		padding-bottom: 20px;
-		width: 70%;
 		font-size: 90%;
 	}
-	
-	#branding #name-and-slogan {
-		padding-left: 20px;
+
+	.region-highlighted ul.main-menu li,
+	.region-highlighted .block-main-menu ul.menu li,
+	#primary-menu-bar ul.primary-menu li {
+		font-weight: bold;
+		display: inline;
+		padding: 8px 6px;
+		font-size: 100%;
 	}
 
 	.ds-my-project-preview .group-left {
