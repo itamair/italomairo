@@ -42,8 +42,12 @@ $handler->display->display_options['style_options']['widgets']['top']['views_sli
   'field_category' => 0,
   'field_mese_pubblicazione' => 0,
   'title' => 0,
-  'field_cover_images' => 0,
+  'title_field' => 0,
+  'field_sottottolo' => 0,
   'body' => 0,
+  'field_data_di_pubblicazione' => 0,
+  'field_cover_images' => 0,
+  'field_image' => 0,
   'field_tags' => 0,
   'counter' => 0,
   'nothing' => 0,
@@ -59,16 +63,21 @@ $handler->display->display_options['style_options']['widgets']['bottom']['views_
   'field_category' => 0,
   'field_mese_pubblicazione' => 0,
   'title' => 0,
-  'field_cover_images' => 0,
+  'title_field' => 0,
+  'field_sottottolo' => 0,
   'body' => 0,
+  'field_data_di_pubblicazione' => 0,
+  'field_cover_images' => 0,
+  'field_image' => 0,
   'field_tags' => 0,
   'nothing' => 0,
 );
 $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['weight'] = '1';
 $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
 $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_slide_counter']['weight'] = '1';
-$handler->display->display_options['style_options']['views_slideshow_cycle']['timeout'] = '5000';
-$handler->display->display_options['style_options']['views_slideshow_cycle']['speed'] = '700';
+$handler->display->display_options['style_options']['views_slideshow_cycle']['transition_advanced'] = 1;
+$handler->display->display_options['style_options']['views_slideshow_cycle']['timeout'] = '8000';
+$handler->display->display_options['style_options']['views_slideshow_cycle']['speed'] = '900';
 $handler->display->display_options['style_options']['views_slideshow_cycle']['delay'] = '0';
 $handler->display->display_options['style_options']['views_slideshow_cycle']['start_paused'] = 0;
 $handler->display->display_options['style_options']['views_slideshow_cycle']['remember_slide_days'] = '1';
@@ -125,7 +134,7 @@ $handler->display->display_options['fields']['title_field']['table'] = 'field_da
 $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
 $handler->display->display_options['fields']['title_field']['exclude'] = TRUE;
 $handler->display->display_options['fields']['title_field']['link_to_entity'] = 1;
-/* Campo: Contenuto: Sottotitolo */
+/* Campo: Contenuto: Sottotitolo in Home Page */
 $handler->display->display_options['fields']['field_sottottolo']['id'] = 'field_sottottolo';
 $handler->display->display_options['fields']['field_sottottolo']['table'] = 'field_data_field_sottottolo';
 $handler->display->display_options['fields']['field_sottottolo']['field'] = 'field_sottottolo';
@@ -158,7 +167,7 @@ $handler->display->display_options['fields']['field_data_di_pubblicazione']['set
   'multiple_to' => '',
   'show_repeat_rule' => 'show',
 );
-/* Campo: Contenuto: Immagine di copertina */
+/* Campo: Contenuto: Immagini */
 $handler->display->display_options['fields']['field_cover_images']['id'] = 'field_cover_images';
 $handler->display->display_options['fields']['field_cover_images']['table'] = 'field_data_field_cover_images';
 $handler->display->display_options['fields']['field_cover_images']['field'] = 'field_cover_images';
@@ -217,6 +226,11 @@ $handler->display->display_options['fields']['nothing']['element_label_colon'] =
 $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = 'div';
 $handler->display->display_options['fields']['nothing']['element_wrapper_class'] = 'slide-text-container';
 $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
+/* Criterio di ordinamento: Contenuto: In rilievo */
+$handler->display->display_options['sorts']['sticky']['id'] = 'sticky';
+$handler->display->display_options['sorts']['sticky']['table'] = 'node';
+$handler->display->display_options['sorts']['sticky']['field'] = 'sticky';
+$handler->display->display_options['sorts']['sticky']['order'] = 'DESC';
 /* Criterio di ordinamento: Globale: Casuale */
 $handler->display->display_options['sorts']['random']['id'] = 'random';
 $handler->display->display_options['sorts']['random']['table'] = 'views';
@@ -261,7 +275,7 @@ $handler->display->display_options['filters']['field_image_fid']['field'] = 'fie
 $handler->display->display_options['filters']['field_image_fid']['operator'] = '>=';
 $handler->display->display_options['filters']['field_image_fid']['value']['value'] = '1';
 $handler->display->display_options['filters']['field_image_fid']['group'] = 2;
-/* Filter criterion: Contenuto: Immagine di copertina (field_cover_images:fid) */
+/* Filter criterion: Contenuto: Immagini (field_cover_images:fid) */
 $handler->display->display_options['filters']['field_cover_images_fid']['id'] = 'field_cover_images_fid';
 $handler->display->display_options['filters']['field_cover_images_fid']['table'] = 'field_data_field_cover_images';
 $handler->display->display_options['filters']['field_cover_images_fid']['field'] = 'field_cover_images_fid';

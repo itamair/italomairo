@@ -3,9 +3,6 @@
 $view = new view();
 $view->name = 'amministra_i_contenuti';
 $view->description = '';
-$view = new view();
-$view->name = 'amministra_i_contenuti';
-$view->description = '';
 $view->tag = 'default';
 $view->base_table = 'node';
 $view->human_name = 'Amministra i contenuti (in code)';
@@ -364,16 +361,8 @@ $handler->display->display_options['filters']['type_1']['table'] = 'node';
 $handler->display->display_options['filters']['type_1']['field'] = 'type';
 $handler->display->display_options['filters']['type_1']['value'] = array(
   'article' => 'article',
-  'blog' => 'blog',
-  'blocco' => 'blocco',
-  'evento_gamba_destra' => 'evento_gamba_destra',
-  'feed' => 'feed',
-  'feed_item' => 'feed_item',
   'my_project' => 'my_project',
-  'notizia' => 'notizia',
   'page' => 'page',
-  'segnalazione' => 'segnalazione',
-  'webform' => 'webform',
 );
 $handler->display->display_options['filters']['type_1']['group'] = 1;
 $handler->display->display_options['filters']['type_1']['exposed'] = TRUE;
@@ -386,6 +375,7 @@ $handler->display->display_options['filters']['type_1']['expose']['remember_role
   2 => 0,
   3 => '3',
   1 => 0,
+  4 => 0,
 );
 $handler->display->display_options['filters']['type_1']['expose']['reduce'] = TRUE;
 /* Filter criterion: Utente: Name (raw) */
@@ -483,6 +473,7 @@ $translatables['amministra_i_contenuti'] = array(
   t('[edit_node] <a href=\'/node/[nid]/translate\'>tranlslate</a>'),
   t('Page'),
 );
+
 
 /* Define this new view from code in views list */
 $views[$view->name] = $view;

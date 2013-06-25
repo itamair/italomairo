@@ -119,7 +119,6 @@ $handler->display->display_options['defaults']['header'] = FALSE;
 $handler->display->display_options['header']['area']['id'] = 'area';
 $handler->display->display_options['header']['area']['table'] = 'views';
 $handler->display->display_options['header']['area']['field'] = 'area';
-$handler->display->display_options['header']['area']['empty'] = TRUE;
 $handler->display->display_options['header']['area']['content'] = '<div class="add-blog-article float-right"><a href="node/add/article">Aggiungi un nuovo articolo per il blog</a></div>';
 $handler->display->display_options['header']['area']['format'] = 'full_html';
 $handler->display->display_options['path'] = 'blog';
