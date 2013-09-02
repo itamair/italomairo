@@ -1,0 +1,11 @@
+<?php 
+
+/**
+* @file * Use this module to learn about jQuery. */
+
+/** * Implements hook_init(). */
+function small_display_adapt_init() {
+
+drupal_add_js(drupal_get_path('module', 'small_display_adapt') .'/small_display_adapt.js');
+
+}

@@ -1,0 +1,19 @@
+name = ImageFlow
+description =  Displays a group of images as a circular rotating gallery.
+core = 7.x
+configure = admin/config/media/imageflow
+
+dependencies[] = image
+dependencies[] = libraries
+
+files[] = imageflow.module
+files[] = includes/imageflow.admin.inc
+files[] = includes/views_plugin_style_imageflow.inc
+
+
+; Information added by drupal.org packaging script on 2012-04-22
+version = "7.x-1.0-alpha3+0-dev"
+core = "7.x"
+project = "imageflow"
+datestamp = "1335054751"
+

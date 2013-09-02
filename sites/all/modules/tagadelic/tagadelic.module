@@ -377,7 +377,7 @@ function tagadelic_block_info() {
  * Implements hook_block_view().
  */
 function tagadelic_block_view($delta = '') {
-  $block = array();
+  $blocks = array();
   if ($voc = taxonomy_vocabulary_load($delta)) {
     $blocks['subject'] = variable_get('tagadelic_block_title_' . $delta, t('Tags in @voc', array('@voc' => $voc->name)));
     $tags = tagadelic_get_weighted_tags(array($delta), variable_get('tagadelic_levels', 6), variable_get('tagadelic_block_tags_' . $delta, 12));

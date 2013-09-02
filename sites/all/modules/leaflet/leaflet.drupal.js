@@ -1,7 +1,11 @@
 (function ($) {
 
   Drupal.behaviors.leaflet = {
+    
+
     attach:function (context, settings) {
+      
+          console.log(context);
 
       $(settings.leaflet).each(function () {
         // bail if the map already exists

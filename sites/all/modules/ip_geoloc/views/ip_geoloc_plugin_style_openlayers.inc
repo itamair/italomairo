@@ -50,7 +50,7 @@ class ip_geoloc_plugin_style_openlayers extends views_plugin_style {
     $form['center_option']['#options'][IP_GEOLOC_MAP_CENTER_ON_LOCATION_FROM_ARGUMENT] = t('Use lat/lon coordinate arguments from a contextual filter');
     $argument_handlers = $this->view->display_handler->get_handlers('argument');
     if (!empty($argument_handlers)) {
-      $argument_options = array();
+      $argument_options = array('' => '<' . t('none') . '>');
       foreach ($argument_handlers as $key => $handler) {
         $argument_options[$key] = $handler->definition['group'] . ': ' . $handler->definition['title'];
       }
@@ -59,8 +59,16 @@ class ip_geoloc_plugin_style_openlayers extends views_plugin_style {
        '#title' => t('Choose a contextual filter to pull data from'),
        '#options' => $argument_options,
        '#default_value' => $this->options['argument'],
+       '#weight' => 100
       );
     }
+  }
+
+  /**
+   * Validate the options form.
+   */
+  function options_validate(&$form, &$form_state) {
+    ip_geoloc_plugin_style_bulk_of_form_validate($form, $form_state);
   }
 
   /**
@@ -113,15 +121,26 @@ class ip_geoloc_plugin_style_openlayers extends views_plugin_style {
         }
       }
       foreach ($locations as $location) {
+        if (isset($location->lon)) {
+          $lon = $location->lon;
+          $lat = $location->lat;
+        }
+        elseif (isset($location->longitude)) {
+          $lon = $location->longitude;
+          $lat = $location->latitude;
+        }
+        else {
+          continue;
+        }
         if (empty($center_set) && $center_option == IP_GEOLOC_MAP_CENTER_ON_FIRST_LOCATION) {
-          $map['center']['initial']['centerpoint'] = $location->longitude . ',' . $location->latitude;
+          $map['center']['initial']['centerpoint'] = "$lon,$lat";
           $center_set = TRUE;
         }
         $feature = array(
           // Only 'name' and 'description' are valid attribute names, see openlayers_behavior_popup.js
           'attributes' => array('description' => $location->balloon_text),
           'projection' => 'EPSG:4326',
-          'wkt' => 'POINT(' . $location->longitude . ' ' . $location->latitude . ')'
+          'wkt' => "POINT($lon $lat)"
         );
         $layer = isset($location->marker_color) && is_numeric($location->marker_color) ? $location->marker_color : 1;
         $map['layers'][IP_GEOLOC_MARKER_LAYER . $layer]['features'][] = $feature;

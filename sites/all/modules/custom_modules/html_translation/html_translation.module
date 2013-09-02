@@ -1,0 +1,17 @@
+<?php 
+
+function html_translation_form_locale_translate_edit_form_alter (&$form, $form_state, $form_id) {
+    // var_dump($form);
+    unset($form['#validate']);
+}
+
+function html_translation_form_i18n_string_locale_translate_edit_form_alter (&$form, $form_state, $form_id) {
+    //var_dump($form_id);
+    unset($form['#validate']);
+}
+
+function html_translation_form_i18n_string_translate_page_form_alter (&$form, $form_state, $form_id) {
+    //var_dump($form_id);
+    unset($form['#validate']);
+}
+

@@ -191,21 +191,7 @@ $databases = array (
       'driver' => 'mysql',
       'prefix' => '',
     ),
-  ),
-  
- 'previous_italomairo_cms' => 
-  array (
-    'default' => 
-    array (
-      'database' => 'itamair_cms',
-      'username' => 'root',
-      'password' => 'root',
-      'host' => 'localhost',
-      'port' => '',
-      'driver' => 'mysql',
-      'prefix' => '',
-    ),
-  ),
+  )
   
 );
 
@@ -317,7 +303,8 @@ ini_set('session.cookie_lifetime', 2000000);
  * shared base domain. Doing so assures that users remain logged in as they
  * cross between your various domains.
  */
-# $cookie_domain = 'example.com';
+
+ $cookie_domain = 'italomairo.italomairo.com';
 
 /**
  * Variable overrides:

@@ -104,12 +104,12 @@
   ; and main content column layout - these are controlled via theme settings for
   ; Page layouts. The Panels layouts are for Panels module and are controlled via
   ; the theme settings for Panels layouts.
-  
+
   ; There are seperate directories for each type of layout and an example
   ; plugin for each. These don't do very much, they are just examples, you can
   ; use the core themes layout plugins as a guide. Please see the _README in the
   ; layouts directory of this subtheme.
-  
+
   ; Remove the semicolon to umcomment and clear the sites cache.
 
   ; Page layout plugins
@@ -130,7 +130,7 @@
   features[] = favicon
   features[] = main_menu
   features[] = secondary_menu
-  
+
   ; Default settings for site features
   settings[toggle_logo]                      = 1
   settings[toggle_name]                      = 1
@@ -439,8 +439,8 @@
   settings[adaptivetheme_meta_mobileoptimized]  = 'width'
   settings[adaptivetheme_meta_handheldfriendly] = 'true'
   settings[adaptivetheme_meta_apple_mobile_web_app_capable] = 'yes'
-  settings[chrome_edge] = 0
-  settings[clear_type]  = 0
+  settings[adaptivetheme_meta_ie_document_mode] = ''
+  settings[adaptivetheme_meta_clear_type] = 0
 
 
   ; Touch icons
@@ -453,9 +453,9 @@
   ; Custom CSS
   settings[custom_css] = ''
 
-; Information added by drupal.org packaging script on 2013-01-20
-version = "7.x-3.1+47-dev"
+; Information added by drupal.org packaging script on 2013-04-17
+version = "7.x-3.1+68-dev"
 core = "7.x"
 project = "adaptivetheme"
-datestamp = "1358642227"
+datestamp = "1366201865"
 

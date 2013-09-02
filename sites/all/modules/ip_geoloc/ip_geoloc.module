@@ -18,7 +18,7 @@ define('IP_GEOLOC_DEFAULT_PAGE_EXCLUSIONS', "admin/*\nsites/default/*");
 
 define('IP_GEOLOC_MAP_DIV_DEFAULT_STYLE', 'height:300px');
 define('IP_GEOLOC_CURRENT_VISITOR_MAP_OPTIONS', '{"mapTypeId":"roadmap", "disableDefaultUI":true, "zoom":15, "zoomControl":true}');
-define('IP_GEOLOC_RECENT_VISITORS_MAP_OPTIONS', '{"mapTypeId":"terrain", "disableDefaultUI":true, "zoom":2,  "zoomControl":true, "scaleControl":true}');
+define('IP_GEOLOC_RECENT_VISITORS_MAP_OPTIONS', '{"mapTypeId":"roadmap", "disableDefaultUI":true, "zoom":2,  "zoomControl":true, "scaleControl":true}');
 define('IP_GEOLOC_EXAMPLE_MAP_OPTIONS', '{"mapTypeId":"roadmap", "zoom":10, "styles":[{"featureType":"road", "stylers":[{"saturation":-80}] }] }');
 
 define('DOC_GOOGLE_MAP_OPTIONS', 'http://code.google.com/apis/maps/documentation/javascript/reference.html#MapOptions');
@@ -45,6 +45,31 @@ function ip_geoloc_help($path, $arg) {
 }
 
 /**
+ * Implements hook_library().
+ */
+function ip_geoloc_library() {
+
+  if (!($css_path = ip_geoloc_get_ccs_library_path('font-awesome'))) {
+    return NULL;
+  }
+  $libraries['ip_geoloc_font_awesome'] = array(
+    'title' => 'IP Geolocation Views & Maps Font Awesome extension',
+    'css' => array(
+      "$css_path/font-awesome.css" => array(
+        'type' => 'file',
+        'media' => 'screen',
+      )
+    )
+  );
+  return $libraries;
+}
+
+function ip_geoloc_get_ccs_library_path($lib_path = 'font-awesome') {
+  $path = libraries_get_path($lib_path);
+  return $path ? "$path/css" : FALSE;
+}
+
+/**
  * Implements hook_menu().
  *
  * Defines new menu items.
@@ -54,7 +79,7 @@ function ip_geoloc_menu() {
   // Put the administrative settings under System on the Configuration page.
   $items['admin/config/system/ip_geoloc'] = array(
     'title' => 'IP Geolocation Views and Maps',
-    'description' => 'Configure how geolocation information is updated.',
+    'description' => 'Configure map markers and how geolocation information is updated.',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('ip_geoloc_admin_configure'),
     'access arguments' => array('administer site configuration'),
@@ -141,7 +166,7 @@ function ip_geoloc_init() {
       ip_geoloc_debug(t('IP Geolocation: initiating services to locate current position and reverse-geocode to address...'));
       ip_geoloc_get_current_location('ip-geoloc-current-location');
 
-      _ip_geoloc_set_session_value('position_pending_since', microtime(TRUE));
+      _ip_geoloc_set_session_value('position_pending_since', microtime(TRUE) - (timer_read('page') / 1000));
     }
     _ip_geoloc_set_session_value('last_position_check', time());
   };
@@ -201,6 +226,13 @@ function ip_geoloc_current_location_ajax_recipient() {
     watchdog('IP Geolocation', 'Browser @ %address, received after %sec seconds.',  array('%address' => $location['formatted_address'], '%sec' => $time_elapsed), WATCHDOG_INFO);
     ip_geoloc_debug(t('IP Geolocaton: global position and reverse-geocoding callback received after %sec seconds: !location',
       array('%sec' => $time_elapsed, '!location' => ip_geoloc_pretty_print($location))));
+    // If better_statistics module is enabled, we can backfill geolocation information
+    // to {accesslog} entries occurred since the positioning was requested.
+    if (!empty($since) and module_exists('better_statistics')) {
+      require_once 'plugins/ip_geoloc.statistics.inc';
+      _ip_geoloc_statistics_backfill($since, $location);
+    }
+
   }
   _ip_geoloc_set_session_value('position_pending_since', NULL);
 
@@ -223,12 +255,12 @@ function ip_geoloc_current_location_ajax_recipient() {
  */
 function ip_geoloc_use_smart_ip_if_enabled(&$location) {
   if (variable_get('ip_geoloc_smart_ip_as_backup', TRUE)) {
-    $location['provider'] = 'smart_ip';
-    if (module_exists('smart_ip')) {
+    if (function_exists('smart_ip_get_location')) {
       if (empty($location['ip_address'])) {
         $location['ip_address'] = ip_address();
       }
       $location = smart_ip_get_location($location['ip_address']); // see also: ip_geoloc_smart_ip_get_location_alter()
+      $location['provider'] = 'smart_ip';
       return TRUE;
     }
     ip_geoloc_debug(t('IP Geolocation: Smart IP configured as a backup, but is not enabled.'));
@@ -241,7 +273,7 @@ function ip_geoloc_use_smart_ip_if_enabled(&$location) {
  * Module GeoIP API does not expose a hook, but it does expose an API.
  */
 function ip_geoloc_use_geoip_api_if_enabled(&$location) {
-  if (!module_exists('geoip')) {
+  if (!function_exists('geoip_city')) {
     return FALSE;
   }
   $location['provider'] = 'geoip';
@@ -332,7 +364,9 @@ function ip_geoloc_format_address(&$location) {
   if (!empty($location['postal_code']) && $location['postal_code'] != '-') {
     $location['formatted_address'] .= ' ' . $location['postal_code'] . ',';
   }
-  $location['formatted_address'] .= ' ' . $location['country'];
+  if (!empty($location['country'])) {
+    $location['formatted_address'] .= ' ' . $location['country'];
+  }
   $location['formatted_address'] = trim($location['formatted_address']);
 }
 
@@ -448,7 +482,7 @@ function ip_geoloc_form_alter(&$form, &$form_state) {
  * the $location array as much as it can. Used here to format the address.
  */
 function ip_geoloc_smart_ip_get_location_alter(&$location) {
-  if (empty($location['postal_code'])) {
+  if (empty($location['postal_code']) && isset($location['zip'])) {
     $location['postal_code'] = $location['zip'];
   }
   ip_geoloc_format_address($location);

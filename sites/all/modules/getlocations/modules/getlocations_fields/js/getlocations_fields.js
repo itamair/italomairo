@@ -302,19 +302,22 @@
             //alert (typeof adrs.address_components == 'undefined');
             
             console.log($("#" + provincefield + k).val().toLowerCase());
-            console.log(results[0].address_components[2].long_name.toLowerCase());
-            console.log(results[0].address_components[2].long_name.toLowerCase().indexOf(provincefield_value_fixed.toLowerCase()));
+	    
+            if (results[0].address_components[2]) {
+	      console.log(results[0].address_components[2].long_name.toLowerCase());
+	      console.log(results[0].address_components[2].long_name.toLowerCase().indexOf(provincefield_value_fixed.toLowerCase()));
+	    }
             
             if (provincefield_value_fixed) {
-              if (results[0].address_components[2].long_name.toLowerCase().indexOf(provincefield_value_fixed.toLowerCase()) == -1 &&
+              if (results[0].address_components[2].long_name.toLowerCase().indexOf(provincefield_value_fixed.toLowerCase()) == -1 && 
                   results[0].address_components[3].long_name.toLowerCase().indexOf(provincefield_value_fixed.toLowerCase()) == -1 ) {
                 var msg = Drupal.t('The asked address doesn\'t respect the Province of ' + provincefield_value_fixed);
                 alert (msg);
-                return null;
+                return;
               }
             }
             
-            if (typeof adrs.address_components == 'undefined') { adrs.address_components = results[0].address_components };
+            if (typeof adrs.address_components == 'undefined') { adrs.address_components = results[0].address_components; }
             
             console.log (adrs.address_components);
             

@@ -319,7 +319,7 @@ ini_set('memory_limit', '256M');
  * shared base domain. Doing so assures that users remain logged in as they
  * cross between your various domains.
  */
-# $cookie_domain = 'example.com';
+ $cookie_domain = 'italomairo';
 
 /**
  * Variable overrides:

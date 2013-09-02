@@ -81,6 +81,5 @@ $.fn.mobileMenu = function(options) {
 })(jQuery);
 
 jQuery(function(){
-   jQuery('.primary-menu').mobileMenu();
-   jQuery('.secondary-menu').mobileMenu();
+   jQuery('.region-secondary-content .menu:first').mobileMenu();
   })

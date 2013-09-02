@@ -4,8 +4,91 @@
 * Implements $modulename_page_alter().
 */
 function my_functions_page_alter(&$page) {
-    dpm(current_path());
-  if (current_path() == 'manage_site_content') {
+    
+   $current_path =  current_path();
+   
+   //dpm($current_path);
+    
+  if ($current_path == 'manage_site_content' ||
+      $current_path == 'amministra-elenco-progetti' ||
+      arg(0) == 'admin' ||
+      arg(0) == 'user' ||
+      arg(2) == 'webform-results' ||
+      (arg(0) == 'node' && arg(1) == 'add') ||
+      (arg(0) == 'node' && arg(2) == 'edit')    ) {
     unset($page['sidebar_first']);
+    unset($page['sidebar_second']);
   }
+
+
+}
+
+/**
+* Implements hook_block_list_alter().
+*/
+function my_functions_block_list_alter(&$blocks) {
+        if(arg(0) == 'node' && is_numeric(arg(1)) ) {
+            
+        $node = node_load(arg(1));
+        
+            // We hide the Main Leaflet Map Block on the My Projects Nodes, setting a '' region to it
+            if ($node->type == 'my_project') {
+                
+                foreach ($blocks as $block) {
+                    if($block->delta == 'ip_locations-block_2') {
+                    $block->region = '';
+                    }
+                }
+            }
+        }
+        
+        if((arg(0) == 'node' && arg(1) == 'add') ||
+            (arg(0) == 'node' && arg(2) == 'edit') ) {
+        
+            // We hide the Main Leaflet Map Block on the Nodes Add/Edit pages, setting a '' region to it
+                
+                foreach ($blocks as $block) {
+                    if($block->delta == 'ip_locations-block_1' || $block->delta == 'ip_locations-block_2') {
+                    $block->region = '';
+                    }
+                }
+        }
+
+}
+
+/**
+* Implements hook_quicktabs_alter().
+*/
+function my_functions_quicktabs_alter(&$quicktabs) {
+    
+    $thisquicktabs = $quicktabs;
+    
+    //dpm($thisquicktabs);
+    
+    $current_path =  current_path();
+
+    /* if the page is the Blog one, then I hide the Blog Quicktab ***/
+    if ($current_path == 'blog') {
+    
+        for ($i=0; $i<count($thisquicktabs->tabs); ++$i) {
+            //dpm($thisquicktabs->tabs[$i]);
+          if ($thisquicktabs->tabs[$i]['title'] == 'Blog') {
+              
+              unset($thisquicktabs->tabs[$i]);  
+          }
+        }
+    }
+    
+    /* if the page is the News one, then I hide the Blog Quicktab ***/
+    if ($current_path == 'news') {
+    
+        for ($i=0; $i<count($thisquicktabs->tabs); ++$i) {
+            //dpm($thisquicktabs->tabs[$i]);
+          if ($thisquicktabs->tabs[$i]['title'] == 'News') {
+              
+              unset($thisquicktabs->tabs[$i]);  
+          }
+        }
+    }
+
 }

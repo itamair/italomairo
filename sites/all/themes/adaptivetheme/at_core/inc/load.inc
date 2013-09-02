@@ -340,6 +340,10 @@ function at_load_polyfills($theme_name) {
     if (at_get_setting('load_onmediaqueryjs') === 1) {
       $polyfills_array['all'][] = 'scripts/onmediaquery.js';
     }
+    if (at_get_setting('load_matchmediajs') === 1) {
+      $polyfills_array['all'][] = 'scripts/matchMedia.js';
+      $polyfills_array['all'][] = 'scripts/matchMedia.addListener.js';
+    }
 
     // Load Polyfills
     if (!empty($polyfills_array)) {
@@ -647,42 +651,52 @@ function at_load_google_fonts($theme_name) {
 }
 
 /**
- * Return JS and CSS for the Menu Toggle for mobile.
+ * Add js settings for the layout type and media query
  */
 function at_load_layout_js_settings($theme_name) {
-  $layout_settings_array = array(
-    'bigscreen_layout',
-    'tablet_landscape_layout',
-    'tablet_portrait_layout',
-    'smalltouch_landscape_layout',
-    'smalltouch_portrait_layout',
+  $breakpoints = array(
+    'bigscreen',
+    'tablet_landscape',
+    'tablet_portrait',
+    'smalltouch_landscape',
+    'smalltouch_portrait',
   );
-  foreach ($layout_settings_array as $layout_setting) {
-    $setting = at_get_setting($layout_setting, $theme_name);
-    if ($setting) {
-      $setting = str_replace('_', '-', $setting);
-      drupal_add_js(array($theme_name . '_layout_settings' => array($layout_setting => $setting)), 'setting');
+  $cfg = array();
+  foreach ($breakpoints as $breakpoint) {
+    $layout = at_get_setting($breakpoint . '_layout', $theme_name);
+    $media_query = at_get_setting($breakpoint . '_media_query', $theme_name);
+    if ($layout) {
+      $layout = str_replace('_', '-', $layout);
+      $cfg[$theme_name]['layout_settings'][$breakpoint] = $layout;
+    }
+    if ($media_query) {
+      check_plain($media_query);
+      $cfg[$theme_name]['media_query_settings'][$breakpoint] = $media_query;
     }
   }
+  drupal_add_js(array('adaptivetheme' => $cfg), 'setting');
 }
 
 /**
  * Return JS and CSS for the Menu Toggle for mobile.
  */
 function at_load_menu_toggle($path, $theme_name) {
-  // Add JS settings, we can leverage these with responsive JS if we want to
-  $menu_toggle_settings_array = array(
-    'menu_toggle_smalltouch_portrait',
-    'menu_toggle_smalltouch_landscape',
+  // Add JS settings for each enabled option (breakpoint)
+  $menu_toggle_settings = array(
     'menu_toggle_tablet_portrait',
     'menu_toggle_tablet_landscape',
   );
-  foreach ($menu_toggle_settings_array as $menu_toggle_setting) {
-    if (at_get_setting($menu_toggle_setting, $theme_name) == 1) {
-      $setting = $menu_toggle_setting;
-      drupal_add_js(array($theme_name . '_menu_toggle_settings' => array($setting => 'active')), 'setting');
+  $cfg = array();
+  foreach ($menu_toggle_settings as $toggle_setting) {
+    $setting = at_get_setting($toggle_setting, $theme_name);
+    if ($setting == 1) {
+      $cfg[$theme_name]['menu_toggle_settings'][$toggle_setting] = 'true';
+    }
+    else {
+      $cfg[$theme_name]['menu_toggle_settings'][$toggle_setting] = 'false';
     }
   }
+  drupal_add_js(array('adaptivetheme' => $cfg), 'setting');
 
   // Load the JS file
   $path_to_at_core = drupal_get_path('theme', 'adaptivetheme');
@@ -690,6 +704,7 @@ function at_load_menu_toggle($path, $theme_name) {
     'type' => 'file',
     'scope' => 'header',
     'group' => JS_THEME,
+    'weight'=> 999,
     'preprocess' => TRUE,
     'cache' => TRUE,
     )

@@ -1,7 +1,7 @@
 <?php
 
 $view = new view();
-$view->name = 'taxonomy_term';
+$view->name = 'taxonomy_term_new';
 $view->description = 'A view to emulate Drupal core\'s handling of taxonomy/term.';
 $view->tag = 'default';
 $view->base_table = 'node';
@@ -73,6 +73,14 @@ $handler->display->display_options['filters']['status_extra']['table'] = 'node';
 $handler->display->display_options['filters']['status_extra']['field'] = 'status_extra';
 $handler->display->display_options['filters']['status_extra']['group'] = 0;
 $handler->display->display_options['filters']['status_extra']['expose']['operator'] = FALSE;
+/* Filter criterion: Contenuto: Tipo */
+$handler->display->display_options['filters']['type']['id'] = 'type';
+$handler->display->display_options['filters']['type']['table'] = 'node';
+$handler->display->display_options['filters']['type']['field'] = 'type';
+$handler->display->display_options['filters']['type']['value'] = array(
+  'article' => 'article',
+  'my_project' => 'my_project',
+);
 
 /* Display: Page */
 $handler = $view->new_display('page', 'Page', 'page');
@@ -98,7 +106,7 @@ $handler->display->display_options['displays'] = array(
   'page' => 'page',
   'default' => 0,
 );
-$translatables['taxonomy_term'] = array(
+$translatables['taxonomy_term_new'] = array(
   t('Master'),
   t('leggi tutto'),
   t('Applica'),
@@ -118,7 +126,6 @@ $translatables['taxonomy_term'] = array(
   t('Page'),
   t('Feed'),
 );
-
 
 /* Define this new view from code in views list */
 $views[$view->name] = $view;

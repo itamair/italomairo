@@ -1,0 +1,101 @@
+<?php
+
+/**
+ * @file
+ * Module file for leaflet_googlemaps module.
+ */
+
+/**
+ * Implements hook_leaflet_map_info().
+ */
+function leaflet_googlemaps_leaflet_map_info() {
+  $map_info = array();
+
+  $default_settings = array(
+    'zoom' => 18,
+    'minZoom' => 0,
+    'maxZoom' => 18,
+    'dragging' => TRUE,
+    'touchZoom' => TRUE,
+    'scrollWheelZoom' => TRUE,
+    'doubleClickZoom' => TRUE,
+    'zoomControl' => TRUE,
+    'attributionControl' => TRUE,
+    'trackResize' => TRUE,
+    'fadeAnimation' => TRUE,
+    'zoomAnimation' => TRUE,
+    'closePopupOnClick' => TRUE,
+    'layerControl'       => FALSE, // TRUE works but forces user to pick one, not multiple
+  );
+
+  $map_info['google-maps-roadmap'] = array(
+    'label' => 'Google Maps - Roadmap',
+    'description' => t('Google Maps Roadmap layer'),
+    'settings' => $default_settings,
+    'layers' => array(
+      'roadmap' => array(
+        'type' => 'google-maps',
+        'googleMapsType' => 'ROADMAP',
+        'urlTemplate' => '',
+      ),
+    ),
+  );
+
+  $map_info['google-maps-satellite'] = array(
+    'label' => 'Google Maps - Satellite',
+    'description' => t('Google Maps Satellite layer'),
+    'settings' => $default_settings,
+    'layers' => array(
+      'roadmap' => array(
+        'type' => 'google-maps',
+        'googleMapsType' => 'SATELLITE',
+        'urlTemplate' => '',
+      ),
+    ),
+  );
+
+  $map_info['google-maps-hybrid'] = array(
+    'label' => 'Google Maps - Hybrid',
+    'description' => t('Google Maps Hybrid layer'),
+    'settings' => $default_settings,
+    'layers' => array(
+      'roadmap' => array(
+        'type' => 'google-maps',
+        'googleMapsType' => 'HYBRID',
+        'urlTemplate' => '',
+      ),
+    ),
+  );
+
+  $map_info['google-maps-terrain'] = array(
+    'label' => 'Google Maps - Terrain',
+    'description' => t('Google Maps Terrain layer'),
+    'settings' => $default_settings,
+    'layers' => array(
+      'roadmap' => array(
+        'type' => 'google-maps',
+        'googleMapsType' => 'TERRAIN',
+        'urlTemplate' => '',
+      ),
+    ),
+  );
+
+  return $map_info;
+}
+
+/**
+ * Preprocess function for leaflet maps.
+ */
+function leaflet_googlemaps_preprocess_leaflet_map(&$vars) {
+  global $language;
+  global $is_https;
+  $query = array(
+    'v' => '3.2',
+    'language' => $language->language,
+    'sensor' => 'false',
+  );
+  $protocol = $is_https ? 'https' : 'http';
+  drupal_add_js(url("$protocol://maps.google.com/maps/api/js", array('query' => $query, 'external' => TRUE)), array('type' => 'external', 'group' => JS_LIBRARY, 'weight' => 5));
+  drupal_add_js(libraries_get_path('leaflet-plugins') . '/layer/tile/Google.js', array('group' => JS_LIBRARY, 'weight' => 5));
+  drupal_add_js(drupal_get_path('module', 'leaflet_googlemaps') . '/leaflet_googlemaps.js', array('group' => JS_LIBRARY, 'weight' => 5));
+}

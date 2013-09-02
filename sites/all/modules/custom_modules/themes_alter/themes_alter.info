@@ -1,0 +1,8 @@
+name = Themes Alter (Custom Module)
+description = Alters the way of rendering specific theme elements
+package = Custom_modules
+core = 7.x
+php = 5.2
+
+files[] = themes_alter.module
+

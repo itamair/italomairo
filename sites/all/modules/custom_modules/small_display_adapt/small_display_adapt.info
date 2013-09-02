@@ -1,0 +1,8 @@
+name = small_display_adapt (Custom Module)
+description = adapt/reduce with javascript the appearence of pages with small monitors
+package = Custom_modules
+core = 7.x
+
+files[] = small_display_adapt.module
+
+

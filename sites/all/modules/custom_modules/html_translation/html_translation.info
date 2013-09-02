@@ -1,0 +1,9 @@
+name = html_translation (Custom Module)
+description = allow translation of html tags strings (unset form validate on locale_translate_edit_form)
+package = Custom_modules
+core = 7.x
+dependencies[] = locale
+
+files[] = html_translation.module
+
+

@@ -2,10 +2,6 @@
    This is crafted to work with Seven and AT Admin themes,
    other admin themes could spit the dummy with these styles. */
 .theme-settings-header {
-  background: #e5e5e5;
-  padding: 10px;
-  -moz-border-radius: 3px 3px 0 0;
-  -webkit-border-radius: 3px 3px 0 0;
   border-radius: 3px 3px 0 0;
 }
 .theme-settings-header h1 {
@@ -367,7 +363,7 @@ fieldset#edit-font .fieldset-wrapper .fieldset-wrapper {
   clip: rect(1px 1px 1px 1px);
   clip: rect(1px, 1px, 1px, 1px);
   position: absolute;
-  overflow: 0;
+  overflow: hidden;
 }
 #edit-site-name-font-style .form-type-select label {
   position: static !important;
@@ -544,7 +540,7 @@ div[class*=form-item-move-region-options] label:first-child {
   clip: rect(1px 1px 1px 1px);
   clip: rect(1px, 1px, 1px, 1px);
   position: absolute;
-  overflow: 0;
+  overflow: hidden;
 }
 
 

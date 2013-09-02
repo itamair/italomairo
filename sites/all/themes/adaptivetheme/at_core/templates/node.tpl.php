@@ -18,7 +18,7 @@
  * - $footer_attributes: attributes such as classes to apply to the footer element.
  * - $links_attributes: attributes such as classes to apply to the nav element.
  * - $is_mobile: Mixed, requires the Mobile Detect or Browscap module to return
- *   TRUE for mobile.  Note that tablets are also considered mobile devices.  
+ *   TRUE for mobile.  Note that tablets are also considered mobile devices.
  *   Returns NULL if the feature could not be detected.
  * - $is_tablet: Mixed, requires the Mobile Detect to return TRUE for tablets.
  *   Returns NULL if the feature could not be detected.
@@ -98,7 +98,7 @@
  */
 
 /**
- * Hiding Content and Printing it Separately
+ * Hide Content and Print it Separately
  *
  * Use the hide() function to hide fields and other content, you can render it
  * later using the render() function. Install the Devel module and use

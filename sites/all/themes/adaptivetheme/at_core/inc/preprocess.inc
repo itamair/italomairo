@@ -41,6 +41,9 @@ function adaptivetheme_preprocess_html(&$vars) {
   $vars['html_attributes_array']['lang'][] = $language->language;
   $vars['html_attributes_array']['dir'][] = $language->dir;
 
+  // You can add more attributes to the html elment, for example in a sub-theme you can do this:
+  //$vars['html_attributes_array']['xmlns:og'][] = 'http://opengraphprotocol.org/schema/';
+
   // Convert RDF Namespaces into structured data using drupal_attributes.
   $vars['rdf_namespaces'] = array();
   if (function_exists('rdf_get_namespaces')) {
@@ -403,7 +406,8 @@ function adaptivetheme_preprocess_block(&$vars) {
     $vars['tag'] = 'nav';
     array_unshift($vars['theme_hook_suggestions'], 'block__menu');
   }
-  $nav_modules = array('superfish', 'nice_menus', 'menu_block');
+
+  $nav_modules = array('superfish', 'nice_menus', 'menu_block', 'menu');
   if (in_array($vars['block']->module, $nav_modules)) {
     $vars['tag'] = 'nav';
     array_unshift($vars['theme_hook_suggestions'], 'block__menu');
@@ -411,19 +415,29 @@ function adaptivetheme_preprocess_block(&$vars) {
 
   // The menu bar region gets special treatment for the block template
   if ($vars['block']->region === 'menu_bar') {
-    // They are always menu blocks, right?
-    $vars['tag'] = 'nav';
-  }
-
-  // The menu bar region gets special treatment for the block template
-  if ($vars['block']->region === 'menu_bar') {
-    // Hide title with element invisible unless the menu toggle is active
-    if (at_get_setting('enable_menu_toggle', $theme_name) === 0) {
-      $vars['title_attributes_array']['class'][] = 'element-invisible';
-    }
     $vars['classes_array'][] = 'menu-wrapper';
     $vars['classes_array'][] = 'menu-bar-wrapper';
     $vars['classes_array'][] = 'clearfix';
+    $vars['title_attributes_array']['class'][] = 'element-invisible';
+  }
+
+  // The menu bar region gets special treatment for the block template
+  if (at_get_setting('enable_menu_toggle', $theme_name) === 1) {
+    if (at_get_setting('menu_toggle_menu_bar', $theme_name) === 1) {
+      if ($vars['block']->region === 'menu_bar') {
+        $vars['classes_array'][] = 'at-menu-toggle';
+      }
+    }
+
+    if (at_get_setting('menu_toggle_leaderboard', $theme_name) === 1 && $vars['block']->region === 'leaderboard') {
+      $vars['classes_array'][] = 'at-menu-toggle';
+      $vars['classes_array'][] = 'clearfix';
+    }
+
+    if (at_get_setting('menu_toggle_header', $theme_name) === 1 && $vars['block']->region === 'header') {
+      $vars['classes_array'][] = 'at-menu-toggle';
+      $vars['classes_array'][] = 'clearfix';
+    }
   }
 
   // Add extra classes if required
@@ -465,8 +479,7 @@ function adaptivetheme_preprocess_block(&$vars) {
 
   // Give our block titles and content some additional class
   $vars['title_attributes_array']['class'][] = 'block-title';
-  $vars['content_attributes_array']['class'][] = 'block-content';
-  $vars['content_attributes_array']['class'][] = 'content';
+  $vars['content_attributes_array']['class'] = array('block-content', 'content');
 
   // Add Aria Roles via attributes
   switch ($vars['block']->module) {
@@ -780,13 +793,20 @@ function adaptivetheme_preprocess_comment(&$vars) {
   }
   $vars['links_attributes_array']['class'][] = 'clearfix';
 
-  // Build the submitted by and time elements
+  // Build the submitted by, permalink, title and time elements
   $uri = entity_uri('comment', $vars['comment']);
   $uri['options'] += array('attributes' => array('rel' => 'bookmark'));
   $vars['title'] = l($vars['comment']->subject, $uri['path'], $uri['options']);
-  $vars['permalink'] = l(t('Permalink'), $uri['path'], $uri['options']); // Permalinks are embedded in the time element, aka Wordpress
+
+  // Don't rebuild the permalink variable if Advanced Forum is enabled
+  if (!module_exists('advanced_forum')) {
+    $vars['permalink'] = l(t('Permalink'), $uri['path'], $uri['options']);
+  }
+
   $vars['created'] = '<span class="date-time permalink">' . l($vars['created'], $uri['path'], $uri['options']) . '</span>';
+
   $vars['datetime'] = format_date($vars['comment']->created, 'custom', 'Y-m-d\TH:i:s\Z'); // Generate the timestamp, PHP "c" format is wrong
+
   $vars['submitted'] = t('Submitted by !username on !datetime',
     array(
       '!username' => $vars['author'],
@@ -829,11 +849,32 @@ function adaptivetheme_preprocess_aggregator_item(&$vars) {
  * Preprocess variables for adaptivtheme_menubar()
  */
 function adaptivetheme_preprocess_menubar(&$vars) {
+  global $theme_key;
+  $theme_name = $theme_key;
+
   $type = $vars['type'];
+
+  // menu bar id
   $vars['menubar_id'] = $type . '-menu-bar';
-  $vars['classes_array'][] = 'nav clearfix';
+  // Add classes to the main wrapper
+  $vars['classes_array'] = array('nav', 'clearfix');
+
+  // Classes for toggle menus
+  if (at_get_setting('enable_menu_toggle', $theme_name) === 1) {
+    if (at_get_setting('menu_toggle_main_menu', $theme_name) === 1 && $type === 'primary') {
+      $vars['classes_array'][] = 'at-menu-toggle';
+    }
+    if (at_get_setting('menu_toggle_secondary_menu', $theme_name) === 1 && $type === 'secondary') {
+      $vars['classes_array'][] = 'at-menu-toggle';
+    }
+  }
+
+  // Add classes to the inner wrapper
+  $vars['content_attributes_array']['class'][] = $type . '-menu-wrapper';
+  $vars['content_attributes_array']['class'][] = 'menu-wrapper';
+  $vars['content_attributes_array']['class'][] = 'clearfix';
+  // Set aria role
   $vars['content_attributes_array']['role'][] = 'navigation';
-  $vars['content_attributes_array']['class'][] = $type . '-menu-wrapper menu-wrapper clearfix';
   // Add suggstions per menu type
   $vars['theme_hook_suggestions'][] = 'menubar__' . $type;
 }
@@ -951,9 +992,20 @@ function adaptivetheme_preprocess_user_profile(&$vars) {
 function adaptivetheme_preprocess_breadcrumb(&$vars) {
   // Add Google rich snippets to breadcrumbs using RDFa
   if (module_exists('rdf')) {
-    $rich_snippet = 'rel="v:url" property="v:title" ';
+    $snippet_url = ' rel="v:url" ';
+    $snippet_title = ' property="v:title" ';
     foreach ($vars['breadcrumb'] as $key => $breadcrumb) {
-      $breadcrumb = substr_replace($breadcrumb, $rich_snippet, 3, 0);
+      preg_match_all('/<([\w]+)[^>]*>.*?<\/\\1>/', $breadcrumb, $matches);
+      if (count($matches[0]) > 0) {
+        $snippet = $snippet_title;
+        if ($matches[1][count($matches[1]) - 1] == 'a') {
+          $snippet = $snippet_url . $snippet_title;
+        }
+        $breadcrumb = substr_replace($breadcrumb, $snippet, strlen($matches[1][count($matches[1]) - 1]) + 1, 0);
+      }
+      else {
+        $breadcrumb = '<span ' . $snippet_title . '>' . $breadcrumb . '</span>';
+      }
       $vars['breadcrumb'][$key] = '<span typeof="v:Breadcrumb">' . $breadcrumb . '</span>';
     }
   }

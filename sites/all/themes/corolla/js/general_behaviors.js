@@ -1,13 +1,11 @@
+
 (function ($) {
 
-    $(document).ready(function () {
- 
-        //alert ('Javascript enabled!');
-        //console.log(document);
+ $(document).ready(function () {
     
     $('.block').fadeIn('slow');
-
-    });
-
+ 
+ });
+ 
 })(jQuery);
 

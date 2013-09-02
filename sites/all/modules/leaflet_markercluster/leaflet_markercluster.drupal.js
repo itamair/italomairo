@@ -7,7 +7,7 @@
 
   Drupal.behaviors.leaflet = { // overrides same behavior in leaflet/leaflet.drupal.js
     attach: function(context, settings) {
-
+          console.log(context);
       $(settings.leaflet).each(function () {
         
         // bail if the map already exists
@@ -120,8 +120,6 @@
               lFeature.bindPopup(feature.popup, {autoPanPadding: L.point(25,25)});
             }
           }
-          
-          console.log(feature);
 
           // Allow others to do something with the feature that was just added to the map
           $(document).trigger('leaflet.feature', [lFeature, feature]);

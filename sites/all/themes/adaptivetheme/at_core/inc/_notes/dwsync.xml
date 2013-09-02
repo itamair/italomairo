@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name="alter.inc" server="174.120.150.92/public_html/italomairo/" local="3441483658" remote="12033108032" />
-<file name="fonts.inc" server="174.120.150.92/public_html/italomairo/" local="3441483658" remote="12033108032" />
-<file name="generate.inc" server="174.120.150.92/public_html/italomairo/" local="3441483658" remote="12033108092" />
-<file name="get.inc" server="174.120.150.92/public_html/italomairo/" local="3441483658" remote="12033108092" />
-<file name="google.web.fonts.inc" server="174.120.150.92/public_html/italomairo/" local="3441483658" remote="12033108092" />
-<file name="load.inc" server="174.120.150.92/public_html/italomairo/" local="3441483658" remote="12033108092" />
-<file name="plugins.inc" server="174.120.150.92/public_html/italomairo/" local="3441483658" remote="12033108092" />
-<file name="preprocess.inc" server="174.120.150.92/public_html/italomairo/" local="3444216646" remote="12041221592" />
-<file name="process.inc" server="174.120.150.92/public_html/italomairo/" local="3441483658" remote="12033108092" />
-<file name="theme.inc" server="174.120.150.92/public_html/italomairo/" local="3441483658" remote="12033108092" />
+<file name="alter.inc" server="174.120.150.92/public_html/italomairo/" local="3449044151" remote="12045001232" />
+<file name="fonts.inc" server="174.120.150.92/public_html/italomairo/" local="3449044151" remote="12045001232" />
+<file name="generate.inc" server="174.120.150.92/public_html/italomairo/" local="3449044151" remote="12045001292" />
+<file name="get.inc" server="174.120.150.92/public_html/italomairo/" local="3449044151" remote="12045001292" />
+<file name="google.web.fonts.inc" server="174.120.150.92/public_html/italomairo/" local="3449044151" remote="12045001292" />
+<file name="load.inc" server="174.120.150.92/public_html/italomairo/" local="3449044151" remote="12045001292" />
+<file name="plugins.inc" server="174.120.150.92/public_html/italomairo/" local="3449044151" remote="12045001292" />
+<file name="process.inc" server="174.120.150.92/public_html/italomairo/" local="3449044151" remote="12045001292" />
+<file name="theme.inc" server="174.120.150.92/public_html/italomairo/" local="3449044151" remote="12045001292" />
 </dwsync>

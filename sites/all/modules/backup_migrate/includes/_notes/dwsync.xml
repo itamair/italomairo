@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="backup_migrate.drush.inc" server="174.120.150.92/public_html/Siti_Fiera_di_Milano/fieramilanomedianew/" local="3421150378" remote="12018234032" />
+<file name="crud.inc" server="174.120.150.92/public_html/Siti_Fiera_di_Milano/fieramilanomedianew/" local="3421150378" remote="12018234032" />
+<file name="db.inc" server="174.120.150.92/public_html/Siti_Fiera_di_Milano/fieramilanomedianew/" local="3421150378" remote="12018234032" />
+<file name="db.mysql.inc" server="174.120.150.92/public_html/Siti_Fiera_di_Milano/fieramilanomedianew/" local="3421150378" remote="12018234032" />
+<file name="destinations.browser.inc" server="174.120.150.92/public_html/Siti_Fiera_di_Milano/fieramilanomedianew/" local="3421150378" remote="12018234032" />
+<file name="destinations.db.inc" server="174.120.150.92/public_html/Siti_Fiera_di_Milano/fieramilanomedianew/" local="3421150378" remote="12018234032" />
+<file name="destinations.db.mysql.inc" server="174.120.150.92/public_html/Siti_Fiera_di_Milano/fieramilanomedianew/" local="3421150378" remote="12018234032" />
+<file name="destinations.email.inc" server="174.120.150.92/public_html/Siti_Fiera_di_Milano/fieramilanomedianew/" local="3421150378" remote="12018234032" />
+<file name="destinations.file.inc" server="174.120.150.92/public_html/Siti_Fiera_di_Milano/fieramilanomedianew/" local="3421150378" remote="12018234032" />
+<file name="destinations.ftp.inc" server="174.120.150.92/public_html/Siti_Fiera_di_Milano/fieramilanomedianew/" local="3421150378" remote="12018234032" />
+<file name="destinations.inc" server="174.120.150.92/public_html/Siti_Fiera_di_Milano/fieramilanomedianew/" local="3421150378" remote="12018234032" />
+<file name="destinations.s3.inc" server="174.120.150.92/public_html/Siti_Fiera_di_Milano/fieramilanomedianew/" local="3421150378" remote="12018234032" />
+<file name="files.inc" server="174.120.150.92/public_html/Siti_Fiera_di_Milano/fieramilanomedianew/" local="3421150378" remote="12018234032" />
+<file name="filters.backup_restore.inc" server="174.120.150.92/public_html/Siti_Fiera_di_Milano/fieramilanomedianew/" local="3421150378" remote="12018234032" />
+<file name="filters.compression.inc" server="174.120.150.92/public_html/Siti_Fiera_di_Milano/fieramilanomedianew/" local="3421150378" remote="12018234032" />
+<file name="filters.encryption.inc" server="174.120.150.92/public_html/Siti_Fiera_di_Milano/fieramilanomedianew/" local="3421150378" remote="12018234032" />
+<file name="filters.inc" server="174.120.150.92/public_html/Siti_Fiera_di_Milano/fieramilanomedianew/" local="3421150378" remote="12018234032" />
+<file name="filters.statusnotify.inc" server="174.120.150.92/public_html/Siti_Fiera_di_Milano/fieramilanomedianew/" local="3421150378" remote="12018234032" />
+<file name="filters.utils.inc" server="174.120.150.92/public_html/Siti_Fiera_di_Milano/fieramilanomedianew/" local="3421150378" remote="12018234032" />
+<file name="profiles.inc" server="174.120.150.92/public_html/Siti_Fiera_di_Milano/fieramilanomedianew/" local="3421150378" remote="12018234032" />
+<file name="schedules.inc" server="174.120.150.92/public_html/Siti_Fiera_di_Milano/fieramilanomedianew/" local="3421150378" remote="12018234032" />
+<file name="backup_migrate.drush.inc" server="174.120.150.92/public_html/italomairo/" local="3421150378" remote="12033099932" />
+<file name="crud.inc" server="174.120.150.92/public_html/italomairo/" local="3421150378" remote="12033099932" />
+<file name="db.inc" server="174.120.150.92/public_html/italomairo/" local="3421150378" remote="12033099932" />
+<file name="db.mysql.inc" server="174.120.150.92/public_html/italomairo/" local="3421150378" remote="12033099932" />
+<file name="destinations.browser.inc" server="174.120.150.92/public_html/italomairo/" local="3421150378" remote="12033099932" />
+<file name="destinations.db.inc" server="174.120.150.92/public_html/italomairo/" local="3421150378" remote="12033099932" />
+<file name="destinations.db.mysql.inc" server="174.120.150.92/public_html/italomairo/" local="3421150378" remote="12033099932" />
+<file name="destinations.email.inc" server="174.120.150.92/public_html/italomairo/" local="3421150378" remote="12033099932" />
+<file name="destinations.file.inc" server="174.120.150.92/public_html/italomairo/" local="3421150378" remote="12033099932" />
+<file name="destinations.ftp.inc" server="174.120.150.92/public_html/italomairo/" local="3421150378" remote="12033099932" />
+<file name="destinations.inc" server="174.120.150.92/public_html/italomairo/" local="3421150378" remote="12033099932" />
+<file name="destinations.s3.inc" server="174.120.150.92/public_html/italomairo/" local="3421150378" remote="12033099932" />
+<file name="files.inc" server="174.120.150.92/public_html/italomairo/" local="3421150378" remote="12033099932" />
+<file name="filters.backup_restore.inc" server="174.120.150.92/public_html/italomairo/" local="3421150378" remote="12033099932" />
+<file name="filters.compression.inc" server="174.120.150.92/public_html/italomairo/" local="3421150378" remote="12033099932" />
+<file name="filters.encryption.inc" server="174.120.150.92/public_html/italomairo/" local="3421150378" remote="12033099932" />
+<file name="filters.inc" server="174.120.150.92/public_html/italomairo/" local="3421150378" remote="12033099932" />
+<file name="filters.statusnotify.inc" server="174.120.150.92/public_html/italomairo/" local="3421150378" remote="12033099932" />
+<file name="filters.utils.inc" server="174.120.150.92/public_html/italomairo/" local="3421150378" remote="12033099932" />
+<file name="profiles.inc" server="174.120.150.92/public_html/italomairo/" local="3421150378" remote="12033099932" />
+<file name="schedules.inc" server="174.120.150.92/public_html/italomairo/" local="3421150378" remote="12033099932" />
+</dwsync>

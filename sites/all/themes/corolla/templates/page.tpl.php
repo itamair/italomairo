@@ -13,7 +13,7 @@
     <div id="header-wrapper">
       <div class="container clearfix">
 
-        <header class="clearfix<?php print $site_logo ? ' with-logo' : ''; ?>" role="banner">
+        <header class="clearfix<?php print $site_logo ? ' with-no-logo' : ''; ?>" role="banner">
 
           <?php if ($site_logo || $site_name || $site_slogan): ?>
             <div id="branding" class="branding-elements clearfix">
@@ -28,7 +28,7 @@
                 <hgroup<?php print $hgroup_attributes; ?>>
 
                   <?php if ($site_name): ?>
-                    <h1<?php print $site_name_attributes; ?>><?php print $site_name; ?></h1>
+                    <h1<?php print $site_name_attributes; ?>><?php print t($site_name); ?></h1>
                   <?php endif; ?>
 
                   <?php if ($site_slogan): ?>
@@ -47,14 +47,6 @@
 
       </div>
     </div>
-
-                <?php if ($page['site_references']): ?>
-                  <div id="site-references-wrapper">
-                    <div class="container clearfix">
-                      <?php print render($page['site_references']); ?>
-                    </div>
-                  </div>
-                 <?php endif; ?>
 
     <?php if (
       $page['three_33_top'] ||
@@ -84,6 +76,13 @@
         </div>
       </div>
      <?php endif; ?>
+
+    <div id="main-menu-wrapper">
+      <div class="container clearfix">
+                <?php if ($primary_navigation): print $primary_navigation; endif; ?>
+                <?php if ($secondary_navigation): print $secondary_navigation; endif; ?>
+      </div>
+    </div>
 
     <?php if ($messages || $page['help']): ?>
       <div id="messages-help-wrapper">
@@ -118,9 +117,6 @@
           }; */ ?>
 
                 <?php print render($page['highlighted']); ?>
-
-                <?php if ($primary_navigation): print $primary_navigation; endif; ?>
-                <?php if ($secondary_navigation): print $secondary_navigation; endif; ?>
 
                 <<?php print $tag; ?> id="main-content" role="main">
 

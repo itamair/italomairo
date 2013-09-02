@@ -15,30 +15,29 @@ function adaptivetheme_html_head_alter(&$head_elements) {
   // charset utf-8
   $head_elements['system_meta_content_type']['#attributes'] = array('charset' => 'utf-8');
 
-  // Metatags for mobile
-  // X-UA-Compatible
-  if (at_get_setting('chrome_edge', $theme_name) === 1) {
-    $head_elements['adaptivetheme_meta_x_ua_compatible'] = array(
+  // IE Document Mode
+  if ($adaptivetheme_meta_ie_document_mode = at_get_setting('adaptivetheme_meta_ie_document_mode', $theme_name)) {
+    $head_elements['adaptivetheme_meta_ie_document_mode'] = array(
       '#type' => 'html_tag',
       '#tag' => 'meta',
       '#attributes' => array(
         'http-equiv' => "X-UA-Compatible",
-        'content' => "IE=edge, chrome=1",
+        'content' => $adaptivetheme_meta_ie_document_mode,
       ),
-      '#weight' => 1,
+      '#weight' => -999, // 1 less than the charset
     );
   }
 
   // cleartype
-  if (at_get_setting('clear_type', $theme_name) === 1) {
-    $head_elements['adaptivetheme_meta_cleartype'] = array(
+  if (at_get_setting('adaptivetheme_meta_clear_type', $theme_name) === 1) {
+    $head_elements['adaptivetheme_meta_clear_type'] = array(
       '#type' => 'html_tag',
       '#tag' => 'meta',
       '#attributes' => array(
         'http-equiv' => "cleartype",
         'content' => "on",
       ),
-      '#weight' => 2,
+      '#weight' => -998,
     );
   }
 
@@ -54,7 +53,7 @@ function adaptivetheme_html_head_alter(&$head_elements) {
           'name' => 'viewport',
           'content' => check_plain($adaptivetheme_meta_viewport),
         ),
-        '#weight' => 3,
+        '#weight' => 1,
       );
     }
 
@@ -67,7 +66,7 @@ function adaptivetheme_html_head_alter(&$head_elements) {
           'name' => "MobileOptimized",
           'content' => check_plain($adaptivetheme_meta_mobileoptimized),
         ),
-        '#weight' => 4,
+        '#weight' => 2,
       );
     }
 
@@ -80,7 +79,7 @@ function adaptivetheme_html_head_alter(&$head_elements) {
           'name' => "HandheldFriendly",
           'content' => check_plain($adaptivetheme_meta_handheldfriendly),
         ),
-        '#weight' => 5,
+        '#weight' => 3,
       );
     }
 
@@ -93,7 +92,7 @@ function adaptivetheme_html_head_alter(&$head_elements) {
           'name' => "apple-mobile-web-app-capable",
           'content' => check_plain($adaptivetheme_meta_apple_mobile_web_app_capable),
         ),
-        '#weight' => 6,
+        '#weight' => 4,
       );
     }
   }

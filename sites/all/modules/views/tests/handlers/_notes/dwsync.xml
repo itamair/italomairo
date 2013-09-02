@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="views_handler_area_text.test" server="174.120.150.92/public_html/italomairo/" local="3428673579" remote="12033107432" />
+<file name="views_handler_argument_null.test" server="174.120.150.92/public_html/italomairo/" local="3428673579" remote="12033107432" />
+<file name="views_handler_argument_string.test" server="174.120.150.92/public_html/italomairo/" local="3428673579" remote="12033107432" />
+<file name="views_handler_field.test" server="174.120.150.92/public_html/italomairo/" local="3428673579" remote="12033107432" />
+<file name="views_handler_field_boolean.test" server="174.120.150.92/public_html/italomairo/" local="3428673579" remote="12033107432" />
+<file name="views_handler_field_counter.test" server="174.120.150.92/public_html/italomairo/" local="3428673579" remote="12033107432" />
+<file name="views_handler_field_custom.test" server="174.120.150.92/public_html/italomairo/" local="3428673579" remote="12033107432" />
+<file name="views_handler_field_date.test" server="174.120.150.92/public_html/italomairo/" local="3428673579" remote="12033107432" />
+<file name="views_handler_field_file_size.test" server="174.120.150.92/public_html/italomairo/" local="3428673579" remote="12033107432" />
+<file name="views_handler_field_math.test" server="174.120.150.92/public_html/italomairo/" local="3428673579" remote="12033107432" />
+<file name="views_handler_field_url.test" server="174.120.150.92/public_html/italomairo/" local="3428673579" remote="12033107432" />
+<file name="views_handler_field_xss.test" server="174.120.150.92/public_html/italomairo/" local="3428673579" remote="12033107432" />
+<file name="views_handler_filter_combine.test" server="174.120.150.92/public_html/italomairo/" local="3428673579" remote="12033107432" />
+<file name="views_handler_filter_date.test" server="174.120.150.92/public_html/italomairo/" local="3428673579" remote="12033107432" />
+<file name="views_handler_filter_equality.test" server="174.120.150.92/public_html/italomairo/" local="3428673579" remote="12033107432" />
+<file name="views_handler_filter_in_operator.test" server="174.120.150.92/public_html/italomairo/" local="3428673579" remote="12033107432" />
+<file name="views_handler_filter_numeric.test" server="174.120.150.92/public_html/italomairo/" local="3428673579" remote="12033107432" />
+<file name="views_handler_filter_string.test" server="174.120.150.92/public_html/italomairo/" local="3428673579" remote="12033107432" />
+<file name="views_handler_sort.test" server="174.120.150.92/public_html/italomairo/" local="3428673579" remote="12033107432" />
+<file name="views_handler_sort_date.test" server="174.120.150.92/public_html/italomairo/" local="3428673579" remote="12033107432" />
+<file name="views_handler_sort_random.test" server="174.120.150.92/public_html/italomairo/" local="3428673579" remote="12033107432" />
+</dwsync>

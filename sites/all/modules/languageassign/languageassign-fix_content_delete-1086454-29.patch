@@ -1,0 +1,77 @@
+diff --git a/languageassign.module b/languageassign.module
+index 238758c..0e8d867 100644
+--- a/languageassign.module
++++ b/languageassign.module
+@@ -54,15 +54,28 @@ function languageassign_node_operations_callback($nodes, $langcode) {
+  * Updates the nody and body languages.
+  */
+ function languageassign_node_presave($node) {
+-  if (property_exists($node, 'languageassign_langcode')) {
+-    $newlang = $node->languageassign_langcode;
+-    $oldlang = $node->language;
+-    // Update node language:
+-    $node->language = $newlang;
+-    // Update body language:
+-    $node->body[$newlang] = $node->body[$oldlang];
+-    $node->body[$oldlang] = array();
++  if (property_exists($node, 'languageassign_langcode') && field_valid_language($node->languageassign_langcode)) {
++    $new_language = $node->languageassign_langcode;
++    $old_language = $node->language;
+     unset($node->languageassign_langcode);
++
++    // Update field language when language changed only.
++    if ($old_language != $new_language) {
++      // Update node language:
++      $node->language = $new_language;
++
++      // Update field's language:
++      list(,,$bundle) = entity_extract_ids('node', $node);
++      foreach(field_info_instances('node', $bundle) as $instance) {
++        $field_name = $instance['field_name'];
++        $field = field_info_field($field_name);
++
++        if (field_is_translatable('node', $field) && !empty($node->{$field_name})) {
++          $node->{$field_name}[$new_language] = $node->{$field_name}[$old_language];
++          $node->{$field_name}[$old_language] = array();
++        }
++      }
++    }
+   }
+ }
+ 
+@@ -165,13 +178,28 @@ function languageassign_action_info() {
+  * Sets the language field of a node and its body.
+  */
+ function languageassign_set_node_language_action(&$node, $context) {
+-  $oldlang = $node->language;
+-  $newlang = $context['language'];
+-  // set node language
+-  $node->language = $newlang;
+-  // set body language
+-  $node->body[$newlang] = $node->body[$oldlang];
+-  $node->body[$oldlang] = array();
++  if (field_valid_language($context['language'])) {
++    $old_language = $node->language;
++    $new_language = $context['language'];
++
++    // Update field language when language changed only.
++    if ($old_language != $new_language) {
++      // set node language
++      $node->language = $new_language;
++
++      // Update field's language:
++      list(,,$bundle) = entity_extract_ids('node', $node);
++      foreach(field_info_instances('node', $bundle) as $instance) {
++        $field_name = $instance['field_name'];
++        $field = field_info_field($field_name);
++
++        if (field_is_translatable('node', $field) && !empty($node->{$field_name})) {
++          $node->{$field_name}[$new_language] = $node->{$field_name}[$old_language];
++          $node->{$field_name}[$old_language] = array();
++        }
++      }
++    }
++  }
+ }
+ 
+ function languageassign_set_node_language_action_form($context) {

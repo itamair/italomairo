@@ -17,7 +17,7 @@
  * - $secondary_local_tasks: Split local tasks - secondary.
  * - $tag: Prints the wrapper element for the main content.
  * - $is_mobile: Mixed, requires the Mobile Detect or Browscap module to return
- *   TRUE for mobile.  Note that tablets are also considered mobile devices.  
+ *   TRUE for mobile.  Note that tablets are also considered mobile devices.
  *   Returns NULL if the feature could not be detected.
  * - $is_tablet: Mixed, requires the Mobile Detect to return TRUE for tablets.
  *   Returns NULL if the feature could not be detected.
@@ -94,13 +94,13 @@
 <div id="page-wrapper">
   <div id="page" class="container <?php print $classes; ?>">
 
-    <!-- region: Leaderboard -->
+    <!-- !Leaderboard Region -->
     <?php print render($page['leaderboard']); ?>
 
     <header<?php print $header_attributes; ?>>
 
       <?php if ($site_logo || $site_name || $site_slogan): ?>
-        <!-- start: Branding -->
+        <!-- !Branding -->
         <div<?php print $branding_attributes; ?>>
 
           <?php if ($site_logo): ?>
@@ -110,7 +110,7 @@
           <?php endif; ?>
 
           <?php if ($site_name || $site_slogan): ?>
-            <!-- start: Site name and Slogan hgroup -->
+            <!-- !Site name and Slogan -->
             <hgroup<?php print $hgroup_attributes; ?>>
 
               <?php if ($site_name): ?>
@@ -121,43 +121,44 @@
                 <h2<?php print $site_slogan_attributes; ?>><?php print $site_slogan; ?></h2>
               <?php endif; ?>
 
-            </hgroup><!-- /end #name-and-slogan -->
+            </hgroup>
           <?php endif; ?>
 
-        </div><!-- /end #branding -->
+        </div>
       <?php endif; ?>
 
-      <!-- region: Header -->
+      <!-- !Header Region -->
       <?php print render($page['header']); ?>
 
     </header>
 
-    <!-- Navigation elements -->
+    <!-- !Navigation -->
     <?php print render($page['menu_bar']); ?>
     <?php if ($primary_navigation): print $primary_navigation; endif; ?>
     <?php if ($secondary_navigation): print $secondary_navigation; endif; ?>
 
-    <!-- Breadcrumbs -->
+    <!-- !Breadcrumbs -->
     <?php if ($breadcrumb): print $breadcrumb; endif; ?>
 
-    <!-- Messages and Help -->
+    <!-- !Messages and Help -->
     <?php print $messages; ?>
     <?php print render($page['help']); ?>
 
-    <!-- region: Secondary Content -->
+    <!-- !Secondary Content Region -->
     <?php print render($page['secondary_content']); ?>
 
     <div id="columns" class="columns clearfix">
       <div id="content-column" class="content-column" role="main">
         <div class="content-inner">
 
-          <!-- region: Highlighted -->
+          <!-- !Highlighted region -->
           <?php print render($page['highlighted']); ?>
 
           <<?php print $tag; ?> id="main-content">
 
             <?php print render($title_prefix); // Does nothing by default in D7 core ?>
 
+            <!-- !Main Content Header -->
             <?php if ($title || $primary_local_tasks || $secondary_local_tasks || $action_links = render($action_links)): ?>
               <header<?php print $content_header_attributes; ?>>
 
@@ -188,36 +189,36 @@
               </header>
             <?php endif; ?>
 
-            <!-- region: Main Content -->
+            <!-- !Main Content -->
             <?php if ($content = render($page['content'])): ?>
               <div id="content" class="region">
                 <?php print $content; ?>
               </div>
             <?php endif; ?>
 
-            <!-- Feed icons (RSS, Atom icons etc -->
+            <!-- !Feed Icons -->
             <?php print $feed_icons; ?>
 
             <?php print render($title_suffix); // Prints page level contextual links ?>
 
           </<?php print $tag; ?>><!-- /end #main-content -->
 
-          <!-- region: Content Aside -->
+          <!-- !Content Aside Region-->
           <?php print render($page['content_aside']); ?>
 
         </div><!-- /end .content-inner -->
       </div><!-- /end #content-column -->
 
-      <!-- regions: Sidebar first and Sidebar second -->
+      <!-- !Sidebar Regions -->
       <?php $sidebar_first = render($page['sidebar_first']); print $sidebar_first; ?>
       <?php $sidebar_second = render($page['sidebar_second']); print $sidebar_second; ?>
 
     </div><!-- /end #columns -->
 
-    <!-- region: Tertiary Content -->
+    <!-- !Tertiary Content Region -->
     <?php print render($page['tertiary_content']); ?>
 
-    <!-- region: Footer -->
+    <!-- !Footer -->
     <?php if ($page['footer']): ?>
       <footer<?php print $footer_attributes; ?>>
         <?php print render($page['footer']); ?>

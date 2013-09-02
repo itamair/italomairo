@@ -1,1 +1,21 @@
-<?xml version="1.0" encoding="utf-8" ?><dwsync><file name="block--quicktabs.tpl.php" server="174.120.150.92/public_html/italomairo/" local="3436887191" remote="12033108692" /><file name="comment-wrapper.tpl.php" server="174.120.150.92/public_html/italomairo/" local="3436887191" remote="12033108692" /><file name="comment.tpl.php" server="174.120.150.92/public_html/italomairo/" local="3436887191" remote="12033108692" /><file name="forum-icon.tpl.php" server="174.120.150.92/public_html/italomairo/" local="3436887191" remote="12033108692" /><file name="maintenance-page.tpl.php" server="174.120.150.92/public_html/italomairo/" local="3436887191" remote="12033108692" /><file name="node.tpl.php" server="174.120.150.92/public_html/italomairo/" local="3436887191" remote="12033108692" /><file name="page.tpl.php" server="174.120.150.92/public_html/italomairo/" local="3447031020" remote="12036965612" /><file name="poll-bar--block.tpl.php" server="174.120.150.92/public_html/italomairo/" local="3436887191" remote="12033108692" /><file name="poll-bar.tpl.php" server="174.120.150.92/public_html/italomairo/" local="3436887191" remote="12033108692" /><file name="field--field-committente.tpl.php" server="174.120.150.92/public_html/italomairo/" local="3451458586" remote="12041368712" /><file name="field--field-cv.tpl.php" server="174.120.150.92/public_html/italomairo/" local="3446840551" remote="12036753932" /><file name="field.tpl.php" server="174.120.150.92/public_html/italomairo/" local="3438787979" remote="12036737372" /><file name="field--field-da-a.tpl.php" server="174.120.150.92/public_html/italomairo/" local="3447925760" remote="12037831652" /><file name="page--storia-della-mia-gamba.tpl.php" server="174.120.150.92/public_html/italomairo/" local="3451308832" remote="12041221592" /></dwsync>
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="block--quicktabs.tpl.php" server="174.120.150.92/public_html/italomairo/" local="3436887191" remote="12033108692" />
+<file name="comment-wrapper.tpl.php" server="174.120.150.92/public_html/italomairo/" local="3436887191" remote="12033108692" />
+<file name="comment.tpl.php" server="174.120.150.92/public_html/italomairo/" local="3436887191" remote="12033108692" />
+<file name="forum-icon.tpl.php" server="174.120.150.92/public_html/italomairo/" local="3436887191" remote="12033108692" />
+<file name="maintenance-page.tpl.php" server="174.120.150.92/public_html/italomairo/" local="3436887191" remote="12033108692" />
+<file name="node.tpl.php" server="174.120.150.92/public_html/italomairo/" local="3451375296" remote="12044175992" />
+<file name="page.tpl.php" server="174.120.150.92/public_html/italomairo/" local="3455167831" remote="12045077192" />
+<file name="poll-bar--block.tpl.php" server="174.120.150.92/public_html/italomairo/" local="3436887191" remote="12033108692" />
+<file name="poll-bar.tpl.php" server="174.120.150.92/public_html/italomairo/" local="3436887191" remote="12033108692" />
+<file name="field--field-committente.tpl.php" server="174.120.150.92/public_html/italomairo/" local="3451458586" remote="12041368712" />
+<file name="field--field-cv.tpl.php" server="174.120.150.92/public_html/italomairo/" local="3446840551" remote="12036753932" />
+<file name="field.tpl.php" server="174.120.150.92/public_html/italomairo/" local="3438787979" remote="12036737372" />
+<file name="field--field-da-a.tpl.php" server="174.120.150.92/public_html/italomairo/" local="3447925760" remote="12037831652" />
+<file name="page--storia-della-mia-gamba.tpl.php" server="174.120.150.92/public_html/italomairo/" local="3451308832" remote="12041221592" />
+<file name="views-view--ip-locations--page.tpl.php" server="174.120.150.92/public_html/italomairo/" local="3452180535" remote="12042673352" />
+<file name="views-view-field--ip-locations--attachment-1--title.tpl.php" server="174.120.150.92/public_html/italomairo/" local="3453312544" remote="12044581592" />
+<file name="views-view-fields--ip-locations--attachment-1.tpl.php" server="174.120.150.92/public_html/italomairo/" local="3453315241" remote="12044581592" />
+<file name="views-view-unformatted--ip-locations--attachment-1.tpl.php" server="174.120.150.92/public_html/italomairo/" local="3454670267" remote="12044581592" />
+</dwsync>

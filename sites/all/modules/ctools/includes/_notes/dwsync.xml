@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="ajax.inc" server="174.120.150.92/public_html/italomairo/" local="3428163452" remote="12033102512" />
+<file name="cache.inc" server="174.120.150.92/public_html/italomairo/" local="3428163452" remote="12033102512" />
+<file name="cache.plugin-type.inc" server="174.120.150.92/public_html/italomairo/" local="3428163452" remote="12033102512" />
+<file name="cleanstring.inc" server="174.120.150.92/public_html/italomairo/" local="3428163452" remote="12033102512" />
+<file name="collapsible.theme.inc" server="174.120.150.92/public_html/italomairo/" local="3428163452" remote="12033102512" />
+<file name="content.inc" server="174.120.150.92/public_html/italomairo/" local="3428163452" remote="12033102512" />
+<file name="content.menu.inc" server="174.120.150.92/public_html/italomairo/" local="3428163452" remote="12033102512" />
+<file name="content.plugin-type.inc" server="174.120.150.92/public_html/italomairo/" local="3428163452" remote="12033102512" />
+<file name="content.theme.inc" server="174.120.150.92/public_html/italomairo/" local="3428163452" remote="12033102512" />
+<file name="context-access-admin.inc" server="174.120.150.92/public_html/italomairo/" local="3428163452" remote="12033102512" />
+<file name="context-admin.inc" server="174.120.150.92/public_html/italomairo/" local="3428163452" remote="12033102512" />
+<file name="context-task-handler.inc" server="174.120.150.92/public_html/italomairo/" local="3428163452" remote="12033102512" />
+<file name="context.inc" server="174.120.150.92/public_html/italomairo/" local="3428163452" remote="12033102512" />
+<file name="context.menu.inc" server="174.120.150.92/public_html/italomairo/" local="3428163452" remote="12033102512" />
+<file name="context.plugin-type.inc" server="174.120.150.92/public_html/italomairo/" local="3428163452" remote="12033102512" />
+<file name="context.theme.inc" server="174.120.150.92/public_html/italomairo/" local="3428163452" remote="12033102512" />
+<file name="css.inc" server="174.120.150.92/public_html/italomairo/" local="3428163452" remote="12033102512" />
+<file name="dependent.inc" server="174.120.150.92/public_html/italomairo/" local="3428163452" remote="12033102512" />
+<file name="dropbutton.theme.inc" server="174.120.150.92/public_html/italomairo/" local="3428163452" remote="12033102512" />
+<file name="dropdown.theme.inc" server="174.120.150.92/public_html/italomairo/" local="3428163452" remote="12033102512" />
+<file name="export-ui.inc" server="174.120.150.92/public_html/italomairo/" local="3428163452" remote="12033102512" />
+<file name="export-ui.menu.inc" server="174.120.150.92/public_html/italomairo/" local="3428163452" remote="12033102512" />
+<file name="export-ui.plugin-type.inc" server="174.120.150.92/public_html/italomairo/" local="3428163452" remote="12033102512" />
+<file name="export.inc" server="174.120.150.92/public_html/italomairo/" local="3428163452" remote="12033102512" />
+<file name="fields.inc" server="174.120.150.92/public_html/italomairo/" local="3428163452" remote="12033102512" />
+<file name="jump-menu.inc" server="174.120.150.92/public_html/italomairo/" local="3428163452" remote="12033102512" />
+<file name="language.inc" server="174.120.150.92/public_html/italomairo/" local="3428163452" remote="12033102512" />
+<file name="math-expr.inc" server="174.120.150.92/public_html/italomairo/" local="3428163452" remote="12033102512" />
+<file name="menu.inc" server="174.120.150.92/public_html/italomairo/" local="3428163452" remote="12033102512" />
+<file name="modal.inc" server="174.120.150.92/public_html/italomairo/" local="3428163452" remote="12033102572" />
+<file name="object-cache.cron.inc" server="174.120.150.92/public_html/italomairo/" local="3428163452" remote="12033102572" />
+<file name="object-cache.inc" server="174.120.150.92/public_html/italomairo/" local="3428163452" remote="12033102572" />
+<file name="page-wizard.inc" server="174.120.150.92/public_html/italomairo/" local="3428163452" remote="12033102572" />
+<file name="page-wizard.menu.inc" server="174.120.150.92/public_html/italomairo/" local="3428163452" remote="12033102572" />
+<file name="plugins-admin.inc" server="174.120.150.92/public_html/italomairo/" local="3428163452" remote="12033102572" />
+<file name="plugins.inc" server="174.120.150.92/public_html/italomairo/" local="3428163452" remote="12033102572" />
+<file name="registry.inc" server="174.120.150.92/public_html/italomairo/" local="3428163452" remote="12033102572" />
+<file name="stylizer.inc" server="174.120.150.92/public_html/italomairo/" local="3428163452" remote="12033102572" />
+<file name="stylizer.theme.inc" server="174.120.150.92/public_html/italomairo/" local="3428163452" remote="12033102572" />
+<file name="utility.inc" server="174.120.150.92/public_html/italomairo/" local="3428163452" remote="12033102572" />
+<file name="views.inc" server="174.120.150.92/public_html/italomairo/" local="3428163452" remote="12033102572" />
+<file name="wizard.inc" server="174.120.150.92/public_html/italomairo/" local="3428163452" remote="12033102572" />
+<file name="wizard.theme.inc" server="174.120.150.92/public_html/italomairo/" local="3428163452" remote="12033102572" />
+</dwsync>

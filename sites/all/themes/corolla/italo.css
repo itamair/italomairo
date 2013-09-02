@@ -101,15 +101,12 @@ h1#page-title, .in-maintenance h1#page-title {
 }
 
 .region-sidebar-first {
-	margin-top: 60px;
+	margin-top: 10px;
 }
 
 
 /* Set Images Formats in Nodes content*/
 
-.field-type-image figure {
-	display: inline-block;
-}
 
 .field-type-image figure.clearfix::after {
 	clear: none;
@@ -126,14 +123,18 @@ iframe#google_map_contatcts {
 	display:inline-block;
 }
 
+.field-slideshow-wrapper {
+	width: 100% !important;
+}
+
 .field-slideshow {
 	position: relative;
 	padding: 0;
 	margin: 10px auto 0 auto;
+	width: 100% !important;
 	max-width: 768px;
 	max-height: 560px;
 }
-
 
 
 .field-slideshow-slide {
@@ -164,30 +165,6 @@ iframe#google_map_contatcts {
 	border: none;
 }
 
-
-.getlocations_map_canvas {
-	margin-right: 10px;
-	padding: 5px;
-	border: 1px solid #666;
-}
-
-.ip-geoloc-map {
-	border: 1px solid #666;
-	font-size: 0.8em;
-}
-
-.ip-geoloc-map img {
-	max-width: none;
-}
-
-.leaflet-map-select {
-	margin: 0 0 10px 0;
-}
-
-.leaflet-map-select .label {
-	font-size: 0.9em;
-	margin-right: 8px;
-}
 
 .field.view-mode-full.field-type-image img {
 	margin-right: 10px;
@@ -309,7 +286,7 @@ table.mini-gallery .photo-title {
 }
 
 .field-slideshow {
-	padding: 12px;
+	padding: 0;
 	margin: 10px auto 0 auto;
 }
 
@@ -335,18 +312,30 @@ thead th label {
 }
 
 #primary-menu-bar {
-	margin: 0 0 10px 0;
-	padding: 0 10px;
+	margin: 0;
+	padding: 0;
+}
+
+
+
+#content-wrapper {
+	margin-top: 10px;
 }
 
 .region-highlighted ul.main-menu,
 .region-highlighted .block-main-menu ul.menu,
-#primary-menu-bar ul.primary-menu  {
-	padding: 10px 10px;
+#primary-menu-bar ul.primary-menu,
+#primary-menu-bar ul.primary-menu li {
+	padding: 6px 10px;
 	background-color: #333;
 	border: none;
 	color: #fcfcf8;
-	border-radius: 6px 6px 0 0;
+	border-radius: 0;
+}
+
+#primary-menu-bar ul.primary-menu li.active,
+#primary-menu-bar ul.primary-menu li.active-trail {
+	border: solid 1px #FFF;
 }
 
 .region-highlighted ul.main-menu li,
@@ -354,7 +343,7 @@ thead th label {
 #primary-menu-bar ul.primary-menu li {
 	font-weight: bold;
 	display: inline;
-	padding: 10px 10px;
+	padding: 4px 10px;
 	background-color: #333;
 	border: none;
 	color: 	#fcfcf8;
@@ -390,18 +379,18 @@ thead th label {
 }
 
 #secondary-menu-bar ul.secondary-menu {
-	padding: 10px 10px;
+	padding: 6px 10px;
 	background-color: #FFF;
 	border: thin solid #e1e1e1;
 	color: #000;
-	border-radius: 0 0 6px 6px;
-	margin: 0 10px;
+	border-radius: 0;
+	margin: 0;
 }
 
 #secondary-menu-bar ul.secondary-menu li {
 	font-weight: bold;
 	display: inline;
-	padding: 10px 10px;
+	padding: 0 10px;
 	background-color: #FFF;
 	border: none;
 	color: 	#000;
@@ -496,7 +485,7 @@ ul.language-switcher-locale-url {
 	position: relative;
 	width: 100%;
 	max-width: 800px;
-	margin: 16px auto 0;
+	margin: 0 auto;
 }
 
 .view-slideshow-progetti .field-type-image img,
@@ -585,6 +574,38 @@ ul.language-switcher-locale-url {
 }
 
 /*** Maps ***/
+
+.getlocations_map_canvas {
+	margin-right: 10px;
+	padding: 5px;
+	border: 1px solid #666;
+}
+
+.ip-geoloc-map {
+	border: 1px solid #666;
+	font-size: 0.8em;
+}
+
+.ip-geoloc-map img {
+	max-width: none;
+}
+
+.leaflet-map-select {
+	margin: 0 0 10px 0;
+}
+
+.leaflet-map-select .label {
+	font-size: 0.9em;
+	margin-right: 8px;
+}
+
+.leaflet-map-select select {
+	width: 95%;
+}
+
+.view-mini-map .leaflet-control-zoom {
+	display: none;
+}
 
 .map-reset {
 	position: absolute;
@@ -676,15 +697,36 @@ ul.links.inline li .fb_iframe_widget span,
 .projects-list-block,
 .block.other-projects,
 .block.block-aggregator,
+.block-tagadelic,
+.block-blog-view,
+.twitter-block,
 #quicktabs-container-quick_tabs {
 	padding: 14px 10px 16px;
 	background-color: #fff;
 	-khtml-border-radius: 6px;
 	border-radius: 6px;
-	border: 1px solid 
-	#e1e1e1;
+	border: 1px solid #e1e1e1;
 	margin-bottom: 15px;
+	position: relative;
 }
+
+.block-content {
+	position: relative;
+	width: 100%;
+}
+
+.twitter-block .block-inner {
+	margin: 0 !important;
+	position: relative;
+	width: 100%;
+}
+
+.twitter-block .block-inner iframe {
+	width: 98% !important;
+	min-width:100px !important;
+	word-wrap: normal; 
+}
+
 
 ul.quicktabs-tabs.quicktabs-style-basic {
 	border-bottom: none;
@@ -721,11 +763,13 @@ ul.quicktabs-tabs.quicktabs-style-basic li.active a {
 }
 
 .block.block-aggregator,
+.block-blog-view,
 #quicktabs-quick_tabs .view-aggregator-feeds {
 	font-size: 95%;
 }
 
 .block.block-aggregator .block-title,
+.block-blog-view .block-title,
 #quicktabs-quick_tabs .view-aggregator-feeds .block-title {
 	margin-bottom: 10px;
 }
@@ -746,17 +790,24 @@ ul.quicktabs-tabs.quicktabs-style-basic li.active a {
 	margin-right: 0;
 }
 
+#block-quicktabs-quick-tabs {
+	margin-bottom: 16px;
+}
+
 #quicktabs-container-quick_tabs {
-	padding: 14px 20px 4px;
+	padding: 14px 20px;
+	margin-bottom: 0px;
 }
 
 .block.block-aggregator .view-aggregator-feeds .views-row,
+.block-blog-view .view-content .views-row,
 #quicktabs-quick_tabs .view-aggregator-feeds .view-content .views-row,
 #quicktabs-quick_tabs .view-id-vista_blog .view-content .views-row {
 	margin: 6px 0;
 }
 
 .block.block-aggregator .view-content h3,
+.block-blog-view .view-content h3,
 #quicktabs-quick_tabs .view-aggregator-feeds .view-content h3,
 #quicktabs-quick_tabs .view-id-vista_blog .view-content h3  {
 	font-size: 1em;
@@ -774,6 +825,7 @@ ul.quicktabs-tabs.quicktabs-style-basic li.active a {
 }
 
 .block.block-aggregator .view-aggregator-feeds .view-footer,
+.block-blog-view .view-footer,
 #quicktabs-quick_tabs .view-aggregator-feeds .view-footer,
 #quicktabs-quick_tabs .view-id-vista_blog .view-footer {
 	text-align: right;
@@ -797,3 +849,35 @@ form.webform-client-form input.form-text {
   width: inherit;
   max-width: none;
 }
+
+form.webform-client-form #edit-submitted-object {
+	width: 100%;
+}
+
+/*** Taxonomy Term ****/
+
+body.page-taxonomy-term #crumbs {
+	display: none;
+}
+
+/*** Menus in Secondary Content ***/
+
+#secondary-content-wrapper {
+	margin-bottom: 0;
+	height: 0 !important;
+}
+
+ .region-secondary-content .menu-block .menu {
+	display: none;
+ }
+ 
+ select.select-menu {
+	display: none !important;
+	width: 98%;
+	color: white;
+	background-color: #333;
+	margin: 0 10px;
+	padding: 10px;
+	font-size: 1.2em;
+	height: 26px;
+ }

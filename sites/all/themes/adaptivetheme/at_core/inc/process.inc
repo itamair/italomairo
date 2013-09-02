@@ -101,7 +101,7 @@ function adaptivetheme_process_page(&$vars) {
       $vars['theme_hook_suggestions'] = array_merge($vars['theme_hook_suggestions'], $suggestions);
     }
   }
-  
+
 }
 
 /**
@@ -158,6 +158,12 @@ function adaptivetheme_process_block(&$vars) {
     $vars['inner_suffix'] = '';
     $vars['content_processed'] = $vars['content']; // remove the default wrapper
   }
+  // Navigation or menu blocks get special treatment in these regions
+  if ($vars['block']->region === 'leaderboard' || $vars['block']->region === 'header') {
+    if ($vars['tag'] == 'nav') {
+      $vars['content_processed'] = $vars['content']; // remove the default wrapper
+    }
+  }
 
   // Some blocks look bad with wrappers so we strip them
   if ($vars['block']->region === 'content') {
@@ -169,6 +175,8 @@ function adaptivetheme_process_block(&$vars) {
     $vars['inner_prefix'] = '';
     $vars['inner_suffix'] = '';
   }
+
+  //dsm($vars);
 
   // Provide additional suggestions so the block__menu suggestion can be overridden easily
   $vars['theme_hook_suggestions'][] = 'block__' . $vars['block']->region . '__' . $vars['block']->module;
@@ -204,6 +212,8 @@ function adaptivetheme_process_node(&$vars) {
   // the requirement to add a DS template override.
   if (isset($vars['rendered_by_ds']) && $vars['rendered_by_ds'] == TRUE) {
     $vars['panel_prefix'] = '<article id="node-' . $vars['node']->nid . '" class="' . $vars['classes'] . ' rendered-by-ds clearfix"' . $vars['attributes'] . '>';
+    $vars['panel_prefix'] .= render($vars['title_prefix']);
+    $vars['panel_prefix'] .= render($vars['title_suffix']);
     $vars['panel_suffix'] = '</article>';
   }
 }

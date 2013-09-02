@@ -42,6 +42,9 @@ function adaptivetheme_theme($existing, $type, $theme, $path) {
  * @see adaptivetheme_process_menubar()
  */
 function adaptivetheme_menubar($vars) {
+
+  //dsm($vars);
+
   $output = '';
   $output .= '<div id="' . $vars['menubar_id'] . '" class="' . $vars['classes'] . '"' . $vars['attributes'] . '>';
   $output .= '<nav ' . $vars['content_attributes'] . '>';
@@ -161,8 +164,11 @@ function adaptivetheme_status_messages($vars) {
     'error' => t('Error message'),
     'warning' => t('Warning message'),
   );
+
+  $output .= "<div id=\"messages\">";
+
   foreach (drupal_get_messages($display) as $type => $messages) {
-    $output .= "<div id=\"messages\"><div class=\"messages $type\">";
+    $output .= "<div class=\"messages $type\">";
     if (!empty($status_heading[$type])) {
       $output .= '<h2 class="element-invisible">' . $status_heading[$type] . "</h2>";
     }
@@ -176,8 +182,11 @@ function adaptivetheme_status_messages($vars) {
     else {
       $output .= $messages[0];
     }
-    $output .= "</div></div>";
+    $output .= "</div>";
   }
+
+  $output .= "</div>";
+
   return $output;
 }
 

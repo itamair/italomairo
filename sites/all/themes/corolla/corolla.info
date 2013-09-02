@@ -28,10 +28,13 @@
   stylesheets[print][] = css/print.css
   stylesheets[all][] = italo.css
   stylesheets[all][] = italo_responsive.css
+  stylesheets[all][] = italo_specific.css
   
 ;----------// Italo Javascript Files
 
   scripts[] = js/general_behaviors.js
+  
+  scripts[] = js/jquery.mobilemenu.js
   
 ;------------------------------------------
 

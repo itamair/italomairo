@@ -96,14 +96,6 @@ function at_core_settings_validate($form, &$form_state) {
         form_set_error('global_gutter_width', t('The gutter width is not valid: <b>!invalid_gutter_value</b> is not a usable value', array('!invalid_gutter_value' => $invalid_gutter_value)));
       }
     }
-    // Menu toggle custom media query must be set if used
-    //if (isset($values['enable_menu_toggle']) && $values['enable_menu_toggle'] === 1) {
-    //  if (isset($values['menu_toggle_custom_media_query_toggle']) && $values['menu_toggle_custom_media_query_toggle'] === 1) {
-    //    if (empty($values['menu_toggle_custom_media_query'])) {
-    //      form_set_error('menu_toggle_custom_media_query', t('Menu Toggle custom media query is empty, please enter a media query or select another option.'));
-    //    }
-    //  }
-    //}
   }
 
   // Check if the custom files directory exists

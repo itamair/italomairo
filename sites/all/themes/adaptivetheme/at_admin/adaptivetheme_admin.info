@@ -330,12 +330,12 @@
 
   ; Mobile metatags
   settings[mobile_friendly_metatags] = 1
-  settings[adaptivetheme_meta_viewport] = 'width=device-width, initial-scale=1'
+  settings[adaptivetheme_meta_viewport] = 'width=device-width, initial-scale=1.0, user-scalable=yes'
   settings[adaptivetheme_meta_mobileoptimized]  = 'width'
   settings[adaptivetheme_meta_handheldfriendly] = 'true'
   settings[adaptivetheme_meta_apple_mobile_web_app_capable] = 'yes'
-  settings[chrome_edge] = 0
-  settings[clear_type]  = 0
+  settings[adaptivetheme_meta_ie_document_mode] = ''
+  settings[adaptivetheme_meta_clear_type] = 0
 
 
   ; Touch icons
@@ -348,9 +348,9 @@
   ; Custom CSS
   settings[custom_css] = ''
 
-; Information added by drupal.org packaging script on 2013-01-20
-version = "7.x-3.1+47-dev"
+; Information added by drupal.org packaging script on 2013-04-17
+version = "7.x-3.1+68-dev"
 core = "7.x"
 project = "adaptivetheme"
-datestamp = "1358642227"
+datestamp = "1366201865"
 

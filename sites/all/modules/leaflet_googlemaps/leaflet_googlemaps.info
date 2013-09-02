@@ -1,0 +1,13 @@
+name = Leaflet Google Maps
+description = Google Maps layer for Leaflet module
+
+core = 7.x
+
+dependencies[] = libraries
+dependencies[] = leaflet
+; Information added by drupal.org packaging script on 2013-03-19
+version = "7.x-1.0+1-dev"
+core = "7.x"
+project = "leaflet_googlemaps"
+datestamp = "1363655797"
+

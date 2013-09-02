@@ -1,0 +1,66 @@
+<?php
+/**
+ * @file
+ * Install, update and uninstall functions for the imageflow module.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function imageflow_schema() {
+  return array(
+    'imageflow_preset' => array(
+      'description' => 'Store presets for imageflow instances.',
+      'fields' => array(
+        'name' => array(
+          'description' => 'The machine-readable preset name.',
+          'type' => 'varchar',
+          'length' => 255,
+          'not null' => TRUE,
+        ),
+        'title' => array(
+          'description' => 'The human-readable title for this preset.',
+          'type' => 'varchar',
+          'length' => 255,
+          'not null' => TRUE,
+        ),
+        'imagestyle' => array(
+          'description' => 'The imagestyle to use for this preset.',
+          'type' => 'varchar',
+          'length' => 255,
+          'not null' => TRUE,
+          'default' => 'medium',
+        ),
+        'lightbox' => array(
+          'description' => 'Stores the lightbox opening function option.',
+          'type' => 'varchar',
+          'length' => 255,
+          'not null' => TRUE,
+          'default' => 'normal',
+        ),
+        'options' => array(
+          'description' => 'The options array.',
+          'type' => 'blob',
+          'size' => 'big',
+          'serialize' => TRUE,
+        ),
+      ),
+      'primary key' => array('name'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_install().
+ * Adds a 'default' preset for fresh installs.
+ */
+function imageflow_install() {
+  $preset = array(
+    'name' => 'default',
+    'title' => 'Default',
+    'options' => array(
+      'reflections' => 1,
+    ),
+  );
+  imageflow_preset_save($preset, TRUE);
+}

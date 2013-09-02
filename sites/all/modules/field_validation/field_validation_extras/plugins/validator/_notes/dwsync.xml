@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="field_validation_color_validator.inc" server="174.120.150.92/public_html/italomairo/" local="3441873277" remote="12041221232" />
+<file name="field_validation_date_validator.inc" server="174.120.150.92/public_html/italomairo/" local="3441873277" remote="12041221232" />
+<file name="field_validation_ean_validator.inc" server="174.120.150.92/public_html/italomairo/" local="3441873277" remote="12041221232" />
+<file name="field_validation_field_collection_unique_validator.inc" server="174.120.150.92/public_html/italomairo/" local="3441873277" remote="12041221232" />
+<file name="field_validation_int_validator.inc" server="174.120.150.92/public_html/italomairo/" local="3441873277" remote="12041221232" />
+<file name="field_validation_ip_validator.inc" server="174.120.150.92/public_html/italomairo/" local="3441873277" remote="12041221232" />
+<file name="field_validation_numeric_validator.inc" server="174.120.150.92/public_html/italomairo/" local="3441873277" remote="12041221232" />
+<file name="field_validation_pcre_validator.inc" server="174.120.150.92/public_html/italomairo/" local="3441873277" remote="12041221232" />
+<file name="field_validation_phone_validator.inc" server="174.120.150.92/public_html/italomairo/" local="3441873277" remote="12041221232" />
+<file name="field_validation_postal_code_validator.inc" server="174.120.150.92/public_html/italomairo/" local="3441873277" remote="12041221232" />
+<file name="field_validation_required_validator.inc" server="174.120.150.92/public_html/italomairo/" local="3441873277" remote="12041221232" />
+<file name="field_validation_someofseveral_validator.inc" server="174.120.150.92/public_html/italomairo/" local="3441873277" remote="12041221232" />
+</dwsync>
