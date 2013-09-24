@@ -115,12 +115,21 @@ $handler->display->display_options['filters']['field_in_blog_value']['value'] = 
 $handler = $view->new_display('page', 'Page', 'page');
 $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
 $handler->display->display_options['defaults']['header'] = FALSE;
-/* Intestazione: Globale: Text area */
-$handler->display->display_options['header']['area']['id'] = 'area';
-$handler->display->display_options['header']['area']['table'] = 'views';
-$handler->display->display_options['header']['area']['field'] = 'area';
-$handler->display->display_options['header']['area']['content'] = '<div class="add-blog-article float-right"><a href="node/add/article">Aggiungi un nuovo articolo per il blog</a></div>';
-$handler->display->display_options['header']['area']['format'] = 'full_html';
+/* Intestazione: Globale: PHP */
+$handler->display->display_options['header']['php']['id'] = 'php';
+$handler->display->display_options['header']['php']['table'] = 'views';
+$handler->display->display_options['header']['php']['field'] = 'php';
+$handler->display->display_options['header']['php']['empty'] = TRUE;
+$handler->display->display_options['header']['php']['php_output'] = '<?php
+global $user;
+ 
+  // Check to see if $user has the administrator role.
+  if ( in_array(\'administrator\', array_values($user->roles)) || in_array(\'sitecontentmanager\', array_values($user->roles)) ) {
+
+print \'<div class="add-blog-article float-right"><a href="node/add/article">Aggiungi un nuovo articolo per il blog</a></div>\';
+ 
+  }
+?> ';
 $handler->display->display_options['path'] = 'blog';
 $handler->display->display_options['menu']['type'] = 'normal';
 $handler->display->display_options['menu']['title'] = 'Blog';
@@ -189,7 +198,6 @@ $translatables['vista_blog'] = array(
   t('ultima »'),
   t('[title]'),
   t('Page'),
-  t('<div class="add-blog-article float-right"><a href="node/add/article">Aggiungi un nuovo articolo per il blog</a></div>'),
   t('Blocco'),
   t('Latest from Blog'),
   t('<?php 

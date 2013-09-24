@@ -1,8 +1,7 @@
 (function ($) {
   Drupal.behaviors.ATmenuToggle = {
     attach: function (context, settings) {
-      
-      console.log('mobile_menu_toggled');
+
       var activeTheme = Drupal.settings["ajaxPageState"]["theme"];
       var themeSettings = Drupal.settings['adaptivetheme'];
       var mtsTP = themeSettings[activeTheme]['menu_toggle_settings']['tablet_portrait'];

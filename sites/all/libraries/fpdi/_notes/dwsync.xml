@@ -27,4 +27,16 @@
 <file name="fpdi_pdf_parser.php" server="174.120.150.92/public_html/italomairo/" local="3398065222" remote="12033098972" />
 <file name="pdf_context.php" server="174.120.150.92/public_html/italomairo/" local="3398065225" remote="12033098972" />
 <file name="pdf_parser.php" server="174.120.150.92/public_html/italomairo/" local="3398065226" remote="12033098972" />
+<file name="fpdf_tpl.php" server="174.120.150.92/public_html/simmairo/" local="3398065216" remote="12033419732" />
+<file name="fpdi.php" server="174.120.150.92/public_html/simmairo/" local="3398065223" remote="12033419732" />
+<file name="fpdi2tcpdf_bridge.php" server="174.120.150.92/public_html/simmairo/" local="3398065224" remote="12033419732" />
+<file name="fpdi_pdf_parser.php" server="174.120.150.92/public_html/simmairo/" local="3398065222" remote="12033419732" />
+<file name="pdf_context.php" server="174.120.150.92/public_html/simmairo/" local="3398065225" remote="12033419732" />
+<file name="pdf_parser.php" server="174.120.150.92/public_html/simmairo/" local="3398065226" remote="12033419792" />
+<file name="fpdf_tpl.php" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3398065216" remote="12043913852" />
+<file name="fpdi.php" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3398065223" remote="12043913852" />
+<file name="fpdi2tcpdf_bridge.php" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3398065224" remote="12043913852" />
+<file name="fpdi_pdf_parser.php" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3398065222" remote="12043913852" />
+<file name="pdf_context.php" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3398065225" remote="12043913912" />
+<file name="pdf_parser.php" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3398065226" remote="12043913912" />
 </dwsync>

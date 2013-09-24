@@ -80,4 +80,20 @@
 <file name="tokenizejavascript.js" server="174.120.150.92/public_html/italomairo/" local="3433751040" remote="12033098132" />
 <file name="undo.js" server="174.120.150.92/public_html/italomairo/" local="3433751040" remote="12033098132" />
 <file name="util.js" server="174.120.150.92/public_html/italomairo/" local="3433751040" remote="12033098132" />
+<file name="codemirror.js" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433751040" remote="12043913492" />
+<file name="editor.js" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433751040" remote="12043913492" />
+<file name="highlight.js" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433751040" remote="12043913492" />
+<file name="mirrorframe.js" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433751040" remote="12043913492" />
+<file name="parsecss.js" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433751040" remote="12043913492" />
+<file name="parsedummy.js" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433751040" remote="12043913492" />
+<file name="parsehtmlmixed.js" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433751040" remote="12043913492" />
+<file name="parsejavascript.js" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433751040" remote="12043913492" />
+<file name="parsesparql.js" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433751040" remote="12043913492" />
+<file name="parsexml.js" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433751040" remote="12043913492" />
+<file name="select.js" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433751040" remote="12043913492" />
+<file name="stringstream.js" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433751040" remote="12043913492" />
+<file name="tokenize.js" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433751040" remote="12043913492" />
+<file name="tokenizejavascript.js" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433751040" remote="12043913492" />
+<file name="undo.js" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433751040" remote="12043913492" />
+<file name="util.js" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433751040" remote="12043913492" />
 </dwsync>

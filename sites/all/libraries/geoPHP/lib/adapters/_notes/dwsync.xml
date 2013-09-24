@@ -1,21 +1,25 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name="EWKB.class.php" server="174.120.150.92/public_html/italomairo/" local="3439132516" remote="12033538172" />
-<file name="EWKT.class.php" server="174.120.150.92/public_html/italomairo/" local="3439132516" remote="12033538172" />
-<file name="GeoAdapter.class.php" server="174.120.150.92/public_html/italomairo/" local="3439132516" remote="12033538172" />
-<file name="GeoHash.class.php" server="174.120.150.92/public_html/italomairo/" local="3439132516" remote="12033538172" />
-<file name="GeoJSON.class.php" server="174.120.150.92/public_html/italomairo/" local="3439132516" remote="12033538172" />
-<file name="GeoRSS.class.php" server="174.120.150.92/public_html/italomairo/" local="3439132516" remote="12033538172" />
-<file name="GoogleGeocode.class.php" server="174.120.150.92/public_html/italomairo/" local="3439132516" remote="12033538172" />
-<file name="GPX.class.php" server="174.120.150.92/public_html/italomairo/" local="3439132516" remote="12033538172" />
-<file name="KML.class.php" server="174.120.150.92/public_html/italomairo/" local="3439132516" remote="12033538172" />
-<file name="WKB.class.php" server="174.120.150.92/public_html/italomairo/" local="3439132516" remote="12033538172" />
-<file name="WKT.class.php" server="174.120.150.92/public_html/italomairo/" local="3439132516" remote="12033538172" />
-<file name="GeoAdapter.class.php" server="174.120.150.92/public_html/geoblogcms/" local="3439132516" remote="12038518112" />
-<file name="GeoJSON.class.php" server="174.120.150.92/public_html/geoblogcms/" local="3439132516" remote="12038518112" />
-<file name="GoogleGeocode.class.php" server="174.120.150.92/public_html/geoblogcms/" local="3439132516" remote="12038518112" />
-<file name="GPX.class.php" server="174.120.150.92/public_html/geoblogcms/" local="3439132516" remote="12038518112" />
-<file name="KML.class.php" server="174.120.150.92/public_html/geoblogcms/" local="3439132516" remote="12038518172" />
-<file name="WKB.class.php" server="174.120.150.92/public_html/geoblogcms/" local="3439132516" remote="12038518172" />
-<file name="WKT.class.php" server="174.120.150.92/public_html/geoblogcms/" local="3439132516" remote="12038518172" />
+<file name="EWKB.class.php" server="174.120.150.92/public_html/simmairo/" local="3439132516" remote="12033544652" />
+<file name="EWKT.class.php" server="174.120.150.92/public_html/simmairo/" local="3439132516" remote="12033544652" />
+<file name="GeoAdapter.class.php" server="174.120.150.92/public_html/simmairo/" local="3439132516" remote="12033544652" />
+<file name="GeoHash.class.php" server="174.120.150.92/public_html/simmairo/" local="3439132516" remote="12033544652" />
+<file name="GeoJSON.class.php" server="174.120.150.92/public_html/simmairo/" local="3439132516" remote="12033544652" />
+<file name="GeoRSS.class.php" server="174.120.150.92/public_html/simmairo/" local="3439132516" remote="12033544652" />
+<file name="GoogleGeocode.class.php" server="174.120.150.92/public_html/simmairo/" local="3439132516" remote="12033544652" />
+<file name="GPX.class.php" server="174.120.150.92/public_html/simmairo/" local="3439132516" remote="12033544652" />
+<file name="KML.class.php" server="174.120.150.92/public_html/simmairo/" local="3439132516" remote="12033544652" />
+<file name="WKB.class.php" server="174.120.150.92/public_html/simmairo/" local="3439132516" remote="12033544652" />
+<file name="WKT.class.php" server="174.120.150.92/public_html/simmairo/" local="3439132516" remote="12033544652" />
+<file name="EWKB.class.php" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3439132516" remote="12043913912" />
+<file name="EWKT.class.php" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3439132516" remote="12043913912" />
+<file name="GeoAdapter.class.php" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3439132516" remote="12043913912" />
+<file name="GeoHash.class.php" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3439132516" remote="12043913912" />
+<file name="GeoJSON.class.php" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3439132516" remote="12043913912" />
+<file name="GeoRSS.class.php" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3439132516" remote="12043913912" />
+<file name="GoogleGeocode.class.php" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3439132516" remote="12043913912" />
+<file name="GPX.class.php" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3439132516" remote="12043913912" />
+<file name="KML.class.php" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3439132516" remote="12043913912" />
+<file name="WKB.class.php" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3439132516" remote="12043913912" />
+<file name="WKT.class.php" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3439132516" remote="12043913912" />
 </dwsync>

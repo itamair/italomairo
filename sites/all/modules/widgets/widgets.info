@@ -4,9 +4,9 @@ package = Widgets
 core = 7.x
 ; files[] = widgets.test
 configure = admin/structure/widgets-sets
-; Information added by drupal.org packaging script on 2012-09-04
-version = "7.x-1.0-rc1"
+; Information added by drupal.org packaging script on 2013-09-11
+version = "7.x-1.0-rc1+0-dev"
 core = "7.x"
 project = "widgets"
-datestamp = "1346720847"
+datestamp = "1378902833"
 

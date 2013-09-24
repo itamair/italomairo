@@ -30,7 +30,7 @@ div#content-column,div.content-inner,.sidebar-first div.content-inner,.sidebar-s
 }
 /* bigscreen three_col_grail */
 @media only screen and (min-width:1025px) {
-.container {width:100%;max-width:1260px}
+.container {width:90%;max-width:1260px}
 #content-column,.content-column,div.sidebar {float: left; clear: none}
 .two-sidebars .content-inner {margin-left: 20%; margin-right: 20%}
 .sidebar-first .content-inner {margin-left: 20%; margin-right: 0}

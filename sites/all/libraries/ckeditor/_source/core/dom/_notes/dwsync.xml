@@ -70,4 +70,18 @@
 <file name="text.js" server="174.120.150.92/public_html/italomairo/" local="3433750200" remote="12033096812" />
 <file name="walker.js" server="174.120.150.92/public_html/italomairo/" local="3433750200" remote="12033096812" />
 <file name="window.js" server="174.120.150.92/public_html/italomairo/" local="3433750200" remote="12033096812" />
+<file name="comment.js" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433750200" remote="12043912952" />
+<file name="document.js" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433750200" remote="12043912952" />
+<file name="documentfragment.js" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433750200" remote="12043912952" />
+<file name="domobject.js" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433750200" remote="12043912952" />
+<file name="element.js" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433750200" remote="12043913012" />
+<file name="elementpath.js" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433750200" remote="12043913012" />
+<file name="event.js" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433750200" remote="12043913012" />
+<file name="node.js" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433750200" remote="12043913012" />
+<file name="nodelist.js" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433750200" remote="12043913012" />
+<file name="range.js" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433750200" remote="12043913012" />
+<file name="rangelist.js" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433750200" remote="12043913012" />
+<file name="text.js" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433750200" remote="12043913012" />
+<file name="walker.js" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433750200" remote="12043913012" />
+<file name="window.js" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433750200" remote="12043913012" />
 </dwsync>

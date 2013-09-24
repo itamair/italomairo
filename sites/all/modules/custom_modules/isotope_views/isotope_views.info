@@ -1,0 +1,11 @@
+name = "Specific Isotope Views"
+description = "A Module to Set Up Specific Isotope Views Behaviors"
+core = "7.x"
+package = Custom Modules
+core = 7.x
+
+dependencies[] = views
+dependencies[] = libraries
+
+stylesheets[all][] = css/isotope.css
+files[] = isotope_views.module

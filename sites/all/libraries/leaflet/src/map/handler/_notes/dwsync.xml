@@ -6,4 +6,10 @@
 <file name="Map.Keyboard.js" server="174.120.150.92/public_html/geoblogcms/" local="3442965926" remote="12038244932" />
 <file name="Map.ScrollWheelZoom.js" server="174.120.150.92/public_html/geoblogcms/" local="3442965926" remote="12038244932" />
 <file name="Map.TouchZoom.js" server="174.120.150.92/public_html/geoblogcms/" local="3442965926" remote="12038244932" />
+<file name="Map.BoxZoom.js" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3442965926" remote="12043914392" />
+<file name="Map.DoubleClickZoom.js" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3442965926" remote="12043914392" />
+<file name="Map.Drag.js" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3442965926" remote="12043914392" />
+<file name="Map.Keyboard.js" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3442965926" remote="12043914392" />
+<file name="Map.ScrollWheelZoom.js" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3442965926" remote="12043914392" />
+<file name="Map.TouchZoom.js" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3442965926" remote="12043914392" />
 </dwsync>

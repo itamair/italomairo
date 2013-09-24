@@ -55,4 +55,15 @@
 <file name="ResourceTypeConfig.php" server="174.120.150.92/public_html/italomairo/" local="3433750740" remote="12033097712" />
 <file name="ThumbnailsConfig.php" server="174.120.150.92/public_html/italomairo/" local="3433750740" remote="12033097712" />
 <file name="Xml.php" server="174.120.150.92/public_html/italomairo/" local="3433750740" remote="12033097712" />
+<file name="AccessControlConfig.php" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433750740" remote="12043913312" />
+<file name="Config.php" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433750740" remote="12043913312" />
+<file name="Connector.php" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433750740" remote="12043913312" />
+<file name="Factory.php" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433750740" remote="12043913312" />
+<file name="FolderHandler.php" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433750740" remote="12043913312" />
+<file name="Hooks.php" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433750740" remote="12043913312" />
+<file name="ImagesConfig.php" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433750740" remote="12043913312" />
+<file name="Registry.php" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433750740" remote="12043913312" />
+<file name="ResourceTypeConfig.php" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433750740" remote="12043913312" />
+<file name="ThumbnailsConfig.php" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433750740" remote="12043913312" />
+<file name="Xml.php" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433750740" remote="12043913312" />
 </dwsync>

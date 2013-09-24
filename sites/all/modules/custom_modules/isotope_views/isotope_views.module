@@ -1,0 +1,25 @@
+<?php
+
+  //Add Isotope Js Library
+  //drupal_add_js(libraries_get_path('jquery.isotope') . '/jquery.isotope.min.js');
+
+
+/**
+ * Implements hook_js_alter().
+ */
+function isotope_views_js_alter(&$javascript) {
+
+//dpm($javascript);
+
+}
+
+/**
+ * Implementation of hook_views_api().
+ */
+function isotope_views_views_api() {
+  $views_api_array = array(
+    'api' => 3,
+    'template path' => drupal_get_path('module', 'isotope_views') . '/templates',
+  );
+  return $views_api_array;
+}

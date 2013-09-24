@@ -488,22 +488,22 @@ function date_combo_validate($element, &$form_state) {
     }
   }
 
-  // An 'End' date without a 'Start' date is a validation error.
-  if ($empty && !empty($item[$to_field])) {
-    if (!is_array($item[$to_field])) {
-      form_error($element, t("A 'Start date' date is required if an 'end date' is supplied for field %field #%delta.", array('%delta' => $field['cardinality'] ? intval($delta + 1) : '', '%field' => $instance['label'])));
-      $empty = FALSE;
-    }
-    else {
-      foreach ($item[$to_field] as $key => $value) {
-        if (!empty($value)) {
-          form_error($element, t("A 'Start date' date is required if an 'End date' is supplied for field %field #%delta.", array('%delta' => $field['cardinality'] ? intval($delta + 1) : '', '%field' => $instance['label'])));
-          $empty = FALSE;
-          break;
-        }
-      }
-    }
-  }
+  //// An 'End' date without a 'Start' date is a validation error.
+  //if ($empty && !empty($item[$to_field])) {
+  //  if (!is_array($item[$to_field])) {
+  //    form_error($element, t("A 'Start date' date is required if an 'end date' is supplied for field %field #%delta.", array('%delta' => $field['cardinality'] ? intval($delta + 1) : '', '%field' => $instance['label'])));
+  //    $empty = FALSE;
+  //  }
+  //  else {
+  //    foreach ($item[$to_field] as $key => $value) {
+  //      if (!empty($value)) {
+  //        form_error($element, t("A 'Start date' date is required if an 'End date' is supplied for field %field #%delta.", array('%delta' => $field['cardinality'] ? intval($delta + 1) : '', '%field' => $instance['label'])));
+  //        $empty = FALSE;
+  //        break;
+  //      }
+  //    }
+  //  }
+  //}
 
   // If the user chose the option to not show the end date, just swap in the
   // start date as that value so the start and end dates are the same.

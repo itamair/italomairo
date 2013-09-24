@@ -80,4 +80,20 @@
 <file name="RenameFolder.php" server="174.120.150.92/public_html/italomairo/" local="3433750740" remote="12033097652" />
 <file name="Thumbnail.php" server="174.120.150.92/public_html/italomairo/" local="3433750740" remote="12033097652" />
 <file name="XmlCommandHandlerBase.php" server="174.120.150.92/public_html/italomairo/" local="3433750740" remote="12033097652" />
+<file name="CommandHandlerBase.php" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433750740" remote="12043913312" />
+<file name="CopyFiles.php" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433750740" remote="12043913312" />
+<file name="CreateFolder.php" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433750740" remote="12043913312" />
+<file name="DeleteFile.php" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433750740" remote="12043913312" />
+<file name="DeleteFolder.php" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433750740" remote="12043913312" />
+<file name="DownloadFile.php" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433750740" remote="12043913312" />
+<file name="FileUpload.php" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433750740" remote="12043913312" />
+<file name="GetFiles.php" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433750740" remote="12043913312" />
+<file name="GetFolders.php" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433750740" remote="12043913312" />
+<file name="Init.php" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433750740" remote="12043913312" />
+<file name="MoveFiles.php" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433750740" remote="12043913312" />
+<file name="QuickUpload.php" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433750740" remote="12043913312" />
+<file name="RenameFile.php" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433750740" remote="12043913312" />
+<file name="RenameFolder.php" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433750740" remote="12043913312" />
+<file name="Thumbnail.php" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433750740" remote="12043913312" />
+<file name="XmlCommandHandlerBase.php" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433750740" remote="12043913312" />
 </dwsync>

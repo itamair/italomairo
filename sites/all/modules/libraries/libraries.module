@@ -9,6 +9,14 @@
  * Implements hook_flush_caches().
  */
 function libraries_flush_caches() {
+  // Clear static caches.
+  // We don't clear the 'libraries_load' static cache, because that could result
+  // in libraries that had been loaded before the cache flushing to be loaded
+  // again afterwards.
+  foreach (array('libraries_get_path', 'libraries_info') as $name) {
+    drupal_static_reset($name);
+  }
+
   // @todo When upgrading from 1.x, update.php attempts to flush caches before
   //   the cache table has been created.
   // @see http://drupal.org/node/1477932
@@ -423,6 +431,7 @@ function libraries_info_defaults(&$library, $name) {
     'info' => array(),
     'pre-detect' => array(),
     'post-detect' => array(),
+    'pre-dependencies-load' => array(),
     'pre-load' => array(),
     'post-load' => array(),
   );
@@ -612,6 +621,9 @@ function libraries_load($name, $variant = NULL) {
     // only be one variant of a library within a single request.
     unset($library['variants']);
 
+    // Invoke callbacks in the 'pre-dependencies-load' group.
+    libraries_invoke('pre-dependencies-load', $library);
+
     // If the library (variant) is installed, load it.
     $library['loaded'] = FALSE;
     if ($library['installed']) {
@@ -647,16 +659,6 @@ function libraries_load($name, $variant = NULL) {
  *   The number of loaded files.
  */
 function libraries_load_files($library) {
-  // Load integration files.
-  if (!empty($library['integration files'])) {
-    foreach ($library['integration files'] as $module => $files) {
-      libraries_load_files(array(
-        'files' => $files,
-        'path' => '',
-        'library path' => drupal_get_path('module', $module),
-      ));
-    }
-  }
 
   // Construct the full path to the library for later use.
   $path = $library['library path'];
@@ -705,6 +707,17 @@ function libraries_load_files($library) {
         require_once $file_path;
         $count++;
       }
+    }
+  }
+
+  // Load integration files.
+  if (!empty($library['integration files'])) {
+    foreach ($library['integration files'] as $module => $files) {
+      libraries_load_files(array(
+        'files' => $files,
+        'path' => '',
+        'library path' => drupal_get_path('module', $module),
+      ));
     }
   }
 

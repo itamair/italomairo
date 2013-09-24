@@ -54,4 +54,22 @@
 <file name="ttf2ufm" server="174.120.150.92/public_html/italomairo/" local="3398065546" remote="12033099632" />
 <file name="ttf2ufm.exe" server="174.120.150.92/public_html/italomairo/" local="3398065549" remote="12033099692" />
 <file name="zlib1.dll" server="174.120.150.92/public_html/italomairo/" local="3398065550" remote="12033099692" />
+<file name="freetype6.dll" server="174.120.150.92/public_html/simmairo/" local="3398065535" remote="12033420452" />
+<file name="makeallttffonts.php" server="174.120.150.92/public_html/simmairo/" local="3398065535" remote="12033420452" />
+<file name="makefont.php" server="174.120.150.92/public_html/simmairo/" local="3398065536" remote="12033420452" />
+<file name="pfm2afm" server="174.120.150.92/public_html/simmairo/" local="3398065537" remote="12033420452" />
+<file name="pfm2afm.exe" server="174.120.150.92/public_html/simmairo/" local="3398065539" remote="12033420452" />
+<file name="README.TXT" server="174.120.150.92/public_html/simmairo/" local="3398065539" remote="12033420452" />
+<file name="ttf2ufm" server="174.120.150.92/public_html/simmairo/" local="3398065546" remote="12033420452" />
+<file name="ttf2ufm.exe" server="174.120.150.92/public_html/simmairo/" local="3398065549" remote="12033420452" />
+<file name="zlib1.dll" server="174.120.150.92/public_html/simmairo/" local="3398065550" remote="12033420452" />
+<file name="freetype6.dll" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3398065535" remote="12043914752" />
+<file name="makeallttffonts.php" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3398065535" remote="12043914752" />
+<file name="makefont.php" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3398065536" remote="12043914752" />
+<file name="pfm2afm" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3398065537" remote="12043914752" />
+<file name="pfm2afm.exe" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3398065539" remote="12043914752" />
+<file name="README.TXT" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3398065539" remote="12043914752" />
+<file name="ttf2ufm" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3398065546" remote="12043914812" />
+<file name="ttf2ufm.exe" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3398065549" remote="12043914812" />
+<file name="zlib1.dll" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3398065550" remote="12043914812" />
 </dwsync>

@@ -18,4 +18,14 @@
 <file name="node.tpl.php" server="174.120.150.92/public_html/italomairo/" local="3438601889" remote="12033108932" />
 <file name="page.tpl.php" server="174.120.150.92/public_html/italomairo/" local="3439138497" remote="12033108932" />
 <file name="taxonomy-term.tpl.php" server="174.120.150.92/public_html/italomairo/" local="3438601903" remote="12033108932" />
+<file name="block.tpl.php" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3434365754" remote="12043918352" />
+<file name="comment-wrapper.tpl.php" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3438105714" remote="12043918352" />
+<file name="comment.tpl.php" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3429215144" remote="12043918352" />
+<file name="field--field_section.tpl.php" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3437833326" remote="12043918352" />
+<file name="field--field_tags.tpl.php" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3437833449" remote="12043918352" />
+<file name="html.tpl.php" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3437379570" remote="12043918352" />
+<file name="node--contentvuoto.tpl.php" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3437490025" remote="12043918352" />
+<file name="node.tpl.php" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3438601889" remote="12043918352" />
+<file name="page.tpl.php" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3439138497" remote="12043918352" />
+<file name="taxonomy-term.tpl.php" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3438601903" remote="12043918352" />
 </dwsync>

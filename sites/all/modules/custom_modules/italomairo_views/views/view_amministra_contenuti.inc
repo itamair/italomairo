@@ -123,46 +123,48 @@ $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
 $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
 $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'node';
 $handler->display->display_options['fields']['views_bulk_operations']['field'] = 'views_bulk_operations';
-$handler->display->display_options['fields']['views_bulk_operations']['vbo']['entity_load_capacity'] = '10';
-$handler->display->display_options['fields']['views_bulk_operations']['vbo']['operations'] = array(
+$handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['display_type'] = '0';
+$handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['enable_select_all_pages'] = 1;
+$handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['force_single'] = 0;
+$handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['entity_load_capacity'] = '10';
+$handler->display->display_options['fields']['views_bulk_operations']['vbo_operations'] = array(
   'action::node_assign_owner_action' => array(
     'selected' => 1,
-    'use_queue' => 0,
     'skip_confirmation' => 0,
     'override_label' => 0,
     'label' => '',
+    'postpone_processing' => 0,
   ),
   'action::views_bulk_operations_delete_item' => array(
     'selected' => 1,
-    'use_queue' => 0,
     'skip_confirmation' => 0,
     'override_label' => 0,
     'label' => '',
+    'postpone_processing' => 0,
   ),
   'action::views_bulk_operations_script_action' => array(
     'selected' => 0,
-    'use_queue' => 0,
     'skip_confirmation' => 0,
     'override_label' => 0,
     'label' => '',
+    'postpone_processing' => 0,
   ),
   'action::system_send_email_action' => array(
     'selected' => 0,
-    'use_queue' => 0,
     'skip_confirmation' => 0,
     'override_label' => 0,
     'label' => '',
+    'postpone_processing' => 0,
   ),
   'action::node_make_sticky_action' => array(
     'selected' => 1,
-    'use_queue' => 0,
     'skip_confirmation' => 0,
     'override_label' => 0,
     'label' => '',
+    'postpone_processing' => 0,
   ),
   'action::views_bulk_operations_modify_action' => array(
     'selected' => 1,
-    'use_queue' => 0,
     'skip_confirmation' => 0,
     'override_label' => 0,
     'label' => '',
@@ -172,13 +174,14 @@ $handler->display->display_options['fields']['views_bulk_operations']['vbo']['op
         '_all_' => '_all_',
       ),
     ),
+    'postpone_processing' => 0,
   ),
   'action::system_message_action' => array(
     'selected' => 0,
-    'use_queue' => 0,
     'skip_confirmation' => 0,
     'override_label' => 0,
     'label' => '',
+    'postpone_processing' => 0,
   ),
   'action::views_bulk_operations_argument_selector_action' => array(
     'selected' => 0,
@@ -191,87 +194,82 @@ $handler->display->display_options['fields']['views_bulk_operations']['vbo']['op
   ),
   'action::node_promote_action' => array(
     'selected' => 0,
-    'use_queue' => 0,
     'skip_confirmation' => 0,
     'override_label' => 0,
     'label' => '',
+    'postpone_processing' => 0,
   ),
   'action::node_publish_action' => array(
     'selected' => 1,
-    'use_queue' => 0,
     'skip_confirmation' => 0,
     'override_label' => 0,
     'label' => '',
+    'postpone_processing' => 0,
   ),
   'action::system_goto_action' => array(
     'selected' => 0,
-    'use_queue' => 0,
     'skip_confirmation' => 0,
     'override_label' => 0,
     'label' => '',
+    'postpone_processing' => 0,
   ),
   'action::node_unpublish_by_keyword_action' => array(
     'selected' => 0,
-    'use_queue' => 0,
     'skip_confirmation' => 0,
     'override_label' => 0,
     'label' => '',
+    'postpone_processing' => 0,
   ),
   'action::node_make_unsticky_action' => array(
     'selected' => 1,
-    'use_queue' => 0,
     'skip_confirmation' => 0,
     'override_label' => 0,
     'label' => '',
+    'postpone_processing' => 0,
   ),
   'action::node_unpromote_action' => array(
     'selected' => 1,
-    'use_queue' => 0,
     'skip_confirmation' => 0,
     'override_label' => 0,
     'label' => '',
+    'postpone_processing' => 0,
   ),
   'action::node_unpublish_action' => array(
     'selected' => 1,
-    'use_queue' => 0,
     'skip_confirmation' => 0,
     'override_label' => 0,
     'label' => '',
+    'postpone_processing' => 0,
   ),
   'action::node_save_action' => array(
     'selected' => 1,
-    'use_queue' => 0,
     'skip_confirmation' => 0,
     'override_label' => 0,
     'label' => '',
+    'postpone_processing' => 0,
   ),
   'action::mimemail_send_email_action' => array(
     'selected' => 0,
-    'use_queue' => 0,
     'skip_confirmation' => 0,
     'override_label' => 0,
     'label' => '',
+    'postpone_processing' => 0,
   ),
   'action::languageassign_set_node_language_action' => array(
     'selected' => 0,
-    'use_queue' => 0,
     'skip_confirmation' => 0,
     'override_label' => 0,
     'label' => '',
+    'postpone_processing' => 0,
   ),
   'action::pathauto_node_update_action' => array(
     'selected' => 0,
-    'use_queue' => 0,
     'skip_confirmation' => 0,
     'override_label' => 0,
     'label' => '',
+    'postpone_processing' => 0,
   ),
 );
-$handler->display->display_options['fields']['views_bulk_operations']['vbo']['enable_select_all_pages'] = 1;
-$handler->display->display_options['fields']['views_bulk_operations']['vbo']['display_type'] = '0';
-$handler->display->display_options['fields']['views_bulk_operations']['vbo']['display_result'] = 1;
-$handler->display->display_options['fields']['views_bulk_operations']['vbo']['merge_single_action'] = 0;
-$handler->display->display_options['fields']['views_bulk_operations']['vbo']['force_single'] = 0;
 /* Campo: Contenuto: Titolo */
 $handler->display->display_options['fields']['title']['id'] = 'title';
 $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -294,14 +292,19 @@ $handler->display->display_options['fields']['status']['id'] = 'status';
 $handler->display->display_options['fields']['status']['table'] = 'node';
 $handler->display->display_options['fields']['status']['field'] = 'status';
 $handler->display->display_options['fields']['status']['not'] = 0;
+/* Campo: Contenuto: In Slideshow Home Page */
+$handler->display->display_options['fields']['field_in_home_page']['id'] = 'field_in_home_page';
+$handler->display->display_options['fields']['field_in_home_page']['table'] = 'field_data_field_in_home_page';
+$handler->display->display_options['fields']['field_in_home_page']['field'] = 'field_in_home_page';
+/* Campo: Contenuto: In Evidenza Home Page */
+$handler->display->display_options['fields']['field_in_slideshow']['id'] = 'field_in_slideshow';
+$handler->display->display_options['fields']['field_in_slideshow']['table'] = 'field_data_field_in_slideshow';
+$handler->display->display_options['fields']['field_in_slideshow']['field'] = 'field_in_slideshow';
+$handler->display->display_options['fields']['field_in_slideshow']['label'] = 'In Evidenza Homepage';
 /* Campo: Contenuto: In Blog */
 $handler->display->display_options['fields']['field_in_blog']['id'] = 'field_in_blog';
 $handler->display->display_options['fields']['field_in_blog']['table'] = 'field_data_field_in_blog';
 $handler->display->display_options['fields']['field_in_blog']['field'] = 'field_in_blog';
-/* Campo: Contenuto: In Home Page */
-$handler->display->display_options['fields']['field_in_home_page']['id'] = 'field_in_home_page';
-$handler->display->display_options['fields']['field_in_home_page']['table'] = 'field_data_field_in_home_page';
-$handler->display->display_options['fields']['field_in_home_page']['field'] = 'field_in_home_page';
 /* Campo: Contenuto: Data di inserimento */
 $handler->display->display_options['fields']['created']['id'] = 'created';
 $handler->display->display_options['fields']['created']['table'] = 'node';
@@ -400,10 +403,27 @@ $handler->display->display_options['filters']['name']['expose']['remember_roles'
   7 => 0,
   8 => 0,
 );
-/* Filter criterion: Contenuto: In Home Page (field_in_home_page) */
+/* Filter criterion: Contenuto: In Evidenza Home Page (field_in_slideshow) */
+$handler->display->display_options['filters']['field_in_slideshow_value']['id'] = 'field_in_slideshow_value';
+$handler->display->display_options['filters']['field_in_slideshow_value']['table'] = 'field_data_field_in_slideshow';
+$handler->display->display_options['filters']['field_in_slideshow_value']['field'] = 'field_in_slideshow_value';
+$handler->display->display_options['filters']['field_in_slideshow_value']['group'] = 1;
+$handler->display->display_options['filters']['field_in_slideshow_value']['exposed'] = TRUE;
+$handler->display->display_options['filters']['field_in_slideshow_value']['expose']['operator_id'] = 'field_in_slideshow_value_op';
+$handler->display->display_options['filters']['field_in_slideshow_value']['expose']['label'] = 'In Slideshow';
+$handler->display->display_options['filters']['field_in_slideshow_value']['expose']['operator'] = 'field_in_slideshow_value_op';
+$handler->display->display_options['filters']['field_in_slideshow_value']['expose']['identifier'] = 'field_in_slideshow_value';
+$handler->display->display_options['filters']['field_in_slideshow_value']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  3 => 0,
+  4 => 0,
+);
+/* Filter criterion: Contenuto: In Slideshow Home Page (field_in_home_page) */
 $handler->display->display_options['filters']['field_in_home_page_value']['id'] = 'field_in_home_page_value';
 $handler->display->display_options['filters']['field_in_home_page_value']['table'] = 'field_data_field_in_home_page';
 $handler->display->display_options['filters']['field_in_home_page_value']['field'] = 'field_in_home_page_value';
+$handler->display->display_options['filters']['field_in_home_page_value']['group'] = 1;
 $handler->display->display_options['filters']['field_in_home_page_value']['exposed'] = TRUE;
 $handler->display->display_options['filters']['field_in_home_page_value']['expose']['operator_id'] = 'field_in_home_page_value_op';
 $handler->display->display_options['filters']['field_in_home_page_value']['expose']['label'] = 'In Home Page';
@@ -418,6 +438,7 @@ $handler->display->display_options['filters']['field_in_home_page_value']['expos
 $handler->display->display_options['filters']['field_in_blog_value']['id'] = 'field_in_blog_value';
 $handler->display->display_options['filters']['field_in_blog_value']['table'] = 'field_data_field_in_blog';
 $handler->display->display_options['filters']['field_in_blog_value']['field'] = 'field_in_blog_value';
+$handler->display->display_options['filters']['field_in_blog_value']['group'] = 1;
 $handler->display->display_options['filters']['field_in_blog_value']['exposed'] = TRUE;
 $handler->display->display_options['filters']['field_in_blog_value']['expose']['operator_id'] = 'field_in_blog_value_op';
 $handler->display->display_options['filters']['field_in_blog_value']['expose']['label'] = 'In Blog';
@@ -461,16 +482,20 @@ $translatables['amministra_i_contenuti'] = array(
   t('author'),
   t('Nid'),
   t('Contenuto'),
+  t('scegli un operazione'),
   t('Titolo (tradotto)'),
   t('Tipo'),
   t('Pubblicato'),
+  t('In Slideshow Home Page'),
+  t('In Evidenza Homepage'),
   t('In Blog'),
-  t('In Home Page'),
   t('Inserimento'),
   t('Aggiornato'),
   t('Autore'),
   t('Operazioni'),
   t('[edit_node] <a href=\'/node/[nid]/translate\'>tranlslate</a>'),
+  t('In Slideshow'),
+  t('In Home Page'),
   t('Page'),
 );
 

@@ -24,4 +24,12 @@
 <file name="chapter_demo_2.txt" server="174.120.150.92/public_html/italomairo/" local="3398065232" remote="12033099152" />
 <file name="table_data_demo.txt" server="174.120.150.92/public_html/italomairo/" local="3398065233" remote="12033099152" />
 <file name="utf8test.txt" server="174.120.150.92/public_html/italomairo/" local="3398065233" remote="12033099152" />
+<file name="chapter_demo_1.txt" server="174.120.150.92/public_html/simmairo/" local="3398065231" remote="12033419912" />
+<file name="chapter_demo_2.txt" server="174.120.150.92/public_html/simmairo/" local="3398065232" remote="12033419912" />
+<file name="table_data_demo.txt" server="174.120.150.92/public_html/simmairo/" local="3398065233" remote="12033419912" />
+<file name="utf8test.txt" server="174.120.150.92/public_html/simmairo/" local="3398065233" remote="12033419912" />
+<file name="chapter_demo_1.txt" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3398065231" remote="12043914512" />
+<file name="chapter_demo_2.txt" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3398065232" remote="12043914512" />
+<file name="table_data_demo.txt" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3398065233" remote="12043914512" />
+<file name="utf8test.txt" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3398065233" remote="12043914512" />
 </dwsync>

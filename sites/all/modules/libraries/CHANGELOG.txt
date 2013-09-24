@@ -1,6 +1,13 @@
 
 Libraries 7.x-2.x, xxxx-xx-xx
 -----------------------------
+#1329388 by RobLoach, tstoeckler: Clear static caches in libraries_flush_caches().
+#1855918 by rbayliss: Load integration files after library files.
+#1938638 by Pol: Fix typo in libraries.api.php.
+
+Libraries 7.x-2.1, 2013-03-09
+-----------------------------
+#1937446 by Pol, tstoeckler: Add a 'pre-dependencies-load' callback group.
 #1775668 by tstoeckler: Fix bogus assertion message in assertLibraryFiles().
 #1773640 by tstoeckler: Use drupal_get_path() to find the profile directory.
 #1565426 by tstoeckler: Invoke hook_libraries_info() in enabled themes.

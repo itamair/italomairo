@@ -20,4 +20,12 @@
 <file name="FilterASCII85_FPDI.php" server="174.120.150.92/public_html/italomairo/" local="3398065218" remote="12033098972" />
 <file name="FilterLZW.php" server="174.120.150.92/public_html/italomairo/" local="3398065220" remote="12033098972" />
 <file name="FilterLZW_FPDI.php" server="174.120.150.92/public_html/italomairo/" local="3398065220" remote="12033098972" />
+<file name="FilterASCII85.php" server="174.120.150.92/public_html/simmairo/" local="3398065219" remote="12033419732" />
+<file name="FilterASCII85_FPDI.php" server="174.120.150.92/public_html/simmairo/" local="3398065218" remote="12033419732" />
+<file name="FilterLZW.php" server="174.120.150.92/public_html/simmairo/" local="3398065220" remote="12033419732" />
+<file name="FilterLZW_FPDI.php" server="174.120.150.92/public_html/simmairo/" local="3398065220" remote="12033419732" />
+<file name="FilterASCII85.php" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3398065219" remote="12043913852" />
+<file name="FilterASCII85_FPDI.php" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3398065218" remote="12043913852" />
+<file name="FilterLZW.php" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3398065220" remote="12043913852" />
+<file name="FilterLZW_FPDI.php" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3398065220" remote="12043913852" />
 </dwsync>
