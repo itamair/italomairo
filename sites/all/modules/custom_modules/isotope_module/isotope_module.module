@@ -1,0 +1,14 @@
+<?php
+
+  dpm('ciao');
+  
+  //Add Isotope Js Library
+  //drupal_add_js(libraries_get_path('jquery.isotope') . '/jquery.isotope.min.js');
+
+
+  //Add Isotope Js Library
+    if ($jquery_isotope_path = libraries_get_path('jquery.isotope')) {
+      // Do something with the library, knowing the path, for instance:
+       drupal_add_js($jquery_isotope_path . '/jquery.isotope.min.js');
+    }
+  

@@ -1,0 +1,11 @@
+name = "Activate Isotope Plugin for Views"
+description = "A Module to Set Up Specific Isotope Views Behaviors"
+package = Custom_modules
+core = 7.x
+
+dependencies[] = libraries
+dependencies[] = views
+
+
+stylesheets[all][] = css/isotope.css
+files[] = isotope_module.module
