@@ -1,0 +1,74 @@
+<?php
+
+/**
+ * Implements hook_field_widget_form().
+ */
+function tc_geofield_gmap_field_widget_form_alter(&$element, &$form_state, $context) {
+
+  //dpm($context); //Debug
+
+  $widget = $context['instance']['widget'];
+  $settings = $widget['settings'];
+  
+  if ($widget['type'] == 'geofield_gmap') {
+    
+  $element['#geocoded_field'] = (isset($settings['geocoded_field'])) ? $settings['geocoded_field'] : '';
+  $element['#geocoded_field_delta'] = $settings['geocoded_field_delta'];
+  
+  $element['#after_build'] = array('tc_geofield_gmap_widget_gmap_afterbuild');
+  //dpm($element); //Debug
+  
+  }
+
+}
+
+/**
+ * Callback for afterbuild for widget for js addition
+ */
+function tc_geofield_gmap_widget_gmap_afterbuild($element, &$form_state) {
+  global $language;
+  $lng = $language->language;
+  $id = $element['#gmap_id'];
+  $gmapid = 'nid-'.$element['#entity']->nid.'-gmap-' . $id;
+  $search_id = 'nid-'.$element['#entity']->nid.'-'.'search-'.$id;
+
+  $element['lat']['#prefix'] = '<label>'.t("Geocode address").'</label><input size="64" id="'.$search_id.'" class="form-text form-autocomplete geofield-gmap-search" type="text"/>';
+  $element['lat']['#prefix'] .= '<div id="'.$gmapid.'" class="geofield-gmap-cnt"></div>';
+  $element['lat']['#prefix'] .= '<label>'.t("Drag the marker to narrow the location").'</label>';
+  $element['lat']['#prefix'] .= '<button class="geofield-gmap-center" >'.t('Find marker').'</button>';
+  $element['lat']['#prefix'] .= '<button class="geofield-gmap-marker">'.t('Place marker here').'</button>';
+    
+  $js_settings = array();
+  $js_settings['lat'] = (isset($element['lat']['#default_value'])) ? floatval($element['lat']['#default_value']) : ''; // What? Lat as First Default
+  $js_settings['lng'] = (isset($element['lon']['#default_value'])) ? floatval($element['lon']['#default_value']) : ''; // What? Lon as First Default
+  $js_settings['latid'] = 'nid-'.$element['#entity']->nid."edit-".$id."-lat";
+  $js_settings['lngid'] = 'nid-'.$element['#entity']->nid."edit-".$id."-lon";
+  $js_settings['searchid'] = $search_id;
+  $js_settings['mapid'] = $gmapid;
+  $js_settings['widget'] = true;
+  $js_settings['map_type'] = $element['#gmap_map_type'];
+  $js_settings['confirm_center_marker'] = ($element['#gmap_confirm_center_marker']) ? 'true':'false';
+  $js_settings['click_to_place_marker'] = ($element['#gmap_click_to_place_marker']) ? 'true':'false';
+  $js_settings['geocoded_field'] = isset($element['#geocoded_field']) ? $element['#geocoded_field'] : null;
+  $js_settings['geocoded_field_delta'] = (isset($element['#geocoded_field_delta'])) ? $element['#geocoded_field_delta'] : null;
+  $js_settings['language'] = $lng;
+
+  drupal_add_js(array('geofield_map_params' => array($gmapid => $js_settings)),
+                array('type' => 'setting', 'scope' => 'header', 'weight' => 5));
+  drupal_add_js(drupal_get_path('module', 'tc_geofield_gmap') .'/tc_geofield_gmap.js', array('type' => 'file', 'scope' => 'footer', 'weight' => 50)); 
+
+  
+  return $element;
+}
+
+/**
+ * Implements hook_js_alter().
+ */
+function tc_geofield_gmap_js_alter(&$javascript) {
+  //Ovverides the default js file loaded by the "geofield_gmap" module in its info file with a correspondent empty one in this module, as our map js will be loaded in the tc_geofield_gmap_widget_gmap_afterbuild function
+  if (isset($javascript[drupal_get_path('module', 'geofield_gmap').'/geofield_gmap.js'])) {
+    //dpm(isset($javascript[drupal_get_path('module', 'geofield_gmap').'/geofield_gmap.js'])); //Debug
+    $javascript[drupal_get_path('module', 'geofield_gmap').'/geofield_gmap.js']['data'] = drupal_get_path('module', 'tc_geofield_gmap') .'/js/geofield_gmap.js';
+  }
+
+}
