@@ -1,5 +1,5 @@
-name = "Activate Isotope Plugin for Views"
-description = "A Module to Set Up Specific Isotope Views Behaviors"
+name = "Isotope Plugin for Views"
+description = "A Module to Set Up Specific Isotope Views Behaviors on the Site"
 package = Custom_modules
 core = 7.x
 

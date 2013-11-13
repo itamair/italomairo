@@ -1,15 +1,1 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<dwsync>
-<file name="geofield.devel_generate.inc" server="174.120.150.92/public_html/italomairo/" local="3448125752" remote="12041221292" />
-<file name="geofield.feeds.inc" server="174.120.150.92/public_html/italomairo/" local="3448125752" remote="12041221292" />
-<file name="geofield.formatters.inc" server="174.120.150.92/public_html/italomairo/" local="3448125752" remote="12041221292" />
-<file name="geofield.info" server="174.120.150.92/public_html/italomairo/" local="3448142109" remote="12041221292" />
-<file name="geofield.install" server="174.120.150.92/public_html/italomairo/" local="3448125752" remote="12041221292" />
-<file name="geofield.make.example" server="174.120.150.92/public_html/italomairo/" local="3448125752" remote="12041221292" />
-<file name="geofield.module" server="174.120.150.92/public_html/italomairo/" local="3448125752" remote="12041221292" />
-<file name="geofield.openlayers.inc" server="174.120.150.92/public_html/italomairo/" local="3448125752" remote="12041221292" />
-<file name="geofield.test" server="174.120.150.92/public_html/italomairo/" local="3448125752" remote="12041221292" />
-<file name="geofield.widgets.inc" server="174.120.150.92/public_html/italomairo/" local="3448125752" remote="12041221292" />
-<file name="LICENSE.txt" server="174.120.150.92/public_html/italomairo/" local="3399141019" remote="12041221292" />
-<file name="README.txt" server="174.120.150.92/public_html/italomairo/" local="3448125752" remote="12041221352" />
-</dwsync>
+<?xml version="1.0" encoding="utf-8" ?><dwsync><file name="geofield.devel_generate.inc" server="54.229.46.137:22000//var/www/drupal/" local="3460640922" remote="12050589633" /><file name="geofield.feeds.inc" server="54.229.46.137:22000//var/www/drupal/" local="3460640922" remote="12050589633" /><file name="geofield.formatters.inc" server="54.229.46.137:22000//var/www/drupal/" local="3460640922" remote="12050589634" /><file name="geofield.info" server="54.229.46.137:22000//var/www/drupal/" local="3460640922" remote="12050589634" /><file name="geofield.install" server="54.229.46.137:22000//var/www/drupal/" local="3460640922" remote="12050589634" /><file name="geofield.make.example" server="54.229.46.137:22000//var/www/drupal/" local="3460640922" remote="12050589635" /><file name="geofield.module" server="54.229.46.137:22000//var/www/drupal/" local="3460640922" remote="12050589635" /><file name="geofield.openlayers.inc" server="54.229.46.137:22000//var/www/drupal/" local="3460640922" remote="12050589636" /><file name="geofield.test" server="54.229.46.137:22000//var/www/drupal/" local="3460640922" remote="12050589636" /><file name="geofield.widgets.inc" server="54.229.46.137:22000//var/www/drupal/" local="3460640922" remote="12050589636" /><file name="LICENSE.txt" server="54.229.46.137:22000//var/www/drupal/" local="3460640922" remote="12050589639" /><file name="README.txt" server="54.229.46.137:22000//var/www/drupal/" local="3460640922" remote="12050589643" /></dwsync>

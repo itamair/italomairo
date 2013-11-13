@@ -1,5 +1,8 @@
 <?php
 
+  //Add Isotope Js Library
+  //drupal_add_js(libraries_get_path('jquery.isotope') . '/jquery.isotope.min.js');
+
 /**
 * Implements $modulename_page_alter().
 */

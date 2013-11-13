@@ -170,7 +170,7 @@
 }
 
 
-@media only screen and (max-width: 480px) and (min-width: 321px) {
+@media only screen and (max-width: 480px) {
 
 	.region-header {
 		margin-top: 10px !important;
@@ -217,4 +217,43 @@
 		display: none;
 	}
 
+	
+	.ds-my-project-preview .view-immagini-aggiuntive,
+	.ds-my-project-preview .field-name-field-tags,
+	.ds-my-project-preview .field-name-request-more-information-on-this,
+	.ds-my-project-preview  .field-name-service-links-displays-facebook-like,
+	.ds-my-project-preview  .field-name-field-link {
+		display: none !important;
+	}
+	
+
+}
+
+@media only screen and (max-width: 321px) {
+	
+	#block-widgets-s-socialmedia-profile-default {
+		margin-bottom: 4px;
+	}
+	
+	.region.region-header {
+		position: absolute;
+		top: 0;
+		right: 0 !important;
+	}
+	
+	h1#site-name {
+		height:  70px;
+	}
+	
+	.region-header .block {
+		float: none;
+		display: block !important;
+		vertical-align: top;
+	}
+	
+	#block-locale-language ul {
+		width: auto;
+		margin-left: 0;
+	}
+	
 }

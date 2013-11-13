@@ -1,0 +1,8 @@
+name = "My Geofield GMap Alter (Custom Module)"
+description = "Alters and get better behavior of the Geofield_GMap Module, making it working with Drupal.behaviors js and allowing its Google Maps correct functioning thorough Ajax calls. Very efficient in conjuction Inline Form Entity Module, for dynamic CRUD operations in Entitiy Reference fields editing"
+core = "7.x"
+dependencies[] = geofield_gmap
+package = Custom_modules
+core = 7.x
+
+files[] = my_geofield_gmap.module

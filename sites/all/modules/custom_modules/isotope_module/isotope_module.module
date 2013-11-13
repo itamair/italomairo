@@ -1,14 +1,26 @@
 <?php
-
-  dpm('ciao');
   
+/**
+* Implements $modulename_page_alter().
+*/
+function isotope_module_page_alter(&$page) {
+   
   //Add Isotope Js Library
-  //drupal_add_js(libraries_get_path('jquery.isotope') . '/jquery.isotope.min.js');
+  drupal_add_js(libraries_get_path('jquery.isotope') . '/jquery.isotope.min.js');
+
+}
+
+/**
+ * Implementation of hook_views_api().
+ */
+function isotope_module_views_api() {
+  $views_api_array = array(
+    'api' => 3,
+    'template path' => drupal_get_path('module', 'isotope_module') . '/templates',
+  );
+  return $views_api_array;
+}
 
 
-  //Add Isotope Js Library
-    if ($jquery_isotope_path = libraries_get_path('jquery.isotope')) {
-      // Do something with the library, knowing the path, for instance:
-       drupal_add_js($jquery_isotope_path . '/jquery.isotope.min.js');
-    }
+
   
