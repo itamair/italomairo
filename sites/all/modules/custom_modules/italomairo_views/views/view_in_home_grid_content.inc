@@ -12,6 +12,7 @@ $view->disabled = FALSE; /* Edit this to true to make a default view disabled in
 
 /* Display: Master */
 $handler = $view->new_display('default', 'Master', 'default');
+$handler->display->display_options['title'] = 'Focuses & Highlights';
 $handler->display->display_options['css_class'] = 'view-home-images-grid isotope-container';
 $handler->display->display_options['use_ajax'] = TRUE;
 $handler->display->display_options['use_more_always'] = FALSE;
@@ -19,6 +20,7 @@ $handler->display->display_options['use_more_text'] = 'leggi tutto';
 $handler->display->display_options['access']['type'] = 'perm';
 $handler->display->display_options['cache']['type'] = 'none';
 $handler->display->display_options['query']['type'] = 'views_query';
+$handler->display->display_options['query']['options']['pure_distinct'] = TRUE;
 $handler->display->display_options['exposed_form']['type'] = 'basic';
 $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Applica';
 $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Ripristina';
@@ -104,6 +106,7 @@ $handler->display->display_options['fields']['field_category']['element_class'] 
 $handler->display->display_options['fields']['field_category']['element_label_colon'] = FALSE;
 $handler->display->display_options['fields']['field_category']['type'] = 'taxonomy_term_reference_link';
 $handler->display->display_options['fields']['field_category']['delta_offset'] = '0';
+$handler->display->display_options['fields']['field_category']['separator'] = '';
 /* Campo: Contenuto: Titolo */
 $handler->display->display_options['fields']['title']['id'] = 'title';
 $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -122,6 +125,7 @@ $handler->display->display_options['fields']['body']['id'] = 'body';
 $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
 $handler->display->display_options['fields']['body']['field'] = 'body';
 $handler->display->display_options['fields']['body']['label'] = '';
+$handler->display->display_options['fields']['body']['exclude'] = TRUE;
 $handler->display->display_options['fields']['body']['alter']['alter_text'] = TRUE;
 $handler->display->display_options['fields']['body']['alter']['text'] = '<div>[body]</div>';
 $handler->display->display_options['fields']['body']['alter']['max_length'] = '300';
@@ -140,6 +144,16 @@ $handler->display->display_options['fields']['view_node']['field'] = 'view_node'
 $handler->display->display_options['fields']['view_node']['label'] = '';
 $handler->display->display_options['fields']['view_node']['element_label_colon'] = FALSE;
 $handler->display->display_options['fields']['view_node']['text'] = 'Read More';
+/* Criterio di ordinamento: Contenuto: Data di Pubblicazione (field_data_di_pubblicazione) */
+$handler->display->display_options['sorts']['field_data_di_pubblicazione_value']['id'] = 'field_data_di_pubblicazione_value';
+$handler->display->display_options['sorts']['field_data_di_pubblicazione_value']['table'] = 'field_data_field_data_di_pubblicazione';
+$handler->display->display_options['sorts']['field_data_di_pubblicazione_value']['field'] = 'field_data_di_pubblicazione_value';
+$handler->display->display_options['sorts']['field_data_di_pubblicazione_value']['order'] = 'DESC';
+/* Criterio di ordinamento: Contenuto: Mese di pubblicazione (field_mese_pubblicazione) */
+$handler->display->display_options['sorts']['field_mese_pubblicazione_value']['id'] = 'field_mese_pubblicazione_value';
+$handler->display->display_options['sorts']['field_mese_pubblicazione_value']['table'] = 'field_data_field_mese_pubblicazione';
+$handler->display->display_options['sorts']['field_mese_pubblicazione_value']['field'] = 'field_mese_pubblicazione_value';
+$handler->display->display_options['sorts']['field_mese_pubblicazione_value']['order'] = 'DESC';
 /* Criterio di ordinamento: Contenuto: Data di inserimento */
 $handler->display->display_options['sorts']['created']['id'] = 'created';
 $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -152,19 +166,21 @@ $handler->display->display_options['filters']['status']['field'] = 'status';
 $handler->display->display_options['filters']['status']['value'] = 1;
 $handler->display->display_options['filters']['status']['group'] = 1;
 $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-/* Filter criterion: Contenuto: In Slideshow Home Page (field_in_home_page) */
-$handler->display->display_options['filters']['field_in_home_page_value']['id'] = 'field_in_home_page_value';
-$handler->display->display_options['filters']['field_in_home_page_value']['table'] = 'field_data_field_in_home_page';
-$handler->display->display_options['filters']['field_in_home_page_value']['field'] = 'field_in_home_page_value';
-$handler->display->display_options['filters']['field_in_home_page_value']['value'] = array(
+/* Filter criterion: Contenuto: In Evidenza Home Page (field_in_slideshow) */
+$handler->display->display_options['filters']['field_in_slideshow_value']['id'] = 'field_in_slideshow_value';
+$handler->display->display_options['filters']['field_in_slideshow_value']['table'] = 'field_data_field_in_slideshow';
+$handler->display->display_options['filters']['field_in_slideshow_value']['field'] = 'field_in_slideshow_value';
+$handler->display->display_options['filters']['field_in_slideshow_value']['value'] = array(
   1 => '1',
 );
+$handler->display->display_options['filters']['field_in_slideshow_value']['group'] = 1;
 
 /* Display: Blocco */
 $handler = $view->new_display('block', 'Blocco', 'block_1');
 $handler->display->display_options['block_description'] = 'in Home Content Grid';
 $translatables['in_home_grid_content'] = array(
   t('Master'),
+  t('Focuses & Highlights'),
   t('leggi tutto'),
   t('Applica'),
   t('Ripristina'),

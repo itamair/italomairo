@@ -147,7 +147,6 @@ $handler->display->display_options['pager']['type'] = 'mini';
 $handler->display->display_options['pager']['options']['items_per_page'] = '5';
 $handler->display->display_options['pager']['options']['offset'] = '0';
 $handler->display->display_options['pager']['options']['id'] = '0';
-$handler->display->display_options['pager']['options']['quantity'] = '9';
 $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Voci per pagina';
 $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Tutto -';
 $handler->display->display_options['pager']['options']['expose']['offset_label'] = 'Slittamento';
@@ -176,7 +175,7 @@ $handler->display->display_options['footer']['area']['field'] = 'area';
 $handler->display->display_options['footer']['area']['content'] = '<?php 
 global $base_url, $language;
 $lng = $language->language;
-echo \'<a class="other" href="\'.$base_url.\'/\'.$lng.\'/blog">view all</a>\';
+echo \'<a class="other" href="\'.$base_url.\'/\'.$lng.\'/blog">\'.t(\'view all\').\'</a>\';
 ?>';
 $handler->display->display_options['footer']['area']['format'] = 'php_code';
 $handler->display->display_options['block_description'] = 'Ultimi dal Blog';
@@ -203,7 +202,7 @@ $translatables['vista_blog'] = array(
   t('<?php 
 global $base_url, $language;
 $lng = $language->language;
-echo \'<a class="other" href="\'.$base_url.\'/\'.$lng.\'/blog">view all</a>\';
+echo \'<a class="other" href="\'.$base_url.\'/\'.$lng.\'/blog">\'.t(\'view all\').\'</a>\';
 ?>'),
   t('Ultimi dal Blog'),
 );

@@ -56,7 +56,7 @@ $handler->display->display_options['row_options']['separator'] = ' - ';
 $handler->display->display_options['header']['area']['id'] = 'area';
 $handler->display->display_options['header']['area']['table'] = 'views';
 $handler->display->display_options['header']['area']['field'] = 'area';
-$handler->display->display_options['header']['area']['content'] = 'News from the world of construction and architecture';
+$handler->display->display_options['header']['area']['content'] = 'News from the Digital Communication, Web & Web Gis 2.0 World';
 $handler->display->display_options['header']['area']['format'] = 'full_html';
 /* Campo: Aggregator: Item ID */
 $handler->display->display_options['fields']['iid']['id'] = 'iid';
@@ -164,7 +164,6 @@ $handler->display->display_options['pager']['type'] = 'mini';
 $handler->display->display_options['pager']['options']['items_per_page'] = '5';
 $handler->display->display_options['pager']['options']['offset'] = '0';
 $handler->display->display_options['pager']['options']['id'] = '0';
-$handler->display->display_options['pager']['options']['quantity'] = '9';
 $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Voci per pagina';
 $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Tutto -';
 $handler->display->display_options['pager']['options']['expose']['offset_label'] = 'Slittamento';
@@ -180,7 +179,7 @@ $handler->display->display_options['footer']['area']['field'] = 'area';
 $handler->display->display_options['footer']['area']['content'] = '<?php 
 global $base_url, $language;
 $lng = $language->language;
-echo \'<a class="other" href="\'.$base_url.\'/\'.$lng.\'/news">view all</a>\'
+echo \'<a class="other" href="\'.$base_url.\'/\'.$lng.\'/news">\'.t(\'view all\').\'</a>\'
 ?>';
 $handler->display->display_options['footer']['area']['format'] = 'php_code';
 $handler->display->display_options['defaults']['fields'] = FALSE;
@@ -247,7 +246,7 @@ $translatables['aggregator_feeds'] = array(
   t('‹ precedente'),
   t('seguente ›'),
   t('ultima »'),
-  t('News from the world of construction and architecture'),
+  t('News from the Digital Communication, Web & Web Gis 2.0 World'),
   t('Item ID'),
   t('.'),
   t(','),
@@ -259,7 +258,7 @@ $translatables['aggregator_feeds'] = array(
   t('<?php 
 global $base_url, $language;
 $lng = $language->language;
-echo \'<a class="other" href="\'.$base_url.\'/\'.$lng.\'/news">view all</a>\'
+echo \'<a class="other" href="\'.$base_url.\'/\'.$lng.\'/news">\'.t(\'view all\').\'</a>\'
 ?>'),
   t('<a href="[link_1]" target="blank">[title]</a>  - [title_2]'),
   t('News Feeds (last 5)'),

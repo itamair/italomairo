@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="/it/sitemap.xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>http://italomairo/en</loc><changefreq>daily</changefreq><priority>1.0</priority></url>
-<url><loc>http://italomairo/en/my-projects</loc></url>
-<url><loc>http://italomairo/en/content/who-i-am</loc></url>
-<url><loc>http://italomairo/en/content/drupal</loc></url>
-<url><loc>http://italomairo/en/content/main-informatics-skills</loc></url>
-<url><loc>http://italomairo/en/contacts</loc></url>
+<url><loc>http://italomairo.italomairo.com/en</loc><changefreq>daily</changefreq><priority>1.0</priority></url>
+<url><loc>http://italomairo.italomairo.com/en/my-projects</loc></url>
+<url><loc>http://italomairo.italomairo.com/en/news</loc></url>
+<url><loc>http://italomairo.italomairo.com/en/content/who-i-am</loc></url>
+<url><loc>http://italomairo.italomairo.com/en/contacts</loc></url>
+<url><loc>http://italomairo.italomairo.com/en/content/drupal</loc></url>
+<url><loc>http://italomairo.italomairo.com/en/content/main-informatics-skills</loc></url>
 </urlset>
