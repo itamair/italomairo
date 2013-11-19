@@ -42,12 +42,8 @@ $handler->display->display_options['style_options']['widgets']['top']['views_sli
   'field_category' => 0,
   'field_mese_pubblicazione' => 0,
   'title' => 0,
-  'title_field' => 0,
-  'field_sottottolo' => 0,
-  'body' => 0,
-  'field_data_di_pubblicazione' => 0,
   'field_cover_images' => 0,
-  'field_image' => 0,
+  'body' => 0,
   'field_tags' => 0,
   'counter' => 0,
   'nothing' => 0,
@@ -63,21 +59,16 @@ $handler->display->display_options['style_options']['widgets']['bottom']['views_
   'field_category' => 0,
   'field_mese_pubblicazione' => 0,
   'title' => 0,
-  'title_field' => 0,
-  'field_sottottolo' => 0,
-  'body' => 0,
-  'field_data_di_pubblicazione' => 0,
   'field_cover_images' => 0,
-  'field_image' => 0,
+  'body' => 0,
   'field_tags' => 0,
   'nothing' => 0,
 );
 $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['weight'] = '1';
 $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
 $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_slide_counter']['weight'] = '1';
-$handler->display->display_options['style_options']['views_slideshow_cycle']['transition_advanced'] = 1;
-$handler->display->display_options['style_options']['views_slideshow_cycle']['timeout'] = '8000';
-$handler->display->display_options['style_options']['views_slideshow_cycle']['speed'] = '900';
+$handler->display->display_options['style_options']['views_slideshow_cycle']['timeout'] = '5000';
+$handler->display->display_options['style_options']['views_slideshow_cycle']['speed'] = '700';
 $handler->display->display_options['style_options']['views_slideshow_cycle']['delay'] = '0';
 $handler->display->display_options['style_options']['views_slideshow_cycle']['start_paused'] = 0;
 $handler->display->display_options['style_options']['views_slideshow_cycle']['remember_slide_days'] = '1';
@@ -226,11 +217,6 @@ $handler->display->display_options['fields']['nothing']['element_label_colon'] =
 $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = 'div';
 $handler->display->display_options['fields']['nothing']['element_wrapper_class'] = 'slide-text-container';
 $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
-/* Criterio di ordinamento: Contenuto: In rilievo */
-$handler->display->display_options['sorts']['sticky']['id'] = 'sticky';
-$handler->display->display_options['sorts']['sticky']['table'] = 'node';
-$handler->display->display_options['sorts']['sticky']['field'] = 'sticky';
-$handler->display->display_options['sorts']['sticky']['order'] = 'DESC';
 /* Criterio di ordinamento: Globale: Casuale */
 $handler->display->display_options['sorts']['random']['id'] = 'random';
 $handler->display->display_options['sorts']['random']['table'] = 'views';
@@ -260,7 +246,7 @@ $handler->display->display_options['filters']['type']['value'] = array(
   'my_project' => 'my_project',
 );
 $handler->display->display_options['filters']['type']['group'] = 1;
-/* Filter criterion: Contenuto: In Home Page (field_in_home_page) */
+/* Filter criterion: Contenuto: In Slideshow Home Page (field_in_home_page) */
 $handler->display->display_options['filters']['field_in_home_page_value']['id'] = 'field_in_home_page_value';
 $handler->display->display_options['filters']['field_in_home_page_value']['table'] = 'field_data_field_in_home_page';
 $handler->display->display_options['filters']['field_in_home_page_value']['field'] = 'field_in_home_page_value';
@@ -311,6 +297,7 @@ $translatables['slideshow_progetti'] = array(
   t('Blocco'),
   t('Blocco Slideshow Progetti'),
 );
+
 
 
 /* Define this new view from code in views list */

@@ -4,9 +4,9 @@ description = Allows you to set a singular and a plural for field labels.
 core = 7.x
 dependencies[] = field
 
-; Information added by drupal.org packaging script on 2012-05-11
+; Information added by drupal.org packaging script on 2013-09-30
 version = "7.x-1.0+2-dev"
 core = "7.x"
 project = "field_label_plurals"
-datestamp = "1336695355"
+datestamp = "1380578897"
 

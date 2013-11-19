@@ -48,4 +48,12 @@
 <file name="select.js" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433750440" remote="12043913072" />
 <file name="textarea.js" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433750440" remote="12043913072" />
 <file name="textfield.js" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433750440" remote="12043913072" />
+<file name="button.js" server="192.185.46.61/public_html/italomairo/" local="3467181429" remote="12057523472" />
+<file name="checkbox.js" server="192.185.46.61/public_html/italomairo/" local="3467181429" remote="12057523472" />
+<file name="form.js" server="192.185.46.61/public_html/italomairo/" local="3467181429" remote="12057523472" />
+<file name="hiddenfield.js" server="192.185.46.61/public_html/italomairo/" local="3467181429" remote="12057523472" />
+<file name="radio.js" server="192.185.46.61/public_html/italomairo/" local="3467181429" remote="12057523532" />
+<file name="select.js" server="192.185.46.61/public_html/italomairo/" local="3467181429" remote="12057523532" />
+<file name="textarea.js" server="192.185.46.61/public_html/italomairo/" local="3467181429" remote="12057523532" />
+<file name="textfield.js" server="192.185.46.61/public_html/italomairo/" local="3467181429" remote="12057523532" />
 </dwsync>

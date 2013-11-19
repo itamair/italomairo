@@ -584,7 +584,9 @@ function file_field_widget_value($element, $input = FALSE, $form_state) {
     // If the display field is present make sure its unchecked value is saved.
     $field = field_widget_field($element, $form_state);
     if (empty($input['display'])) {
-      $input['display'] = $field['settings']['display_field'] ? 0 : 1;
+      //$input['display'] = $field['settings']['display_field'] ? 0 : 1;
+      $input['display'] = !empty($field['settings']['display_field']) ? 0 : 1; //https://drupal.org/comment/5725004#comment-5725004
+
     }
   }
 

@@ -32,12 +32,14 @@ $handler->display->display_options['pager']['options']['quantity'] = '9';
 $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Voci per pagina';
 $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Tutto -';
 $handler->display->display_options['pager']['options']['expose']['offset_label'] = 'Slittamento';
-$handler->display->display_options['style_plugin'] = 'grid';
-$handler->display->display_options['style_options']['columns'] = '2';
+$handler->display->display_options['pager']['options']['tags']['first'] = '« prima';
+$handler->display->display_options['pager']['options']['tags']['previous'] = '‹ precedente';
+$handler->display->display_options['pager']['options']['tags']['next'] = 'seguente ›';
+$handler->display->display_options['pager']['options']['tags']['last'] = 'ultima »';
+$handler->display->display_options['style_plugin'] = 'list';
 $handler->display->display_options['row_plugin'] = 'node';
-$handler->display->display_options['row_options']['view_mode'] = 'ultime_notizie';
 $handler->display->display_options['row_options']['links'] = FALSE;
-/* Campo: Contenuto: Data di pubblicazione della Notizia */
+/* Campo: Contenuto: Data */
 $handler->display->display_options['fields']['field_data']['id'] = 'field_data';
 $handler->display->display_options['fields']['field_data']['table'] = 'field_data_field_data';
 $handler->display->display_options['fields']['field_data']['field'] = 'field_data';
@@ -58,7 +60,7 @@ $handler->display->display_options['fields']['title']['field'] = 'title';
 $handler->display->display_options['fields']['title']['label'] = '';
 $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
 $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-/* Criterio di ordinamento: Contenuto: Data di pubblicazione della Notizia (field_data) */
+/* Criterio di ordinamento: Contenuto: Data (field_data) */
 $handler->display->display_options['sorts']['field_data_value']['id'] = 'field_data_value';
 $handler->display->display_options['sorts']['field_data_value']['table'] = 'field_data_field_data';
 $handler->display->display_options['sorts']['field_data_value']['field'] = 'field_data_value';
@@ -95,14 +97,6 @@ $handler->display->display_options['filters']['type']['value'] = array(
   'article' => 'article',
   'blog' => 'blog',
   'notizia' => 'notizia',
-);
-/* Filter criterion: Contenuto: In evidenza/slideshow home (field_in_evidenza) */
-$handler->display->display_options['filters']['field_in_evidenza_value']['id'] = 'field_in_evidenza_value';
-$handler->display->display_options['filters']['field_in_evidenza_value']['table'] = 'field_data_field_in_evidenza';
-$handler->display->display_options['filters']['field_in_evidenza_value']['field'] = 'field_in_evidenza_value';
-$handler->display->display_options['filters']['field_in_evidenza_value']['operator'] = 'not';
-$handler->display->display_options['filters']['field_in_evidenza_value']['value'] = array(
-  1 => '1',
 );
 
 /* Display: Block */
@@ -152,15 +146,16 @@ $translatables['ultime_notizie'] = array(
   t('Voci per pagina'),
   t('- Tutto -'),
   t('Slittamento'),
-  t('« first'),
-  t('‹ previous'),
-  t('next ›'),
-  t('last »'),
+  t('« prima'),
+  t('‹ precedente'),
+  t('seguente ›'),
+  t('ultima »'),
   t('Tutti'),
   t('Block'),
   t('In Allegato'),
   t('<h2>Older News</h2>'),
 );
+
 
 
 /* Define this new view from code in views list */

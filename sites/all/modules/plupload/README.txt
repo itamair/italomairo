@@ -28,29 +28,48 @@ Plupload from element can be used like this:
 $form['my_element'] = array(
   '#type' => 'plupload',
   '#title' => t('Upload files'),
-  '#description => t('This multi-upload widget uses Plupload library.'),
+  '#description' => t('This multi-upload widget uses Plupload library.'),
+  '#autoupload' => TRUE,
+  '#autosubmit' => TRUE,
+  '#submit_element' => '#id-of-your-submit-element',
   '#upload_validators' => array(
     'file_validate_extensions' => array('jpg jpeg gif png txt doc xls pdf ppt pps odt ods odp'),
-    'my_custom_file_validator => array('some validation criteria'),
+    'my_custom_file_validator' => array('some validation criteria'),
   );
   '#plupload_settings' => array(
     'runtimes' => 'html5',
-    'chunk_size => '1mb',
+    'chunk_size' => '1mb',
+  ),
+  '#event_callbacks' => array(
+    'FilesAdded' => 'Drupal.mymodule.filesAddedCallback',
+    'UploadComplete' => 'Drupal.mymodule.uploadCompleteCallback',
   ),
 );
 
-- #upload_validators - an array of validation function/validation criteria pairs, that
-  will be passed to file_validate().
+There are few optional properties of this array that have special meaning:
 
+-  #autoupload: set this to TRUE if you want Plupload to start uploading
+  immediately after files are added.
+  Defaults to FALSE.
+
+-  #autosubmit: set this to TRUE if you want Plupload to autosubmit
+  your form after automatic upload has finished.
+  Defaults to FALSE.
+  Has to be used in combination with #autoupload.
+
+-  #submit_element: specify which submit element Plupload shall use to submit
+  the form. Can also be used in combination with #autoupload and #autosubmit.
+  See: http://drupal.org/node/1935256
+
+- #upload_validators - an array of validation function/validation criteria pairs,
+  that will be passed to file_validate().
   Defaults to:
   '#upload_validators' => array(
     'file_validate_extensions' => array('jpg jpeg gif png txt doc xls pdf ppt pps odt ods odp'),
   );
 
-
 - #plupload_settings - array of settings, that will be passed to Plupload library.
   See: http://www.plupload.com/documentation.php
-
   Defaults to:
   '#plupload_settings' => array(
     'runtimes' => 'html5,flash,html4',
@@ -61,3 +80,7 @@ $form['my_element'] = array(
     'flash_swf_url' => file_create_url($library_path . '/js/plupload.flash.swf'),
     'silverlight_xap_url' => file_create_url($library_path . '/js/plupload.silverlight.xap'),
   ),
+
+- #event_callbacks - array of callbacks that will be passed to js.
+  See full documentation about events in Plupload library:
+  http://www.plupload.com/example_events.php

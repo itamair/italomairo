@@ -1,8 +1,27 @@
 
+/*** Window Size Module ****/
+
+div.size {
+  z-index:150;
+	bottom: 10px;
+	right:  10px;
+	margin: 30px;
+}
+
+
+/* Breadcrumbs */
+#breadcrumb {
+  margin: 0 0 10px 0;
+}
+
 body.wysiwygeditor {
 	background-color: #fff;
 	background-image: none;
 	font-size: 14px;
+}
+
+em {
+	font-style: normal;
 }
 
 h2 {
@@ -54,8 +73,17 @@ p {
 
 .field-name-field-sottottolo {
 	font-weight: bold;
+	font-size: 1.1em;
 }
 
+.field-name-field-committente {
+	text-align: left;
+}
+
+.field-name-field-committente div.field-item.committente {
+	display: inline-block !important;
+	margin-right:  6px;
+}
 
 #branding, .region-header {
 	padding: 25px 0 10px 25px;
@@ -64,6 +92,15 @@ p {
 
 .region-header .block {
 	margin-top: 0px;
+}
+
+.view-header {
+	padding:  16px 0 16px 0;
+}
+
+.view-header .node-link {
+	float:  right;
+	margin: 10px 20px 20px 0;
 }
 
 .region-site-references {
@@ -81,8 +118,8 @@ h1#page-title, .in-maintenance h1#page-title {
 	border-bottom: none;
 	line-height: 1;
 	margin: 10px 0 10px;
-	padding: 10px 0 0;
-	font-size: 160%;
+	font-size: 200%;
+	
 }
 
 .content-style {
@@ -115,9 +152,14 @@ h1#page-title, .in-maintenance h1#page-title {
 
 .field-type-image img,
 .field-type-image figure img,
-.views-field-field-cover-images img,
-.views-field img,
-iframe#google_map_contatcts {
+.views-field-field-cover-images img {
+	padding: 5px;
+	border: 1px solid #dddddd;
+	display:inline-block;
+	margin-right:  4px;
+}
+
+iframe#google_map_contacts {
 	padding: 5px;
 	border: 1px solid #dddddd;
 	display:inline-block;
@@ -155,8 +197,7 @@ iframe#google_map_contatcts {
 
 .view-content .views-field img,
 .view-content .field-type-image figure img {
-	margin-right: 4px;
-	margin-left: 0;
+
 }
 
 #node-86 .field-name-body img {
@@ -232,24 +273,43 @@ table.mini-gallery .photo-title {
 	padding: 0 .75em 0 0;
 }
 
+.field-type-taxonomy-term-reference.field-name-field-tags .field-item,
+.field-type-taxonomy-term-reference.field-name-field-category .field-item,
+.views-field-field-tags,
+.view-in-home-grid-content .field-type-taxonomy-term-reference.field-name-field-category .field-item,
+.view-in-home-grid-content .views-field-field-category .field-content {
+	display: inline-block;
+	padding: 2px 10px; 
+	margin: 0 6px 6px 0;
+	font-size: 0.9em;
+	border-radius: 3px;
+	text-transform: uppercase;
+}
+
+.field-type-taxonomy-term-reference.field-name-field-tags .field-item,
+.field-type-taxonomy-term-reference.field-name-field-category .field-item,
+.views-field-field-tags,
 .field-type-taxonomy-term-reference.field-name-field-tags .field-item a,
 .field-type-taxonomy-term-reference.field-name-field-category .field-item a,
-.views-field-field-tags a {
-	display: inline-block;
-	padding: 2px 10px;
-	margin: 0 0 6px 0;
-	font-size: 0.9em;
+.views-field-field-tags a,
+.view-in-home-grid-content .field-type-taxonomy-term-reference.field-name-field-category .field-item,
+.view-in-home-grid-content .views-field-field-category .field-content,
+.view-in-home-grid-content .field-type-taxonomy-term-reference.field-name-field-category .field-item a,
+.view-in-home-grid-content .views-field-field-category .field-content a {
 	color: white;
-	border-radius: 3px;
 }
 
-.field-type-taxonomy-term-reference.field-name-field-tags .field-item a,
-.views-field-field-tags a {
+.field-type-taxonomy-term-reference.field-name-field-category .field-item,
+.view-in-home-grid-content .field-type-taxonomy-term-reference.field-name-field-category .field-item,
+.view-in-home-grid-content .views-field-field-category .field-content {
+	background: #0173BA;
+	background: rgba(1,115,186, 0.8);
+}
+
+.field-type-taxonomy-term-reference.field-name-field-tags .field-item,
+.views-field-field-tags {
 	background: #A1A1A1;
-}
-
-.field-type-taxonomy-term-reference.field-name-field-category .field-item a {
-	background: #e25400;
+	margin-right: 6px;
 }
 
 .field-name-field-tags .field-label {
@@ -301,6 +361,10 @@ body.page-storia-della-mia-gamba.sidebar-first .content-inner {
 
 thead th label {
 	color: #FCFCF8;
+}
+
+.views-field-field-fonte {
+	padding:  8px 0;
 }
 
 /* Impostazioni Main Menù */
@@ -668,6 +732,7 @@ ul.links.inline li .fb_iframe_widget span,
 
 .field-name-service-links-displays-group .service-links .fb_iframe_widget {
 	vertical-align: top !important;
+	display: inline-block;
 }
 
 .field-name-service-links-displays-group .service-links .fb_iframe_widget span,
@@ -880,3 +945,69 @@ body.page-taxonomy-term #crumbs {
 	font-size: 1.2em;
 	height: 26px;
  }
+ 
+ /*** field-slideshow-caption-text ***/
+ .field-slideshow-caption {
+	text-align: center;
+	font-weight: bolder;
+	padding:  6px 0;
+ }
+ 
+ 
+ /**** Copyright ****/
+ 
+ .copyright-warining {
+	font-size: 0.85em;
+	font-style: italic;
+	margin-top:  20px;
+ }
+ 
+ /**** Superfish Main Menu *****/
+ 
+.block-region-superfish-main-menu {
+	background: #333;
+	margin: 0 6px;
+}
+
+.block-region-superfish-main-menu ul.sf-menu {
+	padding:  0;
+	margin:  0;
+}
+
+.block-region-superfish-main-menu ul.sf-menu li.active-trail {
+	background-color: #e25402;
+	border: solid 1px #FFF;
+}
+
+.block-region-superfish-main-menu ul.sf-menu.sf-style-default li a {
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.block-region-superfish-main-menu ul.sf-menu.sf-style-default li.active-trail a {
+	color: #fcfcfc !important;
+}
+
+.block-region-superfish-main-menu ul.sf-menu.sf-menu.sf-horizontal.sf-shadow ul {
+  margin-top: 2px; 
+}
+
+/**** Testata Sezione GIS ***/
+.testata-sezione-gis img {
+	width:  100% !important;
+	height:  auto !important;
+}
+
+/*** Body Fileds and Images ***/
+
+.field-name-body .float-right {
+	margin-left:  20px;
+}
+
+.field-name-body .float-left {
+	margin-right:  20px;
+}
+
+.field-name-body ul {
+	list-style-position: inside;
+}

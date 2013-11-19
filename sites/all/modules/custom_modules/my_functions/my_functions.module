@@ -2,7 +2,8 @@
 
   //Add Isotope Js Library
   //drupal_add_js(libraries_get_path('jquery.isotope') . '/jquery.isotope.min.js');
-
+  
+  
 /**
 * Implements $modulename_page_alter().
 */
@@ -14,6 +15,7 @@ function my_functions_page_alter(&$page) {
     
   if ($current_path == 'manage_site_content' ||
       $current_path == 'amministra-elenco-progetti' ||
+      $current_path == 'comments/recent' ||
       arg(0) == 'admin' ||
       arg(0) == 'user' ||
       arg(2) == 'webform-results' ||

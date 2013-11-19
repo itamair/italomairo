@@ -1,1 +1,12 @@
-<?xml version="1.0" encoding="utf-8" ?><dwsync><file name="Collection.class.php" server="54.229.46.137:22000//var/www/drupal/" local="3460640923" remote="12050589653" /><file name="Geometry.class.php" server="54.229.46.137:22000//var/www/drupal/" local="3460640923" remote="12050589653" /><file name="GeometryCollection.class.php" server="54.229.46.137:22000//var/www/drupal/" local="3460640923" remote="12050589654" /><file name="LineString.class.php" server="54.229.46.137:22000//var/www/drupal/" local="3460640923" remote="12050589654" /><file name="MultiLineString.class.php" server="54.229.46.137:22000//var/www/drupal/" local="3460640923" remote="12050589654" /><file name="MultiPoint.class.php" server="54.229.46.137:22000//var/www/drupal/" local="3460640923" remote="12050589655" /><file name="MultiPolygon.class.php" server="54.229.46.137:22000//var/www/drupal/" local="3460640923" remote="12050589655" /><file name="Point.class.php" server="54.229.46.137:22000//var/www/drupal/" local="3460640923" remote="12050589655" /><file name="Polygon.class.php" server="54.229.46.137:22000//var/www/drupal/" local="3460640923" remote="12050589656" /></dwsync>
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="Collection.class.php" server="54.229.46.137:22000//var/www/drupal/" local="3460640923" remote="12050589653" />
+<file name="Geometry.class.php" server="54.229.46.137:22000//var/www/drupal/" local="3460640923" remote="12050589653" />
+<file name="GeometryCollection.class.php" server="54.229.46.137:22000//var/www/drupal/" local="3460640923" remote="12050589654" />
+<file name="LineString.class.php" server="54.229.46.137:22000//var/www/drupal/" local="3460640923" remote="12050589654" />
+<file name="MultiLineString.class.php" server="54.229.46.137:22000//var/www/drupal/" local="3460640923" remote="12050589654" />
+<file name="MultiPoint.class.php" server="54.229.46.137:22000//var/www/drupal/" local="3460640923" remote="12050589655" />
+<file name="MultiPolygon.class.php" server="54.229.46.137:22000//var/www/drupal/" local="3460640923" remote="12050589655" />
+<file name="Point.class.php" server="54.229.46.137:22000//var/www/drupal/" local="3460640923" remote="12050589655" />
+<file name="Polygon.class.php" server="54.229.46.137:22000//var/www/drupal/" local="3460640923" remote="12050589656" />
+</dwsync>

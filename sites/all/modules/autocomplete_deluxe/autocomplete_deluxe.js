@@ -130,6 +130,17 @@
     this.multiple = settings.multiple;
     this.required = settings.required;
     this.limit = settings.limit;
+    this.synonyms = typeof settings.use_synonyms == 'undefined' ? false : settings.use_synonyms;
+
+    this.wrapper = '""';
+
+    if (typeof settings.delimiter == 'undefined') {
+      this.delimiter = true;
+    } else {
+      this.delimiter =  settings.delimiter.charCodeAt(0);
+    }
+
+
     this.items = {};
 
     var self = this;
@@ -142,7 +153,7 @@
 
     var generateValues = function(data, term) {
       var result = new Array();
-      for (terms in data) {
+      for (var terms in data) {
         if (self.acceptTerm(terms)) {
           result.push({
             label: data[terms],
@@ -176,7 +187,9 @@
       if (!term) {
         term = " ";
       }
-      lastXhr = $.getJSON(settings.uri + '/' + term +'/' +  self.limit, request, function(data, status, xhr) {
+      request.synonyms = self.synonyms;
+      var url = settings.uri + '/' + term +'/' +  self.limit;
+      lastXhr = $.getJSON(url, request, function(data, status, xhr) {
         cache[term] = data;
         if (xhr === lastXhr) {
           response(generateValues(data, term));
@@ -205,11 +218,12 @@
     // Monkey patch the _renderItem function jquery so we can highlight the
     // text, that we already entered.
     $.ui.autocomplete.prototype._renderItem = function( ul, item) {
-      var escapedValue = Drupal.autocomplete_deluxe.escapeRegex( this.term );
-      var re = new RegExp('( )*""' + escapedValue + '""|' + escapedValue + '( )*', 'gi');
-      var t = item.label.replace(re,"<span style='font-weight:bold;color:Blue;'>" +
-        this.term +
-        "</span>");
+      var t = item.label;
+      if (this.term != "") {
+        var escapedValue = Drupal.autocomplete_deluxe.escapeRegex( this.term );
+        var re = new RegExp('()*""' + escapedValue + '""|' + escapedValue + '()*', 'gi');
+        var t = item.label.replace(re,"<span class='autocomplete-deluxe-highlight-char'>$&</span>");
+      }
       return $( "<li></li>" )
         .data( "item.autocomplete", item )
         .append( "<a>" + t + "</a>" )
@@ -290,7 +304,7 @@
     this.element.remove();
     var values = this.widget.valueForm.val();
     var escapedValue = Drupal.autocomplete_deluxe.escapeRegex( this.item.value );
-    var regex = new RegExp('( )*""' + escapedValue + '""|' + escapedValue + '( )*', 'gi');
+    var regex = new RegExp('()*""' + escapedValue + '""|' + escapedValue + '()*', 'gi');
     this.widget.valueForm.val(values.replace(regex, ''));
     delete this.widget.items[this.value];
   };
@@ -309,6 +323,7 @@
     jqObject.data("autocomplete")._resizeMenu = function()  {};
 
     jqObject.show();
+
     value_container.hide();
 
     // Add the default values to the box.
@@ -342,7 +357,7 @@
       var item = new Drupal.autocomplete_deluxe.MultipleWidget.Item(self, ui_item);
       item.element.insertBefore(jqObject);
       items[ui_item.value] = item;
-      var new_value = ' ""' + ui_item.value + '""';
+      var new_value = ' ' + self.wrapper + ui_item.value + self.wrapper;
       var values = value_input.val();
       value_input.val(values + new_value);
       jqObject.val('');
@@ -371,13 +386,13 @@
 
     var clear = false;
 
-    jqObject.keydown(function (event) {
+    jqObject.keypress(function (event) {
       var value = jqObject.val();
       // If a comma was entered and there is none or more then one comma,or the
       // enter key was entered, then enter the new term.
-      if ((event.which == 188 && (value.split('"').length - 1) != 1) || (event.which == 13 && jqObject.val() != "")) {
+      if ((event.which == self.delimiter && (value.split('"').length - 1) != 1) || (event.which == 13 && jqObject.val() != "")) {
         value = value.substr(0, value.length);
-        if (self.items[value] === undefined && value != '') {
+        if (typeof self.items[value] == 'undefined' && value != '') {
           var ui_item = {
             label: value,
             value: value

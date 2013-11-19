@@ -80,8 +80,11 @@
   regions[help]              = Help
 
   regions[highlighted]       = Highlighted
+  regions[content_top]       = Content Top
   regions[content]           = Main content
   regions[content_aside]     = Content bottom
+  
+  regions[superfish_main_menu] = Superfish Main Menu
 
   regions[secondary_content] = Secondary content
   regions[tertiary_content]  = Tertiary content

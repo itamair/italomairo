@@ -36,4 +36,10 @@
 <file name="replace.php" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433750200" remote="12043912952" />
 <file name="replaceall.php" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433750200" remote="12043912952" />
 <file name="standalone.php" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433750200" remote="12043912952" />
+<file name="advanced.php" server="192.185.46.61/public_html/italomairo/" local="3467181429" remote="12057522152" />
+<file name="events.php" server="192.185.46.61/public_html/italomairo/" local="3467181429" remote="12057522152" />
+<file name="index.html" server="192.185.46.61/public_html/italomairo/" local="3467181429" remote="12057522152" />
+<file name="replace.php" server="192.185.46.61/public_html/italomairo/" local="3467181429" remote="12057522152" />
+<file name="replaceall.php" server="192.185.46.61/public_html/italomairo/" local="3467181429" remote="12057522152" />
+<file name="standalone.php" server="192.185.46.61/public_html/italomairo/" local="3467181429" remote="12057522152" />
 </dwsync>

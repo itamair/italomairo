@@ -42,4 +42,11 @@
 <file name="replaceall.asp" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433750140" remote="12043912952" />
 <file name="sample_posteddata.asp" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433750140" remote="12043912952" />
 <file name="standalone.asp" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433750140" remote="12043912952" />
+<file name="advanced.asp" server="192.185.46.61/public_html/italomairo/" local="3467181429" remote="12057522092" />
+<file name="events.asp" server="192.185.46.61/public_html/italomairo/" local="3467181429" remote="12057522092" />
+<file name="index.html" server="192.185.46.61/public_html/italomairo/" local="3467181429" remote="12057522092" />
+<file name="replace.asp" server="192.185.46.61/public_html/italomairo/" local="3467181429" remote="12057522092" />
+<file name="replaceall.asp" server="192.185.46.61/public_html/italomairo/" local="3467181429" remote="12057522152" />
+<file name="sample_posteddata.asp" server="192.185.46.61/public_html/italomairo/" local="3467181429" remote="12057522152" />
+<file name="standalone.asp" server="192.185.46.61/public_html/italomairo/" local="3467181429" remote="12057522152" />
 </dwsync>

@@ -1,1 +1,16 @@
-<?xml version="1.0" encoding="utf-8" ?><dwsync><file name="comment.inc" server="192.185.46.61/public_html/italomairo/" local="3456201420" remote="12052460732" /><file name="file_managed.inc" server="192.185.46.61/public_html/italomairo/" local="3456201420" remote="12052460732" /><file name="node.inc" server="192.185.46.61/public_html/italomairo/" local="3456201420" remote="12052460732" /><file name="node_revision.inc" server="192.185.46.61/public_html/italomairo/" local="3456201420" remote="12052460732" /><file name="taxonomy_term.inc" server="192.185.46.61/public_html/italomairo/" local="3456201420" remote="12052460732" /><file name="users.inc" server="192.185.46.61/public_html/italomairo/" local="3456201420" remote="12052460732" /><file name="views_ui_base_views_wizard.class.php" server="192.185.46.61/public_html/italomairo/" local="3456201420" remote="12052460732" /><file name="views_ui_comment_views_wizard.class.php" server="192.185.46.61/public_html/italomairo/" local="3456201420" remote="12052460792" /><file name="views_ui_file_managed_views_wizard.class.php" server="192.185.46.61/public_html/italomairo/" local="3456201420" remote="12052460792" /><file name="views_ui_node_revision_views_wizard.class.php" server="192.185.46.61/public_html/italomairo/" local="3456201420" remote="12052460792" /><file name="views_ui_node_views_wizard.class.php" server="192.185.46.61/public_html/italomairo/" local="3456201420" remote="12052460792" /><file name="views_ui_taxonomy_term_views_wizard.class.php" server="192.185.46.61/public_html/italomairo/" local="3456201420" remote="12052460792" /><file name="views_ui_users_views_wizard.class.php" server="192.185.46.61/public_html/italomairo/" local="3456201420" remote="12052460792" /></dwsync>
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="comment.inc" server="192.185.46.61/public_html/italomairo/" local="3456201420" remote="12052460732" />
+<file name="file_managed.inc" server="192.185.46.61/public_html/italomairo/" local="3456201420" remote="12052460732" />
+<file name="node.inc" server="192.185.46.61/public_html/italomairo/" local="3456201420" remote="12052460732" />
+<file name="node_revision.inc" server="192.185.46.61/public_html/italomairo/" local="3456201420" remote="12052460732" />
+<file name="taxonomy_term.inc" server="192.185.46.61/public_html/italomairo/" local="3456201420" remote="12052460732" />
+<file name="users.inc" server="192.185.46.61/public_html/italomairo/" local="3456201420" remote="12052460732" />
+<file name="views_ui_base_views_wizard.class.php" server="192.185.46.61/public_html/italomairo/" local="3456201420" remote="12052460732" />
+<file name="views_ui_comment_views_wizard.class.php" server="192.185.46.61/public_html/italomairo/" local="3456201420" remote="12052460792" />
+<file name="views_ui_file_managed_views_wizard.class.php" server="192.185.46.61/public_html/italomairo/" local="3456201420" remote="12052460792" />
+<file name="views_ui_node_revision_views_wizard.class.php" server="192.185.46.61/public_html/italomairo/" local="3456201420" remote="12052460792" />
+<file name="views_ui_node_views_wizard.class.php" server="192.185.46.61/public_html/italomairo/" local="3456201420" remote="12052460792" />
+<file name="views_ui_taxonomy_term_views_wizard.class.php" server="192.185.46.61/public_html/italomairo/" local="3456201420" remote="12052460792" />
+<file name="views_ui_users_views_wizard.class.php" server="192.185.46.61/public_html/italomairo/" local="3456201420" remote="12052460792" />
+</dwsync>

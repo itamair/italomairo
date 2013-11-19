@@ -20,6 +20,7 @@ $handler->display->display_options['cache']['type'] = 'none';
 $handler->display->display_options['query']['type'] = 'views_query';
 $handler->display->display_options['query']['options']['query_comment'] = FALSE;
 $handler->display->display_options['exposed_form']['type'] = 'basic';
+$handler->display->display_options['exposed_form']['options']['submit_button'] = 'Applica';
 $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Ripristina';
 $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Ordina per';
 $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Disc';
@@ -30,35 +31,39 @@ $handler->display->display_options['pager']['options']['id'] = '0';
 $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Voci per pagina';
 $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Tutto -';
 $handler->display->display_options['pager']['options']['expose']['offset_label'] = 'Slittamento';
+$handler->display->display_options['pager']['options']['tags']['first'] = '« prima';
+$handler->display->display_options['pager']['options']['tags']['previous'] = '‹ precedente';
+$handler->display->display_options['pager']['options']['tags']['next'] = 'seguente ›';
+$handler->display->display_options['pager']['options']['tags']['last'] = 'ultima »';
 $handler->display->display_options['style_plugin'] = 'default';
 $handler->display->display_options['row_plugin'] = 'node';
 $handler->display->display_options['row_options']['view_mode'] = 'anteprima_my_project';
 $handler->display->display_options['row_options']['links'] = FALSE;
-/* Field: Content: Title */
+/* Campo: Contenuto: Titolo */
 $handler->display->display_options['fields']['title']['id'] = 'title';
 $handler->display->display_options['fields']['title']['table'] = 'node';
 $handler->display->display_options['fields']['title']['field'] = 'title';
 $handler->display->display_options['fields']['title']['label'] = '';
 $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
 $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-/* Sort criterion: Content: Mese di pubblicazione (field_mese_pubblicazione) */
+/* Criterio di ordinamento: Contenuto: Mese di pubblicazione (field_mese_pubblicazione) */
 $handler->display->display_options['sorts']['field_mese_pubblicazione_value']['id'] = 'field_mese_pubblicazione_value';
 $handler->display->display_options['sorts']['field_mese_pubblicazione_value']['table'] = 'field_data_field_mese_pubblicazione';
 $handler->display->display_options['sorts']['field_mese_pubblicazione_value']['field'] = 'field_mese_pubblicazione_value';
 $handler->display->display_options['sorts']['field_mese_pubblicazione_value']['order'] = 'DESC';
-/* Sort criterion: Content: Post date */
+/* Criterio di ordinamento: Contenuto: Data di inserimento */
 $handler->display->display_options['sorts']['created']['id'] = 'created';
 $handler->display->display_options['sorts']['created']['table'] = 'node';
 $handler->display->display_options['sorts']['created']['field'] = 'created';
 $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-/* Filter criterion: Content: Published */
+/* Filter criterion: Contenuto: Pubblicato */
 $handler->display->display_options['filters']['status']['id'] = 'status';
 $handler->display->display_options['filters']['status']['table'] = 'node';
 $handler->display->display_options['filters']['status']['field'] = 'status';
 $handler->display->display_options['filters']['status']['value'] = 1;
 $handler->display->display_options['filters']['status']['group'] = 1;
 $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-/* Filter criterion: Content: Type */
+/* Filter criterion: Contenuto: Tipo */
 $handler->display->display_options['filters']['type']['id'] = 'type';
 $handler->display->display_options['filters']['type']['table'] = 'node';
 $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -72,34 +77,34 @@ $handler = $view->new_display('page', 'Projects Main Page', 'page');
 $handler->display->display_options['path'] = 'my-projects';
 $handler->display->display_options['menu']['type'] = 'normal';
 $handler->display->display_options['menu']['title'] = 'Projects List';
-$handler->display->display_options['menu']['weight'] = '10';
+$handler->display->display_options['menu']['weight'] = '-48';
 $handler->display->display_options['menu']['name'] = 'main-menu';
 $handler->display->display_options['menu']['context'] = 0;
-$handler->display->display_options['tab_options']['weight'] = '0';
-
-/* Display: All Projects Page */
-$handler = $view->new_display('page', 'All Projects Page', 'page_1');
-$handler->display->display_options['path'] = 'my-projects/all';
-$handler->display->display_options['menu']['type'] = 'default tab';
-$handler->display->display_options['menu']['title'] = 'All Projects';
-$handler->display->display_options['menu']['weight'] = '0';
-$handler->display->display_options['menu']['context'] = 0;
+$handler->display->display_options['menu']['context_only_inline'] = 0;
 $handler->display->display_options['tab_options']['weight'] = '0';
 
 /* Display: Gis & Web Gis Projects Page */
 $handler = $view->new_display('page', 'Gis & Web Gis Projects Page', 'page_2');
 $handler->display->display_options['defaults']['title'] = FALSE;
 $handler->display->display_options['title'] = 'Gis & Web Gis 2.0 Projects';
+$handler->display->display_options['defaults']['header'] = FALSE;
+/* Intestazione: Globale: Text area */
+$handler->display->display_options['header']['area']['id'] = 'area';
+$handler->display->display_options['header']['area']['table'] = 'views';
+$handler->display->display_options['header']['area']['field'] = 'area';
+$handler->display->display_options['header']['area']['content'] = '<div>Some complex projects run for Italian Local Authorities (Regional & Provincial Level), and private companies in planning and development of spatial Geographical Information Systems, spatial relational DBs and data models for social, economic and environmental assessment, applied to Geo Marketing, Territorial Marketing, Land Use Planning, Environmental Protection and Regional Sustainable Development.</div>
+<div class="node-link"><a href="/node/195">GIS & Web Gis 2.0 Principles and Overview</a></div>';
+$handler->display->display_options['header']['area']['format'] = 'full_html';
 $handler->display->display_options['defaults']['filter_groups'] = FALSE;
 $handler->display->display_options['defaults']['filters'] = FALSE;
-/* Filter criterion: Content: Published */
+/* Filter criterion: Contenuto: Pubblicato */
 $handler->display->display_options['filters']['status']['id'] = 'status';
 $handler->display->display_options['filters']['status']['table'] = 'node';
 $handler->display->display_options['filters']['status']['field'] = 'status';
 $handler->display->display_options['filters']['status']['value'] = 1;
 $handler->display->display_options['filters']['status']['group'] = 1;
 $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-/* Filter criterion: Content: Type */
+/* Filter criterion: Contenuto: Tipo */
 $handler->display->display_options['filters']['type']['id'] = 'type';
 $handler->display->display_options['filters']['type']['table'] = 'node';
 $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -107,7 +112,7 @@ $handler->display->display_options['filters']['type']['value'] = array(
   'my_project' => 'my_project',
 );
 $handler->display->display_options['filters']['type']['group'] = 1;
-/* Filter criterion: Content: Has taxonomy terms (with depth) */
+/* Filter criterion: Contenuto: Has taxonomy terms (with depth) */
 $handler->display->display_options['filters']['term_node_tid_depth']['id'] = 'term_node_tid_depth';
 $handler->display->display_options['filters']['term_node_tid_depth']['table'] = 'node';
 $handler->display->display_options['filters']['term_node_tid_depth']['field'] = 'term_node_tid_depth';
@@ -120,7 +125,7 @@ $handler->display->display_options['filters']['term_node_tid_depth']['type'] = '
 $handler->display->display_options['filters']['term_node_tid_depth']['vocabulary'] = 'category';
 $handler->display->display_options['filters']['term_node_tid_depth']['hierarchy'] = 1;
 $handler->display->display_options['filters']['term_node_tid_depth']['depth'] = '1';
-$handler->display->display_options['path'] = 'my-projects/gis_webgis';
+$handler->display->display_options['path'] = 'gis-webgis-projects';
 $handler->display->display_options['menu']['type'] = 'normal';
 $handler->display->display_options['menu']['title'] = 'Gis & Web Gis 2.0 Projects';
 $handler->display->display_options['menu']['weight'] = '0';
@@ -131,7 +136,7 @@ $translatables['my_projects_views'] = array(
   t('Master'),
   t('Projects'),
   t('leggi tutto'),
-  t('Apply'),
+  t('Applica'),
   t('Ripristina'),
   t('Ordina per'),
   t('Asc'),
@@ -139,15 +144,15 @@ $translatables['my_projects_views'] = array(
   t('Voci per pagina'),
   t('- Tutto -'),
   t('Slittamento'),
-  t('« first'),
-  t('‹ previous'),
-  t('next ›'),
-  t('last »'),
+  t('« prima'),
+  t('‹ precedente'),
+  t('seguente ›'),
+  t('ultima »'),
   t('Projects Main Page'),
-  t('more'),
-  t('All Projects Page'),
   t('Gis & Web Gis Projects Page'),
   t('Gis & Web Gis 2.0 Projects'),
+  t('<div>Some complex projects run for Italian Local Authorities (Regional & Provincial Level), and private companies in planning and development of spatial Geographical Information Systems, spatial relational DBs and data models for social, economic and environmental assessment, applied to Geo Marketing, Territorial Marketing, Land Use Planning, Environmental Protection and Regional Sustainable Development.</div>
+<div class="node-link"><a href="/node/195">GIS & Web Gis 2.0 Principles and Overview</a></div>'),
 );
 
 

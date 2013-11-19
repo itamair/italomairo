@@ -11,7 +11,7 @@
 .view-home-images-grid.isotope-container .views-row {
     float: left;
 /*    background: #ff8000;*/
-    width: 41%;
+    width: 42%;
     margin: 10px 2%;
     padding: 0px;
     -moz-box-shadow: 0px 0px 5px #aaa;
@@ -47,20 +47,6 @@
 
 .view-in-home-grid-content {
     font-size: 0.95em;
-}
-
-.view-in-home-grid-content .field-type-taxonomy-term-reference.field-name-field-category .field-item a,
-.view-in-home-grid-content .views-field-field-category .field-content a {
-    background: #0173BA;
-    background: rgba(1,115,186, 0.8);
-    padding: 2px 10px;
-    margin: 0 0 6px 0;
-    color: white;
-    border-radius: 3px;
-    font-size: 0.9em;
-    text-transform: uppercase;
-    white-space: nowrap;
-    margin-top:  2px;
 }
 
 .view-in-home-grid-content .views-field-field-data-di-pubblicazione,

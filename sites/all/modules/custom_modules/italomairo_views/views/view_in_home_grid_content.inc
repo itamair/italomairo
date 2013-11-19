@@ -104,7 +104,7 @@ $handler->display->display_options['fields']['field_category']['field'] = 'field
 $handler->display->display_options['fields']['field_category']['label'] = '';
 $handler->display->display_options['fields']['field_category']['element_class'] = 'category';
 $handler->display->display_options['fields']['field_category']['element_label_colon'] = FALSE;
-$handler->display->display_options['fields']['field_category']['type'] = 'taxonomy_term_reference_link';
+$handler->display->display_options['fields']['field_category']['type'] = 'taxonomy_term_reference_plain';
 $handler->display->display_options['fields']['field_category']['delta_offset'] = '0';
 $handler->display->display_options['fields']['field_category']['separator'] = '';
 /* Campo: Contenuto: Titolo */
@@ -114,6 +114,8 @@ $handler->display->display_options['fields']['title']['field'] = 'title';
 $handler->display->display_options['fields']['title']['label'] = '';
 $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
 $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+$handler->display->display_options['fields']['title']['element_type'] = 'h4';
+$handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
 /* Campo: Contenuto: Sottotitolo in Home Page */
 $handler->display->display_options['fields']['field_sottottolo']['id'] = 'field_sottottolo';
 $handler->display->display_options['fields']['field_sottottolo']['table'] = 'field_data_field_sottottolo';
@@ -137,6 +139,15 @@ $handler->display->display_options['fields']['body']['type'] = 'text_summary_or_
 $handler->display->display_options['fields']['body']['settings'] = array(
   'trim_length' => '300',
 );
+/* Campo: Contenuto: Fonte */
+$handler->display->display_options['fields']['field_fonte']['id'] = 'field_fonte';
+$handler->display->display_options['fields']['field_fonte']['table'] = 'field_data_field_fonte';
+$handler->display->display_options['fields']['field_fonte']['field'] = 'field_fonte';
+$handler->display->display_options['fields']['field_fonte']['label'] = 'Source';
+$handler->display->display_options['fields']['field_fonte']['element_type'] = 'span';
+$handler->display->display_options['fields']['field_fonte']['element_label_type'] = 'span';
+$handler->display->display_options['fields']['field_fonte']['hide_empty'] = TRUE;
+$handler->display->display_options['fields']['field_fonte']['click_sort_column'] = 'url';
 /* Campo: Contenuto: Link */
 $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
 $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
@@ -195,6 +206,7 @@ $translatables['in_home_grid_content'] = array(
   t('seguente ›'),
   t('ultima »'),
   t('<div>[body]</div>'),
+  t('Source'),
   t('Read More'),
   t('Blocco'),
   t('in Home Content Grid'),

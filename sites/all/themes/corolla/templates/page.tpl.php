@@ -68,6 +68,14 @@
         </div>
       </div>
     <?php endif; ?>
+    
+    <?php if ($page['superfish_main_menu']): ?>
+      <div id="superfish-main-menu-wrapper">
+        <div class="container clearfix">
+          <?php print render($page['superfish_main_menu']); ?>
+        </div>
+      </div>
+     <?php endif; ?>
 
     <?php if ($page['secondary_content']): ?>
       <div id="secondary-content-wrapper">
@@ -79,7 +87,7 @@
 
     <div id="main-menu-wrapper">
       <div class="container clearfix">
-                <?php if ($primary_navigation): print $primary_navigation; endif; ?>
+                <?php //if ($primary_navigation): print $primary_navigation; endif; ?>
                 <?php if ($secondary_navigation): print $secondary_navigation; endif; ?>
       </div>
     </div>
@@ -142,7 +150,11 @@
                       <?php endif; ?>
 
                       <?php if ($breadcrumb): print $breadcrumb; endif; ?>
-
+                      
+                      <div id="content-top">
+                        <?php print render($page['content_top']); ?>
+                      </div>
+                    
                       <?php print render($title_prefix); ?>
 
                       <?php if ($title): ?>

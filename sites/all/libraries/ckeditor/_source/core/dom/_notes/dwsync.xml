@@ -84,4 +84,18 @@
 <file name="text.js" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433750200" remote="12043913012" />
 <file name="walker.js" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433750200" remote="12043913012" />
 <file name="window.js" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433750200" remote="12043913012" />
+<file name="comment.js" server="192.185.46.61/public_html/italomairo/" local="3467181429" remote="12057522212" />
+<file name="document.js" server="192.185.46.61/public_html/italomairo/" local="3467181429" remote="12057522212" />
+<file name="documentfragment.js" server="192.185.46.61/public_html/italomairo/" local="3467181429" remote="12057522212" />
+<file name="domobject.js" server="192.185.46.61/public_html/italomairo/" local="3467181429" remote="12057522272" />
+<file name="element.js" server="192.185.46.61/public_html/italomairo/" local="3467181429" remote="12057522272" />
+<file name="elementpath.js" server="192.185.46.61/public_html/italomairo/" local="3467181429" remote="12057522272" />
+<file name="event.js" server="192.185.46.61/public_html/italomairo/" local="3467181429" remote="12057522272" />
+<file name="node.js" server="192.185.46.61/public_html/italomairo/" local="3467181429" remote="12057522272" />
+<file name="nodelist.js" server="192.185.46.61/public_html/italomairo/" local="3467181429" remote="12057522272" />
+<file name="range.js" server="192.185.46.61/public_html/italomairo/" local="3467181429" remote="12057522272" />
+<file name="rangelist.js" server="192.185.46.61/public_html/italomairo/" local="3467181429" remote="12057522272" />
+<file name="text.js" server="192.185.46.61/public_html/italomairo/" local="3467181429" remote="12057522272" />
+<file name="walker.js" server="192.185.46.61/public_html/italomairo/" local="3467181429" remote="12057522272" />
+<file name="window.js" server="192.185.46.61/public_html/italomairo/" local="3467181429" remote="12057522272" />
 </dwsync>

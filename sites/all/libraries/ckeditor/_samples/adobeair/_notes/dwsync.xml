@@ -24,4 +24,8 @@
 <file name="run.bat" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433750140" remote="12043912952" />
 <file name="run.sh" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433750140" remote="12043912952" />
 <file name="sample.html" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433750140" remote="12043912952" />
+<file name="application.xml" server="192.185.46.61/public_html/italomairo/" local="3467181429" remote="12057522092" />
+<file name="run.bat" server="192.185.46.61/public_html/italomairo/" local="3467181429" remote="12057522092" />
+<file name="run.sh" server="192.185.46.61/public_html/italomairo/" local="3467181429" remote="12057522092" />
+<file name="sample.html" server="192.185.46.61/public_html/italomairo/" local="3467181429" remote="12057522092" />
 </dwsync>

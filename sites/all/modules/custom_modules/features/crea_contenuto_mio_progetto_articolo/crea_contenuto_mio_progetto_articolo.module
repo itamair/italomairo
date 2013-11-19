@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Crea Contenuto Mio Progetto & Articolo feature.
- */
-
-include_once 'crea_contenuto_mio_progetto_articolo.features.inc';

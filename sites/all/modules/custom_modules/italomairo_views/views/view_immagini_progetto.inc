@@ -41,7 +41,7 @@ $handler->display->display_options['fields']['title']['exclude'] = TRUE;
 $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
 $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
 $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-/* Campo: Contenuto: Immagine di copertina */
+/* Campo: Contenuto: Immagini */
 $handler->display->display_options['fields']['field_cover_images']['id'] = 'field_cover_images';
 $handler->display->display_options['fields']['field_cover_images']['table'] = 'field_data_field_cover_images';
 $handler->display->display_options['fields']['field_cover_images']['field'] = 'field_cover_images';
@@ -111,7 +111,7 @@ $handler->display->display_options['fields']['title']['exclude'] = TRUE;
 $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
 $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
 $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-/* Campo: Contenuto: Immagine di copertina */
+/* Campo: Contenuto: Immagini */
 $handler->display->display_options['fields']['field_cover_images']['id'] = 'field_cover_images';
 $handler->display->display_options['fields']['field_cover_images']['table'] = 'field_data_field_cover_images';
 $handler->display->display_options['fields']['field_cover_images']['field'] = 'field_cover_images';
@@ -120,7 +120,7 @@ $handler->display->display_options['fields']['field_cover_images']['element_labe
 $handler->display->display_options['fields']['field_cover_images']['click_sort_column'] = 'fid';
 $handler->display->display_options['fields']['field_cover_images']['type'] = 'colorbox';
 $handler->display->display_options['fields']['field_cover_images']['settings'] = array(
-  'colorbox_node_style' => 'thumbnail',
+  'colorbox_node_style' => 'square-thumbnail',
   'colorbox_image_style' => '',
   'colorbox_gallery' => 'post',
   'colorbox_gallery_custom' => '',

@@ -1,1 +1,14 @@
-<?xml version="1.0" encoding="utf-8" ?><dwsync><file name="EWKB.class.php" server="54.229.46.137:22000//var/www/drupal/" local="3460640923" remote="12050589648" /><file name="EWKT.class.php" server="54.229.46.137:22000//var/www/drupal/" local="3460640923" remote="12050589648" /><file name="GeoAdapter.class.php" server="54.229.46.137:22000//var/www/drupal/" local="3460640923" remote="12050589649" /><file name="GeoHash.class.php" server="54.229.46.137:22000//var/www/drupal/" local="3460640923" remote="12050589649" /><file name="GeoJSON.class.php" server="54.229.46.137:22000//var/www/drupal/" local="3460640923" remote="12050589650" /><file name="GeoRSS.class.php" server="54.229.46.137:22000//var/www/drupal/" local="3460640923" remote="12050589650" /><file name="GoogleGeocode.class.php" server="54.229.46.137:22000//var/www/drupal/" local="3460640923" remote="12050589651" /><file name="GPX.class.php" server="54.229.46.137:22000//var/www/drupal/" local="3460640923" remote="12050589651" /><file name="KML.class.php" server="54.229.46.137:22000//var/www/drupal/" local="3460640923" remote="12050589651" /><file name="WKB.class.php" server="54.229.46.137:22000//var/www/drupal/" local="3460640923" remote="12050589652" /><file name="WKT.class.php" server="54.229.46.137:22000//var/www/drupal/" local="3460640923" remote="12050589652" /></dwsync>
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="EWKB.class.php" server="54.229.46.137:22000//var/www/drupal/" local="3460640923" remote="12050589648" />
+<file name="EWKT.class.php" server="54.229.46.137:22000//var/www/drupal/" local="3460640923" remote="12050589648" />
+<file name="GeoAdapter.class.php" server="54.229.46.137:22000//var/www/drupal/" local="3460640923" remote="12050589649" />
+<file name="GeoHash.class.php" server="54.229.46.137:22000//var/www/drupal/" local="3460640923" remote="12050589649" />
+<file name="GeoJSON.class.php" server="54.229.46.137:22000//var/www/drupal/" local="3460640923" remote="12050589650" />
+<file name="GeoRSS.class.php" server="54.229.46.137:22000//var/www/drupal/" local="3460640923" remote="12050589650" />
+<file name="GoogleGeocode.class.php" server="54.229.46.137:22000//var/www/drupal/" local="3460640923" remote="12050589651" />
+<file name="GPX.class.php" server="54.229.46.137:22000//var/www/drupal/" local="3460640923" remote="12050589651" />
+<file name="KML.class.php" server="54.229.46.137:22000//var/www/drupal/" local="3460640923" remote="12050589651" />
+<file name="WKB.class.php" server="54.229.46.137:22000//var/www/drupal/" local="3460640923" remote="12050589652" />
+<file name="WKT.class.php" server="54.229.46.137:22000//var/www/drupal/" local="3460640923" remote="12050589652" />
+</dwsync>

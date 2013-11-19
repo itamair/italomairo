@@ -42,4 +42,11 @@
 <file name="filter.js" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433750200" remote="12043913012" />
 <file name="fragment.js" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433750200" remote="12043913012" />
 <file name="text.js" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3433750200" remote="12043913012" />
+<file name="basicwriter.js" server="192.185.46.61/public_html/italomairo/" local="3467181429" remote="12057522332" />
+<file name="cdata.js" server="192.185.46.61/public_html/italomairo/" local="3467181429" remote="12057522332" />
+<file name="comment.js" server="192.185.46.61/public_html/italomairo/" local="3467181429" remote="12057522332" />
+<file name="element.js" server="192.185.46.61/public_html/italomairo/" local="3467181429" remote="12057522332" />
+<file name="filter.js" server="192.185.46.61/public_html/italomairo/" local="3467181429" remote="12057522332" />
+<file name="fragment.js" server="192.185.46.61/public_html/italomairo/" local="3467181429" remote="12057522392" />
+<file name="text.js" server="192.185.46.61/public_html/italomairo/" local="3467181429" remote="12057522392" />
 </dwsync>
