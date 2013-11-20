@@ -1,5 +1,74 @@
 (function ($) {
+
+  Drupal.behaviors.geofield_gmap = {
 	
+    attach:function (context, settings) {
+	//console.log("settings:", settings); //Debug
+	//console.log("context:", context); //Debug
+	
+	//$(settings.geofield_map_params).each(function () {
+	$('.field-widget-geofield-gmap', context).each(function () {
+		
+	//console.log(context); //Debug
+	//console.log(settings); //Debug
+		
+	var mapContentId = $('.geofield-gmap-cnt', this).attr('id');
+	//console.log("mapContentId:", mapContentId); //Debug
+	//console.log("mapContentId:", mapContentId); //Debug
+	
+	for (var this_geofield_map_params in settings.geofield_map_params) {
+	    
+	  if(this_geofield_map_params == mapContentId && settings.geofield_map_params[this_geofield_map_params]['initialized'] == 0) {
+
+		settings.geofield_map_params[this_geofield_map_params]['initialized'] = 1;
+		
+			var thisParams = settings.geofield_map_params[this_geofield_map_params];
+		
+			//console.log(mapContentId);
+			
+			var thisIesForm = ($('#'+mapContentId).parents('.ief-form').length > 0) ? $('#'+mapContentId).parents('.ief-form').attr('id') : null;
+			//console.log(thisIesForm); //Debug
+			
+			thisParams.thisIesForm = thisIesForm;
+			
+			$('.geofield_lat', this).attr('id', thisParams.latid);
+			$('.geofield_lon', this).attr('id', thisParams.lngid);
+		
+			//alert(jQuery("input[name='" + params.geocoded_field + "']").length);
+			//console.log(thisParams.geocoded_field); //Debug
+			geocoded_field_div = (thisIesForm != null) ? $("#"+thisIesForm+" input[name*='" + thisParams.geocoded_field + "']", context) : $("input[name*='" + thisParams.geocoded_field + "']", context);
+			//console.log(geocoded_field_div); //Debug
+			geocoded_field_div/*.attr("disabled", "disabled")*/.css('background', 'red')/*.hide()*/.parents('.field-widget-text-textfield').hide();
+			thisParams.geocoded_field_div = geocoded_field_div;
+			$("#"+thisParams.searchid, this).val(geocoded_field_div.val());
+		
+			//console.log(thisParams); //Debug
+			
+			geofield_gmap_initialize(thisParams);
+			
+			$(thisParams.search.selector).keyup(function() {
+					$(thisParams.geocoded_field_div.selector).val($(thisParams.search.selector).val());
+			});
+			
+			$(".geofield-gmap-center", context).click(function(event) {
+				//console.log(mapid); //Debug
+					geofield_gmap_center(thisParams);
+					return false;
+			});
+			
+			$(".geofield-gmap-marker", context).click(function(event) {
+				//console.log(mapid); //Debug
+					geofield_gmap_marker(thisParams);
+					return false;
+			});
+	    
+	  };
+	    
+	}
+
+		
+	});
+
 	var geofield_gmap_geocoder;	
 	
 	function geofield_gmap_initialize (params){
@@ -72,6 +141,8 @@
 	  //console.log(location); //Debug
 		
 	  marker.setPosition(location);
+		
+		//console.log(marker, marker.getPosition());//Debug
 	  
 	  //console.log("mapMarker:", geofield_gmap_data[params.mapid].marker); //Debug
 	  
@@ -121,8 +192,13 @@
 			      if (status == google.maps.GeocoderStatus.OK) {
 				if (results[0]) {
 				  params.search.val(results[0].formatted_address);
+					console.log(params, $(params.geocoded_field_div));
 				  $(params.geocoded_field_div.selector).val($(params.search.selector).val());
-				  console.log(params.latid, $(params.search.selector).val());
+				  //console.log('params.search.selector', $(params.search.selector).val());
+				  console.log($(params));
+					console.log($("#"+params.latid));
+				  //console.log(marker, marker.getPosition());
+					
 				  $("#"+params.latid).val(marker.getPosition().lat().toFixed(6));
 				  $("#"+params.lngid).val(marker.getPosition().lng().toFixed(6));
 				}
@@ -143,7 +219,7 @@
 				  if (status == google.maps.GeocoderStatus.OK) {
 				    if (results[0]) {
 				      params.search.val(results[0].formatted_address);
-				      $(params.geocoded_field_div.selector)($(params.search.selector).val());
+				      $(params.geocoded_field_div.selector).val($(params.search.selector).val());
 				    }
 				  }
 				});
@@ -197,71 +273,11 @@
 		    });
 		}
 	}
-
-  Drupal.behaviors.geofield_gmap = {
 	
-    attach:function (context, settings) {
-	//console.log("settings:", settings); //Debug
-	//console.log("context:", context); //Debug
-	
-	//$(settings.geofield_map_params).each(function () {
-	$('.field-widget-geofield-gmap', context).each(function () {
-		
-	  var mapContentId = $('.geofield-gmap-cnt', this).attr('id');
-	  //console.log("mapContentId:", mapContentId); //Debug
-	
-	for (var this_geofield_map_params in settings.geofield_map_params) {
-	    
-	    if(this_geofield_map_params == mapContentId) {
-		
-		var thisParams = settings.geofield_map_params[this_geofield_map_params];
-		
-		//console.log(thisParams);
+    } //end of the attach:function (context, settings)
+    
+  } // end of Drupal.behaviors.geofield_gmap = {
 
-		//console.log(mapContentId);
-		
-		var thisIesForm = ($('#'+mapContentId).parents('.ief-form')) ? $('#'+mapContentId).parents('.ief-form').attr('id') : null;
-		//console.log(thisIesForm);
-		
-		thisParams.thisIesForm = thisIesForm;
-		
-		$('.geofield_lat', this).attr('id', thisParams.latid);
-		$('.geofield_lon', this).attr('id', thisParams.lngid);
-
-		//alert(jQuery("input[name='" + params.geocoded_field + "']").length);
-		//console.log(thisParams.geocoded_field); //Debug
-		geocoded_field_div = (thisIesForm != null) ? $("#"+thisIesForm+" input[name*='" + thisParams.geocoded_field + "']", context) : $("input[name*='" + thisParams.geocoded_field + "']", context);
-		geocoded_field_div/*.attr("disabled", "disabled")*/.css('background', 'red').hide().parents('.field-type-text').hide();
-		thisParams.geocoded_field_div = geocoded_field_div;
-		$("#"+thisParams.searchid, this).val(geocoded_field_div.val());
-
-		geofield_gmap_initialize(thisParams);
-		
-		$(thisParams.search.selector).keyup(function() {
-				$(thisParams.geocoded_field_div.selector).val($(thisParams.search.selector).val());
-		});
-		
-		$(".geofield-gmap-center", context).click(function(event) {
-			//console.log(mapid); //Debug
-		    geofield_gmap_center(thisParams);
-		    return false;
-		});
-		
-		$(".geofield-gmap-marker", context).click(function(event) {
-			//console.log(mapid); //Debug
-		    geofield_gmap_marker(thisParams);
-		    return false;
-		});
-	    
-	    };
-	    
-	}
-
-		
-	});
-	
-    }
-  }
 
 
 })(jQuery);

@@ -1,19 +1,72 @@
 <?php
 
 /**
+ * My Geofield Gmap Settings.
+ *
+ * @return
+ *   Returns the current settings
+ */
+function my_geofield_gmap_defaults() {
+  $my_geofield_gmap_defaults_setup = array(
+    'geocoded_field'  =>  NULL,
+  );
+
+  return $my_geofield_gmap_defaults_setup;
+}
+
+/*
+* Implements hook_menu().
+*/
+function my_geofield_gmap_menu() {
+  $items = array();
+
+  $items['admin/config/services/my_geofield_gmap'] = array(
+    'title' => 'Specific Geofield Gmap Settings',
+    'description' => 'Configure Geofield Gmap Settings',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('my_geofield_gmap_settings_form'),
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_NORMAL_ITEM,
+    'file' => 'my_geofield_gmap.admin.inc',
+    'weight' => '-100',
+  );
+  
+  return $items;
+
+}
+
+
+/**
  * Implements hook_field_widget_form().
  */
 function my_geofield_gmap_field_widget_form_alter(&$element, &$form_state, $context) {
 
-  //dpm($context); //Debug
-
   $widget = $context['instance']['widget'];
-  $settings = $widget['settings'];
   
   if ($widget['type'] == 'geofield_gmap') {
     
-  $element['#geocoded_field'] = (isset($settings['geocoded_field'])) ? $settings['geocoded_field'] : '';
-  $element['#geocoded_field_delta'] = $settings['geocoded_field_delta'];
+  //dpm($context); //Debug
+  
+  //$form = $context['form'];
+  //$form['#validate'][] = 'my_geofield_gmap_field_widget_form_validate';
+  //dpm($form); //Debug
+    
+  //$settings = $widget['settings'];
+  
+  //dpm($settings);
+
+  $my_geofield_gmap_settings = variable_get('my_geofield_gmap_setup', array());
+  $my_geocoded_field = isset($my_geofield_gmap_settings['my_geocoded_field']) ? $my_geofield_gmap_settings['my_geocoded_field'] : '';
+  //dpm($my_geocoded_field); //Debug
+  
+  //We don't have a dynamic logic for setting a geocoded_field yet
+  //$element['#geocoded_field'] = (isset($settings['geocoded_field'])) ? $settings['geocoded_field'] : '';
+  //$element['#geocoded_field_delta'] = $settings['geocoded_field_delta'];
+  
+  // ... so we set it up as the 'field_nome_location' by default
+  $element['#geocoded_field'] = $my_geocoded_field;
+  $element['#geocoded_field_delta'] = 1;
+  
   
   $element['#after_build'] = array('my_geofield_gmap_widget_gmap_afterbuild');
   //dpm($element); //Debug
@@ -26,11 +79,14 @@ function my_geofield_gmap_field_widget_form_alter(&$element, &$form_state, $cont
  * Callback for afterbuild for widget for js addition
  */
 function my_geofield_gmap_widget_gmap_afterbuild($element, &$form_state) {
+  
+  //dpm($element); //Debug
+  
   global $language;
   $lng = $language->language;
   $id = $element['#gmap_id'];
-  $gmapid = 'nid-'.$element['#entity']->nid.'-gmap-' . $id;
-  $search_id = 'nid-'.$element['#entity']->nid.'-'.'search-'.$id;
+  $gmapid = isset($element['#entity']->nid) ? 'nid-'.$element['#entity']->nid.'-gmap-' . $id : 'nid-0-gmap-' . $id ;
+  $search_id = isset($element['#entity']->nid) ? 'nid-'.$element['#entity']->nid.'-'.'search-'.$id : 'nid-0-search-'.$id;
 
   $element['lat']['#prefix'] = '<label>'.t("Geocode address").'</label><input size="64" id="'.$search_id.'" class="form-text form-autocomplete geofield-gmap-search" type="text"/>';
   $element['lat']['#prefix'] .= '<div id="'.$gmapid.'" class="geofield-gmap-cnt"></div>';
@@ -39,10 +95,11 @@ function my_geofield_gmap_widget_gmap_afterbuild($element, &$form_state) {
   $element['lat']['#prefix'] .= '<button class="geofield-gmap-marker">'.t('Place marker here').'</button>';
     
   $js_settings = array();
+  $js_settings['initialized'] = 0;
   $js_settings['lat'] = (isset($element['lat']['#default_value'])) ? floatval($element['lat']['#default_value']) : ''; // What? Lat as First Default
   $js_settings['lng'] = (isset($element['lon']['#default_value'])) ? floatval($element['lon']['#default_value']) : ''; // What? Lon as First Default
-  $js_settings['latid'] = 'nid-'.$element['#entity']->nid."edit-".$id."-lat";
-  $js_settings['lngid'] = 'nid-'.$element['#entity']->nid."edit-".$id."-lon";
+  $js_settings['latid'] = (isset($element['#entity']->nid)) ? 'nid-'.$element['#entity']->nid.'edit-'.$id.'-lat' : 'nid-0-edit-'.$id.'-lat';
+  $js_settings['lngid'] = (isset($element['#entity']->nid)) ? 'nid-'.$element['#entity']->nid.'edit-'.$id.'-lon' : 'nid-0-edit-'.$id.'-lon';
   $js_settings['searchid'] = $search_id;
   $js_settings['mapid'] = $gmapid;
   $js_settings['widget'] = true;
@@ -62,13 +119,22 @@ function my_geofield_gmap_widget_gmap_afterbuild($element, &$form_state) {
 }
 
 /**
+ * Implements form validation for the my_geofield_gmap_field_widget validation
+ */
+function my_geofield_gmap_field_widget_form_validate($form, &$form_state) {
+  
+  //dpm($form_state);file:///Users/italo/Sites/dotland_bergamo/touringclub/sites/all/modules/custom_touringclub/tc_geofield_gmap/tc_geofield_gmap.admin.inc
+  
+}
+
+/**
  * Implements hook_js_alter().
  */
-function tc_geofield_gmap_js_alter(&$javascript) {
-  //Ovverides the default js file loaded by the "geofield_gmap" module in its info file with a correspondent empty one in this module, as our map js will be loaded in the tc_geofield_gmap_widget_gmap_afterbuild function
+function my_geofield_gmap_js_alter(&$javascript) {
+  //Ovverides the default js file loaded by the "geofield_gmap" module in its info file with a correspondent empty one in this module, as our map js will be loaded in the my_geofield_gmap_widget_gmap_afterbuild function
   if (isset($javascript[drupal_get_path('module', 'geofield_gmap').'/geofield_gmap.js'])) {
     //dpm(isset($javascript[drupal_get_path('module', 'geofield_gmap').'/geofield_gmap.js'])); //Debug
-    $javascript[drupal_get_path('module', 'geofield_gmap').'/geofield_gmap.js']['data'] = drupal_get_path('module', 'tc_geofield_gmap') .'/js/geofield_gmap.js';
+    $javascript[drupal_get_path('module', 'geofield_gmap').'/geofield_gmap.js']['data'] = drupal_get_path('module', 'my_geofield_gmap') .'/js/geofield_gmap.js';
   }
 
 }
