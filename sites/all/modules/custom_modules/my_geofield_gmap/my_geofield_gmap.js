@@ -192,11 +192,11 @@
 			      if (status == google.maps.GeocoderStatus.OK) {
 				if (results[0]) {
 				  params.search.val(results[0].formatted_address);
-					console.log(params, $(params.geocoded_field_div));
+					//console.log(params, $(params.geocoded_field_div));
 				  $(params.geocoded_field_div.selector).val($(params.search.selector).val());
 				  //console.log('params.search.selector', $(params.search.selector).val());
-				  console.log($(params));
-					console.log($("#"+params.latid));
+				  //console.log($(params));
+					//console.log($("#"+params.latid));
 				  //console.log(marker, marker.getPosition());
 					
 				  $("#"+params.latid).val(marker.getPosition().lat().toFixed(6));
