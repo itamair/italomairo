@@ -18,9 +18,10 @@
 	
 	for (var this_geofield_map_params in settings.geofield_map_params) {
 	    
-	  if(this_geofield_map_params == mapContentId && settings.geofield_map_params[this_geofield_map_params]['initialized'] == 0) {
+	  if(this_geofield_map_params == mapContentId &&
+			 (settings.geofield_map_params[this_geofield_map_params].initialized == 0 || settings.geofield_map_params[this_geofield_map_params].thisIesForm != null)) {
 
-		settings.geofield_map_params[this_geofield_map_params]['initialized'] = 1;
+		settings.geofield_map_params[this_geofield_map_params].initialized = 1;
 		
 			var thisParams = settings.geofield_map_params[this_geofield_map_params];
 		
@@ -46,8 +47,8 @@
 			
 			geofield_gmap_initialize(thisParams);
 			
-			$(thisParams.search.selector).keyup(function() {
-					$(thisParams.geocoded_field_div.selector).val($(thisParams.search.selector).val());
+			thisParams.search.keyup(function() {
+					thisParams.geocoded_field_div.val(thisParams.search.val());
 			});
 			
 			$(".geofield-gmap-center", context).click(function(event) {
@@ -182,7 +183,7 @@
 			map.setZoom(15);
 			
 			//Set the value of the Geocoded Field to the the Geocoder Value result
-			$(params.geocoded_field_div.selector).val(ui.item.value);
+			params.geocoded_field_div.val(ui.item.value);
 		      }
 		    });
 			
@@ -193,7 +194,7 @@
 				if (results[0]) {
 				  params.search.val(results[0].formatted_address);
 					//console.log(params, $(params.geocoded_field_div));
-				  $(params.geocoded_field_div.selector).val($(params.search.selector).val());
+				 params.geocoded_field_div.val($(params.search.selector).val());
 				  //console.log('params.search.selector', $(params.search.selector).val());
 				  //console.log($(params));
 					//console.log($("#"+params.latid));
@@ -219,7 +220,7 @@
 				  if (status == google.maps.GeocoderStatus.OK) {
 				    if (results[0]) {
 				      params.search.val(results[0].formatted_address);
-				      $(params.geocoded_field_div.selector).val($(params.search.selector).val());
+				      params.geocoded_field_div.val($(params.search.selector).val());
 				    }
 				  }
 				});
