@@ -7,7 +7,7 @@
 
   Drupal.behaviors.leaflet = { // overrides same behavior in leaflet/leaflet.drupal.js
     attach: function(context, settings) {
-          console.log(context);
+      //console.log(context); //debug
       $(settings.leaflet).each(function () {
         
         // bail if the map already exists
