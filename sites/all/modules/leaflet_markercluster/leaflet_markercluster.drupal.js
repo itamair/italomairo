@@ -24,7 +24,6 @@
 
         // instantiate our new map
         var lMap = new L.Map(this.mapId, settings);
-        lMap.bounds = [];
 
         // add map layers
         var layers = {}, overlays = {};
@@ -92,7 +91,7 @@
             var lGroup = new L.LayerGroup();
             for (var groupKey in feature.features) {
               var groupFeature = feature.features[groupKey];
-              lFeature = leaflet_create_feature(groupFeature, lMap);
+              lFeature = leaflet_create_feature(groupFeature);
               if (groupFeature.popup) {
                 lFeature.bindPopup(groupFeature.popup);
               }
@@ -109,7 +108,7 @@
             }
           }
           else {
-            lFeature = leaflet_create_feature(feature, lMap);
+            lFeature = leaflet_create_feature(feature);
             // @RdB add to cluster layer if one is defined, else to map
             if (cluster_layer) {
               cluster_layer.addLayer(lFeature);
@@ -166,28 +165,25 @@
         this.features = null;
       });
 
-      function leaflet_create_feature(feature, lMap) {
+      function leaflet_create_feature(feature) {
         var lFeature;
         switch (feature.type) {
           case 'point':
-            lFeature = Drupal.leaflet.create_point(feature, lMap);
+            lFeature = Drupal.leaflet.create_point(feature);
             break;
           case 'linestring':
-            lFeature = Drupal.leaflet.create_linestring(feature, lMap);
+            lFeature = Drupal.leaflet.create_linestring(feature);
             break;
           case 'polygon':
-            lFeature = Drupal.leaflet.create_polygon(feature, lMap);
+            lFeature = Drupal.leaflet.create_polygon(feature);
             break;
           case 'multipolygon':
           case 'multipolyline':
-            lFeature = Drupal.leaflet.create_multipoly(feature, lMap);
+            lFeature = Drupal.leaflet.create_multipoly(feature);
             break;
           case 'json':
-            Feature = Drupal.leaflet.create_json(feature.json, lMap);
+            lFeature = Drupal.leaflet.create_json(feature.json)
             break;
-          case 'circle':
-            lFeature = Drupal.leaflet.create_circle(feature, lMap);
-             break;
         }
 
         // assign our given unique ID, useful for associating nodes
