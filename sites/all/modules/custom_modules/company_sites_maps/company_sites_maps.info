@@ -1,0 +1,13 @@
+name = Company Sites Maps (Custom Module)
+description = Manage Maps and Markers for Company Sites
+package = Custom_modules
+core = 7.x
+
+dependencies[] = geofield
+dependencies[] = leaflet
+dependencies[] = geofield_gmap
+dependencies[] = ip_geoloc
+
+files[] = company_sites_maps.module
+
+

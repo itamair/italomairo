@@ -1,0 +1,13 @@
+name = Company Site
+description = Crate Company Site content type
+core = 7.x
+package = Features
+version = 7.x-1.0
+project = company_site
+dependencies[] = crea_contenuto_articolo
+dependencies[] = features
+dependencies[] = node
+dependencies[] = text
+features[features_api][] = api:2
+features[field_instance][] = node-company_site-body
+features[node][] = company_site

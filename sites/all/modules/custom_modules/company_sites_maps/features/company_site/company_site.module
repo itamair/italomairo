@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Company Site feature.
+ */
+
+include_once 'company_site.features.inc';
