@@ -121,7 +121,7 @@ Drupal.behaviors.company_sites_map = {
 																Drupal.company_sites_map.zoomToFeature (thisLeafletMap, features[entity_nid]);
 														}, 200);
 												}
-										}, 300);
+										}, 100);
                 });		
 
 								$(".company-sites-list .views-row .site-content").bind('mouseleave', function(event) {
