@@ -5,7 +5,7 @@ Drupal.behaviors.company_sites_map = {
         
         $(settings.leaflet).each(function () {
             
-            //console.log(this); //Debug
+            console.log(this); //Debug
                        
                 var features = {};
                 var popups = {};
@@ -28,7 +28,11 @@ Drupal.behaviors.company_sites_map = {
                     //Fill the features object with the features, and add a Leaflet popup to it
                     for (var i = 0; i < thisLeafletMap.features.length; i++) {
                         var featureId = thisLeafletMap.features[i].feature_id;
+												
+												
                         features[featureId] = thisLeafletMap.features[i];
+												
+												features[featureId].lFeature.unbindPopup().on('click', Drupal.company_sites_map.onMarkerClick);
                         
                         //Get and define each feature's Lat and Lng point
                         var lat = parseFloat(features[featureId].lat); //devo aggiungere un p√≤ di lat altrimenti il pupop fa al centro del marker
@@ -95,14 +99,30 @@ Drupal.behaviors.company_sites_map = {
 												if(features[entity_nid]) { //If there is a features with that nid ...
 														$(thisSelector).parents('.views-row').addClass('highlighted');
 														$(".company-sites-list .views-row").not($(".company-sites-list .views-row.highlighted")).addClass('sublighted');
-														if (mapReset) clearTimeout(mapReset); //Stop/Clear any possible companySitesListReset strted ...
 														zoomToFeature = setTimeout( function () {
 																Drupal.company_sites_map.zoomToFeature (thisLeafletMap, features[entity_nid]);
 														}, 200);
 												}
-										}, 1000);
+										}, 300);
                 });
-						
+
+								$(".company-sites-list .views-row .site-content").bind('click', function(event) {
+										var thisSelector = this;
+										Drupal.company_sites_map.resetAllTimeOutEvents(mapReset, companySitesListReset, companySiteFocus);
+                    companySiteFocus = setTimeout( function () {
+												$(".company-sites-list .views-row").removeClass('highlighted').removeClass('sublighted');
+												console.log('mouseClickedInViewRowSiteContent');
+												entity_nid = $(thisSelector).attr('nid');
+												//console.log(thisSelector);
+												if(features[entity_nid]) { //If there is a features with that nid ...
+														$(thisSelector).parents('.views-row').addClass('strong-highlighted');
+														$(".company-sites-list .views-row").not($(".company-sites-list .views-row.strong-highlighted")).fadeOut('slow');
+														zoomToFeature = setTimeout( function () {
+																Drupal.company_sites_map.zoomToFeature (thisLeafletMap, features[entity_nid]);
+														}, 200);
+												}
+										}, 300);
+                });		
 
 								$(".company-sites-list .views-row .site-content").bind('mouseleave', function(event) {
 										var thisSelector = this;
@@ -115,7 +135,7 @@ Drupal.behaviors.company_sites_map = {
 																Drupal.company_sites_map.mapReset (thisLeafletMap); // Zooomout sulle mappa sulle sue impostazioni inziali, senza bisogno di rigenerarla
 														}, 1000);
 												}
-										}, 800);
+										}, 1000);
         
                 });
 								
@@ -126,9 +146,11 @@ Drupal.behaviors.company_sites_map = {
 								});
 								
 								$(".ip-geoloc-map.leaflet-view").bind('mouseleave', function(event) {
+										console.log('mouseLeftTheMap');
+										Drupal.company_sites_map.resetAllTimeOutEvents(mapReset, companySitesListReset, companySiteFocus);
 										mapReset = setTimeout( function () {
 												Drupal.company_sites_map.mapReset (thisLeafletMap); // Zooomout sulle mappa sulle sue impostazioni inziali, senza bisogno di rigenerarla
-										}, 3000);
+										}, 5000);
 								});
         
                 $(".map-reset a").bind('click', function(event) {
@@ -148,23 +170,24 @@ Drupal.company_sites_map = {
     
     mapReset: function (lMap) {
         
-				$(".company-sites-list .views-row").removeClass('highlighted').removeClass('sublighted');
+				$(".company-sites-list .views-row").removeClass('highlighted').removeClass('sublighted').removeClass('strong-highlighted').fadeIn('Slow');;
 				lMap.setView([lMap.center.lat, lMap.center.lng], lMap.zoom, true);
         lMap.closePopup();
         $("select.leaflet-map-select option").filter(function() {
             //may want to use $.trim in here
             return $(this).attr('value') == 'all'; 
         }).attr('selected', true);
+				console.log('mapHasBeenReset');
         
     },
     
     // Zooom sulla mappa con centro del popup creato, senza ricostruzione della mappa
     zoomToFeature: function (map, feature) {   
         
-        map.setView([parseFloat(feature.lat) + 0.006, parseFloat(feature.lon)], 14, false).whenReady( function () {
+        map.setView([parseFloat(feature.lat) /*+ 0.006*/, parseFloat(feature.lon)], 14, false).whenReady( function () {
 				setTimeout( function () {
-				feature.Lpopup.openOn(map);
-				console.log('openpopup');
+				//feature.Lpopup.openOn(map);
+				//console.log('openpopup');
 				}, 200);
         });
      },
@@ -174,7 +197,13 @@ Drupal.company_sites_map = {
         if (companySiteFocus )clearTimeout(companySiteFocus); //Stop/Clear any possible event started ...
 				if (companySitesListReset )clearTimeout(companySitesListReset); //Stop/Clear any possible event started ...
 				if (mapReset )clearTimeout(mapReset); //Stop/Clear any possible event started ...
-     } 
+     },
+		 
+		onMarkerClick: function (e) {
+				//alert('Marker Click!');
+				console.log(e);
+				$(".company-sites-list .views-row .site-content[nid=" + e.target.feature_id + "]").trigger('mouseenter');
+		}
 }
   
 
