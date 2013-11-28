@@ -1,0 +1,9 @@
+name = MY Leaflets modules Alters (Custom Module)
+description = Alters the original Leaflet Module and Leaflet Markecluster Module Settings and Behaviours
+package = Custom_modules
+core = 7.x
+dependencies[] = leaflet
+
+files[] = my_leaflet.module
+
+

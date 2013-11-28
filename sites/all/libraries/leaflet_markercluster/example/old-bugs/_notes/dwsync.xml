@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name="add-1000-after.html" server="174.120.150.92/public_html/geoblogcms/" local="3447744430" remote="12038245052" />
-<file name="add-markers-offscreen.html" server="174.120.150.92/public_html/geoblogcms/" local="3447744430" remote="12038245052" />
-<file name="add-remove-before-addtomap.html" server="174.120.150.92/public_html/geoblogcms/" local="3447744430" remote="12038245052" />
-<file name="doesnt-update-cluster-on-bottom-level.html" server="174.120.150.92/public_html/geoblogcms/" local="3447744430" remote="12038245052" />
-<file name="remove-add-clustering.html" server="174.120.150.92/public_html/geoblogcms/" local="3447744430" remote="12038245052" />
-<file name="remove-when-spiderfied.html" server="174.120.150.92/public_html/geoblogcms/" local="3447744430" remote="12038245052" />
-<file name="setView-doesnt-remove.html" server="174.120.150.92/public_html/geoblogcms/" local="3447744430" remote="12038245052" />
-<file name="zoomtoshowlayer-doesnt-need-to-zoom.html" server="174.120.150.92/public_html/geoblogcms/" local="3447744430" remote="12038245052" />
-<file name="add-1000-after.html" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3447744430" remote="12043914512" />
-<file name="add-markers-offscreen.html" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3447744430" remote="12043914512" />
-<file name="add-remove-before-addtomap.html" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3447744430" remote="12043914512" />
-<file name="doesnt-update-cluster-on-bottom-level.html" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3447744430" remote="12043914512" />
-<file name="remove-add-clustering.html" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3447744430" remote="12043914512" />
-<file name="remove-when-spiderfied.html" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3447744430" remote="12043914512" />
-<file name="setView-doesnt-remove.html" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3447744430" remote="12043914512" />
-<file name="zoomtoshowlayer-doesnt-need-to-zoom.html" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3447744430" remote="12043914512" />
+<file name="add-1000-after.html" server="192.185.46.61/public_html/geoblogcms/" local="3467187632" remote="12057906872" />
+<file name="add-markers-offscreen.html" server="192.185.46.61/public_html/geoblogcms/" local="3467187632" remote="12057906872" />
+<file name="add-remove-before-addtomap.html" server="192.185.46.61/public_html/geoblogcms/" local="3467187632" remote="12057906872" />
+<file name="animationless-zoom.html" server="192.185.46.61/public_html/geoblogcms/" local="3467187632" remote="12057906872" />
+<file name="disappearing-marker-from-spider.html" server="192.185.46.61/public_html/geoblogcms/" local="3467187632" remote="12057906872" />
+<file name="doesnt-update-cluster-on-bottom-level.html" server="192.185.46.61/public_html/geoblogcms/" local="3467187632" remote="12057906872" />
+<file name="remove-add-clustering.html" server="192.185.46.61/public_html/geoblogcms/" local="3467187632" remote="12057906932" />
+<file name="remove-when-spiderfied.html" server="192.185.46.61/public_html/geoblogcms/" local="3467187632" remote="12057906932" />
+<file name="removelayer-after-remove-from-map.html" server="192.185.46.61/public_html/geoblogcms/" local="3467187632" remote="12057906932" />
+<file name="setView-doesnt-remove.html" server="192.185.46.61/public_html/geoblogcms/" local="3467187632" remote="12057906932" />
+<file name="zoomtoshowlayer-doesnt-need-to-zoom.html" server="192.185.46.61/public_html/geoblogcms/" local="3467187632" remote="12057906932" />
 </dwsync>

@@ -1,23 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name="ip-geoloc-leaflet.tpl.php" server="174.120.150.92/public_html/geoblogcms/" local="3453062118" remote="12043025252" />
-<file name="ip-geoloc-map.tpl.php" server="174.120.150.92/public_html/geoblogcms/" local="3453062118" remote="12043025252" />
-<file name="ip-geoloc-openlayers.tpl.php" server="174.120.150.92/public_html/geoblogcms/" local="3453062118" remote="12043025252" />
-<file name="ip_geoloc.views.inc" server="174.120.150.92/public_html/geoblogcms/" local="3453062118" remote="12043025252" />
-<file name="ip_geoloc.views_default.inc" server="174.120.150.92/public_html/geoblogcms/" local="3453062118" remote="12043025252" />
-<file name="ip_geoloc_plugin_argument_default_ip_geoloc.inc" server="174.120.150.92/public_html/geoblogcms/" local="3453062118" remote="12043025252" />
-<file name="ip_geoloc_plugin_style.inc" server="174.120.150.92/public_html/geoblogcms/" local="3453062118" remote="12043025252" />
-<file name="ip_geoloc_plugin_style_leaflet.inc" server="174.120.150.92/public_html/geoblogcms/" local="3453114898" remote="12043025252" />
-<file name="ip_geoloc_plugin_style_map.inc" server="174.120.150.92/public_html/geoblogcms/" local="3453062118" remote="12043025252" />
-<file name="ip_geoloc_plugin_style_openlayers.inc" server="174.120.150.92/public_html/geoblogcms/" local="3453062118" remote="12043025252" />
-<file name="ip-geoloc-leaflet.tpl.php" server="174.120.150.92/public_html/italomairo/" local="3453062118" remote="12044581592" />
-<file name="ip-geoloc-map.tpl.php" server="174.120.150.92/public_html/italomairo/" local="3453062118" remote="12044581592" />
-<file name="ip-geoloc-openlayers.tpl.php" server="174.120.150.92/public_html/italomairo/" local="3453062118" remote="12044581592" />
-<file name="ip_geoloc.views.inc" server="174.120.150.92/public_html/italomairo/" local="3453062118" remote="12044581592" />
-<file name="ip_geoloc.views_default.inc" server="174.120.150.92/public_html/italomairo/" local="3453062118" remote="12044581592" />
-<file name="ip_geoloc_plugin_argument_default_ip_geoloc.inc" server="174.120.150.92/public_html/italomairo/" local="3453062118" remote="12044581592" />
-<file name="ip_geoloc_plugin_style.inc" server="174.120.150.92/public_html/italomairo/" local="3453062118" remote="12044581592" />
-<file name="ip_geoloc_plugin_style_leaflet.inc" server="174.120.150.92/public_html/italomairo/" local="3453114898" remote="12044581592" />
-<file name="ip_geoloc_plugin_style_map.inc" server="174.120.150.92/public_html/italomairo/" local="3453062118" remote="12044581592" />
-<file name="ip_geoloc_plugin_style_openlayers.inc" server="174.120.150.92/public_html/italomairo/" local="3453062118" remote="12044581592" />
+<file name="___ip_geoloc_plugin_style___inc___p8b1SB" server="192.185.46.61/public_html/geoblogcms/" local="3467990740" remote="12057906272" />
+<file name="ip-geoloc-leaflet.tpl.php" server="192.185.46.61/public_html/geoblogcms/" local="3466295134" remote="12057906272" />
+<file name="ip-geoloc-map.tpl.php" server="192.185.46.61/public_html/geoblogcms/" local="3466295134" remote="12057906272" />
+<file name="ip-geoloc-openlayers.tpl.php" server="192.185.46.61/public_html/geoblogcms/" local="3466295134" remote="12057906272" />
+<file name="ip_geoloc.views.inc" server="192.185.46.61/public_html/geoblogcms/" local="3466295134" remote="12057906272" />
+<file name="ip_geoloc.views_default.inc" server="192.185.46.61/public_html/geoblogcms/" local="3466295134" remote="12057906272" />
+<file name="ip_geoloc_plugin_argument_default_ip_geoloc.inc" server="192.185.46.61/public_html/geoblogcms/" local="3466295134" remote="12057906332" />
+<file name="ip_geoloc_plugin_style.inc" server="192.185.46.61/public_html/geoblogcms/" local="3467993253" remote="12057906332" />
+<file name="ip_geoloc_plugin_style_leaflet.inc" server="192.185.46.61/public_html/geoblogcms/" local="3467993165" remote="12057906332" />
+<file name="ip_geoloc_plugin_style_map.inc" server="192.185.46.61/public_html/geoblogcms/" local="3466295134" remote="12057906332" />
+<file name="ip_geoloc_plugin_style_openlayers.inc" server="192.185.46.61/public_html/geoblogcms/" local="3466295134" remote="12057906332" />
 </dwsync>

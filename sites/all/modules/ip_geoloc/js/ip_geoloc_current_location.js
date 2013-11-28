@@ -1,4 +1,3 @@
-
 (function ($) {
 
   Drupal.behaviors.addCurrentLocation = {
@@ -7,21 +6,25 @@
       var callback_url = Drupal.settings.basePath + settings.ip_geoloc_menu_callback;
       var refresh_page = settings.ip_geoloc_refresh_page;
 
-      /* Use the geo.js unified API. This covers the W3C Geolocation API as well
-       * as some specific devices like Palm and Blackberry.
-       */
-      var data = new Object;
-      if (typeof(geo_position_js) != 'object') {
-        data['error'] = Drupal.t('IP Geolocation: geo_position_js code missing. Are you connected to the internet?');
-        callback_php(callback_url, data, false);
-        return;
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(getLocation, handleLocationError, {enableHighAccuracy: true, timeout: 10000});
       }
-      if (!geo_position_js.init()) {
-        data['error'] = Drupal.t('IP Geolocation cannot accurately determine visitor location. Browser does not support getCurrentPosition(): @browser', { '@browser': navigator.userAgent });
-        callback_php(callback_url, data, false);
-        return;
+      else {
+        // Use the geo.js unified API. This covers the W3C Geolocation API as well
+        // as some specific devices like Palm and Blackberry.
+        var data = new Object;
+        if (typeof(geo_position_js) != 'object') {
+          data['error'] = Drupal.t('IPGV&M: device does not support W3C API and the unified geo_position_js device API is not loaded.');
+          callback_php(callback_url, data, false);
+          return;
+        }
+        if (geo_position_js.init()) {
+          data['error'] = Drupal.t('IPGV&M cannot accurately determine visitor location. Browser does not support getCurrentPosition(): @browser', { '@browser': navigator.userAgent });
+          callback_php(callback_url, data, false);
+          return;
+        }
+        geo_position_js.getCurrentPosition(getLocation, handleLocationError, {enableHighAccuracy: true, timeout: 20000});
       }
-      geo_position_js.getCurrentPosition(getLocation, handleLocationError, {enableHighAccuracy: true, timeout: 20000});
 
       function getLocation(position) {
         //alert(Drupal.t('Received (@lat, @lng)', { '@lat': position.coords.latitude, '@lng': position.coords.longitude }));
@@ -64,12 +67,15 @@
           case 1:
             text = Drupal.t('user declined to share location');
             break;
+
           case 2:
             text = Drupal.t('position unavailable (connection lost?)');
             break;
+
           case 3:
             text = Drupal.t('timeout');
             break;
+
           default:
             text = Drupal.t('unknown error');
         }
@@ -89,7 +95,7 @@
           },
           error: function (http) {
             if (http.status > 0 && http.status != 200) {
-              alert(Drupal.t('IP Geolocation: an HTTP error @status occurred.', { '@status': http.status }));
+              alert(Drupal.t('IPGV&M: an HTTP error @status occurred.', { '@status': http.status }));
             }
           },
           complete: function() {

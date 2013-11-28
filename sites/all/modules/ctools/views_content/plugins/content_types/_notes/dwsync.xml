@@ -3,15 +3,15 @@
 <file name="icon_views_block_legacy.png" server="192.185.46.61/public_html/italomairo/" local="3455857487" remote="12052457552" />
 <file name="icon_views_page.png" server="192.185.46.61/public_html/italomairo/" local="3455857487" remote="12052457552" />
 <file name="icon_views_page_legacy.png" server="192.185.46.61/public_html/italomairo/" local="3455857487" remote="12052457552" />
-<file name="views.inc" server="192.185.46.61/public_html/italomairo/" local="3455857487" remote="12052457612" />
-<file name="views_attachments.inc" server="192.185.46.61/public_html/italomairo/" local="3455857487" remote="12052457612" />
-<file name="views_empty.inc" server="192.185.46.61/public_html/italomairo/" local="3455857487" remote="12052457612" />
-<file name="views_exposed.inc" server="192.185.46.61/public_html/italomairo/" local="3455857487" remote="12052457612" />
-<file name="views_feed.inc" server="192.185.46.61/public_html/italomairo/" local="3455857487" remote="12052457612" />
-<file name="views_footer.inc" server="192.185.46.61/public_html/italomairo/" local="3455857487" remote="12052457612" />
-<file name="views_header.inc" server="192.185.46.61/public_html/italomairo/" local="3455857487" remote="12052457612" />
-<file name="views_pager.inc" server="192.185.46.61/public_html/italomairo/" local="3455857487" remote="12052457612" />
-<file name="views_panes.inc" server="192.185.46.61/public_html/italomairo/" local="3455857487" remote="12052457672" />
-<file name="views_row.inc" server="192.185.46.61/public_html/italomairo/" local="3455857487" remote="12052457672" />
-<file name="views_view.inc" server="192.185.46.61/public_html/italomairo/" local="3455857487" remote="12052457672" />
+<file name="views.inc" server="192.185.46.61/public_html/italomairo/" local="3467720477" remote="12057695252" />
+<file name="views_attachments.inc" server="192.185.46.61/public_html/italomairo/" local="3467720477" remote="12057695252" />
+<file name="views_empty.inc" server="192.185.46.61/public_html/italomairo/" local="3467720477" remote="12057695252" />
+<file name="views_exposed.inc" server="192.185.46.61/public_html/italomairo/" local="3467720477" remote="12057695312" />
+<file name="views_feed.inc" server="192.185.46.61/public_html/italomairo/" local="3467720477" remote="12057695312" />
+<file name="views_footer.inc" server="192.185.46.61/public_html/italomairo/" local="3467720477" remote="12057695312" />
+<file name="views_header.inc" server="192.185.46.61/public_html/italomairo/" local="3467720477" remote="12057695312" />
+<file name="views_pager.inc" server="192.185.46.61/public_html/italomairo/" local="3467720477" remote="12057695312" />
+<file name="views_panes.inc" server="192.185.46.61/public_html/italomairo/" local="3467720477" remote="12057695312" />
+<file name="views_row.inc" server="192.185.46.61/public_html/italomairo/" local="3467720477" remote="12057695312" />
+<file name="views_view.inc" server="192.185.46.61/public_html/italomairo/" local="3467720477" remote="12057695312" />
 </dwsync>

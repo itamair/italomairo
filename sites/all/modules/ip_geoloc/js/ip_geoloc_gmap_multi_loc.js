@@ -18,7 +18,8 @@
       if (!mapOptions) {
         alert(Drupal.t('Syntax error in map options.'));
       }
-      if (typeof(google) != 'object') { // when not connected to Internet
+      if (typeof(google) != 'object') {
+        // When not connected to Internet.
         return;
       }
       var mapDiv = document.getElementById(settings.ip_geoloc_multi_location_map_div);
@@ -44,9 +45,15 @@
 
       if (visitorMarker || centerOption == 2) {
         // Retrieve visitor's location, fall back on supplied location, if not found.
-        if (use_gps && typeof(geo_position_js) == 'object' && geo_position_js.init()) {
-          // Center the map on the user's current location, using the unified API.
-          geo_position_js.getCurrentPosition(handleMapCenterAndVisitorMarker1, handlePositionError, {enableHighAccuracy: true});
+        if (use_gps) {
+          // Center the map on the user's current location
+          if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(handleMapCenterAndVisitorMarker1, handlePositionError, {enableHighAccuracy: true});
+          }
+          else if (typeof(geo_position_js) == 'object' && geo_position_js.init()) {
+            // Use the unified API.
+            geo_position_js.getCurrentPosition(handleMapCenterAndVisitorMarker1, handlePositionError, {enableHighAccuracy: true});
+          }
         }
         else {
           // Use supplied visitor lat/lng to center and set marker.
@@ -60,8 +67,10 @@
       var defaultPinImage = !markerColor ? null : new google.maps.MarkerImage(
         markerDirname + '/' + markerColor + imageExt,
         new google.maps.Size(markerWidth, markerHeight),
-        new google.maps.Point(0, 0), // origin
-        new google.maps.Point((markerWidth / 2), markerAnchor)); // anchor
+        // Origin.
+        new google.maps.Point(0, 0),
+        // Anchor.
+        new google.maps.Point((markerWidth / 2), markerAnchor));
       var shadowImage = null;
 
       var i = 1;
@@ -80,18 +89,21 @@
           pinImage = new google.maps.MarkerImage(
             markerDirname + '/' + locations[key].marker_color + imageExt,
             new google.maps.Size(markerWidth, markerHeight),
-            new google.maps.Point(0, 0), // origin
-            new google.maps.Point((markerWidth / 2), markerAnchor)); // anchor
+            // Origin.
+            new google.maps.Point(0, 0),
+            // Anchor.
+            new google.maps.Point((markerWidth / 2), markerAnchor));
         }
         marker = new google.maps.Marker({ map: map, icon: pinImage, shadow: shadowImage, position: position, title: mouseOverText });
 
-        // Funny index is because listener callback only gives us position
-        balloonTexts['LL' + position] = '<div class="balloon">'  + locations[key].balloon_text + '</div>';
+        // Funny index is because listener callback only gives us position.
+        balloonTexts['LL' + position] = '<div class="balloon">' + locations[key].balloon_text + '</div>';
         google.maps.event.addListener(marker, 'click', function(event) {
           new google.maps.InfoWindow({
             content: balloonTexts['LL' + event.latLng],
             position: event.latLng,
-            maxWidth: 200 // [#1777664]
+            // See [#1777664].
+            maxWidth: 200
           }).open(map);
         });
       }
@@ -115,10 +127,13 @@
           specialMarker = new google.maps.Marker({ map: map, position: position, title: text });
         }
         else {
-          // Interpret value of visitorMarker as the marker color
-          var pinColor = visitorMarker; // eg "00FF00" for bright green
-          var pinChar = "%E2%80%A2"; // use character like "x", for a dot use "%E2%80%A2"
-          var textColor = "000000";  // black
+          // Interpret value of visitorMarker as the marker color.
+          // eg "00FF00" for bright green.
+          var pinColor = visitorMarker;
+          // use character like "x", for a dot use "%E2%80%A2".
+          var pinChar = "%E2%80%A2";
+          // Black.
+          var textColor = "000000";
           // Note: cannot use https: here...
           var pinImage = new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=" + pinChar + "|" + pinColor + "|" + textColor,
             new google.maps.Size(21, 34), new google.maps.Point(0, 0), new google.maps.Point(10, 34));
@@ -134,7 +149,7 @@
 
       // Fall back on IP address lookup, for instance when user declined to share location (error 1)
       function handlePositionError(error) {
-        //alert(Drupal.t('IP Geolocation, multi-location map: getCurrentPosition() returned error !code', {'!code': error.code}));
+        //alert(Drupal.t('IPGV&M multi-location map: getCurrentPosition() returned error !code', {'!code': error.code}));
         var latLng = settings.ip_geoloc_multi_location_center_latlng;
         if (latLng) {
           handleMapCenterAndVisitorMarker2(latLng[0], latLng[1]);

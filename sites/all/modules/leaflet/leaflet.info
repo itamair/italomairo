@@ -6,9 +6,9 @@ dependencies[] = libraries
 
 files[] = leaflet.formatters.inc
 
-; Information added by drupal.org packaging script on 2013-05-15
-version = "7.x-1.0-beta3+0-dev"
+; Information added by  packaging script on 2013-11-21
+version = "7.x-1.0-beta3+44-dev"
 core = "7.x"
 project = "leaflet"
-datestamp = "1368580236"
+datestamp = "1385000307"
 

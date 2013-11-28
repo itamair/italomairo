@@ -2,15 +2,23 @@
 
 /**
  * @file
- * Install and uninstall hooks for IP Geolocation.
+ * Install and uninstall hooks for IP Geolocation Views & Maps.
  */
 
 /**
  * Implements hook_requirements().
+ *
+ * $phase typically is one of 'install', 'runtime', 'update'.
  */
 function ip_geoloc_requirements($phase) {
-  $t = get_t();
+
   $requirements = array();
+  // Avoid 'undefined function: ip_geoloc_get_css_library_path' during 'install'
+  // and some warnings not relevant while executing an 'update'.
+  if ($phase != 'runtime') {
+    return $requirements;
+  }
+  $t = get_t();
 
   $geolocation_methods = array();
   if (variable_get('ip_geoloc_google_to_reverse_geocode', TRUE)) {
@@ -33,7 +41,7 @@ function ip_geoloc_requirements($phase) {
   $requirements['ip_geoloc_lbs']['title'] = $t('IP Geolocation Views & Maps data collection methods employed');
   $requirements['ip_geoloc_lbs']['value'] = implode(', ', $geolocation_methods);
   if (empty($geolocation_methods)) {
-    $warning = $t('You currently have no data collection methods enabled. Therefore no new address information can be added to the IP Geolocation database.');
+    $warning = $t('You currently have no data collection methods enabled. Therefore no new address information can be added to the IP geolocation database.');
     if (empty($requirements['ip_geoloc']['description'])) {
       $requirements['ip_geoloc_lbs']['severity'] = REQUIREMENT_WARNING;
       $requirements['ip_geoloc_lbs']['description'] = $warning;
@@ -43,7 +51,7 @@ function ip_geoloc_requirements($phase) {
     }
   }
   $css_file = FALSE;
-  $requirements['ip_geoloc_font_awesome']['title'] = t('IP Geolocation Views & Maps <em>Font Awesome</em> extension');
+  $requirements['ip_geoloc_font_awesome']['title'] = $t('IP Geolocation Views & Maps <em>Font Awesome</em> extension');
   if ($css_path = ip_geoloc_get_ccs_library_path('font-awesome')) {
     $css_file = "$css_path/font-awesome.min.css";
   }
@@ -52,12 +60,13 @@ function ip_geoloc_requirements($phase) {
     $requirements['ip_geoloc_font_awesome']['severity'] = REQUIREMENT_OK;
   }
   else {
-    $requirements['ip_geoloc_font_awesome']['value'] = $css_path
-      ? $t('%dir found, but required .css file not present: %file', array('%dir' => $css_path, '%file' => $css_file))
-      : $t('The optional <em>Font Awesome</em> directory not found, so you will not be able to superimpose any Font Awesome symbols on top of your markers');
+    $s1 = $t('%dir found, but required .css file not present: %file', array(
+      '%dir' => $css_path, '%file' => $css_file)
+    );
+    $s2 = $t('The optional <em>Font Awesome</em> directory was not found, so you will not be able to superimpose any Font Awesome symbols on top of your markers');
+    $requirements['ip_geoloc_font_awesome']['value'] = $css_path ? $s1 : $s2;
     $requirements['ip_geoloc_font_awesome']['severity'] = REQUIREMENT_WARNING;
   }
-
   return $requirements;
 }
 
@@ -76,7 +85,7 @@ function ip_geoloc_install() {
  * Implements hook_uninstall().
  */
 function ip_geoloc_uninstall() {
-  // Delete all ip_geoloc_* variables at once
+  // Delete all ip_geoloc_* variables at once.
   db_query("DELETE FROM {variable} WHERE name LIKE 'ip_geoloc_%%'");
 }
 
@@ -96,14 +105,16 @@ function ip_geoloc_uninstall() {
  * GeoIP City provides:
  *  TBA
  *
- * Goolge provides:
+ * Googlee provides:
  *  TBA
+ *
+ * Note: some of the varchar should be varbinary, see drupal.org/node/1793674
  */
 function ip_geoloc_schema() {
   $schema['ip_geoloc'] = array(
     'description' => 'Store visitor IP addresses and geolocation information',
-      'fields' => array(
-        'id'          => array(
+    'fields' => array(
+      'id' => array(
         'description' => 'Unique id',
         'type'        => 'serial',
         'unsigned'    => TRUE,
@@ -196,8 +207,8 @@ function ip_geoloc_schema() {
     ),
     'primary key' => array('id'),
     'indexes' => array(
-      'ip_address' => array('ip_address')
-    )
+      'ip_address' => array('ip_address'),
+    ),
   );
   return $schema;
 }

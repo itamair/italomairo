@@ -2,10 +2,13 @@
 <?xml-stylesheet type="text/xsl" href="/it/sitemap.xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url><loc>http://italomairo/en</loc><changefreq>daily</changefreq><priority>1.0</priority></url>
+<url><loc>http://italomairo/en/company-sites-map</loc></url>
+<url><loc>http://italomairo/en/geoimages</loc></url>
 <url><loc>http://italomairo/en/gis-webgis-projects</loc></url>
 <url><loc>http://italomairo/en/my-projects</loc></url>
 <url><loc>http://italomairo/en/news</loc></url>
 <url><loc>http://italomairo/en/content/gis-web-gis-20-principles-and-overview</loc></url>
+<url><loc>http://italomairo/en/content/contacts</loc></url>
 <url><loc>http://italomairo/en/content/who-i-am</loc></url>
 <url><loc>http://italomairo/en/contacts</loc></url>
 <url><loc>http://italomairo/en/content/drupal</loc></url>

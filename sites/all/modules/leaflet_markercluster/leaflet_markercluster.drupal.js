@@ -5,11 +5,12 @@
 
 (function ($) {
 
+  var LEAFLET_MARKERCLUSTER_EXCLUDE_FROM_CLUSTER = 0x01;
+
   Drupal.behaviors.leaflet = { // overrides same behavior in leaflet/leaflet.drupal.js
     attach: function(context, settings) {
-      //console.log(context); //debug
+
       $(settings.leaflet).each(function () {
-        
         // bail if the map already exists
         var container = L.DomUtil.get(this.mapId);
         if (container._leaflet) {
@@ -84,6 +85,7 @@
         // add features
         for (i = 0; i < this.features.length; i++) {
           var feature = this.features[i];
+          var cluster = (feature.type == 'point') && (!feature.flags || !(feature.flags & LEAFLET_MARKERCLUSTER_EXCLUDE_FROM_CLUSTER));
           var lFeature;
 
           // dealing with a layer group
@@ -101,7 +103,7 @@
             // add the group to the layer switcher
             overlays[feature.label] = lGroup;
 
-            if (cluster_layer) {
+            if (cluster_layer && cluster)  {
               cluster_layer.addLayer(lGroup);
             } else {
               lMap.addLayer(lGroup);
@@ -110,7 +112,7 @@
           else {
             lFeature = leaflet_create_feature(feature);
             // @RdB add to cluster layer if one is defined, else to map
-            if (cluster_layer) {
+            if (cluster_layer && cluster) {
               cluster_layer.addLayer(lFeature);
             }
             else {
@@ -144,10 +146,6 @@
           Drupal.leaflet.fitbounds(lMap);
         }
 
-        //Associate the center and zoom level proprerties to the built lMap (useful to after interaction with it, otherwise would be difficult to get them outside of this context ...)
-        lMap.center = lMap.getCenter();
-        lMap.zoom = lMap.getZoom();
-
         // add attribution
         if (this.map.settings.attributionControl && this.map.attribution) {
           lMap.attributionControl.setPrefix(this.map.attribution.prefix);
@@ -156,10 +154,6 @@
 
         // add the leaflet map to our settings object to make it accessible
         this.lMap = lMap;
-        
-        // allow other modules to get access to the map object using jQuery's trigger method
-        $(document).trigger('leaflet.map', [this.map, lMap]);
-        
         // Destroy features so that an AJAX reload does not get parts of the old set.
         // Required when the View has "Use AJAX" set to Yes.
         this.features = null;

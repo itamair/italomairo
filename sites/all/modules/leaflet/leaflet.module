@@ -1,5 +1,5 @@
 <?php
-require_once ('leaflet.formatters.inc');
+module_load_include('inc', 'leaflet', 'leaflet.formatters');
 
 /**
  * Implements hook_theme().
@@ -20,27 +20,27 @@ function leaflet_library() {
   $libraries['leaflet'] = array(
     'title' => 'Leaflet',
     'website' => 'http://leaflet.cloudmade.com',
-    'version' => '0.4',
+    'version' => '0.6',
     'js' => array(
       array(
         'type' => 'inline',
-        'data' => 'L_ROOT_URL = "' . base_path() . libraries_get_path('leaflet') . '/dist/";',
+        'data' => 'L_ROOT_URL = "' . base_path() . libraries_get_path('leaflet') . '/";',
         'group' => JS_LIBRARY,
-        'preprocess' => FALSE
+        'preprocess' => FALSE,
       ),
       array(
         'type' => 'file',
-        'data' => libraries_get_path('leaflet') . '/dist/leaflet.js',
+        'data' => libraries_get_path('leaflet') . '/leaflet.js',
         'group' => JS_LIBRARY,
-        'preprocess' => FALSE
+        'preprocess' => FALSE,
       ),
     ),
     'css' => array(
-      libraries_get_path('leaflet') . '/dist/leaflet.css' => array(
+      libraries_get_path('leaflet') . '/leaflet.css' => array(
         'type' => 'file',
-        'media' => 'screen',
+        'media' => 'all',
       ),
-      libraries_get_path('leaflet') . '/dist/leaflet.ie.css' => array(
+      libraries_get_path('leaflet') . '/leaflet.ie.css' => array(
         'browsers' => array(
           'IE' => 'lte IE 8',
           '!IE' => FALSE,
@@ -65,19 +65,32 @@ function leaflet_library() {
 }
 
 /**
- * Load all Leaflet required client files and return markup for a map.
+ * Attach Leaflet-required client files and return renderable array for a map.
  *
  * @param array $map
  * @param array $features
  * @param string $height
  *
- * @return string map markup
+ * @return array
+ *  A renderable array.
  */
-function leaflet_render_map($map, $features = array(), $height = '400px') {
+function leaflet_build_map($map, $features = array(), $height = '400px') {
   $map_id = drupal_html_id('leaflet_map');
-  drupal_add_library('leaflet', 'leaflet-drupal');
+  $build = array(
+    '#theme' => 'html_tag',
+    '#tag' => 'div',
+    '#value' => '',
+    '#attributes' => array(
+      'id' => $map_id,
+      'style' => 'height: ' . $height,
+    ),
+    '#attached' => array(
+      'js' => array(),
+      'library' => array(),
+    ),
+  );
 
-  // Allow map definitions to provide a default icon
+  // Allow map definitions to provide a default icon:
   if (isset($map['icon']['iconUrl'])) {
     foreach ($features as &$feature) {
       if (!isset($feature['icon'])) {
@@ -91,10 +104,35 @@ function leaflet_render_map($map, $features = array(), $height = '400px') {
     'map' => $map,
     'features' => $features,
   );
+  drupal_alter('leaflet_map_prebuild', $settings);
 
-  drupal_add_js(array('leaflet' => array($settings)), 'setting');
+  $build['#attached']['js'][] = array(
+    'data' => array('leaflet' => array($settings)),
+    'type' => 'setting',
+  );
+  $build['#attached']['js'][] = array(
+    'data' => drupal_get_path('module', 'leaflet') . '/leaflet.drupal.js',
+    'type' => 'file',
+  );
+  $build['#attached']['library'][] = array('leaflet', 'leaflet-drupal');
 
-  return theme('leaflet_map', array('map_id' => $map_id, 'height' => $height));
+  return $build;
+}
+
+/**
+ * DEPRECATED. Use leaflet_build_map() instead.
+ * 
+ * Load all Leaflet required client files and return markup for a map.
+ *
+ * @param array $map
+ * @param array $features
+ * @param string $height
+ *
+ * @return string map markup
+ */
+function leaflet_render_map($map, $features = array(), $height = '400px') {
+  $build = leaflet_build_map($map, $features, $height);
+  return render($build);
 }
 
 /**
@@ -161,11 +199,10 @@ function leaflet_leaflet_map_info() {
         'earth' => array(
           'urlTemplate' => 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
           'options' => array(
-            'attribution' => 'OSM Mapnik'
-          )
+            'attribution' => 'OSM Mapnik',
+          ),
         ),
       ),
     ),
   );
 }
-

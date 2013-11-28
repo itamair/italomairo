@@ -44,8 +44,6 @@ drupal_add_js(drupal_get_path('module', 'company_sites_maps') .'/js/company_site
       <?php print $header; ?>
     </div>
   <?php endif; ?>
-  
-  <div class="map-reset"><a href="javascript:void(0)"><?php print t('Reset the map'); ?></a></div>
 
   <?php if ($exposed): ?>
     <div class="view-filters">

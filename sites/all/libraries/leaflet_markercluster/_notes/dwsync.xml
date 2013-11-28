@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name=".gitignore" server="174.120.150.92/public_html/geoblogcms/" local="3447744430" remote="12038244992" />
-<file name="CHANGELOG.md" server="174.120.150.92/public_html/geoblogcms/" local="3447744430" remote="12038245052" />
-<file name="Jakefile.js" server="174.120.150.92/public_html/geoblogcms/" local="3447744430" remote="12038245112" />
-<file name="MIT-LICENCE.txt" server="174.120.150.92/public_html/geoblogcms/" local="3447744430" remote="12038245112" />
-<file name="README.md" server="174.120.150.92/public_html/geoblogcms/" local="3447744430" remote="12038245112" />
-<file name=".gitignore" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3447744430" remote="12043914452" />
-<file name="CHANGELOG.md" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3447744430" remote="12043914452" />
-<file name="Jakefile.js" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3447744430" remote="12043914512" />
-<file name="MIT-LICENCE.txt" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3447744430" remote="12043914512" />
-<file name="README.md" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3447744430" remote="12043914512" />
+<file name=".gitignore" server="192.185.46.61/public_html/geoblogcms/" local="3467187632" remote="12057906812" />
+<file name=".travis.yml" server="192.185.46.61/public_html/geoblogcms/" local="3467187632" remote="12057906812" />
+<file name="CHANGELOG.md" server="192.185.46.61/public_html/geoblogcms/" local="3467187632" remote="12057906812" />
+<file name="Jakefile.js" server="192.185.46.61/public_html/geoblogcms/" local="3467187632" remote="12057906992" />
+<file name="MIT-LICENCE.txt" server="192.185.46.61/public_html/geoblogcms/" local="3467187632" remote="12057906992" />
+<file name="package.json" server="192.185.46.61/public_html/geoblogcms/" local="3467187632" remote="12057906992" />
+<file name="README.md" server="192.185.46.61/public_html/geoblogcms/" local="3467187632" remote="12057907052" />
 </dwsync>

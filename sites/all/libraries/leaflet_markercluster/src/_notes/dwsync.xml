@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name="DistanceGrid.js" server="174.120.150.92/public_html/geoblogcms/" local="3447744430" remote="12038245112" />
-<file name="MarkerCluster.js" server="174.120.150.92/public_html/geoblogcms/" local="3447744430" remote="12038245112" />
-<file name="MarkerCluster.QuickHull.js" server="174.120.150.92/public_html/geoblogcms/" local="3447744430" remote="12038245112" />
-<file name="MarkerCluster.Spiderfier.js" server="174.120.150.92/public_html/geoblogcms/" local="3447744430" remote="12038245112" />
-<file name="MarkerClusterGroup.js" server="174.120.150.92/public_html/geoblogcms/" local="3447744430" remote="12038245112" />
-<file name="DistanceGrid.js" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3447744430" remote="12043914512" />
-<file name="MarkerCluster.js" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3447744430" remote="12043914512" />
-<file name="MarkerCluster.QuickHull.js" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3447744430" remote="12043914512" />
-<file name="MarkerCluster.Spiderfier.js" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3447744430" remote="12043914512" />
-<file name="MarkerClusterGroup.js" server="ftp.simmairo.com/www.simmairo.com/cms/" local="3447744430" remote="12043914512" />
+<file name="copyright.js" server="192.185.46.61/public_html/geoblogcms/" local="3467187632" remote="12057907172" />
+<file name="DistanceGrid.js" server="192.185.46.61/public_html/geoblogcms/" local="3467187632" remote="12057907172" />
+<file name="MarkerCluster.js" server="192.185.46.61/public_html/geoblogcms/" local="3467187632" remote="12057907172" />
+<file name="MarkerCluster.QuickHull.js" server="192.185.46.61/public_html/geoblogcms/" local="3467187632" remote="12057907172" />
+<file name="MarkerCluster.Spiderfier.js" server="192.185.46.61/public_html/geoblogcms/" local="3467187632" remote="12057907232" />
+<file name="MarkerClusterGroup.js" server="192.185.46.61/public_html/geoblogcms/" local="3467187632" remote="12057907232" />
 </dwsync>

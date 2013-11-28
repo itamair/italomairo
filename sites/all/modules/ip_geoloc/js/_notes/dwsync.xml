@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name="ip_geoloc_current_location.js" server="174.120.150.92/public_html/geoblogcms/" local="3453062118" remote="12043025192" />
-<file name="ip_geoloc_gmap.js" server="174.120.150.92/public_html/geoblogcms/" local="3453062118" remote="12043025192" />
-<file name="ip_geoloc_gmap_current_loc.js" server="174.120.150.92/public_html/geoblogcms/" local="3453062118" remote="12043025192" />
-<file name="ip_geoloc_gmap_multi_loc.js" server="174.120.150.92/public_html/geoblogcms/" local="3453062118" remote="12043025192" />
-<file name="ip_geoloc_gmap_multi_visitor.js" server="174.120.150.92/public_html/geoblogcms/" local="3453062118" remote="12043025192" />
-<file name="ip_geoloc_leaflet_tagged_marker.js" server="174.120.150.92/public_html/geoblogcms/" local="3453062118" remote="12043025192" />
-<file name="ip_geoloc_current_location.js" server="174.120.150.92/public_html/italomairo/" local="3453062118" remote="12044581532" />
-<file name="ip_geoloc_gmap.js" server="174.120.150.92/public_html/italomairo/" local="3453062118" remote="12044581532" />
-<file name="ip_geoloc_gmap_current_loc.js" server="174.120.150.92/public_html/italomairo/" local="3453062118" remote="12044581532" />
-<file name="ip_geoloc_gmap_multi_loc.js" server="174.120.150.92/public_html/italomairo/" local="3453062118" remote="12044581532" />
-<file name="ip_geoloc_gmap_multi_visitor.js" server="174.120.150.92/public_html/italomairo/" local="3453062118" remote="12044581532" />
-<file name="ip_geoloc_leaflet_tagged_marker.js" server="174.120.150.92/public_html/italomairo/" local="3453062118" remote="12044581532" />
+<file name="ip_geoloc_current_location.js" server="192.185.46.61/public_html/geoblogcms/" local="3466295134" remote="12057906212" />
+<file name="ip_geoloc_gmap.js" server="192.185.46.61/public_html/geoblogcms/" local="3466295134" remote="12057906212" />
+<file name="ip_geoloc_gmap_current_loc.js" server="192.185.46.61/public_html/geoblogcms/" local="3466295134" remote="12057906212" />
+<file name="ip_geoloc_gmap_multi_loc.js" server="192.185.46.61/public_html/geoblogcms/" local="3466295134" remote="12057906212" />
+<file name="ip_geoloc_gmap_multi_visitor.js" server="192.185.46.61/public_html/geoblogcms/" local="3466295134" remote="12057906212" />
+<file name="ip_geoloc_leaflet_tagged_marker.js" server="192.185.46.61/public_html/geoblogcms/" local="3466295134" remote="12057906212" />
 </dwsync>

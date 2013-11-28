@@ -1,5 +1,12 @@
 <?php
 
+function company_sites_maps_preprocess_page(&$variables, $hook) {
+  drupal_add_library('system', 'ui', true);
+	drupal_add_library('system', 'ui.dialog', true);
+	drupal_add_library('system', 'ui.tooltip', true);
+}
+
+
 // Add company_sites_maps.css file:
 drupal_add_css(drupal_get_path('module', 'company_sites_maps') . '/css/company_sites_maps.css');
 
@@ -24,4 +31,41 @@ function company_sites_maps_views_default_views() {
         require_once($views_filename);
     }
     return $views;
+}
+
+	function startsWith($haystack, $needle) {
+			return $needle === "" || strpos($haystack, $needle) === 0;
+	}
+
+/**
+ * Implements hook_form_alter().
+ */
+function company_sites_maps_form_alter(&$form, &$form_state, $form_id) {
+	
+	//dpm($form_id);
+	//dpm($form);
+	
+	if( $form_id == 'views_exposed_form' && startsWith($form['#id'], 'views-exposed-form-company-sites-map')) {
+		
+		$form['field_site_type_value']['#type'] = 'checkboxes';
+		$form['field_site_type_value']['#size'] = 1;
+		
+		if(isset($form['field_site_type_value'])) {
+			$form['field_site_type_value']['#after_build'][] = 'field_site_type_value_remove_validation'; 
+		}
+		
+		//dpm($form);
+		
+	}
+	
+}
+
+/**
+* Custom After_Build Function to unset/remove the validation on the views-exposed-form-company-sites-map-page field_site_type_value element
+*/
+function field_site_type_value_remove_validation($form_element) {
+  //dpm($form_element);
+  unset($form_element['#needs_validation']);
+
+  return $form_element;
 }

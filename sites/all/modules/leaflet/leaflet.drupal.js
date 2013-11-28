@@ -1,13 +1,16 @@
 (function ($) {
+  
+  //console.log('leaflet_js loaded');
 
   Drupal.behaviors.leaflet = {
-    
-
     attach:function (context, settings) {
       
-          console.log(context);
+      console.log(settings);
 
       $(settings.leaflet).each(function () {
+        
+        
+        
         // bail if the map already exists
         var container = L.DomUtil.get(this.mapId);
         if (!container || container._leaflet) {
@@ -38,6 +41,8 @@
           }
           i++;
         }
+        
+        console.log(this.features);
 
         // add features
         for (i = 0; i < this.features.length; i++) {
@@ -92,10 +97,6 @@
         else {
           Drupal.leaflet.fitbounds(lMap);
         }
-        
-        //Associate the center and zoom level proprerties to the built lMap (useful to after interaction with it, otherwise would be difficult to get them outside of this context ...)
-        lMap.center = lMap.getCenter();
-        lMap.zoom = lMap.getZoom();
 
         // add attribution
         if (this.map.settings.attributionControl && this.map.attribution) {
@@ -131,7 +132,13 @@
             lFeature = Drupal.leaflet.create_multipoly(feature);
             break;
           case 'json':
-            lFeature = Drupal.leaflet.create_json(feature.json)
+            lFeature = Drupal.leaflet.create_json(feature.json);
+            break;
+          case 'popup':
+            lFeature = Drupal.leaflet.create_popup(feature);
+            break;
+          case 'circle':
+            lFeature = Drupal.leaflet.create_circle(feature);
             break;
         }
 
@@ -152,7 +159,7 @@
       }
 
     }
-  }
+  };
 
   Drupal.leaflet = {
 
@@ -180,22 +187,51 @@
             x: tilePoint.x,
             y: Math.pow(2, zoom) - tilePoint.y - 1
           }, this.options));
-        }
+        };
       }
       return map_layer;
     },
 
+    create_circle: function(circle) {
+      var latLng = new L.LatLng(circle.lat, circle.lon);
+      latLng = latLng.wrap();
+      this.bounds.push(latLng);
+      if (circle.options) {
+        return new L.Circle(latLng, circle.radius, circle.options);
+      }
+      else {
+        return new L.Circle(latLng, circle.radius);
+      }
+    },
+
     create_point: function(marker) {
       var latLng = new L.LatLng(marker.lat, marker.lon);
+      latLng = latLng.wrap();
       this.bounds.push(latLng);
       var lMarker;
 
-      if (marker.icon) {
+      if (marker.html) {
+        if (marker.html_class) {
+          var icon = new L.DivIcon({html: marker.html, className: marker.html_class});
+        }
+        else {
+          var icon = new L.DivIcon({html: marker.html});
+        }
+        // override applicable marker defaults
+        if (marker.icon.iconSize) {
+          icon.options.iconSize = new L.Point(parseInt(marker.icon.iconSize.x, 10), parseInt(marker.icon.iconSize.y, 10));
+        }
+        if (marker.icon.iconAnchor) {
+          icon.options.iconAnchor = new L.Point(parseFloat(marker.icon.iconAnchor.x), parseFloat(marker.icon.iconAnchor.y));
+        }
+        lMarker = new L.Marker(latLng, {icon:icon});
+      }
+      else if (marker.icon) {
         var icon = new L.Icon({iconUrl: marker.icon.iconUrl});
 
         // override applicable marker defaults
         if (marker.icon.iconSize) {
-          icon.options.iconSize = new L.Point(parseInt(marker.icon.iconSize.x), parseInt(marker.icon.iconSize.y));
+          icon.options.iconSize = new L.Point(parseInt(marker.icon.iconSize.x, 10), parseInt(marker.icon.iconSize.y, 10));
         }
         if (marker.icon.iconAnchor) {
           icon.options.iconAnchor = new L.Point(parseFloat(marker.icon.iconAnchor.x), parseFloat(marker.icon.iconAnchor.y));
@@ -207,17 +243,28 @@
           icon.options.shadowUrl = marker.icon.shadowUrl;
         }
         if (marker.icon.shadowSize) {
-          icon.options.shadowSize = new L.Point(parseInt(marker.icon.shadowSize.x), parseInt(marker.icon.shadowSize.y));
+          icon.options.shadowSize = new L.Point(parseInt(marker.icon.shadowSize.x, 10), parseInt(marker.icon.shadowSize.y, 10));
         }
         if (marker.icon.shadowAnchor) {
-          icon.options.shadowAnchor = new L.Point(parseInt(marker.icon.shadowAnchor.x), parseInt(marker.icon.shadowAnchor.y));
+          icon.options.shadowAnchor = new L.Point(parseInt(marker.icon.shadowAnchor.x, 10), parseInt(marker.icon.shadowAnchor.y, 10));
         }
-
-        lMarker = new L.Marker(latLng, {icon:icon});
+        if (marker.icon.zIndexOffset) {
+          icon.options.zIndexOffset = marker.icon.zIndexOffset;
+        }
+        var options = {icon:icon};
+        if (marker.zIndexOffset) {
+          options.zIndexOffset = marker.zIndexOffset;
+        }
+        lMarker = new L.Marker(latLng, options);
       }
       else {
         lMarker = new L.Marker(latLng);
       }
+
+      if (marker.label) {
+        lMarker.options.title = marker.label;
+      }
+
       return lMarker;
     },
 
@@ -225,6 +272,7 @@
       var latlngs = [];
       for (var i = 0; i < polyline.points.length; i++) {
         var latlng = new L.LatLng(polyline.points[i].lat, polyline.points[i].lon);
+        latlng = latlng.wrap();
         latlngs.push(latlng);
         this.bounds.push(latlng);
       }
@@ -235,6 +283,7 @@
       var latlngs = [];
       for (var i = 0; i < polygon.points.length; i++) {
         var latlng = new L.LatLng(polygon.points[i].lat, polygon.points[i].lon);
+        latlng = latlng.wrap();
         latlngs.push(latlng);
         this.bounds.push(latlng);
       }
@@ -248,6 +297,7 @@
         var polygon = multipoly.component[x];
         for (var i = 0; i < polygon.points.length; i++) {
           var latlng = new L.LatLng(polygon.points[i].lat, polygon.points[i].lon);
+          latlng = latlng.wrap();
           latlngs.push(latlng);
           this.bounds.push(latlng);
         }
@@ -261,37 +311,51 @@
       }
     },
 
-    create_json: function(json) {
-      lJSON = new L.GeoJSON();
+    create_json:function(json) {
+      lJSON = new L.GeoJSON(json, {
+        onEachFeature:function (feature, layer) {
+          var has_properties = (typeof feature.properties != 'undefined');
 
-      lJSON.on('featureparse', function (e) {
-        e.layer.bindPopup(e.properties.popup);
-
-        for (var layer_id in e.layer._layers) {
-          for (var i in e.layer._layers[layer_id]._latlngs) {
-            Drupal.leaflet.bounds.push(e.layer._layers[layer_id]._latlngs[i]);
+          // bind popups
+          if (has_properties && typeof feature.properties.popup != 'undefined') {
+            layer.bindPopup(feature.properties.popup);
           }
-        }
 
-        if (e.properties.style) {
-          e.layer.setStyle(e.properties.style);
-        }
+          for (var layer_id in layer._layers) {
+            for (var i in layer._layers[layer_id]._latlngs) {
+              Drupal.leaflet.bounds.push(layer._layers[layer_id]._latlngs[i]);
+            }
+          }
 
-        if (e.properties.leaflet_id) {
-          e.layer._leaflet_id = e.properties.leaflet_id;
+          if (has_properties && typeof feature.properties.style != 'undefined') {
+            layer.setStyle(feature.properties.style);
+          }
+
+          if (has_properties && typeof feature.properties.leaflet_id != 'undefined') {
+            layer._leaflet_id = feature.properties.leaflet_id;
+          }
         }
       });
 
-      lJSON.addData(json);
       return lJSON;
     },
 
-    fitbounds: function(lMap) {
+    create_popup: function(popup) {
+      var latLng = new L.LatLng(popup.lat, popup.lon);
+      this.bounds.push(latLng);
+      var lPopup = new L.Popup();
+      lPopup.setLatLng(latLng);
+      if (popup.content) {
+        lPopup.setContent(popup.content);
+      }
+      return lPopup;
+    },
+
+    fitbounds:function (lMap) {
       if (this.bounds.length > 0) {
         lMap.fitBounds(new L.LatLngBounds(this.bounds));
       }
     }
-
-  }
+  };
 
 })(jQuery);

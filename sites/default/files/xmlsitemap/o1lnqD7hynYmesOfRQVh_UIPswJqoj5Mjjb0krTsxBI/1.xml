@@ -2,14 +2,18 @@
 <?xml-stylesheet type="text/xsl" href="/it/sitemap.xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url><loc>http://italomairo/it</loc><changefreq>daily</changefreq><priority>1.0</priority></url>
+<url><loc>http://italomairo/it/company-sites-map</loc></url>
+<url><loc>http://italomairo/it/geoimages</loc></url>
 <url><loc>http://italomairo/it/gis-webgis-projects</loc></url>
 <url><loc>http://italomairo/it/my-projects</loc></url>
 <url><loc>http://italomairo/it/news</loc></url>
 <url><loc>http://italomairo/it/content/principi-e-fondamenta-dei-gis-e-del-web-gis-20</loc></url>
+<url><loc>http://italomairo/it/node/202</loc></url>
 <url><loc>http://italomairo/it/chi-sono</loc></url>
 <url><loc>http://italomairo/it/contatti</loc></url>
 <url><loc>http://italomairo/it/content/drupal</loc></url>
 <url><loc>http://italomairo/it/content/principali-competenze-informatiche</loc></url>
+<url><loc>http://italomairo/it/node/202</loc><lastmod>2013-11-25T18:49Z</lastmod><changefreq>daily</changefreq></url>
 <url><loc>http://italomairo/it/content/il-nuovo-catalogo-informatizzato-ed-ecommerce-di-inu-edizioni-istituto-nazionale-di</loc><lastmod>2013-11-14T10:12Z</lastmod><changefreq>weekly</changefreq></url>
 <url><loc>http://italomairo/it/content/web-gis-20-attivit%C3%A0-e-clusters-economici-santa-fe-argentina</loc><lastmod>2013-06-17T22:07Z</lastmod><changefreq>yearly</changefreq></url>
 <url><loc>http://italomairo/it/content/webgis-20-atlante-aree-produttive-attrezzate-dellemilia-romagna</loc><lastmod>2013-06-17T22:07Z</lastmod><changefreq>yearly</changefreq></url>

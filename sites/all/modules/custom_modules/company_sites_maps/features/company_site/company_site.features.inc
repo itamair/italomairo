@@ -12,9 +12,9 @@ function company_site_node_info() {
     'company_site' => array(
       'name' => t('Company Site'),
       'base' => 'node_content',
-      'description' => '',
+      'description' => t('A company site with its geolocation, category and tipology'),
       'has_title' => '1',
-      'title_label' => t('Title'),
+      'title_label' => t('Titolo'),
       'help' => '',
     ),
   );

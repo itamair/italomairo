@@ -16,6 +16,7 @@ function my_functions_page_alter(&$page) {
   if ($current_path == 'manage_site_content' ||
       $current_path == 'amministra-elenco-progetti' ||
       $current_path == 'comments/recent' ||
+      $current_path == 'manage-company-sites' ||
       arg(0) == 'admin' ||
       arg(0) == 'user' ||
       arg(2) == 'webform-results' ||

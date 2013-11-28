@@ -295,3 +295,10 @@ a.map-zoom:hover {
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 }
 
+/**** View Aggregator ****/
+
+.view-aggregator-feeds .view-header {
+		padding:  0;
+}
+
+

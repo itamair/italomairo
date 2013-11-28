@@ -1,14 +1,13 @@
 <?php
 
-
 /**
  * @file
  * ip_geoloc/plugins/contexts/ip_geoloc.inc
  * CTools context plugin.
- *
  */
+
 $plugin = array(
-  'title' => t('IP Geolocation'),
+  'title' => t('IP geolocation'),
   'description' => t('The geolocation information for the current user'),
   'context' => 'ip_geoloc_ip_geoloc_context',
   'keyword' => 'ip_geoloc',
@@ -17,6 +16,9 @@ $plugin = array(
   'convert' => 'ip_geoloc_ip_geoloc_context_convert',
 );
 
+/**
+ * Implements hook_context().
+ */
 function ip_geoloc_ip_geoloc_context($empty, $data = NULL, $conf = FALSE) {
   $context = new ctools_context('ip_geoloc');
   $context->plugin = 'ip_geoloc';
@@ -53,10 +55,10 @@ function ip_geoloc_ip_geoloc_context_convert_list() {
 }
 
 /**
- * Convert a context into a string to be used as a keyword by content types, etc.
+ * Convert a context into string to be used as keyword by content types, etc.
  */
 function ip_geoloc_ip_geoloc_context_convert($context, $type) {
-  if ($context->data) {
+  if (isset($context->data['location'][$type])) {
     return $context->data['location'][$type];
   }
   return NULL;

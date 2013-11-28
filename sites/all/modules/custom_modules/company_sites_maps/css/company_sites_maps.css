@@ -1,6 +1,3 @@
-
-/**** admin-menu-wrapper ***/
-
 /**** CSS for Geofield GMap corrections ***/
 
 /* Geofield Map module */
@@ -53,16 +50,62 @@ a.map-zoom:hover {
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 }
 
+/**** view-company-sites-map ****/
+
+.view-company-sites-map .view-header {
+	float:  right;
+	padding: 0;
+	margin:  0;
+}
+
+.view-company-sites-map .map-reset,
+.view-company-sites-map .map-legend {
+	position: relative;
+	top:  16px;
+	right:  0;
+	float: right;
+	margin: 0 10px 0 20px;
+}
+
+.view-company-sites-map .map-reset a,
+.view-company-sites-map .map-reset a:hover {
+	padding: 0;
+	background: none;
+	border: none;
+	color: inherit;
+	border-radius: 0;
+	text-transform: inherit;
+	font-weight: normal;
+	font-size: 100%;
+	text-shadow: none;
+}
+
+.view-company-sites-map .click-to-zoom {
+	padding: 6px 10px;
+	border: none;
+	color: #cccccc;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 100%;
+	text-shadow: 1px 1px 1px #555555
+}
+
+.view-company-sites-map #edit-field-site-type-value-wrapper.views-exposed-widget label,
+.view-company-sites-map #edit-field-site-type-value-wrapper.views-exposed-widget .views-widget,
+.view-company-sites-map #edit-field-site-type-value-wrapper.views-exposed-widget .form-item {
+	display:  inline-block;
+	margin-right:  10px;
+}
 
 /**** View Company Sites List ****/
 
+
 .view.company-sites-list {
 	margin:  20px 0;
-	/*padding:  10px;
-	height:  200px;
-	overflow-y: scroll;*/
-	border: solid thin black;
-	padding: 5px;
+	height:  300px;
+	overflow-y: scroll;
+	border: solid thin #e6e6e6;
+
 }
 
 .view.company-sites-list .views-slideshow-cycle-main-frame {
@@ -74,11 +117,13 @@ a.map-zoom:hover {
 }
 
 .view.company-sites-list .views-row {
-	padding: 6px 10px;
+	margin:  0;
+	padding: 16px;
+	border-bottom: thin solid #e6e6e6;
 }
 
 .view.company-sites-list .views-row.views-row-odd {
-	background: #e6e6e6;
+	/*background: #e6e6e6;*/
 }
 
 .view.company-sites-list .views-row .views-field .site-content {
@@ -87,13 +132,14 @@ a.map-zoom:hover {
 
 .view.company-sites-list .views-row .views-field .site-content .column {
 	display:  inline-block;
-	margin:  0 10px 0 0;
+	margin:  0 5px 0 0;
 	vertical-align: top;
 	font-size: 0.9em;
 }
 
-.view.company-sites-list .views-row .views-field .site-content p {
-	margin:  0;
+.view-company-sites-map .view-content p,
+.view.company-sites-list .views-row .views-field p {
+	margin:  0 !important;
 }
 
 .view.company-sites-list .views-row .views-field .site-content div.title {
@@ -101,21 +147,114 @@ a.map-zoom:hover {
 	font-size: 1.2em;
 }
 
+.view.company-sites-list .views-row .views-field .site-content div.type,
+.view.company-sites-list .views-row .views-field .site-content div.category {
+	font-size: 0.9em;
+}
+
+.view.company-sites-list .views-row .views-field .site-content div.links {
+	margin: 6px 0;
+}
+
+
 .view.company-sites-list .views-row .views-field .site-content .col-1 {
-	width:  7%;
+	width:  6%;
 }
 
 .view.company-sites-list .views-row .views-field .site-content .col-2 {
-	width:  25%;
+	width:  30%;
 }
 
 
 .view.company-sites-list .views-row .views-field .site-content .col-3 {
-	width:  35%;
+	width:  30%;
 
 }
 
 .view.company-sites-list .views-row .views-field .site-content .col-4 {
-	width:  20%;
+	width:  25%;
 }
+
+/**** Js Interaction ... ***/
+
+.view.company-sites-list .views-row.highlighted {
+	border: thin solid #999999;
+}
+
+.view.company-sites-list .views-row.strong-highlighted {
+	background:  #ffffcc;
+	border: thin solid #999999;
+}
+
+.view.company-sites-list .views-row.sublighted {
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+	filter: alpha(opacity=50);
+	opacity:0.5;
+}
+
+.view.company-sites-list .views-row .map-reset {
+	font-size: 0.9em;
+	position: relative;
+	margin: 20px 0;
+	text-align: center;
+	top: 0px;
+	right: 0px;
+	display:  none;
+}
+
+.view.company-sites-list .views-row .click-to-zoom {
+	position: relative;
+	margin: 16px 0;
+	text-align: center;
+	top: 0px;
+	right: 0px;
+	display:  none;
+} 
+
+.view.company-sites-list .views-row.highlighted .click-to-zoom,
+.view.company-sites-list .views-row.strong-highlighted .map-reset {
+	display:  block;
+}
+
+/*** .legenda-categorie-sedi ***/
+
+.legenda-categorie-sedi .views-row {
+	margin: 4px 0;
+}
+
+.legenda-categorie-sedi {
+	font-size: 0.9em;
+}
+
+.legenda-categorie-sedi .legend-item {
+	height: 36px;
+}
+
+.legenda-categorie-sedi .legend-item .marker-icon {
+	float: left;
+	margin: 1px 10px 0 0;
+}
+
+.legenda-categorie-sedi .legend-item .marker-icon img {
+	height: 30px;
+	width: auto;
+}
+
+.legenda-categorie-sedi .legend-item .marker-title {
+	display: block;
+	padding-top: 6px;
+}
+
+.ip-geoloc-map.leaflet-view .ui-dialog .ui-dialog-titlebar {
+	padding:  .2em 1em;
+}
+
+.ip-geoloc-map.leaflet-view .ui-corner-all {
+	border-radius: 0 !important ;
+}
+
+.ip-geoloc-map.leaflet-view .ui-dialog-title {
+	color: black;
+}
+
 

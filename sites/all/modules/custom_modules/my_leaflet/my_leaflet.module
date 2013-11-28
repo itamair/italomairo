@@ -1,0 +1,92 @@
+<?php
+
+module_load_include('inc', 'my_leaflet', 'my_leaflet.admin');
+
+/**
+ * Some defaults.
+ *
+ * @return
+ *   Returns the current settings
+ */
+function my_leaflet_defaults() {
+  $my_leaflet_defaults = array(
+    'leaflet_js_override'  => 0,
+    'leaflet_markecluster_js_override'  => 0,
+  );
+
+  return $my_leaflet_defaults;
+}
+
+/*
+* Implements hook_menu().
+*/
+function my_leaflet_menu() {
+  $items = array();
+
+  $items['admin/config/services/my_leaflet_settings'] = array(
+    'title' => 'My Leaflet Alter Module Settings',
+    'description' => 'Configure My Leaflet Alter Module Settings',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('my_leaflet_settings_form'),
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_NORMAL_ITEM,
+    'file' => 'my_leaflet.admin.inc',
+  );
+  
+return $items;
+
+}
+
+
+/**
+ * Implements hook_js_alter().
+ */
+function my_leaflet_js_alter(&$javascript) {
+	
+	//dpm($javascript);
+	
+	//dpm($javascript['sites/all/modules/leaflet/leaflet.drupal.js']);
+	//dpm($javascript['sites/all/modules/leaflet_markercluster/leaflet_markercluster.drupal.js']);
+	
+	$my_leaflet_settings = variable_get('my_leaflet_settings', array());
+	
+	$leaflet_js_override = (!empty($my_leaflet_settings['leaflet_js_override'])) ? $my_leaflet_settings['leaflet_js_override'] : 0;
+  $leaflet_markecluster_js_override = (!empty($my_leaflet_settings['leaflet_markecluster_js_override'])) ? $my_leaflet_settings['leaflet_markecluster_js_override'] : 0;
+
+	//dpm($leaflet_js_override);
+	//dpm($leaflet_markecluster_js_override);
+	
+  if (module_exists('leaflet') && isset($javascript['sites/all/modules/leaflet/leaflet.drupal.js'])) {
+		
+		if($leaflet_js_override) {
+			$javascript['sites/all/modules/leaflet/leaflet.drupal.js']['data'] = drupal_get_path('module', 'my_leaflet') . '/js/leaflet.drupal.js';
+		}
+		if (isset($javascript['sites/all/modules/leaflet_markercluster/leaflet_markercluster.drupal.js'])) {
+			$javascript['sites/all/modules/leaflet_markercluster/leaflet_markercluster.drupal.js']['weight'] = $javascript['sites/all/modules/leaflet/leaflet.drupal.js']['weight'] + 0.05;
+		}
+		
+		if (isset($javascript['sites/all/themes/corolla/js/leaflet_markers_animation.js'])) {
+			$javascript['sites/all/themes/corolla/js/leaflet_markers_animation.js']['weight'] = $javascript['sites/all/modules/leaflet/leaflet.drupal.js']['weight'] + 0.20;
+		}
+		  
+		  
+	}
+
+  if ($leaflet_markecluster_js_override && module_exists('leaflet_markercluster') && isset($javascript['sites/all/modules/leaflet_markercluster/leaflet_markercluster.drupal.js'])) {
+    $javascript['sites/all/modules/leaflet_markercluster/leaflet_markercluster.drupal.js']['data'] = drupal_get_path('module', 'my_leaflet') . '/js/leaflet_markercluster.drupal.js';
+		
+	}
+	
+	if (module_exists('ip_geoloc') &&
+			isset($javascript['sites/all/modules/ip_geoloc/js/ip_geoloc_leaflet_tagged_marker.js']) && 
+			$javascript['sites/all/modules/ip_geoloc/js/ip_geoloc_leaflet_tagged_marker.js']['weight'] < $javascript['sites/all/modules/leaflet/leaflet.drupal.js']['weight']) {
+		$javascript['sites/all/modules/ip_geoloc/js/ip_geoloc_leaflet_tagged_marker.js']['weight'] = $javascript['sites/all/modules/leaflet/leaflet.drupal.js']['weight'] + 0.15;
+	}
+	
+	
+	//dpm($javascript['sites/all/modules/leaflet/leaflet.drupal.js']);
+	//dpm($javascript['sites/all/modules/leaflet_markercluster/leaflet_markercluster.drupal.js']);
+	//dpm($javascript['sites/all/modules/ip_geoloc/js/ip_geoloc_leaflet_tagged_marker.js']);
+	//dpm($javascript['sites/all/themes/corolla/js/leaflet_markers_animation.js']);
+  
+}

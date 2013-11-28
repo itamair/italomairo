@@ -1011,3 +1011,10 @@ body.page-taxonomy-term #crumbs {
 .field-name-body ul {
 	list-style-position: inside;
 }
+
+/**** CSS for Geofield GMap corrections ***/
+
+/* Geofield Map module */
+.gm-style img {
+	max-width: none;
+}

@@ -1,10 +1,10 @@
-
 (function ($) {
 
   Drupal.behaviors.addGMapCurrentLocation = {
     attach: function (context, settings) {
 
-      if (typeof(google) != 'object') { // when not connected to Internet
+      if (typeof(google) != 'object') {
+        // When not connected to Internet.
         return;
       }
       // Start with a map canvas, then add marker and balloon with address info
@@ -15,11 +15,13 @@
       }
       var map = new google.maps.Map(document.getElementById(settings.ip_geoloc_current_location_map_div), mapOptions);
 
-      /* Use the geo.js unified API. This covers the W3C Geolocation API
-       * as well as some specific devices like Palm and Blackberry.
-       */
-      if (typeof(geo_position_js) == 'object' && geo_position_js.init()) {
+      if (navigator.geolocation) {
         // Note that we use the same function for normal and error behaviours.
+        navigator.geolocation.getCurrentPosition(displayMap, displayMap, {enableHighAccuracy: true});
+      }
+      else if (typeof(geo_position_js) == 'object' && geo_position_js.init()) {
+        // Use the geo.js unified API. This covers the W3C Geolocation API
+        // as well as some specific devices like Palm and Blackberry.
         geo_position_js.getCurrentPosition(displayMap, displayMap, {enableHighAccuracy: true});
       }
       else {
@@ -51,18 +53,18 @@
             addressText = response[0]['formatted_address'];
           }
           else {
-          //alert(Drupal.t('IP Geolocation displayMap(): Google address lookup failed with status code !code.', { '!code': status }));
+          //alert(Drupal.t('IPGV&M: Google address lookup failed with status code !code.', { '!code': status }));
           }
           // lat/long and address are revealed when clicking marker
           var lat = coords.latitude.toFixed(4);
           var lng = coords.longitude.toFixed(4);
-          var latLongText = Drupal.t('lat. !lat, long. !long', { '!lat': lat, '!long': lng }) + '<br/>'
-            + Drupal.t('accuracy !accuracy m', { '!accuracy': coords.accuracy });
+          var latLongText = Drupal.t('lat. !lat, long. !long', { '!lat': lat, '!long': lng }) + '<br/>' +
+            Drupal.t('accuracy !accuracy m', { '!accuracy': coords.accuracy });
           var infoPopUp = new google.maps.InfoWindow({ content: addressText + '<br/>' + latLongText });
           google.maps.event.addListener(marker, 'click', function() { infoPopUp.open(map, marker) });
-          //google.maps.event.addListener(map, 'center_changed', function() {
-          //  alert('New coords: ' + map.getCenter().lat() + ', ' + map.getCenter().lng());
-          //});
+          // google.maps.event.addListener(map, 'center_changed', function() {
+          //   alert('New coords: ' + map.getCenter().lat() + ', ' + map.getCenter().lng());
+          // });
         });
       }
     }

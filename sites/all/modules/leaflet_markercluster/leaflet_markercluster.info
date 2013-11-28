@@ -2,9 +2,9 @@ name = Leaflet Markercluster
 description = Extend Leaflet with the Markercluster library
 core = 7.x
 dependencies[] = leaflet
-; Information added by drupal.org packaging script on 2013-03-16
-version = "7.x-1.0-beta1+1-dev"
+; Information added by drupal.org packaging script on 2013-09-30
+version = "7.x-1.0-beta1+2-dev"
 core = "7.x"
 project = "leaflet_markercluster"
-datestamp = "1363464177"
+datestamp = "1380584761"
 

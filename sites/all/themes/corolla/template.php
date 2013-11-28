@@ -28,6 +28,7 @@ function corolla_preprocess_html(&$vars) {
   foreach ($settings_array as $setting) {
     $vars['classes_array'][] = at_get_setting($setting);
   }
+  
 }
 
 /**

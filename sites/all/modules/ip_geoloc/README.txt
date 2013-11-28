@@ -2,7 +2,7 @@
 IP GEOLOCATION VIEWS AND MAPS
 =============================
 This documentation concentrates on the installation and configuration of the
-IP Geolocation Views and Maps (IPGV&M) module. A full description of the module
+IP Geolocation Views & Maps (IPGV&M) module. A full description of the module
 and its features can be found at http://drupal.org/project/ip_geoloc.
 
 INSTALLATION & CONFIGURATION
@@ -65,9 +65,10 @@ B. Historic data: location info about visits to your site from way back when
 Note, that this step relies on you having had the Statistics module enabled
 before you installed IPGV&M, as the access log is used as the source of IP
 addresses that have visited your site previously.
-There are a couple of options here. Use either http://drupal.org/project/smart_ip
-and the IPinfoDB web service it uses, or http://drupal.org/project/geoip, which
-takes its data from a file you download for free.
+There are a couple of options here. Use either
+http://drupal.org/project/smart_ip and the IPinfoDB web service it uses, or
+http://drupal.org/project/geoip, which takes its data from a file you download
+for free.
 
 1a. If you decide to employ Smart IP....
 Install and enable Smart IP. There is no need to enable the Device Geolocation
@@ -95,7 +96,7 @@ import to check it's all working. For instance, the block "Map showing locations
 of 10 most recent visitors" should now show more markers.
 
 4. Go back the Configuration >> IPGV&M and complete the import process
-with a larger batch size until the IP Geolocation database is up to date with
+with a larger batch size until the IP geolocation database is up to date with
 the access log. It will automatically remain in synch from now on.
 
 CONFIGURING YOUR VIEW TO DISPLAY AS A MAP
@@ -109,7 +110,7 @@ sure you have included in your view's field selection a field named "Content:
 your_Geofield/Geolocation_field". Only one copy is required, you do NOT need
 both a latitude version plus a longitude version. The "Formatter", if it pops
 up, is relevant only if you want the location field to appear in the marker
-balloons.
+balloons. Make sure "Use field template" is UNTICKED.
 Then, after selecting the View Format "Map (Google, via IPGV&M)", "Map (Leaflet,
 via IPGV&M)" or "Map (OpenLayers, via IPGV&M)" select or type field_name in the
 "Name of latitude field in Views query".
@@ -120,12 +121,11 @@ LEAFLET TIPS
 You need to download and install the Leaflet package on your system, but you
 only have to enable the main module, no need for the Leaflet Views submodule.
 Don't forget to download the Leaflet javascript library from
-http://leaflet.cloudmade.com/download.html. This zip file contains a directory
-named 'dist'. Drop this directory in your Drupal install in
-sites/all/libraries/leaflet, so that the path to the essential javascript file
-becomes sites/all/libraries/leaflet/dist/leaflet.js
-Remember to install and enable the Libraries API module too. If all's ok, you
-won't see any errors in the Status Report, .../admin/reports/status.
+http://leafletjs.com/download.html dropping it in sites/all/libraries and
+changing the folder name to leaflet. Remember to install and enable the
+Libraries API module too.
+If all's ok, you won't see any errors in the Status Report, i.e.
+.../admin/reports/status.
 
 OPENLAYERS TIPS
 ===============
@@ -161,9 +161,11 @@ and "Scale Line".
 ALTERNATIVE MARKER ICONS (LEAFLET, GOOGLE MAPS)
 ===============================================
 Find on the web a marker icon set you like, eg http://mapicons.nicolasmollet.com
-Download and extract the icon image files, which must have extension .png, into
-a directory anywhere in your Drupal instal, e.g. sites/default/files/map_markers.
-Now visit the the IP Geolocation Views and Maps configuration page at
+Download and extract the icon image files, which must have extension .png,
+into a directory anywhere in your Drupal instal,
+e.g. sites/default/files/map_markers.
+
+Now visit the the IP Geolocation Views & Maps configuration page at
 admin/config/system/ip_geoloc. Expand the "Alternative markers" fieldset.
 Enter the path to your map_markers directory and the dimensions of your markers.
 The marker set will now be available in your map settings, in particular in the
@@ -174,7 +176,8 @@ differentiator settings.
 To install Font Awesome visit http://fortawesome.github.io/Font-Awesome and
 press the "Download" button. Unzip the downloaded file into the Drupal
 libraries directory, typically sites/all/libraries, so that the path to the
-essential style sheet becomes sites/all/libraries/font-awesome/css/font-awesome.css
+essential style sheet becomes
+sites/all/libraries/font-awesome/css/font-awesome.css
 
 UTILITY FUNCTIONS
 =================
@@ -204,67 +207,70 @@ centered on it. Or you can choose one of the other centering options, as per
 normal.
 
 <?php
-  /*
-   *  Implements hook_ip_geoloc_marker_locations_alter().
-   */
-  function MYMODULE_ip_geoloc_marker_locations_alter(&$marker_locations, &$view) {
-    if ($view->name != 'my_view') {
-       return;
-    }
-    if (count($marker_locations) >= 2) {
-      $marker_locations[0]->marker_color = 'orange';
-      $marker_locations[1]->marker_color = 'yellow';
-    }
-    $observatory = new stdClass();
-    $observatory->latitude = 51.4777;
-    $observatory->longitude = -0.0015;
-    $observatory->balloon_text = t('The zero-meridian passes through the courtyard of the <strong>Greenwich</strong> observatory.');
-    $observatory->marker_color = 'white';
-    array_unshift($marker_locations, $observatory);
+/**
+ * Implements hook_ip_geoloc_marker_locations_alter().
+ */
+function MYMODULE_ip_geoloc_marker_locations_alter(&$marker_locations, &$view) {
+  if ($view->name != 'my_view') {
+    return;
   }
+  if (count($marker_locations) >= 2) {
+    $marker_locations[0]->marker_color = 'orange';
+    $marker_locations[1]->marker_color = 'yellow';
+  }
+  $observatory = new stdClass();
+  $observatory->latitude = 51.4777;
+  $observatory->longitude = -0.0015;
+  $observatory->balloon_text = t('The zero-meridian passes through the courtyard of the <strong>Greenwich</strong> observatory.');
+  $observatory->marker_color = 'white';
+  array_unshift($marker_locations, $observatory);
+}
+?>
 
 If you want to hook your own gelocation data provider into IP Geolocation, then
 you can -- it's simple, using another hook.
 All you have to do is flesh out the following function.
 
 <?php
-  /*
-   *  Implements hook_get_ip_geolocation_alter().
-   */
-  function MYMODULE_get_ip_geolocation_alter(&$location) {
+/**
+ * Implements hook_get_ip_geolocation_alter().
+ */
+function MYMODULE_get_ip_geolocation_alter(&$location) {
 
-    if (empty($location['ip_address'])) {
-      return;
-    }
-    // ... your code here to retrieve geolocation data ...
-
-    $location['provider'] = 'MYMODULE';
-
-    // Then fill out some or all of the location fields that IP Geolocation
-    // knows how to store.
-    $location['latitude'] =  ....;
-    $location['longitude'] = ....;
-    $location['country'] = ....;
-    $location['country_code'] = ....;
-    $location['region'] = ....;
-    $location['region_code'] = ....;
-    $location['city'] = ... ;
-    $location['locality'] = ....; // eg suburb
-    $location['route'] = ....;     // eg street
-    $location['street_number'] = ....;
-    $location['postal_code'] = ....; // eg ZIP
-    $location['administrative_area_level_1'] = ....; // eg state or province
-    $location['formatted_address'] = ....; // address as a human-readible string
+  if (empty($location['ip_address'])) {
+    return;
   }
+  // ... your code here to retrieve geolocation data ...
+  $location['provider'] = 'MYMODULE';
+
+  // Fill out some or all of the location fields that IPGV&M knows how to store.
+  $location['latitude'] = ;
+  $location['longitude'] = ;
+  $location['country'] = ;
+  $location['country_code'] = ;
+  $location['region'] = ;
+  $location['region_code'] = ;
+  $location['city'] = ;
+  // 'locality' is usually the suburb.
+  $location['locality'] = ;
+  // 'route' is usually the street.
+  $location['route'] = ;
+  $location['street_number'] = ;
+  $location['postal_code'] = ;
+  // 'administrative_area_level_1' is usually the state or province.
+  $location['administrative_area_level_1'] = ;
+  // Finally the complete address as a human-readable string.
+  $location['formatted_address'] = ;
+}
 ?>
 
 That's all!
-Note that when IP Geolocation calls this function the $location object may be
+Note that when IPGV&M calls this function the $location object may be
 partially fleshed out. If $location['ip_address'] is empty, this means that
-IP Geolocation is still waiting for more details to arrive from the Google
-reverse-geocoding AJAX call. If $location['ip_address'] is not empty, then IP
-Geolocation does not expect any further details and will store the $location
-with your modifications (if any) on the IP Geolocation database. You must set
+IPGV&M is still waiting for more details to arrive from the Google
+reverse-geocoding AJAX call. If $location['ip_address'] is not empty, then
+IPGV&M does not expect any further details and will store the $location
+with your modifications (if any) on the IP geolocation database. You must set
 $location['formatted_address'] in order for the location to be stored.
 
 RESTRICTIONS IMPOSED BY GOOGLE
