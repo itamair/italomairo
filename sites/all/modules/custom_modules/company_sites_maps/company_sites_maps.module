@@ -9,6 +9,7 @@ function company_sites_maps_preprocess_page(&$variables, $hook) {
 
 // Add company_sites_maps.css file:
 drupal_add_css(drupal_get_path('module', 'company_sites_maps') . '/css/company_sites_maps.css');
+drupal_add_css(drupal_get_path('module', 'company_sites_maps') . '/css/company_sites_maps_responsive.css');
 
 /**
  * Implements hook_views_api().

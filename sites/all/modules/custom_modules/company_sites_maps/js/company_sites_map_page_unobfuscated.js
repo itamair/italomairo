@@ -9,6 +9,8 @@ Drupal.behaviors.company_sites_map = {
 							return this.indexOf(str) == 0;
 						};
 				}
+				
+				$.widget.bridge('uitooltip', $.ui.tooltip); // handle jQuery plugin naming conflict between jQuery UI and Bootstrap
         
         $(settings.leaflet).each(function () {
             
@@ -16,17 +18,18 @@ Drupal.behaviors.company_sites_map = {
 	
 								//console.log(this); //Debug
 						
-								$(".company-sites-list .views-row").attr('title', '').tooltip({
+								$(".company-sites-list .views-row").attr('title', '').uitooltip({
 										content: Drupal.t('Click to Zoom'),
 										position: {
 										my: "center bottom-10",
 										at: "right-50 top",
+										//of: '.company-sites-list' ,
 										},
 										//track: true,
 										//show: { effect: "blind", duration: 800},
 									});
 								
-								var mapResetDiv = '<div class="map-reset"><a href="javascript:void(0)">' + Drupal.t('Reset the map') + '</a></div>';
+								var mapResetDiv = '<div class="map-reset"><a href="javascript:void(0)">' + Drupal.t('Reset the Sites List and the Map') + '</a></div>';
 								//console.log($(".company-sites-list").length);
 								if ($(".company-sites-list .map-reset").length < 1) {
 										$(".company-sites-list").append(mapResetDiv);
@@ -36,7 +39,7 @@ Drupal.behaviors.company_sites_map = {
 								$( ".legenda-categorie-sedi").dialog({						
 										autoOpen: false,
 										show: { effect: "blind", duration: 800 },
-										width: ($(".ip-geoloc-map.leaflet-view").width()*2)/5,
+										width: ($(".ip-geoloc-map.leaflet-view").width()*1)/3,
 										modal: true,
 										appendTo: ".ip-geoloc-map.leaflet-view",
 										draggable: false,
@@ -77,7 +80,7 @@ Drupal.behaviors.company_sites_map = {
 												features[featureId].lFeature.unbindPopup().on('click', Drupal.company_sites_map.onMarkerClick);
 												
 												//Get and define each feature's Lat and Lng point
-												var lat = parseFloat(features[featureId].lat); //devo aggiungere un p√≤ di lat altrimenti il pupop fa al centro del marker
+												var lat = parseFloat(features[featureId].lat);
 												var lng = parseFloat(features[featureId].lon);
 												var latlng = new L.LatLng(lat, lng );
 												
@@ -117,9 +120,9 @@ Drupal.behaviors.company_sites_map = {
 																$(".company-sites-list .views-row").not($(".company-sites-list .views-row.highlighted")).addClass('sublighted');
 																centreToFeature = setTimeout( function () {
 																		Drupal.company_sites_map.centreToFeature (thisLeafletMap, features[entity_nid]);
-																}, 300);
+																}, 600);
 														}
-												}, 200);
+												}, 300);
 										}
 								});
 
@@ -134,7 +137,7 @@ Drupal.behaviors.company_sites_map = {
 														entity_nid = $(thisSelector).attr('nid');
 														//console.log(thisSelector);
 														if(features[entity_nid]) { //If there is a features with that nid ...
-																$(thisSelector).addClass('strong-highlighted').fadeIn('slow').tooltip( "disable" );
+																$(thisSelector).addClass('strong-highlighted').fadeIn('slow').uitooltip( "disable" );
 																//console.log($(thisSelector));
 																$(".company-sites-list .views-row").not('.strong-highlighted').fadeOut('slow');
 																//$(".company-sites-list .views-row.strong-highlighted").fadeIn('slow');

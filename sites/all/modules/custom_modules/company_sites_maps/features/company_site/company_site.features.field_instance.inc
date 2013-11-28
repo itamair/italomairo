@@ -465,6 +465,43 @@ function company_site_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'taxonomy_term-site_category-name_field'
+  $field_instances['taxonomy_term-site_category-name_field'] = array(
+    'bundle' => 'site_category',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'name_field',
+    'label' => 'Nome',
+    'required' => TRUE,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'hide_label' => array(
+        'entity' => FALSE,
+        'page' => FALSE,
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => -5,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Categoria');
@@ -481,6 +518,7 @@ function company_site_field_default_field_instances() {
   t('Indicare qui i dettagli e l\'indirizzo della Sede Aziendale (compariranno con la formattazione imputata)<br>
 <strong>Nota: Inputare i contatti (Telefono, Fax, emails, ecc.) nel seguente campo Contatti</strong>');
   t('Inserisci il titolo di questo contenuto (campo titolo)');
+  t('Nome');
   t('Tipo');
   t('Titolo');
 

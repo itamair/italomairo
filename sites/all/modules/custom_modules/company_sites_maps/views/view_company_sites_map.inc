@@ -55,6 +55,13 @@ $handler->display->display_options['header']['php']['field'] = 'php';
 $handler->display->display_options['header']['php']['php_output'] = '<div class="map-reset"><a href="javascript:void(0)"><?php print t(\'Reset the map\'); ?></a></div>
 <div class="map-legend"><a href="javascript:void(0)" title="<?php print t(\'Legend\'); ?>"><?php print t(\'Legend\'); ?></a></div>
 ';
+/* No results behavior: Globale: PHP */
+$handler->display->display_options['empty']['php']['id'] = 'php';
+$handler->display->display_options['empty']['php']['table'] = 'views';
+$handler->display->display_options['empty']['php']['field'] = 'php';
+$handler->display->display_options['empty']['php']['empty'] = TRUE;
+$handler->display->display_options['empty']['php']['php_output'] = '<?php print t(\'Any Company Sites Added Yet. The Company Sites Map cannot be generated\') ?>
+';
 /* Relazione: Contenuto: Categoria (field_site_category) */
 $handler->display->display_options['relationships']['field_site_category_tid']['id'] = 'field_site_category_tid';
 $handler->display->display_options['relationships']['field_site_category_tid']['table'] = 'field_data_field_site_category';
@@ -74,6 +81,7 @@ $handler->display->display_options['fields']['title']['exclude'] = TRUE;
 $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
 $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
 $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
 /* Campo: Contenuto: Tipo */
 $handler->display->display_options['fields']['field_site_type']['id'] = 'field_site_type';
 $handler->display->display_options['fields']['field_site_type']['table'] = 'field_data_field_site_type';
@@ -187,11 +195,12 @@ $handler->display->display_options['filters']['field_site_type_value']['expose']
 
 /* Display: Page */
 $handler = $view->new_display('page', 'Page', 'page');
+$handler->display->display_options['enabled'] = FALSE;
 $handler->display->display_options['path'] = 'company-sites-map';
 $handler->display->display_options['menu']['type'] = 'normal';
 $handler->display->display_options['menu']['title'] = 'Company Sites Map';
 $handler->display->display_options['menu']['weight'] = '19';
-$handler->display->display_options['menu']['name'] = 'main-menu';
+$handler->display->display_options['menu']['name'] = 'management';
 $handler->display->display_options['menu']['context'] = 0;
 $handler->display->display_options['menu']['context_only_inline'] = 0;
 
@@ -200,7 +209,8 @@ $handler = $view->new_display('attachment', 'In Allegato Company Sites List', 'a
 $handler->display->display_options['defaults']['title'] = FALSE;
 $handler->display->display_options['defaults']['css_class'] = FALSE;
 $handler->display->display_options['css_class'] = 'company-sites-list';
-$handler->display->display_options['pager']['type'] = 'some';
+$handler->display->display_options['pager']['type'] = 'none';
+$handler->display->display_options['pager']['options']['offset'] = '0';
 $handler->display->display_options['defaults']['style_plugin'] = FALSE;
 $handler->display->display_options['style_plugin'] = 'default';
 $handler->display->display_options['defaults']['style_options'] = FALSE;
@@ -209,6 +219,7 @@ $handler->display->display_options['row_plugin'] = 'fields';
 $handler->display->display_options['defaults']['row_options'] = FALSE;
 $handler->display->display_options['defaults']['header'] = FALSE;
 $handler->display->display_options['defaults']['footer'] = FALSE;
+$handler->display->display_options['defaults']['empty'] = FALSE;
 $handler->display->display_options['defaults']['relationships'] = FALSE;
 /* Relazione: Contenuto: Categoria (field_site_category) */
 $handler->display->display_options['relationships']['field_site_category_tid']['id'] = 'field_site_category_tid';
@@ -259,6 +270,7 @@ $handler->display->display_options['fields']['title']['alter']['word_boundary'] 
 $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
 $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
 $handler->display->display_options['fields']['title']['element_wrapper_class'] = 'site-content-title';
+$handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
 /* Campo: Contenuto: Tipo */
 $handler->display->display_options['fields']['field_site_type']['id'] = 'field_site_type';
 $handler->display->display_options['fields']['field_site_type']['table'] = 'field_data_field_site_type';
@@ -304,17 +316,6 @@ $handler->display->display_options['fields']['field_site_geofield']['settings'] 
   'data' => 'full',
   'format' => 'decimal_degrees',
   'labels' => 1,
-);
-/* Campo: Contenuto: Ordine di Visualizzazione */
-$handler->display->display_options['fields']['field_site_order']['id'] = 'field_site_order';
-$handler->display->display_options['fields']['field_site_order']['table'] = 'field_data_field_site_order';
-$handler->display->display_options['fields']['field_site_order']['field'] = 'field_site_order';
-$handler->display->display_options['fields']['field_site_order']['label'] = 'Order of View';
-$handler->display->display_options['fields']['field_site_order']['exclude'] = TRUE;
-$handler->display->display_options['fields']['field_site_order']['hide_empty'] = TRUE;
-$handler->display->display_options['fields']['field_site_order']['settings'] = array(
-  'thousand_separator' => '',
-  'prefix_suffix' => 1,
 );
 /* Campo: Contenuto: Link modifica */
 $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
@@ -371,11 +372,13 @@ $handler->display->display_options['access']['perm'] = 'create company_site cont
 $handler->display->display_options['defaults']['style_plugin'] = FALSE;
 $handler->display->display_options['style_plugin'] = 'table';
 $handler->display->display_options['style_options']['columns'] = array(
+  'draggableviews' => 'draggableviews',
   'nid' => 'nid',
   'title' => 'title',
   'field_site_type' => 'field_site_type',
   'field_site_category' => 'field_site_category',
   'body' => 'body',
+  'field_site_contacts' => 'field_site_contacts',
   'field_geofield_name' => 'field_geofield_name',
   'field_site_geofield' => 'field_site_geofield',
   'edit_node' => 'edit_node',
@@ -383,6 +386,11 @@ $handler->display->display_options['style_options']['columns'] = array(
 );
 $handler->display->display_options['style_options']['default'] = '-1';
 $handler->display->display_options['style_options']['info'] = array(
+  'draggableviews' => array(
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
   'nid' => array(
     'sortable' => 0,
     'default_sort_order' => 'asc',
@@ -410,6 +418,13 @@ $handler->display->display_options['style_options']['info'] = array(
     'empty_column' => 0,
   ),
   'body' => array(
+    'sortable' => 0,
+    'default_sort_order' => 'asc',
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
+  'field_site_contacts' => array(
     'sortable' => 0,
     'default_sort_order' => 'asc',
     'align' => '',
@@ -445,6 +460,20 @@ $handler->display->display_options['defaults']['style_options'] = FALSE;
 $handler->display->display_options['defaults']['row_plugin'] = FALSE;
 $handler->display->display_options['defaults']['row_options'] = FALSE;
 $handler->display->display_options['defaults']['header'] = FALSE;
+/* Intestazione: Globale: PHP */
+$handler->display->display_options['header']['php']['id'] = 'php';
+$handler->display->display_options['header']['php']['table'] = 'views';
+$handler->display->display_options['header']['php']['field'] = 'php';
+$handler->display->display_options['header']['php']['php_output'] = '<?php print l(t(\'Add a Company Site\'), \'node/add/company-site\', array(\'query\' => array(\'destination\' => \'manage-company-sites\'))); ?>
+';
+$handler->display->display_options['defaults']['empty'] = FALSE;
+/* No results behavior: Globale: PHP */
+$handler->display->display_options['empty']['php']['id'] = 'php';
+$handler->display->display_options['empty']['php']['table'] = 'views';
+$handler->display->display_options['empty']['php']['field'] = 'php';
+$handler->display->display_options['empty']['php']['empty'] = TRUE;
+$handler->display->display_options['empty']['php']['php_output'] = '<?php print t(\'Any Company Sites Added Yet. The Company Sites List cannot be generated\') ?>
+';
 $handler->display->display_options['defaults']['fields'] = FALSE;
 /* Campo: Draggableviews: Contenuto */
 $handler->display->display_options['fields']['draggableviews']['id'] = 'draggableviews';
@@ -466,6 +495,7 @@ $handler->display->display_options['fields']['title']['label'] = 'Name';
 $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
 $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
 $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
 /* Campo: Contenuto: Tipo */
 $handler->display->display_options['fields']['field_site_type']['id'] = 'field_site_type';
 $handler->display->display_options['fields']['field_site_type']['table'] = 'field_data_field_site_type';
@@ -562,7 +592,6 @@ $translatables['company_sites_map'] = array(
   t('Type'),
   t('Page'),
   t('In Allegato Company Sites List'),
-  t('Order of View'),
   t('<div class="site-content" nid="[nid]">
 <div class="column col-1">
 <div class="geomarker">[field_geomarker]</div>
