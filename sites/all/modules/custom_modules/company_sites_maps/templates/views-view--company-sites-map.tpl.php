@@ -71,6 +71,12 @@ drupal_add_js(drupal_get_path('module', 'company_sites_maps') .'/js/company_site
     <?php print $pager; ?>
   <?php endif; ?>
 
+  <?php if ($footer): ?>
+    <div class="view-footer">
+      <?php print $footer; ?>
+    </div>
+  <?php endif; ?>  
+
   <?php if ($attachment_after): ?>
     <div class="attachment attachment-after">
       <?php print $attachment_after; ?>
@@ -81,11 +87,7 @@ drupal_add_js(drupal_get_path('module', 'company_sites_maps') .'/js/company_site
     <?php print $more; ?>
   <?php endif; ?>
 
-  <?php if ($footer): ?>
-    <div class="view-footer">
-      <?php print $footer; ?>
-    </div>
-  <?php endif; ?>
+
 
   <?php if ($feed_icon): ?>
     <div class="feed-icon">

@@ -2,6 +2,8 @@
     
 Drupal.behaviors.company_sites_map = {
 				attach:function (context, settings) {
+				
+				//console.log(settings);
 						
 				if (typeof String.prototype.startsWith != 'function') {
 						// see below for better implementation!
@@ -11,9 +13,25 @@ Drupal.behaviors.company_sites_map = {
 				}
 				
 				$.widget.bridge('uitooltip', $.ui.tooltip); // handle jQuery plugin naming conflict between jQuery UI and Bootstrap
-        
+				     
         $(settings.leaflet).each(function () {
-            
+						
+						var geofield_gmap_geocoder;
+								
+						if (!geofield_gmap_geocoder) {
+							geofield_gmap_geocoder = new google.maps.Geocoder();
+						}
+						
+						var searchedPlaceIcon = L.icon({
+								iconUrl: '/' + settings.company_sites_maps.module_path + '/geomarkers/searched-place.png',				
+								iconSize:     [60, 60], // size of the icon
+								iconAnchor:   [30, 30], // point of the icon which will correspond to marker's location
+								popupAnchor:  [0, -33]
+						});
+						
+            var searchedPlaceMarker = {};
+						var closestFeature = {};
+						
 						if (this.mapId.startsWith('ip-geoloc-map-of-view-company_sites_map')) {
 	
 								//console.log(this); //Debug
@@ -35,6 +53,8 @@ Drupal.behaviors.company_sites_map = {
 										$(".company-sites-list").append(mapResetDiv);
 										$(".company-sites-list .map-reset").hide();
 								}
+								
+								$('#search-address-input').val(Drupal.t('Type an address'));
 								
 								$( ".legenda-categorie-sedi").dialog({						
 										autoOpen: false,
@@ -77,7 +97,10 @@ Drupal.behaviors.company_sites_map = {
 												
 												features[featureId] = thisLeafletMap.features[i];
 												
-												features[featureId].lFeature.unbindPopup().on('click', Drupal.company_sites_map.onMarkerClick);
+												features[featureId].lFeature.unbindPopup().on('click', function (e) {
+														if(searchedPlaceMarker._leaflet_id) thisLeafletMap.removeLayer(searchedPlaceMarker);
+														Drupal.company_sites_map.onMarkerClick(e);
+												});
 												
 												//Get and define each feature's Lat and Lng point
 												var lat = parseFloat(features[featureId].lat);
@@ -141,13 +164,13 @@ Drupal.behaviors.company_sites_map = {
 																//console.log($(thisSelector));
 																$(".company-sites-list .views-row").not('.strong-highlighted').fadeOut('slow');
 																//$(".company-sites-list .views-row.strong-highlighted").fadeIn('slow');
-																zoomToFeature = setTimeout( function () {
+																//console.log((!searchedPlaceMarker._leaflet_id));
+																if(!searchedPlaceMarker._leaflet_id) zoomToFeature = setTimeout( function () {
 																		Drupal.company_sites_map.zoomToFeature (thisLeafletMap, features[entity_nid]);
 																}, 200);
 																$(".company-sites-list .map-reset").fadeIn('slow');
-																console.log('x');
 														}
-												}, 100);
+												}, 300);
 										};
 								});
 
@@ -178,10 +201,65 @@ Drupal.behaviors.company_sites_map = {
 				
 								$(".map-reset a").bind('click', function(event) {
 										event.stopPropagation();
+										if(searchedPlaceMarker._leaflet_id) thisLeafletMap.removeLayer(searchedPlaceMarker).removeLayer(searchedPlaceMarker.polylineToClosestSite);
 										$(".company-sites-list .views-row").removeClass('highlighted').removeClass('sublighted');
 										// Zooomout sulle mappa sulle sue impostazioni inziali, senza bisogno di rigenerarla
 										Drupal.company_sites_map.mapReset(thisLeafletMap);
 								});
+						
+								$('#search-place-icon').html('<img src="/' + settings.company_sites_maps.module_path + '/geomarkers/searched-place.png" height="20">');
+								
+								$('#search-address-input').focus(function() {
+										$(this).val('');}).autocomplete({
+									//This bit uses the geocoder to fetch address values
+									source: function(request, response) {
+										geofield_gmap_geocoder.geocode( {'address': request.term }, function(results, status) {
+											response($.map(results, function(item) {
+												//console.log(item); Debug
+												return {
+													label: item.formatted_address,
+													value: item.formatted_address,
+													latitude: item.geometry.location.lat(),
+													longitude: item.geometry.location.lng()
+												}
+											}));
+										})
+									},
+									//This bit is executed upon selection of an address
+									select: function(event, ui) {
+										//console.log(ui); //Debug
+										if(searchedPlaceMarker._leaflet_id) thisLeafletMap.removeLayer(searchedPlaceMarker).removeLayer(searchedPlaceMarker.polylineToClosestSite);
+										result_address = ui.item.value;
+										result_latlng = 'Lat: ' + ui.item.latitude.toFixed(6) + ', Lng:' + ui.item.longitude.toFixed(6);
+										//$("#search-latlng-result").html(result_latlng);
+										var latlng = L.latLng(ui.item.latitude, ui.item.longitude);
+										//console.log(latlng);
+										thisLeafletMap.setView(latlng, Math.max(15, thisLeafletMap.zoom + 3), false).whenReady( function () {
+												searchedPlaceMarker = L.marker(latlng, {icon: searchedPlaceIcon, clickable: true, riseOnHover: true});
+												searchedPlaceMarker.addTo(thisLeafletMap);
+										});
+										
+										searchedPlaceMarker.bindPopup(result_address).openPopup();
+										
+										
+										var closestFeature = Drupal.company_sites_map.findClosestFeature (thisLeafletMap, latlng);
+										//console.log('searchedPlaceMarker', searchedPlaceMarker._latlng);
+										//console.log('closestFeature', closestFeature);
+										//Drupal.company_sites_map.zoomToFeature(thisLeafletMap, closestFeature);
+										var closestFeatureLatLng = L.latLng(closestFeature['lat'], closestFeature['lon']);
+																														 
+										$(".company-sites-list .views-row .site-content[nid=" + closestFeature.feature_id + "]").trigger('click');
+										
+										fitBoundsToClosestSite = setTimeout( function () {
+																		thisLeafletMap.fitBounds(new L.LatLngBounds([latlng, closestFeatureLatLng]), {padding: [40, 40]});
+																		searchedPlaceMarker.polylineToClosestSite = L.polyline([latlng, closestFeatureLatLng], {color: 'red', weight: 4}).addTo(thisLeafletMap);
+																		//console.log(searchedPlaceMarker.polylineToClosestSite);
+																		$('#search-closer-site #search-distance-result').text(closestFeature.distance + ' km');
+																		$('#search-closer-site label').text(Drupal.t('Our closer site to'));
+																}, 100);
+								
+							}
+						});
 						
 						}
 				});
@@ -194,7 +272,9 @@ Drupal.behaviors.company_sites_map = {
 Drupal.company_sites_map = {
     
     mapReset: function (lMap) {
-				
+				$('#search-address-input').val(Drupal.t('Type an address'));
+				$('#search-closer-site #search-distance-result').text('');
+				$('#search-closer-site label').text(Drupal.t('Search our closer site to'));
 				$(".company-sites-list .views-row").removeClass('highlighted').removeClass('sublighted').removeClass('strong-highlighted').tooltip( "enable" ).fadeIn('Slow');
 				$(".company-sites-list .map-reset").hide();
 				lMap.setView([lMap.center.lat, lMap.center.lng], lMap.zoom, {reset: true, animate: 1});
@@ -206,7 +286,7 @@ Drupal.company_sites_map = {
 				//console.log('mapHasBeenReset');
         
     },
-		
+
     // Zooom sulla mappa con centro del popup creato, senza ricostruzione della mappa
     centreToFeature: function (map, feature) {
         map.setView([parseFloat(feature.lat) /*+ 0.006*/, parseFloat(feature.lon)], map.zoom + 1, false).whenReady( function () {
@@ -218,7 +298,7 @@ Drupal.company_sites_map = {
      },
     
     // Zooom sulla mappa con centro del popup creato, senza ricostruzione della mappa
-    zoomToFeature: function (map, feature) {				
+    zoomToFeature: function (map, feature) {	
         map.setView([parseFloat(feature.lat) /*+ 0.006*/, parseFloat(feature.lon)], Math.max(13, map.zoom + 3), false).whenReady( function () {
 				//setTimeout( function () {
 				//feature.Lpopup.openOn(map);
@@ -238,8 +318,41 @@ Drupal.company_sites_map = {
 		onMarkerClick: function (e) {
 				//console.log(e);
 				//console.log($(".company-sites-list .views-row[nid=" + e.target.feature_id + "]"));
+				$('#search-address-input').val(Drupal.t('Type an address'));
 				$(".company-sites-list .views-row .site-content[nid=" + e.target.feature_id + "]").trigger('click');
+		},
+
+		rad: function (x) {return x*Math.PI/180;},
+		
+		findClosestFeature: function (thisMap, thisLatLng) {
+				
+				var thisPlace = thisLatLng;
+				
+				var lat = thisPlace.lat.toFixed(6);
+				var lng = thisPlace.lng.toFixed(6);
+				
+				var R = 6371; // radius of earth in km
+				var distances = [];
+				var closest = -1;
+				for( i=0;i<thisMap.features.length; i++ ) {
+						var mlat = thisMap.features[i].lat.toFixed(6);
+						var mlng = thisMap.features[i].lon.toFixed(6);
+						var dLat  = this.rad(mlat - lat);
+						var dLong = this.rad(mlng - lng);
+						var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+								Math.cos(this.rad(lat)) * Math.cos(this.rad(lat)) * Math.sin(dLong/2) * Math.sin(dLong/2);
+						var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+						var d = R * c;
+						distances[i] = d;
+						thisMap.features[i].distance = distances[i].toFixed(1);;
+						if ( closest == -1 || d < distances[closest] ) {
+								closest = i;
+						}
+				}
+				
+				return(thisMap.features[closest]);
 		}
+		
 };
   
 

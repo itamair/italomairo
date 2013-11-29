@@ -1,9 +1,21 @@
 <?php
 
+
 function company_sites_maps_preprocess_page(&$variables, $hook) {
-  drupal_add_library('system', 'ui', true);
-	drupal_add_library('system', 'ui.dialog', true);
-	drupal_add_library('system', 'ui.tooltip', true);
+
+	drupal_add_library('system', 'ui');
+	drupal_add_library('system', 'ui.dialog');
+	drupal_add_library('system', 'ui.tooltip');
+  /*drupal_add_js('http://maps.google.com/maps/api/js?sensor=false', array(
+       'type' => 'external',
+       'preprocess' => FALSE,
+			 ));*/
+	drupal_add_library('system', 'ui.autocomplete');
+	
+	$module_path_settings = drupal_get_path('module', 'company_sites_maps');
+	drupal_add_js(array('company_sites_maps' => array('module_path' => $module_path_settings)), 'setting');
+	
+	
 }
 
 
@@ -70,3 +82,5 @@ function field_site_type_value_remove_validation($form_element) {
 
   return $form_element;
 }
+
+
