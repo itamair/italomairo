@@ -1,0 +1,126 @@
+/**** CSS Responsive Rules for the Company Sites Module ***/
+
+
+
+
+@media screen and (max-width: 1199px) {
+
+
+}
+
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+
+  
+	
+}
+
+@media only screen and (max-width:768px) {
+
+  
+}
+
+@media only screen and (min-width:481px) and (max-width:768px) {
+
+	.view.company-sites-list .views-row .views-field .site-content .column {
+		margin:  0 3px 0 0;
+		font-size: 0.9em;
+	}
+
+	.view.company-sites-list .views-row .views-field .site-content .col-1 {
+		width:  5%;
+	}
+	
+	.view.company-sites-list .views-row .views-field .site-content .col-1 img {
+		width:  80%;
+		height: auto;
+	}
+
+
+	.view.company-sites-list .views-row .views-field .site-content div.title {
+		font-size: 1em;
+	}
+
+	.view.company-sites-list .views-row .views-field .site-content .col-2 {
+		width:  20%;
+	}
+	
+	
+	.view.company-sites-list .views-row .views-field .site-content .col-3 {
+		width:  30%;
+	
+	}
+	
+	.view.company-sites-list .views-row .views-field .site-content .col-4 {
+		width:  35%;
+	}
+
+}
+
+@media only screen and (max-width:480px) {
+	
+	.view.company-sites-list {
+		height:  400px;
+	}
+
+	
+	.view-company-sites-map .map-reset,
+	.view-company-sites-map .map-legend {
+		top:  60px;
+	}
+
+	.ip-geoloc-map {
+		margin-top: 26px;
+	}
+	
+	.view.company-sites-list .views-row .views-field .site-content .column {
+		display:  block;
+		margin:  0 5px 0 0;
+		vertical-align: top;
+		font-size: 1em;
+	}
+
+	.view.company-sites-list .views-row .views-field .site-content .col-1 {
+		float:  left;
+		width:  15%;
+		margin-right:  10px;
+	}
+	
+	.view.company-sites-list .views-row .views-field .site-content .col-1 img {
+		width:  80%;
+		height: auto;
+	}
+
+	.view.company-sites-list .views-row .views-field .site-content div.title {
+		font-size: 1.1em;
+	}
+	
+	.view.company-sites-list .views-row .views-field .site-content .col-2,
+	.view.company-sites-list .views-row .views-field .site-content .col-3,
+	.view.company-sites-list .views-row .views-field .site-content .col-4 {
+		width:  80%;
+		margin-left:  20%;
+	}
+
+	.view-company-sites-map #edit-field-site-type-value-wrapper.views-exposed-widget label[for=edit-field-site-type-value] {
+		display: none;
+	}
+
+	.view-company-sites-map #edit-field-site-type-value-wrapper.views-exposed-widget label,
+	.view-company-sites-map #edit-field-site-type-value-wrapper.views-exposed-widget .views-widget,
+	.view-company-sites-map #edit-field-site-type-value-wrapper.views-exposed-widget .form-item {
+		margin-right:  8px;
+	}
+	
+}
+
+
+@media only screen and (max-width:320px) {
+
+  
+}
+
+
+
+
+
