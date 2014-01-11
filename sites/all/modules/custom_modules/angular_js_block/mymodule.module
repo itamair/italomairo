@@ -1,0 +1,53 @@
+<?php
+/**
+ * @file mymodule.module
+ *
+ * Implements an AngularJS-driven block.
+ */
+
+/**
+ * Implements hook_block_info().
+ */
+function mymodule_block_info() {
+  $blocks['weather'] = array(
+    'info' => t('Weather'),
+  );
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function mymodule_block_view($delta = '') {
+  $block = array();
+
+  switch ($delta) {
+    case 'weather':
+      $path = drupal_get_path('module', 'mymodule');
+      $block['subject'] = t('Weather status');
+      $block['content'] = array(
+        '#theme' => 'weather_status',
+        '#attached' => array(
+          'js' => array(
+            'https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js',
+            $path . '/mymodule.js',
+          ),
+        ),
+      );
+      break;
+  }
+  return $block;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function mymodule_theme() {
+  return array(
+    'weather_status' => array(
+      'template' => 'weather-status',
+      'variables' => array(),
+    ),
+  );
+}

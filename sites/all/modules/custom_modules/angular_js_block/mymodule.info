@@ -1,0 +1,4 @@
+name = My module Angular Js Block
+description = Implements an AngularJS-driven block, as described here http://www.lullabot.com/blog/article/move-logic-front-end-angularjs
+core = 7.x
+package = Custom_modules
