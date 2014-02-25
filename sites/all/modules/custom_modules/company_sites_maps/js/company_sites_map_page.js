@@ -1,1 +1,360 @@
-eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('(5($){8.2F.D={2G:5(v,w){9(2H 1T.1U.1u!=\'5\'){1T.1U.1u=5(a){1h B.2I(a)==0}}$.2J.2K(\'1v\',$.2L.1V);$(w.U).2M(5(){7 f;9(!f){f=1i 2N.2O.2P()}7 g=L.1w({2Q:\'/\'+w.1W.1X+\'/1Y/1Z-1x.21\',2R:[22,22],2S:[30,30],2T:[0,-33]});7 h={};7 j={};9(B.2U.1u(\'V-W-C-23-X-D\')){$(".y-z-A .E-F").1y(\'24\',\'\').1v({1z:8.t(\'2V 1A 2W\'),25:{26:"1B 2X-10",27:"1C-28 1D",},});7 k=\'<29 2Y="C-P"><a 2Z="31:32(0)">\'+8.t(\'34 2a 35 36 37 2a 38\')+\'</a></29>\';9($(".y-z-A .C-P").1E<1){$(".y-z-A").39(k);$(".y-z-A .C-P").2b()}$(\'#I-K-1j\').1k(8.t(\'1F 1G K\'));$(".2c-2d-2e").2f({3a:18,3b:{3c:"3d",3e:3f},2g:($(".V-W-C.U-X").2g()*1)/3,3g:19,3h:".V-W-C.U-X",3i:18,25:{26:"1C 1D",27:"1C-10 1D+10",23:".V-W-C.U-X"},24:8.t(\'3j\'),3k:19,});$(\'.C-3l\').Y(5(){$(".2c-2d-2e").2f("3m")});7 l={};7 m={};7 n=(B.2h)?B.2h:3n;7 o=B.C;7 p,Z,Q,1a;9(n){2i(7 i=0;i<n.M.1E;i++){7 q=n.M[i].1H;l[q]=n.M[i];l[q].3o.3p().3q(\'Y\',5(e){9(h.1l)n.1b(h);8.D.2j(e)});7 r=11(l[q].N);7 s=11(l[q].1c);7 t=1i L.2k(r,s);7 u=1i L.2k(r+0.3r,s);2l=l[q].2m;l[q].3s=L.2m().3t(u).3u(2l)}}$(".y-z-A .E-F").12(\'2n\',5(a){9(!$(B).1I(\'14-G\')){7 b=B;8.D.1d(p,Z,Q);Q=S(5(){$(".y-z-A .E-F").J(\'G\').J(\'1e\');16=$(b).1y(\'1m\');9(l[16]){$(b).1J(\'G\');$(".y-z-A .E-F").2o($(".y-z-A .E-F.G")).1J(\'1e\');1a=S(5(){8.D.1a(n,l[16])},3v)}},2p)}});$(".y-z-A .E-F").12(\'Y\',5(a){9(!$(B).1I(\'14-G\')){7 b=B;8.D.1d(p,Z,Q);Q=S(5(){$(".y-z-A .E-F").J(\'G\').J(\'1e\').J(\'14-G\');16=$(b).1y(\'1m\');9(l[16]){$(b).1J(\'14-G\').1K(\'1L\').1v("3w");$(".y-z-A .E-F").2o(\'.14-G\').3x(\'1L\');9(!h.1l)1M=S(5(){8.D.1M(n,l[16])},3y);$(".y-z-A .C-P").1K(\'1L\')}},2p)}});$(".y-z-A .E-F").12(\'2q\',5(a){7 b=B;8.D.1d(p,Z,Q,1a);Z=S(5(){9($(b).1I(\'G\')){8.D.1n(n)}},3z)});$(".V-W-C.U-X").12(\'2n\',5(a){8.D.1d(p,Z,Q)});$(".V-W-C.U-X").12(\'2q\',5(a){p=S(5(){8.D.1n(n)},3A)});$(".C-P a").12(\'Y\',5(a){a.3B();9(h.1l)n.1b(h).1b(h.1N);$(".y-z-A .E-F").J(\'G\').J(\'1e\');8.D.1n(n)});$(\'#I-1x-1w\').3C(\'<3D 3E="/\'+w.1W.1X+\'/1Y/1Z-1x.21" 3F="20">\');$(\'#I-K-1j\').3G(5(){$(B).1k(\'\')}).3H({3I:5(d,e){f.3J({\'K\':d.3K},5(b,c){e($.C(b,5(a){1h{1O:a.2r,2s:a.2r,1P:a.2t.2u.N(),1Q:a.2t.2u.1R()}}))})},3L:5(a,b){9(h.1l)n.1b(h).1b(h.1N);2v=b.1f.2s;3M=\'3N: \'+b.1f.1P.T(6)+\', 3O:\'+b.1f.1Q.T(6);7 c=L.2w(b.1f.1P,b.1f.1Q);n.1o(c,H.2x(15,n.1p+3),18).1S(5(){h=L.3P(c,{1w:g,3Q:19,3R:19});h.2y(n)});h.3S(2v).3T();7 d=8.D.2z(n,c);7 e=L.2w(d[\'N\'],d[\'1c\']);$(".y-z-A .E-F .O-1z[1m="+d.1H+"]").2A(\'Y\');3U=S(5(){n.3V(1i L.3W([c,e]),{3X:[40,40]});h.1N=L.3Y([c,e],{3Z:\'41\',2B:4}).2y(n);$(\'#I-17-O #I-1q-2C\').1r(d.1q+\' 42\');$(\'#I-17-O 1O\').1r(8.t(\'43 17 O 1A\'))},44)}})}})},2B:28};8.D={1n:5(a){$(\'#I-K-1j\').1k(8.t(\'1F 1G K\'));$(\'#I-17-O #I-1q-2C\').1r(\'\');$(\'#I-17-O 1O\').1r(8.t(\'45 46 17 O 1A\'));$(".y-z-A .E-F").J(\'G\').J(\'1e\').J(\'14-G\').1V("47").1K(\'48\');$(".y-z-A .C-P").2b();a.1o([a.1B.N,a.1B.1R],a.1p,{P:19,49:1})},1a:5(a,b){a.1o([11(b.N),11(b.1c)],a.1p+1,18).1S(5(){})},1M:5(a,b){a.1o([11(b.N),11(b.1c)],H.2x(13,a.1p+3),18).1S(5(){})},1d:5(a,b,c,d){9(c)1s(c);9(b)1s(b);9(d)1s(d);9(a)1s(a)},2j:5(e){$(\'#I-K-1j\').1k(8.t(\'1F 1G K\'));$(".y-z-A .E-F .O-1z[1m="+e.4a.1H+"]").2A(\'Y\')},1g:5(x){1h x*H.4b/4c},2z:5(b,e){7 f=e;7 g=f.N.T(6);7 h=f.1R.T(6);7 R=4d;7 j=[];7 k=-1;2i(i=0;i<b.M.1E;i++){7 l=b.M[i].N.T(6);7 m=b.M[i].1c.T(6);7 n=B.1g(l-g);7 o=B.1g(m-h);7 a=H.1t(n/2)*H.1t(n/2)+H.2D(B.1g(g))*H.2D(B.1g(g))*H.1t(o/2)*H.1t(o/2);7 c=2*H.4e(H.2E(a),H.2E(1-a));7 d=R*c;j[i]=d;b.M[i].1q=j[i].T(1);9(k==-1||d<j[k]){k=i}}1h(b.M[k])}}})(4f);',62,264,'|||||function||var|Drupal|if|||||||||||||||||||||||||company|sites|list|this|map|company_sites_map|views|row|highlighted|Math|search|removeClass|address||features|lat|site|reset|companySiteFocus||setTimeout|toFixed|leaflet|ip|geoloc|view|click|companySitesListReset||parseFloat|bind||strong||entity_nid|closer|false|true|centreToFeature|removeLayer|lon|resetAllTimeOutEvents|sublighted|item|rad|return|new|input|val|_leaflet_id|nid|mapReset|setView|zoom|distance|text|clearTimeout|sin|startsWith|uitooltip|icon|place|attr|content|to|center|right|top|length|Type|an|feature_id|hasClass|addClass|fadeIn|slow|zoomToFeature|polylineToClosestSite|label|latitude|longitude|lng|whenReady|String|prototype|tooltip|company_sites_maps|module_path|geomarkers|searched||png|60|of|title|position|my|at|50|div|the|hide|legenda|categorie|sedi|dialog|width|lMap|for|onMarkerClick|LatLng|popupContent|popup|mouseenter|not|300|mouseleave|formatted_address|value|geometry|location|result_address|latLng|max|addTo|findClosestFeature|trigger|weight|result|cos|sqrt|behaviors|attach|typeof|indexOf|widget|bridge|ui|each|google|maps|Geocoder|iconUrl|iconSize|iconAnchor|popupAnchor|mapId|Click|Zoom|bottom|class|href||javascript|void||Reset|Sites|List|and|Map|append|autoOpen|show|effect|blind|duration|800|modal|appendTo|draggable|Legend|closeOnEscape|legend|open|null|lFeature|unbindPopup|on|00320|Lpopup|setLatLng|setContent|600|disable|fadeOut|200|1000|20000|stopPropagation|html|img|src|height|focus|autocomplete|source|geocode|term|select|result_latlng|Lat|Lng|marker|clickable|riseOnHover|bindPopup|openPopup|fitBoundsToClosestSite|fitBounds|LatLngBounds|padding|polyline|color||red|km|Our|100|Search|our|enable|Slow|animate|target|PI|180|6371|atan2|jQuery'.split('|'),0,{}))
+(function ($) {
+    
+Drupal.behaviors.company_sites_map = {
+				attach:function (context, settings) {
+				
+				//console.log(settings);
+						
+				if (typeof String.prototype.startsWith != 'function') {
+						// see below for better implementation!
+						String.prototype.startsWith = function (str){
+							return this.indexOf(str) == 0;
+						};
+				}
+				
+				$.widget.bridge('uitooltip', $.ui.tooltip); // handle jQuery plugin naming conflict between jQuery UI and Bootstrap
+				     
+        $(settings.leaflet).each(function () {
+						
+						var geofield_gmap_geocoder;
+								
+						if (!geofield_gmap_geocoder) {
+							geofield_gmap_geocoder = new google.maps.Geocoder();
+						}
+						
+						var searchedPlaceIcon = L.icon({
+								iconUrl: '/' + settings.company_sites_maps.module_path + '/geomarkers/searched-place.png',				
+								iconSize:     [60, 60], // size of the icon
+								iconAnchor:   [30, 30], // point of the icon which will correspond to marker's location
+								popupAnchor:  [0, -33]
+						});
+						
+            var searchedPlaceMarker = {};
+						var closestFeature = {};
+						
+						if (this.mapId.startsWith('ip-geoloc-map-of-view-company_sites_map')) {
+	
+								//console.log(this); //Debug
+						
+								$(".company-sites-list .views-row").attr('title', '').uitooltip({
+										content: Drupal.t('Click to Zoom'),
+										position: {
+										my: "center bottom-10",
+										at: "right-50 top",
+										//of: '.company-sites-list' ,
+										},
+										//track: true,
+										//show: { effect: "blind", duration: 800},
+									});
+								
+								var mapResetDiv = '<div class="map-reset"><a href="javascript:void(0)">' + Drupal.t('Reset the Sites List and the Map') + '</a></div>';
+								//console.log($(".company-sites-list").length);
+								if ($(".company-sites-list .map-reset").length < 1) {
+										$(".company-sites-list").append(mapResetDiv);
+										$(".company-sites-list .map-reset").hide();
+								}
+								
+								$('#search-address-input').val(Drupal.t('Type an address'));
+								
+								$( ".legenda-categorie-sedi").dialog({						
+										autoOpen: false,
+										show: { effect: "blind", duration: 800 },
+										width: ($(".ip-geoloc-map.leaflet-view").width()*1)/3,
+										modal: true,
+										appendTo: ".ip-geoloc-map.leaflet-view",
+										draggable: false,
+										position: { my: "right top", at: "right-10 top+10", of: ".ip-geoloc-map.leaflet-view" },
+										title: Drupal.t('Legend'),
+										closeOnEscape: true,
+								});
+								
+								$('.map-legend').click(function() {
+										$( ".legenda-categorie-sedi").dialog( "open" );
+								});					
+													 
+										var features = {};
+										var popups = {};
+										
+										var thisLeafletMap = (this.lMap) ? this.lMap : null;
+										var thisLeafletSettings = this.map;
+										
+										var mapReset, companySitesListReset, companySiteFocus, centreToFeature;
+										
+								// Support event to get the latlng of the clicked point on the map (used to set the map bounds in the Getlocations_fields_add module settings)
+								//thisLeafletMap.on('click', function(e) {
+								//		alert(e.latlng);
+								//});
+								
+								//If it is defined the Leaflet Map in the page Dom, activate all the processings ... 
+								if (thisLeafletMap) {
+
+								//console.log(thisLeafletMap);
+								
+										//Fill the features object with the features, and add a Leaflet popup to it
+										for (var i = 0; i < thisLeafletMap.features.length; i++) {
+												var featureId = thisLeafletMap.features[i].feature_id;
+												
+												
+												features[featureId] = thisLeafletMap.features[i];
+												
+												features[featureId].lFeature.unbindPopup().on('click', function (e) {
+														if(searchedPlaceMarker._leaflet_id) thisLeafletMap.removeLayer(searchedPlaceMarker);
+														Drupal.company_sites_map.onMarkerClick(e);
+												});
+												
+												//Get and define each feature's Lat and Lng point
+												var lat = parseFloat(features[featureId].lat);
+												var lng = parseFloat(features[featureId].lon);
+												var latlng = new L.LatLng(lat, lng );
+												
+												//Create associative Leaflet popups
+												var popuplatlng = new L.LatLng(lat + 0.00320, lng );
+												popupContent = features[featureId].popup;
+		
+												//Create a Leaflet popup associated to the feature
+												features[featureId].Lpopup = L.popup()
+														.setLatLng(popuplatlng)
+														.setContent(popupContent);
+														
+										};
+										
+										//console.log(features); //Debug
+								
+								}		
+								
+								//$(".company-sites-list .views-row .site-content").each(function() {										
+								//		if ($(".column.col-4 .map-reset", this).length == 0) {
+								//				$(".column.col-4", this).append('<div class="map-reset"><a class="tipsy" title="Here I am" href="javascript:void(0)">' + Drupal.t('Reset the map') + '</a></div>');
+								//		}
+								//});
+
+								
+								$(".company-sites-list .views-row").bind('mouseenter', function(event) {
+										if (!$(this).hasClass('strong-highlighted')) {
+												var thisSelector = this;
+												Drupal.company_sites_map.resetAllTimeOutEvents(mapReset, companySitesListReset, companySiteFocus);
+												companySiteFocus = setTimeout( function () {
+														$(".company-sites-list .views-row").removeClass('highlighted').removeClass('sublighted');
+														//console.log('mouseEnteredInViewRowSiteContent');
+														entity_nid = $(thisSelector).attr('nid');
+														//console.log(thisSelector);
+														if(features[entity_nid]) { //If there is a features with that nid ...
+																$(thisSelector).addClass('highlighted');
+																$(".company-sites-list .views-row").not($(".company-sites-list .views-row.highlighted")).addClass('sublighted');
+																centreToFeature = setTimeout( function () {
+																		Drupal.company_sites_map.centreToFeature (thisLeafletMap, features[entity_nid]);
+																}, 600);
+														}
+												}, 300);
+										}
+								});
+
+								$(".company-sites-list .views-row").bind('click', function(event) {
+										if (!$(this).hasClass('strong-highlighted')) {
+												//console.log($(this));
+												var thisSelector = this;
+												Drupal.company_sites_map.resetAllTimeOutEvents(mapReset, companySitesListReset, companySiteFocus);
+												companySiteFocus = setTimeout( function () {
+														$(".company-sites-list .views-row").removeClass('highlighted').removeClass('sublighted').removeClass('strong-highlighted');
+														//console.log('mouseClickedInViewRowSiteContent');
+														entity_nid = $(thisSelector).attr('nid');
+														//console.log(thisSelector);
+														if(features[entity_nid]) { //If there is a features with that nid ...
+																$(thisSelector).addClass('strong-highlighted').fadeIn('slow').uitooltip( "disable" );
+																//console.log($(features[entity_nid]));
+																$(".company-sites-list .views-row").not('.strong-highlighted').fadeOut('slow');
+																//$(".company-sites-list .views-row.strong-highlighted").fadeIn('slow');
+																//console.log((!searchedPlaceMarker._leaflet_id));
+																if(!searchedPlaceMarker._leaflet_id) zoomToFeature = setTimeout( function () {
+																		Drupal.company_sites_map.zoomToFeature (thisLeafletMap, features[entity_nid]);
+																}, 200);
+																$(".company-sites-list .map-reset").fadeIn('slow');
+														}
+												}, 50);
+										};
+								});
+
+								$(".company-sites-list .views-row").bind('mouseleave', function(event) {
+										var thisSelector = this;
+										Drupal.company_sites_map.resetAllTimeOutEvents(mapReset, companySitesListReset, companySiteFocus, centreToFeature);
+										companySitesListReset = setTimeout( function () {
+												//console.log('mouseLeftFromViewRowSiteContent');
+												if($(thisSelector).hasClass('highlighted')) {
+														Drupal.company_sites_map.mapReset (thisLeafletMap); // Zooomout sulle mappa sulle sue impostazioni inziali, senza bisogno di rigenerarla
+														};
+										}, 1000);
+				
+								});
+								
+								
+								$(".ip-geoloc-map.leaflet-view").bind('mouseenter', function(event) {
+										//console.log('mouseEnteredInMap');
+										Drupal.company_sites_map.resetAllTimeOutEvents(mapReset, companySitesListReset, companySiteFocus);
+								});
+								
+								$(".ip-geoloc-map.leaflet-view").bind('mouseleave', function(event) {
+										//console.log('mouseLeftTheMap');
+										mapReset = setTimeout( function () {
+												Drupal.company_sites_map.mapReset (thisLeafletMap); // Zooomout sulle mappa sulle sue impostazioni inziali, senza bisogno di rigenerarla
+										}, 20000);
+								});
+				
+								$(".map-reset a").bind('click', function(event) {
+										event.stopPropagation();
+										if(searchedPlaceMarker._leaflet_id) thisLeafletMap.removeLayer(searchedPlaceMarker).removeLayer(searchedPlaceMarker.polylineToClosestSite);
+										$(".company-sites-list .views-row").removeClass('highlighted').removeClass('sublighted');
+										// Zooomout sulle mappa sulle sue impostazioni inziali, senza bisogno di rigenerarla
+										Drupal.company_sites_map.mapReset(thisLeafletMap);
+								});
+						
+								$('#search-place-icon').html('<img src="/' + settings.company_sites_maps.module_path + '/geomarkers/searched-place.png" height="20">');
+								
+								$('#search-address-input').focus(function() {
+										$(this).val('').removeClass('start-text');}).autocomplete({
+									//This bit uses the geocoder to fetch address values
+									source: function(request, response) {
+										geofield_gmap_geocoder.geocode( {'address': request.term }, function(results, status) {
+											response($.map(results, function(item) {
+												//console.log(item); Debug
+												return {
+													label: item.formatted_address,
+													value: item.formatted_address,
+													latitude: item.geometry.location.lat(),
+													longitude: item.geometry.location.lng()
+												}
+											}));
+										})
+									},
+									//This bit is executed upon selection of an address
+									select: function(event, ui) {
+										//console.log(ui); //Debug
+										if(searchedPlaceMarker._leaflet_id) thisLeafletMap.removeLayer(searchedPlaceMarker).removeLayer(searchedPlaceMarker.polylineToClosestSite);
+										result_address = ui.item.value;
+										result_latlng = 'Lat: ' + ui.item.latitude.toFixed(6) + ', Lng:' + ui.item.longitude.toFixed(6);
+										//$("#search-latlng-result").html(result_latlng);
+										var latlng = L.latLng(ui.item.latitude, ui.item.longitude);
+										//console.log(latlng);
+										thisLeafletMap.setView(latlng, Math.max(15, thisLeafletMap.zoom + 3), false).whenReady( function () {
+												searchedPlaceMarker = L.marker(latlng, {icon: searchedPlaceIcon, clickable: true, riseOnHover: true});
+												searchedPlaceMarker.addTo(thisLeafletMap);
+										});
+										
+										searchedPlaceMarker.bindPopup(result_address).openPopup();
+										
+										
+										var closestFeature = Drupal.company_sites_map.findClosestFeature (thisLeafletMap, latlng);
+										//console.log('searchedPlaceMarker', searchedPlaceMarker._latlng);
+										//console.log('closestFeature', closestFeature);
+										//Drupal.company_sites_map.zoomToFeature(thisLeafletMap, closestFeature);
+										var closestFeatureLatLng = L.latLng(closestFeature['lat'], closestFeature['lon']);
+																														 
+										$(".company-sites-list .views-row .site-content[nid=" + closestFeature.feature_id + "]").trigger('click');
+										
+										fitBoundsToClosestSite = setTimeout( function () {
+																		thisLeafletMap.fitBounds(new L.LatLngBounds([latlng, closestFeatureLatLng]), {padding: [40, 40]});
+																		searchedPlaceMarker.polylineToClosestSite = L.polyline([latlng, closestFeatureLatLng], {color: 'red', weight: 4}).addTo(thisLeafletMap);
+																		//console.log(searchedPlaceMarker.polylineToClosestSite);
+																		$('#search-closer-site #search-distance-result').text(closestFeature.distance + ' km');
+																		$('#search-closer-site label').text(Drupal.t('Our closer site to'));
+																}, 10);
+								
+							}
+						});
+						
+						}
+				});
+
+      },
+      weight: 50
+
+    };
+
+Drupal.company_sites_map = {
+    
+    mapReset: function (lMap) {
+				$('#search-address-input').val(Drupal.t('Type an address'));
+				$('#search-closer-site #search-distance-result').text('');
+				$('#search-closer-site label').text(Drupal.t('Search our closer site to'));
+				$('#search-closer-site #search-address-input').addClass('start-text');
+				$(".company-sites-list .views-row").removeClass('highlighted').removeClass('sublighted').removeClass('strong-highlighted').tooltip( "enable" ).fadeIn('Slow');
+				$(".company-sites-list .map-reset").hide();
+				lMap.setView([lMap.center.lat, lMap.center.lng], lMap.zoom, {reset: true, animate: 1});
+        //lMap.closePopup();
+        //$("select.leaflet-map-select option").filter(function() {
+        //    //may want to use $.trim in here
+        //    return $(this).attr('value') == 'all'; 
+        //}).attr('selected', true);
+				//console.log('mapHasBeenReset');
+        
+    },
+
+    // Zooom sulla mappa con centro del popup creato, senza ricostruzione della mappa
+    centreToFeature: function (map, feature) {
+        map.setView([parseFloat(feature.lat) /*+ 0.006*/, parseFloat(feature.lon)], map.zoom + 1, false).whenReady( function () {
+				//setTimeout( function () {
+				//feature.Lpopup.openOn(map);
+				////console.log('openpopup');
+				//}, 200);
+        });
+     },
+    
+    // Zooom sulla mappa con centro del popup creato, senza ricostruzione della mappa
+    zoomToFeature: function (map, feature) {	
+        map.setView([parseFloat(feature.lat) /*+ 0.006*/, parseFloat(feature.lon)], Math.max(13, map.zoom + 3), false).whenReady( function () {
+				//setTimeout( function () {
+				//feature.Lpopup.openOn(map);
+				////console.log('openpopup');
+				//}, 200);
+        });
+     },
+		 
+		// Zooom sulla mappa con centro del popup creato, senza ricostruzione della mappa
+		resetAllTimeOutEvents: function (mapReset, companySitesListReset, companySiteFocus,centreToFeature) {
+        if (companySiteFocus )clearTimeout(companySiteFocus); //Stop/Clear any possible event started ...
+				if (companySitesListReset )clearTimeout(companySitesListReset); //Stop/Clear any possible event started ...
+				if (centreToFeature)clearTimeout(centreToFeature );
+				if (mapReset )clearTimeout(mapReset); //Stop/Clear any possible event started ...
+     },
+		 
+		onMarkerClick: function (e) {
+				//console.log(e);
+				//console.log($(".company-sites-list .views-row[nid=" + e.target.feature_id + "]"));
+				$('#search-address-input').val(Drupal.t('Type an address'));
+				$(".company-sites-list .views-row .site-content[nid=" + e.target.feature_id + "]").trigger('click');
+		},
+
+		rad: function (x) {return x*Math.PI/180;},
+		
+		findClosestFeature: function (thisMap, thisLatLng) {
+				
+				var thisPlace = thisLatLng;
+				
+				var lat = thisPlace.lat.toFixed(6);
+				var lng = thisPlace.lng.toFixed(6);
+				
+				var R = 6371; // radius of earth in km
+				var distances = [];
+				var closest = -1;
+				for( i=0;i<thisMap.features.length; i++ ) {
+						var mlat = thisMap.features[i].lat.toFixed(6);
+						var mlng = thisMap.features[i].lon.toFixed(6);
+						var dLat  = this.rad(mlat - lat);
+						var dLong = this.rad(mlng - lng);
+						var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+								Math.cos(this.rad(lat)) * Math.cos(this.rad(lat)) * Math.sin(dLong/2) * Math.sin(dLong/2);
+						var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+						var d = R * c;
+						distances[i] = d;
+						thisMap.features[i].distance = distances[i].toFixed(1);;
+						if ( closest == -1 || d < distances[closest] ) {
+								closest = i;
+						}
+				}
+				
+				return(thisMap.features[closest]);
+		}
+		
+};
+  
+
+})(jQuery);

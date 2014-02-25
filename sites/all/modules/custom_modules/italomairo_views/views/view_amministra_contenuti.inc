@@ -364,6 +364,7 @@ $handler->display->display_options['filters']['type_1']['table'] = 'node';
 $handler->display->display_options['filters']['type_1']['field'] = 'type';
 $handler->display->display_options['filters']['type_1']['value'] = array(
   'article' => 'article',
+  'curriculum_vitae' => 'curriculum_vitae',
   'my_project' => 'my_project',
   'page' => 'page',
 );
@@ -378,7 +379,6 @@ $handler->display->display_options['filters']['type_1']['expose']['remember_role
   2 => 0,
   3 => '3',
   1 => 0,
-  4 => 0,
 );
 $handler->display->display_options['filters']['type_1']['expose']['reduce'] = TRUE;
 /* Filter criterion: Utente: Name (raw) */

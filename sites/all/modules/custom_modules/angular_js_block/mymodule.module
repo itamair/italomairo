@@ -10,7 +10,7 @@
  */
 function mymodule_block_info() {
   $blocks['weather'] = array(
-    'info' => t('Weather'),
+    'info' => t('Weather Angular Js'),
   );
 
   return $blocks;

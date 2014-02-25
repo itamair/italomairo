@@ -87,7 +87,7 @@ a.map-zoom:hover {
 
 
 .view.company-sites-list {
-	margin:  20px 0;
+	margin:  6px 0;
 	height:  300px;
 	overflow-y: scroll;
 }
@@ -258,6 +258,7 @@ a.map-zoom:hover {
 	position: relative;
 	margin-top: 12px;
 	vertical-align: middle;
+	color: black;
 }
 
 #search-closer-site label,
@@ -267,8 +268,12 @@ a.map-zoom:hover {
 	margin: 0 10px 0 0;
 }
 
-#search-closer-site input.start-text {
-	color:  gray;
+#search-closer-site input#search-address-input {
+	color:  black !important;
+}
+
+#search-closer-site input#search-address-input.start-text {
+	color:  gray !important;
 }
 
 #search-closer-site #search-place-icon img {

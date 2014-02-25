@@ -400,5 +400,7 @@
       }
     }
   };
+  
+  //console.log('Drupal.leaflet.create.point deifined');
 
 })(jQuery);

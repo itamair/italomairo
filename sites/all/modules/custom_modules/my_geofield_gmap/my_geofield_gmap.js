@@ -160,7 +160,7 @@
 							//This bit uses the geocoder to fetch address values
 							source: function(request, response) {
 								geofield_gmap_geocoder.geocode( {'address': request.term }, function(results, status) {
-									response(jQuery.map(results, function(item) {
+									response($.map(results, function(item) {
 										//console.log(item); Debug
 										return {
 											label: item.formatted_address,

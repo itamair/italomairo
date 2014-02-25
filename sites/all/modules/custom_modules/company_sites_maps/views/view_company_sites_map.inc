@@ -187,6 +187,7 @@ $handler->display->display_options['filters']['field_site_type_value']['expose']
 
 /* Display: Page */
 $handler = $view->new_display('page', 'Page', 'page');
+$handler->display->display_options['enabled'] = FALSE;
 $handler->display->display_options['path'] = 'company-sites-map';
 $handler->display->display_options['menu']['type'] = 'normal';
 $handler->display->display_options['menu']['title'] = 'Company Sites Map';

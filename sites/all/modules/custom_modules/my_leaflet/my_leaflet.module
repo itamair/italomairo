@@ -43,8 +43,6 @@ return $items;
  */
 function my_leaflet_js_alter(&$javascript) {
 	
-	//dpm($javascript);
-	
 	//dpm($javascript['sites/all/modules/leaflet/leaflet.drupal.js']);
 	//dpm($javascript['sites/all/modules/leaflet_markercluster/leaflet_markercluster.drupal.js']);
 	
@@ -77,16 +75,9 @@ function my_leaflet_js_alter(&$javascript) {
 		
 	}
 	
-	if (module_exists('ip_geoloc') &&
-			isset($javascript['sites/all/modules/ip_geoloc/js/ip_geoloc_leaflet_tagged_marker.js']) && 
-			$javascript['sites/all/modules/ip_geoloc/js/ip_geoloc_leaflet_tagged_marker.js']['weight'] < $javascript['sites/all/modules/leaflet/leaflet.drupal.js']['weight']) {
+	if (module_exists('ip_geoloc') && module_exists('leaflet')) {
 		$javascript['sites/all/modules/ip_geoloc/js/ip_geoloc_leaflet_tagged_marker.js']['weight'] = $javascript['sites/all/modules/leaflet/leaflet.drupal.js']['weight'] + 0.15;
 	}
-	
-	
-	//dpm($javascript['sites/all/modules/leaflet/leaflet.drupal.js']);
-	//dpm($javascript['sites/all/modules/leaflet_markercluster/leaflet_markercluster.drupal.js']);
-	//dpm($javascript['sites/all/modules/ip_geoloc/js/ip_geoloc_leaflet_tagged_marker.js']);
-	//dpm($javascript['sites/all/themes/corolla/js/leaflet_markers_animation.js']);
+
   
 }

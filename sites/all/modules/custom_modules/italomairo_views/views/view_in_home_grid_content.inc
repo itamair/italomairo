@@ -41,7 +41,7 @@ $handler->display->display_options['pager']['options']['tags']['last'] = 'ultima
 $handler->display->display_options['style_plugin'] = 'default';
 $handler->display->display_options['style_options']['row_class'] = 'isotope-element';
 $handler->display->display_options['row_plugin'] = 'fields';
-/* Campo: Contenuto: Immagini */
+/* Field: Content: Immagini */
 $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
 $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
 $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
@@ -55,7 +55,7 @@ $handler->display->display_options['fields']['field_image']['settings'] = array(
 $handler->display->display_options['fields']['field_image']['delta_limit'] = '1';
 $handler->display->display_options['fields']['field_image']['delta_offset'] = '0';
 $handler->display->display_options['fields']['field_image']['separator'] = '';
-/* Campo: Contenuto: Immagini */
+/* Field: Content: Immagini */
 $handler->display->display_options['fields']['field_cover_images']['id'] = 'field_cover_images';
 $handler->display->display_options['fields']['field_cover_images']['table'] = 'field_data_field_cover_images';
 $handler->display->display_options['fields']['field_cover_images']['field'] = 'field_cover_images';
@@ -69,7 +69,7 @@ $handler->display->display_options['fields']['field_cover_images']['settings'] =
 $handler->display->display_options['fields']['field_cover_images']['delta_limit'] = '1';
 $handler->display->display_options['fields']['field_cover_images']['delta_offset'] = '0';
 $handler->display->display_options['fields']['field_cover_images']['separator'] = '';
-/* Campo: Contenuto: Data di Pubblicazione */
+/* Field: Content: Data di Pubblicazione */
 $handler->display->display_options['fields']['field_data_di_pubblicazione']['id'] = 'field_data_di_pubblicazione';
 $handler->display->display_options['fields']['field_data_di_pubblicazione']['table'] = 'field_data_field_data_di_pubblicazione';
 $handler->display->display_options['fields']['field_data_di_pubblicazione']['field'] = 'field_data_di_pubblicazione';
@@ -83,7 +83,7 @@ $handler->display->display_options['fields']['field_data_di_pubblicazione']['set
   'multiple_to' => '',
   'show_repeat_rule' => 'show',
 );
-/* Campo: Contenuto: Mese di pubblicazione */
+/* Field: Content: Mese di pubblicazione */
 $handler->display->display_options['fields']['field_mese_pubblicazione']['id'] = 'field_mese_pubblicazione';
 $handler->display->display_options['fields']['field_mese_pubblicazione']['table'] = 'field_data_field_mese_pubblicazione';
 $handler->display->display_options['fields']['field_mese_pubblicazione']['field'] = 'field_mese_pubblicazione';
@@ -97,7 +97,7 @@ $handler->display->display_options['fields']['field_mese_pubblicazione']['settin
   'multiple_to' => '',
   'show_repeat_rule' => 'show',
 );
-/* Campo: Contenuto: Categoria */
+/* Field: Content: Categoria */
 $handler->display->display_options['fields']['field_category']['id'] = 'field_category';
 $handler->display->display_options['fields']['field_category']['table'] = 'field_data_field_category';
 $handler->display->display_options['fields']['field_category']['field'] = 'field_category';
@@ -107,22 +107,31 @@ $handler->display->display_options['fields']['field_category']['element_label_co
 $handler->display->display_options['fields']['field_category']['type'] = 'taxonomy_term_reference_plain';
 $handler->display->display_options['fields']['field_category']['delta_offset'] = '0';
 $handler->display->display_options['fields']['field_category']['separator'] = '';
-/* Campo: Contenuto: Titolo */
+/* Field: Content: Title */
 $handler->display->display_options['fields']['title']['id'] = 'title';
 $handler->display->display_options['fields']['title']['table'] = 'node';
 $handler->display->display_options['fields']['title']['field'] = 'title';
 $handler->display->display_options['fields']['title']['label'] = '';
+$handler->display->display_options['fields']['title']['exclude'] = TRUE;
 $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
 $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
 $handler->display->display_options['fields']['title']['element_type'] = 'h4';
 $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-/* Campo: Contenuto: Sottotitolo in Home Page */
+/* Field: Content: Titolo */
+$handler->display->display_options['fields']['title_field']['id'] = 'title_field';
+$handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
+$handler->display->display_options['fields']['title_field']['field'] = 'title_field';
+$handler->display->display_options['fields']['title_field']['label'] = '';
+$handler->display->display_options['fields']['title_field']['element_type'] = 'h4';
+$handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['title_field']['link_to_entity'] = 1;
+/* Field: Content: Sottotitolo in Home Page */
 $handler->display->display_options['fields']['field_sottottolo']['id'] = 'field_sottottolo';
 $handler->display->display_options['fields']['field_sottottolo']['table'] = 'field_data_field_sottottolo';
 $handler->display->display_options['fields']['field_sottottolo']['field'] = 'field_sottottolo';
 $handler->display->display_options['fields']['field_sottottolo']['label'] = '';
 $handler->display->display_options['fields']['field_sottottolo']['element_label_colon'] = FALSE;
-/* Campo: Contenuto: Body */
+/* Field: Content: Body */
 $handler->display->display_options['fields']['body']['id'] = 'body';
 $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
 $handler->display->display_options['fields']['body']['field'] = 'body';
@@ -139,7 +148,7 @@ $handler->display->display_options['fields']['body']['type'] = 'text_summary_or_
 $handler->display->display_options['fields']['body']['settings'] = array(
   'trim_length' => '300',
 );
-/* Campo: Contenuto: Fonte */
+/* Field: Content: Fonte */
 $handler->display->display_options['fields']['field_fonte']['id'] = 'field_fonte';
 $handler->display->display_options['fields']['field_fonte']['table'] = 'field_data_field_fonte';
 $handler->display->display_options['fields']['field_fonte']['field'] = 'field_fonte';
@@ -148,36 +157,36 @@ $handler->display->display_options['fields']['field_fonte']['element_type'] = 's
 $handler->display->display_options['fields']['field_fonte']['element_label_type'] = 'span';
 $handler->display->display_options['fields']['field_fonte']['hide_empty'] = TRUE;
 $handler->display->display_options['fields']['field_fonte']['click_sort_column'] = 'url';
-/* Campo: Contenuto: Link */
+/* Field: Content: Link */
 $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
 $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
 $handler->display->display_options['fields']['view_node']['field'] = 'view_node';
 $handler->display->display_options['fields']['view_node']['label'] = '';
 $handler->display->display_options['fields']['view_node']['element_label_colon'] = FALSE;
 $handler->display->display_options['fields']['view_node']['text'] = 'Read More';
-/* Criterio di ordinamento: Contenuto: Data di Pubblicazione (field_data_di_pubblicazione) */
+/* Sort criterion: Content: Data di Pubblicazione (field_data_di_pubblicazione) */
 $handler->display->display_options['sorts']['field_data_di_pubblicazione_value']['id'] = 'field_data_di_pubblicazione_value';
 $handler->display->display_options['sorts']['field_data_di_pubblicazione_value']['table'] = 'field_data_field_data_di_pubblicazione';
 $handler->display->display_options['sorts']['field_data_di_pubblicazione_value']['field'] = 'field_data_di_pubblicazione_value';
 $handler->display->display_options['sorts']['field_data_di_pubblicazione_value']['order'] = 'DESC';
-/* Criterio di ordinamento: Contenuto: Mese di pubblicazione (field_mese_pubblicazione) */
+/* Sort criterion: Content: Mese di pubblicazione (field_mese_pubblicazione) */
 $handler->display->display_options['sorts']['field_mese_pubblicazione_value']['id'] = 'field_mese_pubblicazione_value';
 $handler->display->display_options['sorts']['field_mese_pubblicazione_value']['table'] = 'field_data_field_mese_pubblicazione';
 $handler->display->display_options['sorts']['field_mese_pubblicazione_value']['field'] = 'field_mese_pubblicazione_value';
 $handler->display->display_options['sorts']['field_mese_pubblicazione_value']['order'] = 'DESC';
-/* Criterio di ordinamento: Contenuto: Data di inserimento */
+/* Sort criterion: Content: Post date */
 $handler->display->display_options['sorts']['created']['id'] = 'created';
 $handler->display->display_options['sorts']['created']['table'] = 'node';
 $handler->display->display_options['sorts']['created']['field'] = 'created';
 $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-/* Filter criterion: Contenuto: Pubblicato */
+/* Filter criterion: Content: Published */
 $handler->display->display_options['filters']['status']['id'] = 'status';
 $handler->display->display_options['filters']['status']['table'] = 'node';
 $handler->display->display_options['filters']['status']['field'] = 'status';
 $handler->display->display_options['filters']['status']['value'] = 1;
 $handler->display->display_options['filters']['status']['group'] = 1;
 $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-/* Filter criterion: Contenuto: In Evidenza Home Page (field_in_slideshow) */
+/* Filter criterion: Content: In Evidenza Home Page (field_in_slideshow) */
 $handler->display->display_options['filters']['field_in_slideshow_value']['id'] = 'field_in_slideshow_value';
 $handler->display->display_options['filters']['field_in_slideshow_value']['table'] = 'field_data_field_in_slideshow';
 $handler->display->display_options['filters']['field_in_slideshow_value']['field'] = 'field_in_slideshow_value';
@@ -209,6 +218,7 @@ $translatables['in_home_grid_content'] = array(
   t('Source'),
   t('Read More'),
   t('Blocco'),
+  t('more'),
   t('in Home Content Grid'),
 );
 
