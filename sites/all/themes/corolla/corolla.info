@@ -26,9 +26,9 @@
   stylesheets[all][] = css/corolla.settings.style.css
   stylesheets[all][] = color/colors.css
   stylesheets[print][] = css/print.css
-  stylesheets[all][] = italo.css
-  stylesheets[all][] = italo_responsive.css
-  stylesheets[all][] = italo_specific.css
+  stylesheets[all][] = css/italo.css
+  stylesheets[all][] = css/italo_responsive.css
+  stylesheets[all][] = css/italo_specific.css
   
 ;----------// Italo Javascript Files
 
