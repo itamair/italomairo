@@ -1,0 +1,92 @@
+<?php
+
+function myswitchtheme_menu() {
+ $items = array();
+
+ $items['low-bandwidth'] = array(
+    'title' => 'Low bandwidth site',
+    'page callback' => 'myswitchtheme_change_bandwidth_theme',
+    'page arguments' => array('garland'),
+    'access callback' => TRUE,
+ );
+
+ $items['high-bandwidth'] = array(
+    'title' => 'High bandwidth site',
+    'page callback' => 'myswitchtheme_change_bandwidth_theme',
+    'page arguments' => array('corolla'),
+    'access callback' => TRUE,
+ );
+
+ return $items;
+}
+
+function myswitchtheme_change_bandwidth_theme($new_theme = FALSE) {
+ global $user;
+
+ //dpm($user);
+ //dpm($GLOBALS);
+ //dpm($GLOBALS['_SESSION']);
+ //dpm($_GET);
+ //dpm( get_defined_vars());
+ 
+ // If they have no theme set, assume it's the default, so switch to low.
+ // Otherwise, switch between low and high.
+ if (!$new_theme) {
+    $current_theme = isset($_SESSION['custom_theme']) ? 
+        $_SESSION['custom_theme'] : $user->theme;
+   
+    if ($current_theme == 'garland') {
+     $new_theme = 'corolla';
+    }
+    elseif (!$current_theme || $current_theme == 'corolla') {
+     $new_theme = 'garland';
+    }
+ }
+
+ $form = array('values' => array('theme' => $new_theme));
+ switchtheme_switch_form_submit('', $form);
+ 
+   //user_save($account, array(
+   // 'theme' => 'garland',
+   //));
+
+ $referer = $_SERVER["HTTP_REFERER"] ? $_SERVER["HTTP_REFERER"] : '<front>';
+ drupal_goto($referer);
+}
+
+function myswitchtheme_block_info() {
+  $blocks['myswitchtheme_block'] = array(
+   'info' => t('My Switch Theme Block'),
+   'status' => TRUE,
+   'visibility' => BLOCK_VISIBILITY_NOTLISTED,
+   );
+   return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function myswitchtheme_block_view($delta = '') {
+  switch ($delta) {
+    case 'myswitchtheme_block':
+      $block['subject'] = 'My Switch Theme Block';
+      $block['content'] = myswitchtheme_block_low_bandwidth_link();
+      return $block;
+      break;
+} }
+
+function myswitchtheme_block_low_bandwidth_link() {
+  global $user;
+  // Determine the user's current theme, for the low/high bandwidth link.
+  $current_theme = isset($_SESSION['custom_theme']) ? 
+    $_SESSION['custom_theme'] : $user->theme;
+  if ($current_theme == 'garland') {
+     $link = l('High Bandwidth', 'high-bandwidth');
+  }
+  else {
+     $link = l('Low Bandwidth', 'low-bandwidth');
+  }
+  
+  $content = $link;
+  return $content;
+}

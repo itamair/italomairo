@@ -1,0 +1,9 @@
+name = "My Switch Theme Module (Custom Module)"
+description = "Provides an experimental link on the site that let people switch with a single click, regardless if they had an account"
+core = "7.x"
+package = Custom_modules
+core = 7.x
+
+dependencies[] = switchtheme
+
+files[] = myswitchtheme.module
