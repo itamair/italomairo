@@ -31,7 +31,29 @@ function hook_inline_entity_form_entity_form_alter(&$entity_form, &$form_state) 
  *   The form state of the parent form.
  */
 function hook_inline_entity_form_reference_form_alter(&$reference_form, &$form_state) {
-  $reference_form['entity_id']['description'] = t('New autocomplete description');
+  $reference_form['entity_id']['#description'] = t('New autocomplete description');
+}
+
+/**
+ * Perform alterations to the IEF field type settings.
+ *
+ * This allows modules to enable IEF to work on custom field types.
+ *
+ * @param $settings
+ *   An array with the following keys:
+ *   - entity_type - The entity_type being managed.
+ *   - bundles - Bundles of entities that the user is allowed to create.
+ *   - column - The name of the ref. field column that stores the entity id.
+ * @param $field
+ *   The field array of the reference field.
+ * @param $instance
+ *   The instance array of the reference field.
+ */
+function hook_inline_entity_form_settings_alter(&$settings, $field, $instance) {
+  if ($field['type'] == 'mycustom_reference') {
+    $settings['entity_type'] = 'mycustom';
+    $settings['column'] = 'mycustom_id';
+  }
 }
 
 /**
